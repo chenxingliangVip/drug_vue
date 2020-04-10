@@ -16,7 +16,7 @@
                     style="width: 100px;"/>
         </el-form-item>
         <div class="el-dialog-item">
-          <i class="el-icon-search dialog_icon" style="cursor:pointer;" @click="search"></i>
+          <i class="el-icon-search dialog_icon" @click="search"></i>
         </div>
         <div class="el-dialog-item">
           <el-button class="filter-btn-item"
