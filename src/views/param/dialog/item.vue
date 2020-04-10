@@ -16,7 +16,7 @@
                     style="width: 100px;"/>
         </el-form-item>
         <div class="el-dialog-item">
-          <i class="el-icon-search" style="cursor:pointer;" @click="search"></i>
+          <i class="el-icon-search dialog_icon" style="cursor:pointer;" @click="search"></i>
         </div>
         <div class="el-dialog-item">
           <el-button class="filter-btn-item"
@@ -207,5 +207,18 @@
 
   .el-dialog-item {
     display: inline-block;
+  }
+  .dialog_icon {
+  	cursor: pointer;
+    background: #409EFF;
+    color: #fff;
+    width: 50px;
+    border-radius: 3px;
+    padding: 6px;
+    text-align: center;
+    padding-bottom: 5px;
+    &:hover{
+    	opacity: .8;
+    }
   }
 </style>
