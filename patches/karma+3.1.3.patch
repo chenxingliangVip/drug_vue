@@ -1,0 +1,12 @@
+patch-package
+--- a/node_modules/karma/lib/server.js
++++ b/node_modules/karma/lib/server.js
+@@ -165,7 +165,7 @@ class Server extends KarmaEventEmitter {
+     })
+ 
+     const afterPreprocess = () => {
+-      if (config.autoWatch) {
++      if (config.autoWatch || (!config.singleRun)) {
+         this._injector.invoke(watcher.watch)
+       }
+ 

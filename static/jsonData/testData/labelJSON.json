@@ -1,0 +1,3578 @@
+{
+  "success": true,
+  "result": {
+    "allProvincesWithCity": [
+      {
+        "id": 477747,
+        "countryCode": "460",
+        "provinceCode": "110000",
+        "provinceName": "北京市",
+        "iccard": "110000",
+        "zip": "100000",
+        "children": [
+          {
+            "id": 470002,
+            "provinceCode": "110000",
+            "cityCode": "110100",
+            "cityName": "北京市/市辖区",
+            "tel": "010",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470019,
+            "provinceCode": "110000",
+            "cityCode": "110200",
+            "cityName": "北京市/县",
+            "tel": "010",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477748,
+        "countryCode": "460",
+        "provinceCode": "120000",
+        "provinceName": "天津市",
+        "iccard": "120000",
+        "zip": "300000",
+        "children": [
+          {
+            "id": 470023,
+            "provinceCode": "120000",
+            "cityCode": "120100",
+            "cityName": "天津市/市辖区",
+            "tel": "022",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470040,
+            "provinceCode": "120000",
+            "cityCode": "120200",
+            "cityName": "天津市/县",
+            "tel": "022",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477749,
+        "countryCode": "460",
+        "provinceCode": "130000",
+        "provinceName": "河北省",
+        "iccard": "130000",
+        "zip": "050000",
+        "children": [
+          {
+            "id": 470045,
+            "provinceCode": "130000",
+            "cityCode": "130100",
+            "cityName": "石家庄市",
+            "tel": "0311",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470068,
+            "provinceCode": "130000",
+            "cityCode": "130200",
+            "cityName": "唐山市",
+            "tel": "0315",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470085,
+            "provinceCode": "130000",
+            "cityCode": "130300",
+            "cityName": "秦皇岛市",
+            "tel": "0335",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470094,
+            "provinceCode": "130000",
+            "cityCode": "130400",
+            "cityName": "邯郸市",
+            "tel": "0310",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470115,
+            "provinceCode": "130000",
+            "cityCode": "130500",
+            "cityName": "邢台市",
+            "tel": "0319",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470136,
+            "provinceCode": "130000",
+            "cityCode": "130600",
+            "cityName": "保定市",
+            "tel": "0312",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470162,
+            "provinceCode": "130000",
+            "cityCode": "130700",
+            "cityName": "张家口市",
+            "tel": "0313",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470181,
+            "provinceCode": "130000",
+            "cityCode": "130800",
+            "cityName": "承德市",
+            "tel": "0314",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470194,
+            "provinceCode": "130000",
+            "cityCode": "130900",
+            "cityName": "沧州市",
+            "tel": "0317",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470212,
+            "provinceCode": "130000",
+            "cityCode": "131000",
+            "cityName": "廊坊市",
+            "tel": "0316",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470224,
+            "provinceCode": "130000",
+            "cityCode": "131100",
+            "cityName": "衡水市",
+            "tel": "0318",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470237,
+            "provinceCode": "130000",
+            "cityCode": "139000",
+            "cityName": "河北省/省直辖县级行政区划",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477750,
+        "countryCode": "460",
+        "provinceCode": "140000",
+        "provinceName": "山西省",
+        "iccard": "140000",
+        "zip": "030000",
+        "children": [
+          {
+            "id": 470241,
+            "provinceCode": "140000",
+            "cityCode": "140100",
+            "cityName": "太原市",
+            "tel": "0351",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470253,
+            "provinceCode": "140000",
+            "cityCode": "140200",
+            "cityName": "大同市",
+            "tel": "0352",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470266,
+            "provinceCode": "140000",
+            "cityCode": "140300",
+            "cityName": "阳泉市",
+            "tel": "0353",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470273,
+            "provinceCode": "140000",
+            "cityCode": "140400",
+            "cityName": "长治市",
+            "tel": "0355",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470288,
+            "provinceCode": "140000",
+            "cityCode": "140500",
+            "cityName": "晋城市",
+            "tel": "0356",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470296,
+            "provinceCode": "140000",
+            "cityCode": "140600",
+            "cityName": "朔州市",
+            "tel": "0349",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470304,
+            "provinceCode": "140000",
+            "cityCode": "140700",
+            "cityName": "晋中市",
+            "tel": "0354",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470317,
+            "provinceCode": "140000",
+            "cityCode": "140800",
+            "cityName": "运城市",
+            "tel": "0359",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470332,
+            "provinceCode": "140000",
+            "cityCode": "140900",
+            "cityName": "忻州市",
+            "tel": "0350",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470348,
+            "provinceCode": "140000",
+            "cityCode": "141000",
+            "cityName": "临汾市",
+            "tel": "0357",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470367,
+            "provinceCode": "140000",
+            "cityCode": "141100",
+            "cityName": "吕梁市",
+            "tel": "0358",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470382,
+            "provinceCode": "140000",
+            "cityCode": "142300",
+            "cityName": "吕梁地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477751,
+        "countryCode": "460",
+        "provinceCode": "150000",
+        "provinceName": "内蒙古自治区",
+        "iccard": "150000",
+        "zip": "010000",
+        "children": [
+          {
+            "id": 470397,
+            "provinceCode": "150000",
+            "cityCode": "150100",
+            "cityName": "呼和浩特市",
+            "tel": "0471",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470408,
+            "provinceCode": "150000",
+            "cityCode": "150200",
+            "cityName": "包头市",
+            "tel": "0472",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470419,
+            "provinceCode": "150000",
+            "cityCode": "150300",
+            "cityName": "乌海市",
+            "tel": "0473",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470424,
+            "provinceCode": "150000",
+            "cityCode": "150400",
+            "cityName": "赤峰市",
+            "tel": "0476",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470438,
+            "provinceCode": "150000",
+            "cityCode": "150500",
+            "cityName": "通辽市",
+            "tel": "0475",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470448,
+            "provinceCode": "150000",
+            "cityCode": "150600",
+            "cityName": "鄂尔多斯市",
+            "tel": "0477",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470458,
+            "provinceCode": "150000",
+            "cityCode": "150700",
+            "cityName": "呼伦贝尔市",
+            "tel": "0470",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470474,
+            "provinceCode": "150000",
+            "cityCode": "150800",
+            "cityName": "巴彦淖尔市",
+            "tel": "0478",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470483,
+            "provinceCode": "150000",
+            "cityCode": "150900",
+            "cityName": "乌兰察布市",
+            "tel": "0474",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470496,
+            "provinceCode": "150000",
+            "cityCode": "152200",
+            "cityName": "兴安盟",
+            "tel": "0482",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470503,
+            "provinceCode": "150000",
+            "cityCode": "152500",
+            "cityName": "锡林郭勒盟",
+            "tel": "0479",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470516,
+            "provinceCode": "150000",
+            "cityCode": "152600",
+            "cityName": "乌兰察布盟",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470528,
+            "provinceCode": "150000",
+            "cityCode": "152800",
+            "cityName": "乌兰察布盟/巴彦淖尔盟",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470536,
+            "provinceCode": "150000",
+            "cityCode": "152900",
+            "cityName": "阿拉善盟",
+            "tel": "0483",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477752,
+        "countryCode": "460",
+        "provinceCode": "210000",
+        "provinceName": "辽宁省",
+        "iccard": "210000",
+        "zip": "110000",
+        "children": [
+          {
+            "id": 470541,
+            "provinceCode": "210000",
+            "cityCode": "210100",
+            "cityName": "沈阳市",
+            "tel": "024",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470556,
+            "provinceCode": "210000",
+            "cityCode": "210200",
+            "cityName": "大连市",
+            "tel": "0411",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470568,
+            "provinceCode": "210000",
+            "cityCode": "210300",
+            "cityName": "鞍山市",
+            "tel": "0412",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470577,
+            "provinceCode": "210000",
+            "cityCode": "210400",
+            "cityName": "抚顺市",
+            "tel": "024",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470586,
+            "provinceCode": "210000",
+            "cityCode": "210500",
+            "cityName": "本溪市",
+            "tel": "024",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470594,
+            "provinceCode": "210000",
+            "cityCode": "210600",
+            "cityName": "丹东市",
+            "tel": "0415",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470602,
+            "provinceCode": "210000",
+            "cityCode": "210700",
+            "cityName": "锦州市",
+            "tel": "0416",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470611,
+            "provinceCode": "210000",
+            "cityCode": "210800",
+            "cityName": "营口市",
+            "tel": "0417",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470619,
+            "provinceCode": "210000",
+            "cityCode": "210900",
+            "cityName": "阜新市",
+            "tel": "0418",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470628,
+            "provinceCode": "210000",
+            "cityCode": "211000",
+            "cityName": "辽阳市",
+            "tel": "0419",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470637,
+            "provinceCode": "210000",
+            "cityCode": "211100",
+            "cityName": "盘锦市",
+            "tel": "0427",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470643,
+            "provinceCode": "210000",
+            "cityCode": "211200",
+            "cityName": "铁岭市",
+            "tel": "024",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470652,
+            "provinceCode": "210000",
+            "cityCode": "211300",
+            "cityName": "朝阳市",
+            "tel": "0421",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470661,
+            "provinceCode": "210000",
+            "cityCode": "211400",
+            "cityName": "葫芦岛市",
+            "tel": "0429",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477753,
+        "countryCode": "460",
+        "provinceCode": "220000",
+        "provinceName": "吉林省",
+        "iccard": "220000",
+        "zip": "130000",
+        "children": [
+          {
+            "id": 470670,
+            "provinceCode": "220000",
+            "cityCode": "220100",
+            "cityName": "长春市",
+            "tel": "0431",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470682,
+            "provinceCode": "220000",
+            "cityCode": "220200",
+            "cityName": "吉林市",
+            "tel": "0432",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470693,
+            "provinceCode": "220000",
+            "cityCode": "220300",
+            "cityName": "四平市",
+            "tel": "0434",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470701,
+            "provinceCode": "220000",
+            "cityCode": "220400",
+            "cityName": "辽源市",
+            "tel": "0437",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470707,
+            "provinceCode": "220000",
+            "cityCode": "220500",
+            "cityName": "通化市",
+            "tel": "0435",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470716,
+            "provinceCode": "220000",
+            "cityCode": "220600",
+            "cityName": "白山市",
+            "tel": "0439",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470725,
+            "provinceCode": "220000",
+            "cityCode": "220700",
+            "cityName": "松原市",
+            "tel": "0438",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470732,
+            "provinceCode": "220000",
+            "cityCode": "220800",
+            "cityName": "白城市",
+            "tel": "0436",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470739,
+            "provinceCode": "220000",
+            "cityCode": "222400",
+            "cityName": "延边朝鲜族自治州",
+            "tel": "0433",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477754,
+        "countryCode": "460",
+        "provinceCode": "230000",
+        "provinceName": "黑龙江省",
+        "iccard": "230000",
+        "zip": "150000",
+        "children": [
+          {
+            "id": 470749,
+            "provinceCode": "230000",
+            "cityCode": "230100",
+            "cityName": "哈尔滨市",
+            "tel": "0451",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470774,
+            "provinceCode": "230000",
+            "cityCode": "230200",
+            "cityName": "齐齐哈尔市",
+            "tel": "0452",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470792,
+            "provinceCode": "230000",
+            "cityCode": "230300",
+            "cityName": "鸡西市",
+            "tel": "0467",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470803,
+            "provinceCode": "230000",
+            "cityCode": "230400",
+            "cityName": "鹤岗市",
+            "tel": "0468",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470813,
+            "provinceCode": "230000",
+            "cityCode": "230500",
+            "cityName": "双鸭山市",
+            "tel": "0469",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470823,
+            "provinceCode": "230000",
+            "cityCode": "230600",
+            "cityName": "大庆市",
+            "tel": "0459",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470834,
+            "provinceCode": "230000",
+            "cityCode": "230700",
+            "cityName": "伊春市",
+            "tel": "0458",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470853,
+            "provinceCode": "230000",
+            "cityCode": "230800",
+            "cityName": "佳木斯市",
+            "tel": "0454",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470866,
+            "provinceCode": "230000",
+            "cityCode": "230900",
+            "cityName": "七台河市",
+            "tel": "0464",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470872,
+            "provinceCode": "230000",
+            "cityCode": "231000",
+            "cityName": "牡丹江市",
+            "tel": "0453",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470884,
+            "provinceCode": "230000",
+            "cityCode": "231100",
+            "cityName": "黑河市",
+            "tel": "0456",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470892,
+            "provinceCode": "230000",
+            "cityCode": "231200",
+            "cityName": "绥化市",
+            "tel": "0455",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470904,
+            "provinceCode": "230000",
+            "cityCode": "232700",
+            "cityName": "大兴安岭地区",
+            "tel": "0457",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477755,
+        "countryCode": "460",
+        "provinceCode": "310000",
+        "provinceName": "上海市",
+        "iccard": "310000",
+        "zip": "200000",
+        "children": [
+          {
+            "id": 470912,
+            "provinceCode": "310000",
+            "cityCode": "310100",
+            "cityName": "上海市/市辖区",
+            "tel": "021",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470931,
+            "provinceCode": "310000",
+            "cityCode": "310200",
+            "cityName": "上海市/县",
+            "tel": "021",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477756,
+        "countryCode": "460",
+        "provinceCode": "320000",
+        "provinceName": "江苏省",
+        "iccard": "320000",
+        "zip": "210000",
+        "children": [
+          {
+            "id": 470934,
+            "provinceCode": "320000",
+            "cityCode": "320100",
+            "cityName": "南京市",
+            "tel": "025",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470951,
+            "provinceCode": "320000",
+            "cityCode": "320200",
+            "cityName": "无锡市",
+            "tel": "0510",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470961,
+            "provinceCode": "320000",
+            "cityCode": "320300",
+            "cityName": "徐州市",
+            "tel": "0516",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470975,
+            "provinceCode": "320000",
+            "cityCode": "320400",
+            "cityName": "常州市",
+            "tel": "0519",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470984,
+            "provinceCode": "320000",
+            "cityCode": "320500",
+            "cityName": "苏州市",
+            "tel": "0512",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 470995,
+            "provinceCode": "320000",
+            "cityCode": "320600",
+            "cityName": "南通市",
+            "tel": "0513",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471006,
+            "provinceCode": "320000",
+            "cityCode": "320700",
+            "cityName": "连云港市",
+            "tel": "0518",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471015,
+            "provinceCode": "320000",
+            "cityCode": "320800",
+            "cityName": "淮安市",
+            "tel": "0517",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471025,
+            "provinceCode": "320000",
+            "cityCode": "320900",
+            "cityName": "盐城市",
+            "tel": "0515",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471037,
+            "provinceCode": "320000",
+            "cityCode": "321000",
+            "cityName": "扬州市",
+            "tel": "0514",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471047,
+            "provinceCode": "320000",
+            "cityCode": "321100",
+            "cityName": "镇江市",
+            "tel": "0511",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471055,
+            "provinceCode": "320000",
+            "cityCode": "321200",
+            "cityName": "泰州市",
+            "tel": "0523",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471063,
+            "provinceCode": "320000",
+            "cityCode": "321300",
+            "cityName": "宿迁市",
+            "tel": "0527",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477757,
+        "countryCode": "460",
+        "provinceCode": "330000",
+        "provinceName": "浙江省",
+        "iccard": "330000",
+        "zip": "310000",
+        "children": [
+          {
+            "id": 471072,
+            "provinceCode": "330000",
+            "cityCode": "330100",
+            "cityName": "杭州市",
+            "tel": "0571",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471087,
+            "provinceCode": "330000",
+            "cityCode": "330200",
+            "cityName": "宁波市",
+            "tel": "0574",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471100,
+            "provinceCode": "330000",
+            "cityCode": "330300",
+            "cityName": "温州市",
+            "tel": "0577",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471113,
+            "provinceCode": "330000",
+            "cityCode": "330400",
+            "cityName": "嘉兴市",
+            "tel": "0573",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471122,
+            "provinceCode": "330000",
+            "cityCode": "330500",
+            "cityName": "湖州市",
+            "tel": "0572",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471129,
+            "provinceCode": "330000",
+            "cityCode": "330600",
+            "cityName": "绍兴市",
+            "tel": "0575",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471137,
+            "provinceCode": "330000",
+            "cityCode": "330700",
+            "cityName": "金华市",
+            "tel": "0579",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471148,
+            "provinceCode": "330000",
+            "cityCode": "330800",
+            "cityName": "衢州市",
+            "tel": "0570",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471156,
+            "provinceCode": "330000",
+            "cityCode": "330900",
+            "cityName": "舟山市",
+            "tel": "0580",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471162,
+            "provinceCode": "330000",
+            "cityCode": "331000",
+            "cityName": "台州市",
+            "tel": "0576",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471173,
+            "provinceCode": "330000",
+            "cityCode": "331100",
+            "cityName": "丽水市",
+            "tel": "0578",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477758,
+        "countryCode": "460",
+        "provinceCode": "340000",
+        "provinceName": "安徽省",
+        "iccard": "340000",
+        "zip": "230000",
+        "children": [
+          {
+            "id": 471185,
+            "provinceCode": "340000",
+            "cityCode": "340100",
+            "cityName": "合肥市",
+            "tel": "0551",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471196,
+            "provinceCode": "340000",
+            "cityCode": "340200",
+            "cityName": "芜湖市",
+            "tel": "0553",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471207,
+            "provinceCode": "340000",
+            "cityCode": "340300",
+            "cityName": "蚌埠市",
+            "tel": "0552",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471216,
+            "provinceCode": "340000",
+            "cityCode": "340400",
+            "cityName": "淮南市",
+            "tel": "0554",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471224,
+            "provinceCode": "340000",
+            "cityCode": "340500",
+            "cityName": "马鞍山市",
+            "tel": "0555",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471233,
+            "provinceCode": "340000",
+            "cityCode": "340600",
+            "cityName": "淮北市",
+            "tel": "0561",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471239,
+            "provinceCode": "340000",
+            "cityCode": "340700",
+            "cityName": "铜陵市",
+            "tel": "0562",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471245,
+            "provinceCode": "340000",
+            "cityCode": "340800",
+            "cityName": "安庆市",
+            "tel": "0556",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471258,
+            "provinceCode": "340000",
+            "cityCode": "341000",
+            "cityName": "黄山市",
+            "tel": "0559",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471267,
+            "provinceCode": "340000",
+            "cityCode": "341100",
+            "cityName": "滁州市",
+            "tel": "0550",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471277,
+            "provinceCode": "340000",
+            "cityCode": "341200",
+            "cityName": "阜阳市",
+            "tel": "0558",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471287,
+            "provinceCode": "340000",
+            "cityCode": "341300",
+            "cityName": "宿州市",
+            "tel": "0557",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471294,
+            "provinceCode": "340000",
+            "cityCode": "341400",
+            "cityName": "巢湖市",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471301,
+            "provinceCode": "340000",
+            "cityCode": "341500",
+            "cityName": "六安市",
+            "tel": "0564",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471310,
+            "provinceCode": "340000",
+            "cityCode": "341600",
+            "cityName": "亳州市",
+            "tel": "0558",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471316,
+            "provinceCode": "340000",
+            "cityCode": "341700",
+            "cityName": "池州市",
+            "tel": "0566",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471322,
+            "provinceCode": "340000",
+            "cityCode": "341800",
+            "cityName": "宣城市",
+            "tel": "0563",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477759,
+        "countryCode": "460",
+        "provinceCode": "350000",
+        "provinceName": "福建省",
+        "iccard": "350000",
+        "zip": "350000",
+        "children": [
+          {
+            "id": 471332,
+            "provinceCode": "350000",
+            "cityCode": "350100",
+            "cityName": "福州市",
+            "tel": "0591",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471347,
+            "provinceCode": "350000",
+            "cityCode": "350200",
+            "cityName": "厦门市",
+            "tel": "0592",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471357,
+            "provinceCode": "350000",
+            "cityCode": "350300",
+            "cityName": "莆田市",
+            "tel": "0594",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471364,
+            "provinceCode": "350000",
+            "cityCode": "350400",
+            "cityName": "三明市",
+            "tel": "0598",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471378,
+            "provinceCode": "350000",
+            "cityCode": "350500",
+            "cityName": "泉州市",
+            "tel": "0595",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471392,
+            "provinceCode": "350000",
+            "cityCode": "350600",
+            "cityName": "漳州市",
+            "tel": "0596",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471405,
+            "provinceCode": "350000",
+            "cityCode": "350700",
+            "cityName": "南平市",
+            "tel": "0599",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471417,
+            "provinceCode": "350000",
+            "cityCode": "350800",
+            "cityName": "龙岩市",
+            "tel": "0597",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471426,
+            "provinceCode": "350000",
+            "cityCode": "350900",
+            "cityName": "宁德市",
+            "tel": "0593",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477760,
+        "countryCode": "460",
+        "provinceCode": "360000",
+        "provinceName": "江西省",
+        "iccard": "360000",
+        "zip": "330000",
+        "children": [
+          {
+            "id": 471438,
+            "provinceCode": "360000",
+            "cityCode": "360100",
+            "cityName": "南昌市",
+            "tel": "0791",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471449,
+            "provinceCode": "360000",
+            "cityCode": "360200",
+            "cityName": "景德镇市",
+            "tel": "0798",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471455,
+            "provinceCode": "360000",
+            "cityCode": "360300",
+            "cityName": "萍乡市",
+            "tel": "0799",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471462,
+            "provinceCode": "360000",
+            "cityCode": "360400",
+            "cityName": "九江市",
+            "tel": "0792",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471477,
+            "provinceCode": "360000",
+            "cityCode": "360500",
+            "cityName": "新余市",
+            "tel": "0790",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471481,
+            "provinceCode": "360000",
+            "cityCode": "360600",
+            "cityName": "鹰潭市",
+            "tel": "0701",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471486,
+            "provinceCode": "360000",
+            "cityCode": "360700",
+            "cityName": "赣州市",
+            "tel": "0797",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471506,
+            "provinceCode": "360000",
+            "cityCode": "360800",
+            "cityName": "吉安市",
+            "tel": "0796",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471521,
+            "provinceCode": "360000",
+            "cityCode": "360900",
+            "cityName": "宜春市",
+            "tel": "0795",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471533,
+            "provinceCode": "360000",
+            "cityCode": "361000",
+            "cityName": "抚州市",
+            "tel": "0794",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471546,
+            "provinceCode": "360000",
+            "cityCode": "361100",
+            "cityName": "上饶市",
+            "tel": "0793",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477761,
+        "countryCode": "460",
+        "provinceCode": "370000",
+        "provinceName": "山东省",
+        "iccard": "370000",
+        "zip": "250000",
+        "children": [
+          {
+            "id": 471561,
+            "provinceCode": "370000",
+            "cityCode": "370100",
+            "cityName": "济南市",
+            "tel": "0531",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471573,
+            "provinceCode": "370000",
+            "cityCode": "370200",
+            "cityName": "青岛市",
+            "tel": "0532",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471586,
+            "provinceCode": "370000",
+            "cityCode": "370300",
+            "cityName": "淄博市",
+            "tel": "0533",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471596,
+            "provinceCode": "370000",
+            "cityCode": "370400",
+            "cityName": "枣庄市",
+            "tel": "0632",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471604,
+            "provinceCode": "370000",
+            "cityCode": "370500",
+            "cityName": "东营市",
+            "tel": "0546",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471611,
+            "provinceCode": "370000",
+            "cityCode": "370600",
+            "cityName": "烟台市",
+            "tel": "0535",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471625,
+            "provinceCode": "370000",
+            "cityCode": "370700",
+            "cityName": "潍坊市",
+            "tel": "0536",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471639,
+            "provinceCode": "370000",
+            "cityCode": "370800",
+            "cityName": "济宁市",
+            "tel": "0537",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471652,
+            "provinceCode": "370000",
+            "cityCode": "370900",
+            "cityName": "泰安市",
+            "tel": "0538",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471661,
+            "provinceCode": "370000",
+            "cityCode": "371000",
+            "cityName": "威海市",
+            "tel": "0631",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471667,
+            "provinceCode": "370000",
+            "cityCode": "371100",
+            "cityName": "日照市",
+            "tel": "0633",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471673,
+            "provinceCode": "370000",
+            "cityCode": "371200",
+            "cityName": "莱芜市",
+            "tel": "0634",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471677,
+            "provinceCode": "370000",
+            "cityCode": "371300",
+            "cityName": "临沂市",
+            "tel": "0539",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471691,
+            "provinceCode": "370000",
+            "cityCode": "371400",
+            "cityName": "德州市",
+            "tel": "0534",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471704,
+            "provinceCode": "370000",
+            "cityCode": "371500",
+            "cityName": "聊城市",
+            "tel": "0635",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471714,
+            "provinceCode": "370000",
+            "cityCode": "371600",
+            "cityName": "滨州市",
+            "tel": "0543",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471723,
+            "provinceCode": "370000",
+            "cityCode": "371700",
+            "cityName": "菏泽市",
+            "tel": "0530",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477762,
+        "countryCode": "460",
+        "provinceCode": "410000",
+        "provinceName": "河南省",
+        "iccard": "410000",
+        "zip": "450000",
+        "children": [
+          {
+            "id": 471735,
+            "provinceCode": "410000",
+            "cityCode": "410100",
+            "cityName": "郑州市",
+            "tel": "0371",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471749,
+            "provinceCode": "410000",
+            "cityCode": "410200",
+            "cityName": "开封市",
+            "tel": "0371",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471761,
+            "provinceCode": "410000",
+            "cityCode": "410300",
+            "cityName": "洛阳市",
+            "tel": "0379",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471779,
+            "provinceCode": "410000",
+            "cityCode": "410400",
+            "cityName": "平顶山市",
+            "tel": "0375",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471791,
+            "provinceCode": "410000",
+            "cityCode": "410500",
+            "cityName": "安阳市",
+            "tel": "0372",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471802,
+            "provinceCode": "410000",
+            "cityCode": "410600",
+            "cityName": "鹤壁市",
+            "tel": "0392",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471809,
+            "provinceCode": "410000",
+            "cityCode": "410700",
+            "cityName": "新乡市",
+            "tel": "0373",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471823,
+            "provinceCode": "410000",
+            "cityCode": "410800",
+            "cityName": "焦作市",
+            "tel": "0391",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471836,
+            "provinceCode": "410000",
+            "cityCode": "410900",
+            "cityName": "濮阳市",
+            "tel": "0393",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471844,
+            "provinceCode": "410000",
+            "cityCode": "411000",
+            "cityName": "许昌市",
+            "tel": "0374",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471852,
+            "provinceCode": "410000",
+            "cityCode": "411100",
+            "cityName": "漯河市",
+            "tel": "0395",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471860,
+            "provinceCode": "410000",
+            "cityCode": "411200",
+            "cityName": "三门峡市",
+            "tel": "0398",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471868,
+            "provinceCode": "410000",
+            "cityCode": "411300",
+            "cityName": "南阳市",
+            "tel": "0377",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471883,
+            "provinceCode": "410000",
+            "cityCode": "411400",
+            "cityName": "商丘市",
+            "tel": "0370",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471894,
+            "provinceCode": "410000",
+            "cityCode": "411500",
+            "cityName": "信阳市",
+            "tel": "0376",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471906,
+            "provinceCode": "410000",
+            "cityCode": "411600",
+            "cityName": "周口市",
+            "tel": "0394",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471918,
+            "provinceCode": "410000",
+            "cityCode": "411700",
+            "cityName": "驻马店市",
+            "tel": "0396",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471930,
+            "provinceCode": "410000",
+            "cityCode": "419000",
+            "cityName": "河南省/省直辖县级行政区划",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477763,
+        "countryCode": "460",
+        "provinceCode": "420000",
+        "provinceName": "湖北省",
+        "iccard": "420000",
+        "zip": "430000",
+        "children": [
+          {
+            "id": 471933,
+            "provinceCode": "420000",
+            "cityCode": "420100",
+            "cityName": "武汉市",
+            "tel": "027",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471948,
+            "provinceCode": "420000",
+            "cityCode": "420200",
+            "cityName": "黄石市",
+            "tel": "0714",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471956,
+            "provinceCode": "420000",
+            "cityCode": "420300",
+            "cityName": "十堰市",
+            "tel": "0719",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471966,
+            "provinceCode": "420000",
+            "cityCode": "420500",
+            "cityName": "宜昌市",
+            "tel": "0717",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471981,
+            "provinceCode": "420000",
+            "cityCode": "420600",
+            "cityName": "襄阳市",
+            "tel": "0710",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471992,
+            "provinceCode": "420000",
+            "cityCode": "420700",
+            "cityName": "鄂州市",
+            "tel": "0711",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 471997,
+            "provinceCode": "420000",
+            "cityCode": "420800",
+            "cityName": "荆门市",
+            "tel": "0724",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472004,
+            "provinceCode": "420000",
+            "cityCode": "420900",
+            "cityName": "孝感市",
+            "tel": "0712",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472013,
+            "provinceCode": "420000",
+            "cityCode": "421000",
+            "cityName": "荆州市",
+            "tel": "0716",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472023,
+            "provinceCode": "420000",
+            "cityCode": "421100",
+            "cityName": "黄冈市",
+            "tel": "0713",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472035,
+            "provinceCode": "420000",
+            "cityCode": "421200",
+            "cityName": "咸宁市",
+            "tel": "0715",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472043,
+            "provinceCode": "420000",
+            "cityCode": "421300",
+            "cityName": "随州市",
+            "tel": "0722",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472049,
+            "provinceCode": "420000",
+            "cityCode": "422800",
+            "cityName": "恩施土家族苗族自治州",
+            "tel": "0718",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472058,
+            "provinceCode": "420000",
+            "cityCode": "429000",
+            "cityName": "湖北省/省直辖县级行政区划",
+            "tel": "0722",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477764,
+        "countryCode": "460",
+        "provinceCode": "430000",
+        "provinceName": "湖南省",
+        "iccard": "430000",
+        "zip": "410000",
+        "children": [
+          {
+            "id": 472064,
+            "provinceCode": "430000",
+            "cityCode": "430100",
+            "cityName": "长沙市",
+            "tel": "0731",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472076,
+            "provinceCode": "430000",
+            "cityCode": "430200",
+            "cityName": "株洲市",
+            "tel": "0731",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472087,
+            "provinceCode": "430000",
+            "cityCode": "430300",
+            "cityName": "湘潭市",
+            "tel": "0731",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472094,
+            "provinceCode": "430000",
+            "cityCode": "430400",
+            "cityName": "衡阳市",
+            "tel": "0734",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472108,
+            "provinceCode": "430000",
+            "cityCode": "430500",
+            "cityName": "邵阳市",
+            "tel": "0739",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472122,
+            "provinceCode": "430000",
+            "cityCode": "430600",
+            "cityName": "岳阳市",
+            "tel": "0730",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472133,
+            "provinceCode": "430000",
+            "cityCode": "430700",
+            "cityName": "常德市",
+            "tel": "0736",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472144,
+            "provinceCode": "430000",
+            "cityCode": "430800",
+            "cityName": "张家界市",
+            "tel": "0744",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472150,
+            "provinceCode": "430000",
+            "cityCode": "430900",
+            "cityName": "益阳市",
+            "tel": "0737",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472158,
+            "provinceCode": "430000",
+            "cityCode": "431000",
+            "cityName": "郴州市",
+            "tel": "0735",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472171,
+            "provinceCode": "430000",
+            "cityCode": "431100",
+            "cityName": "永州市",
+            "tel": "0746",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472184,
+            "provinceCode": "430000",
+            "cityCode": "431200",
+            "cityName": "怀化市",
+            "tel": "0745",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472198,
+            "provinceCode": "430000",
+            "cityCode": "431300",
+            "cityName": "娄底市",
+            "tel": "0738",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472205,
+            "provinceCode": "430000",
+            "cityCode": "433100",
+            "cityName": "湘西土家族苗族自治州",
+            "tel": "0743",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477765,
+        "countryCode": "460",
+        "provinceCode": "440000",
+        "provinceName": "广东省",
+        "iccard": "440000",
+        "zip": "510000",
+        "children": [
+          {
+            "id": 472215,
+            "provinceCode": "440000",
+            "cityCode": "440100",
+            "cityName": "广州市",
+            "tel": "020",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472233,
+            "provinceCode": "440000",
+            "cityCode": "440200",
+            "cityName": "韶关市",
+            "tel": "0751",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472247,
+            "provinceCode": "440000",
+            "cityCode": "440300",
+            "cityName": "深圳市",
+            "tel": "0755",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472255,
+            "provinceCode": "440000",
+            "cityCode": "440400",
+            "cityName": "珠海市",
+            "tel": "0756",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472260,
+            "provinceCode": "440000",
+            "cityCode": "440500",
+            "cityName": "汕头市",
+            "tel": "0754",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472275,
+            "provinceCode": "440000",
+            "cityCode": "440600",
+            "cityName": "佛山市",
+            "tel": "0757",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472282,
+            "provinceCode": "440000",
+            "cityCode": "440700",
+            "cityName": "江门市",
+            "tel": "0750",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472291,
+            "provinceCode": "440000",
+            "cityCode": "440800",
+            "cityName": "湛江市",
+            "tel": "0759",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472302,
+            "provinceCode": "440000",
+            "cityCode": "440900",
+            "cityName": "茂名市",
+            "tel": "0668",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472310,
+            "provinceCode": "440000",
+            "cityCode": "441200",
+            "cityName": "肇庆市",
+            "tel": "0758",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472320,
+            "provinceCode": "440000",
+            "cityCode": "441300",
+            "cityName": "惠州市",
+            "tel": "0752",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472328,
+            "provinceCode": "440000",
+            "cityCode": "441400",
+            "cityName": "梅州市",
+            "tel": "0753",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472338,
+            "provinceCode": "440000",
+            "cityCode": "441500",
+            "cityName": "汕尾市",
+            "tel": "0660",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472344,
+            "provinceCode": "440000",
+            "cityCode": "441600",
+            "cityName": "河源市",
+            "tel": "0762",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472352,
+            "provinceCode": "440000",
+            "cityCode": "441700",
+            "cityName": "阳江市",
+            "tel": "0662",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472358,
+            "provinceCode": "440000",
+            "cityCode": "441800",
+            "cityName": "清远市",
+            "tel": "0763",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472368,
+            "provinceCode": "440000",
+            "cityCode": "441900",
+            "cityName": "东莞市",
+            "tel": "0769",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472369,
+            "provinceCode": "440000",
+            "cityCode": "442000",
+            "cityName": "中山市",
+            "tel": "0760",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472370,
+            "provinceCode": "440000",
+            "cityCode": "445100",
+            "cityName": "潮州市",
+            "tel": "0768",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472375,
+            "provinceCode": "440000",
+            "cityCode": "445200",
+            "cityName": "揭阳市",
+            "tel": "0663",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472382,
+            "provinceCode": "440000",
+            "cityCode": "445300",
+            "cityName": "云浮市",
+            "tel": "0766",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477766,
+        "countryCode": "460",
+        "provinceCode": "450000",
+        "provinceName": "广西壮族自治区",
+        "iccard": "450000",
+        "zip": "530000",
+        "children": [
+          {
+            "id": 472390,
+            "provinceCode": "450000",
+            "cityCode": "450100",
+            "cityName": "南宁市",
+            "tel": "0771",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472407,
+            "provinceCode": "450000",
+            "cityCode": "450200",
+            "cityName": "柳州市",
+            "tel": "0772",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472419,
+            "provinceCode": "450000",
+            "cityCode": "450300",
+            "cityName": "桂林市",
+            "tel": "0773",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472438,
+            "provinceCode": "450000",
+            "cityCode": "450400",
+            "cityName": "梧州市",
+            "tel": "0774",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472449,
+            "provinceCode": "450000",
+            "cityCode": "450500",
+            "cityName": "北海市",
+            "tel": "0779",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472455,
+            "provinceCode": "450000",
+            "cityCode": "450600",
+            "cityName": "防城港市",
+            "tel": "0770",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472461,
+            "provinceCode": "450000",
+            "cityCode": "450700",
+            "cityName": "钦州市",
+            "tel": "0777",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472467,
+            "provinceCode": "450000",
+            "cityCode": "450800",
+            "cityName": "贵港市",
+            "tel": "0775",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472474,
+            "provinceCode": "450000",
+            "cityCode": "450900",
+            "cityName": "玉林市",
+            "tel": "0775",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472483,
+            "provinceCode": "450000",
+            "cityCode": "451000",
+            "cityName": "百色市",
+            "tel": "0776",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472497,
+            "provinceCode": "450000",
+            "cityCode": "451100",
+            "cityName": "贺州市",
+            "tel": "0774",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472503,
+            "provinceCode": "450000",
+            "cityCode": "451200",
+            "cityName": "河池市",
+            "tel": "0778",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472516,
+            "provinceCode": "450000",
+            "cityCode": "451300",
+            "cityName": "来宾市",
+            "tel": "0772",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472524,
+            "provinceCode": "450000",
+            "cityCode": "451400",
+            "cityName": "崇左市",
+            "tel": "0771",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477767,
+        "countryCode": "460",
+        "provinceCode": "460000",
+        "provinceName": "海南省",
+        "iccard": "460000",
+        "zip": "570100",
+        "children": [
+          {
+            "id": 472534,
+            "provinceCode": "460000",
+            "cityCode": "460100",
+            "cityName": "海口市",
+            "tel": "0898",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472540,
+            "provinceCode": "460000",
+            "cityCode": "460200",
+            "cityName": "三亚市",
+            "tel": "0898",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472546,
+            "provinceCode": "460000",
+            "cityCode": "460300",
+            "cityName": "三沙市",
+            "tel": "0898",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472550,
+            "provinceCode": "460000",
+            "cityCode": "469000",
+            "cityName": "海南省/省直辖县级行政区划",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477768,
+        "countryCode": "460",
+        "provinceCode": "500000",
+        "provinceName": "重庆市",
+        "iccard": "510000",
+        "zip": "400000",
+        "children": [
+          {
+            "id": 472577,
+            "provinceCode": "500000",
+            "cityCode": "500100",
+            "cityName": "重庆市/市辖区",
+            "tel": "023",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472599,
+            "provinceCode": "500000",
+            "cityCode": "500200",
+            "cityName": "重庆市/县",
+            "tel": "023",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472619,
+            "provinceCode": "500000",
+            "cityCode": "500300",
+            "cityName": "重庆市/市",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477769,
+        "countryCode": "460",
+        "provinceCode": "510000",
+        "provinceName": "四川省",
+        "iccard": "510000",
+        "zip": "610000",
+        "children": [
+          {
+            "id": 472625,
+            "provinceCode": "510000",
+            "cityCode": "510100",
+            "cityName": "成都市",
+            "tel": "028",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472647,
+            "provinceCode": "510000",
+            "cityCode": "510300",
+            "cityName": "自贡市",
+            "tel": "0813",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472655,
+            "provinceCode": "510000",
+            "cityCode": "510400",
+            "cityName": "攀枝花市",
+            "tel": "0812",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472662,
+            "provinceCode": "510000",
+            "cityCode": "510500",
+            "cityName": "泸州市",
+            "tel": "0830",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472671,
+            "provinceCode": "510000",
+            "cityCode": "510600",
+            "cityName": "德阳市",
+            "tel": "0838",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472679,
+            "provinceCode": "510000",
+            "cityCode": "510700",
+            "cityName": "绵阳市",
+            "tel": "0816",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472690,
+            "provinceCode": "510000",
+            "cityCode": "510800",
+            "cityName": "广元市",
+            "tel": "0839",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472699,
+            "provinceCode": "510000",
+            "cityCode": "510900",
+            "cityName": "遂宁市",
+            "tel": "0825",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472707,
+            "provinceCode": "510000",
+            "cityCode": "511000",
+            "cityName": "内江市",
+            "tel": "0832",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472714,
+            "provinceCode": "510000",
+            "cityCode": "511100",
+            "cityName": "乐山市",
+            "tel": "0833",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472727,
+            "provinceCode": "510000",
+            "cityCode": "511300",
+            "cityName": "南充市",
+            "tel": "0817",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472738,
+            "provinceCode": "510000",
+            "cityCode": "511400",
+            "cityName": "眉山市",
+            "tel": "028",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472746,
+            "provinceCode": "510000",
+            "cityCode": "511500",
+            "cityName": "宜宾市",
+            "tel": "0831",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472759,
+            "provinceCode": "510000",
+            "cityCode": "511600",
+            "cityName": "广安市",
+            "tel": "0826",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472767,
+            "provinceCode": "510000",
+            "cityCode": "511700",
+            "cityName": "达州市",
+            "tel": "0818",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472776,
+            "provinceCode": "510000",
+            "cityCode": "511800",
+            "cityName": "雅安市",
+            "tel": "0835",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472786,
+            "provinceCode": "510000",
+            "cityCode": "511900",
+            "cityName": "巴中市",
+            "tel": "0827",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472793,
+            "provinceCode": "510000",
+            "cityCode": "512000",
+            "cityName": "资阳市",
+            "tel": "028",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472799,
+            "provinceCode": "510000",
+            "cityCode": "513200",
+            "cityName": "阿坝藏族羌族自治州",
+            "tel": "0837",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472813,
+            "provinceCode": "510000",
+            "cityCode": "513300",
+            "cityName": "甘孜藏族自治州",
+            "tel": "0836",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472832,
+            "provinceCode": "510000",
+            "cityCode": "513400",
+            "cityName": "凉山彝族自治州",
+            "tel": "0834",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477770,
+        "countryCode": "460",
+        "provinceCode": "520000",
+        "provinceName": "贵州省",
+        "iccard": "520000",
+        "zip": "550000",
+        "children": [
+          {
+            "id": 472851,
+            "provinceCode": "520000",
+            "cityCode": "520100",
+            "cityName": "贵阳市",
+            "tel": "0851",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472864,
+            "provinceCode": "520000",
+            "cityCode": "520200",
+            "cityName": "六盘水市",
+            "tel": "0858",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472869,
+            "provinceCode": "520000",
+            "cityCode": "520300",
+            "cityName": "遵义市",
+            "tel": "0851",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472885,
+            "provinceCode": "520000",
+            "cityCode": "520400",
+            "cityName": "安顺市",
+            "tel": "0851",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472893,
+            "provinceCode": "520000",
+            "cityCode": "520500",
+            "cityName": "毕节市",
+            "tel": "0857",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472903,
+            "provinceCode": "520000",
+            "cityCode": "520600",
+            "cityName": "铜仁市",
+            "tel": "0856",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472915,
+            "provinceCode": "520000",
+            "cityCode": "522200",
+            "cityName": "铜仁地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472926,
+            "provinceCode": "520000",
+            "cityCode": "522300",
+            "cityName": "黔西南布依族苗族自治州",
+            "tel": "0859",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472935,
+            "provinceCode": "520000",
+            "cityCode": "522400",
+            "cityName": "毕节地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472944,
+            "provinceCode": "520000",
+            "cityCode": "522600",
+            "cityName": "黔东南苗族侗族自治州",
+            "tel": "0855",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472961,
+            "provinceCode": "520000",
+            "cityCode": "522700",
+            "cityName": "黔南布依族苗族自治州",
+            "tel": "0854",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477771,
+        "countryCode": "460",
+        "provinceCode": "530000",
+        "provinceName": "云南省",
+        "iccard": "530000",
+        "zip": "650000",
+        "children": [
+          {
+            "id": 472975,
+            "provinceCode": "530000",
+            "cityCode": "530100",
+            "cityName": "昆明市",
+            "tel": "0871",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 472992,
+            "provinceCode": "530000",
+            "cityCode": "530300",
+            "cityName": "曲靖市",
+            "tel": "0874",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473003,
+            "provinceCode": "530000",
+            "cityCode": "530400",
+            "cityName": "玉溪市",
+            "tel": "0877",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473014,
+            "provinceCode": "530000",
+            "cityCode": "530500",
+            "cityName": "保山市",
+            "tel": "0875",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473021,
+            "provinceCode": "530000",
+            "cityCode": "530600",
+            "cityName": "昭通市",
+            "tel": "0870",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473034,
+            "provinceCode": "530000",
+            "cityCode": "530700",
+            "cityName": "丽江市",
+            "tel": "0888",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473041,
+            "provinceCode": "530000",
+            "cityCode": "530800",
+            "cityName": "普洱市",
+            "tel": "0879",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473053,
+            "provinceCode": "530000",
+            "cityCode": "530900",
+            "cityName": "临沧市",
+            "tel": "0883",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473063,
+            "provinceCode": "530000",
+            "cityCode": "532300",
+            "cityName": "楚雄彝族自治州",
+            "tel": "0878",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473074,
+            "provinceCode": "530000",
+            "cityCode": "532500",
+            "cityName": "红河哈尼族彝族自治州",
+            "tel": "0873",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473090,
+            "provinceCode": "530000",
+            "cityCode": "532600",
+            "cityName": "文山壮族苗族自治州",
+            "tel": "0876",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473100,
+            "provinceCode": "530000",
+            "cityCode": "532700",
+            "cityName": "思茅地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473111,
+            "provinceCode": "530000",
+            "cityCode": "532800",
+            "cityName": "西双版纳傣族自治州",
+            "tel": "0691",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473115,
+            "provinceCode": "530000",
+            "cityCode": "532900",
+            "cityName": "大理白族自治州",
+            "tel": "0872",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473128,
+            "provinceCode": "530000",
+            "cityCode": "533100",
+            "cityName": "德宏傣族景颇族自治州",
+            "tel": "0692",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473134,
+            "provinceCode": "530000",
+            "cityCode": "533300",
+            "cityName": "怒江傈僳族自治州",
+            "tel": "0886",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473139,
+            "provinceCode": "530000",
+            "cityCode": "533400",
+            "cityName": "迪庆藏族自治州",
+            "tel": "0887",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473143,
+            "provinceCode": "530000",
+            "cityCode": "533500",
+            "cityName": "思茅地区/临沧地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477772,
+        "countryCode": "460",
+        "provinceCode": "540000",
+        "provinceName": "西藏自治区",
+        "iccard": "540000",
+        "zip": "850000",
+        "children": [
+          {
+            "id": 473153,
+            "provinceCode": "540000",
+            "cityCode": "540100",
+            "cityName": "拉萨市",
+            "tel": "0891",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473163,
+            "provinceCode": "540000",
+            "cityCode": "540200",
+            "cityName": "日喀则市",
+            "tel": "0892",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473182,
+            "provinceCode": "540000",
+            "cityCode": "542100",
+            "cityName": "昌都地区",
+            "tel": "0895",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473194,
+            "provinceCode": "540000",
+            "cityCode": "542200",
+            "cityName": "山南地区",
+            "tel": "0893",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473207,
+            "provinceCode": "540000",
+            "cityCode": "542300",
+            "cityName": "日喀则地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473226,
+            "provinceCode": "540000",
+            "cityCode": "542400",
+            "cityName": "那曲地区",
+            "tel": "0896",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473238,
+            "provinceCode": "540000",
+            "cityCode": "542500",
+            "cityName": "阿里地区",
+            "tel": "0897",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473246,
+            "provinceCode": "540000",
+            "cityCode": "542600",
+            "cityName": "林芝地区",
+            "tel": "0894",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477773,
+        "countryCode": "460",
+        "provinceCode": "610000",
+        "provinceName": "陕西省",
+        "iccard": "610000",
+        "zip": "710000",
+        "children": [
+          {
+            "id": 473255,
+            "provinceCode": "610000",
+            "cityCode": "610100",
+            "cityName": "西安市",
+            "tel": "029",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473270,
+            "provinceCode": "610000",
+            "cityCode": "610200",
+            "cityName": "铜川市",
+            "tel": "0919",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473276,
+            "provinceCode": "610000",
+            "cityCode": "610300",
+            "cityName": "宝鸡市",
+            "tel": "0917",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473291,
+            "provinceCode": "610000",
+            "cityCode": "610400",
+            "cityName": "咸阳市",
+            "tel": "029",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473307,
+            "provinceCode": "610000",
+            "cityCode": "610500",
+            "cityName": "渭南市",
+            "tel": "0913",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473320,
+            "provinceCode": "610000",
+            "cityCode": "610600",
+            "cityName": "延安市",
+            "tel": "0911",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473335,
+            "provinceCode": "610000",
+            "cityCode": "610700",
+            "cityName": "汉中市",
+            "tel": "0916",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473348,
+            "provinceCode": "610000",
+            "cityCode": "610800",
+            "cityName": "榆林市",
+            "tel": "0912",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473362,
+            "provinceCode": "610000",
+            "cityCode": "610900",
+            "cityName": "安康市",
+            "tel": "0915",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473374,
+            "provinceCode": "610000",
+            "cityCode": "611000",
+            "cityName": "商洛市",
+            "tel": "0914",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477774,
+        "countryCode": "460",
+        "provinceCode": "620000",
+        "provinceName": "甘肃省",
+        "iccard": "620000",
+        "zip": "730000",
+        "children": [
+          {
+            "id": 473384,
+            "provinceCode": "620000",
+            "cityCode": "620100",
+            "cityName": "兰州市",
+            "tel": "0931",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473394,
+            "provinceCode": "620000",
+            "cityCode": "620200",
+            "cityName": "嘉峪关市",
+            "tel": "0937",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473396,
+            "provinceCode": "620000",
+            "cityCode": "620300",
+            "cityName": "金昌市",
+            "tel": "0935",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473400,
+            "provinceCode": "620000",
+            "cityCode": "620400",
+            "cityName": "白银市",
+            "tel": "0943",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473407,
+            "provinceCode": "620000",
+            "cityCode": "620500",
+            "cityName": "天水市",
+            "tel": "0938",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473416,
+            "provinceCode": "620000",
+            "cityCode": "620600",
+            "cityName": "武威市",
+            "tel": "0935",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473422,
+            "provinceCode": "620000",
+            "cityCode": "620700",
+            "cityName": "张掖市",
+            "tel": "0936",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473430,
+            "provinceCode": "620000",
+            "cityCode": "620800",
+            "cityName": "平凉市",
+            "tel": "0933",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473439,
+            "provinceCode": "620000",
+            "cityCode": "620900",
+            "cityName": "酒泉市",
+            "tel": "0937",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473448,
+            "provinceCode": "620000",
+            "cityCode": "621000",
+            "cityName": "庆阳市",
+            "tel": "0934",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473458,
+            "provinceCode": "620000",
+            "cityCode": "621100",
+            "cityName": "定西市",
+            "tel": "0932",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473467,
+            "provinceCode": "620000",
+            "cityCode": "621200",
+            "cityName": "陇南市",
+            "tel": "0939",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473478,
+            "provinceCode": "620000",
+            "cityCode": "622400",
+            "cityName": "定西地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473486,
+            "provinceCode": "620000",
+            "cityCode": "622600",
+            "cityName": "陇南地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473496,
+            "provinceCode": "620000",
+            "cityCode": "622900",
+            "cityName": "临夏回族自治州",
+            "tel": "0930",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473505,
+            "provinceCode": "620000",
+            "cityCode": "623000",
+            "cityName": "甘南藏族自治州",
+            "tel": "0941",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477775,
+        "countryCode": "460",
+        "provinceCode": "630000",
+        "provinceName": "青海省",
+        "iccard": "630000",
+        "zip": "624700",
+        "children": [
+          {
+            "id": 473515,
+            "provinceCode": "630000",
+            "cityCode": "630100",
+            "cityName": "西宁市",
+            "tel": "0971",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473524,
+            "provinceCode": "630000",
+            "cityCode": "630200",
+            "cityName": "海东市",
+            "tel": "0972",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473531,
+            "provinceCode": "630000",
+            "cityCode": "632100",
+            "cityName": "海东地区",
+            "tel": null,
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473538,
+            "provinceCode": "630000",
+            "cityCode": "632200",
+            "cityName": "海北藏族自治州",
+            "tel": "0970",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473543,
+            "provinceCode": "630000",
+            "cityCode": "632300",
+            "cityName": "黄南藏族自治州",
+            "tel": "0973",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473548,
+            "provinceCode": "630000",
+            "cityCode": "632500",
+            "cityName": "海南藏族自治州",
+            "tel": "0974",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473554,
+            "provinceCode": "630000",
+            "cityCode": "632600",
+            "cityName": "果洛藏族自治州",
+            "tel": "0975",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473561,
+            "provinceCode": "630000",
+            "cityCode": "632700",
+            "cityName": "玉树藏族自治州",
+            "tel": "0976",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473568,
+            "provinceCode": "630000",
+            "cityCode": "632800",
+            "cityName": "海西蒙古族藏族自治州",
+            "tel": "0979",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477776,
+        "countryCode": "460",
+        "provinceCode": "640000",
+        "provinceName": "宁夏回族自治区",
+        "iccard": "640000",
+        "zip": "750100",
+        "children": [
+          {
+            "id": 473575,
+            "provinceCode": "640000",
+            "cityCode": "640100",
+            "cityName": "银川市",
+            "tel": "0951",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473583,
+            "provinceCode": "640000",
+            "cityCode": "640200",
+            "cityName": "石嘴山市",
+            "tel": "0952",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473591,
+            "provinceCode": "640000",
+            "cityCode": "640300",
+            "cityName": "吴忠市",
+            "tel": "0953",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473600,
+            "provinceCode": "640000",
+            "cityCode": "640400",
+            "cityName": "固原市",
+            "tel": "0954",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473608,
+            "provinceCode": "640000",
+            "cityCode": "640500",
+            "cityName": "中卫市",
+            "tel": "0955",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477777,
+        "countryCode": "460",
+        "provinceCode": "650000",
+        "provinceName": "新疆维吾尔自治区",
+        "iccard": "650000",
+        "zip": "830000",
+        "children": [
+          {
+            "id": 473614,
+            "provinceCode": "650000",
+            "cityCode": "650100",
+            "cityName": "乌鲁木齐市",
+            "tel": "0991",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473625,
+            "provinceCode": "650000",
+            "cityCode": "650200",
+            "cityName": "克拉玛依市",
+            "tel": "0990",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473631,
+            "provinceCode": "650000",
+            "cityCode": "652100",
+            "cityName": "吐鲁番地区",
+            "tel": "0995",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473635,
+            "provinceCode": "650000",
+            "cityCode": "652200",
+            "cityName": "哈密地区",
+            "tel": "0902",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473639,
+            "provinceCode": "650000",
+            "cityCode": "652300",
+            "cityName": "昌吉回族自治州",
+            "tel": "0994",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473648,
+            "provinceCode": "650000",
+            "cityCode": "652700",
+            "cityName": "博尔塔拉蒙古自治州",
+            "tel": "0909",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473653,
+            "provinceCode": "650000",
+            "cityCode": "652800",
+            "cityName": "巴音郭楞蒙古自治州",
+            "tel": "0996",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473663,
+            "provinceCode": "650000",
+            "cityCode": "652900",
+            "cityName": "阿克苏地区",
+            "tel": "0997",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473673,
+            "provinceCode": "650000",
+            "cityCode": "653000",
+            "cityName": "克孜勒苏柯尔克孜自治州",
+            "tel": "0908",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473678,
+            "provinceCode": "650000",
+            "cityCode": "653100",
+            "cityName": "喀什地区",
+            "tel": "0998",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473691,
+            "provinceCode": "650000",
+            "cityCode": "653200",
+            "cityName": "和田地区",
+            "tel": "0903",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473700,
+            "provinceCode": "650000",
+            "cityCode": "654000",
+            "cityName": "伊犁哈萨克自治州",
+            "tel": "0999",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473711,
+            "provinceCode": "650000",
+            "cityCode": "654200",
+            "cityName": "塔城地区",
+            "tel": "0901",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473719,
+            "provinceCode": "650000",
+            "cityCode": "654300",
+            "cityName": "阿勒泰地区",
+            "tel": "0906",
+            "iccard": null,
+            "zip": null
+          },
+          {
+            "id": 473727,
+            "provinceCode": "650000",
+            "cityCode": "659000",
+            "cityName": "自治区直辖县级行政区划",
+            "tel": "0993",
+            "iccard": null,
+            "zip": null
+          }
+        ]
+      },
+      {
+        "id": 477778,
+        "countryCode": "460",
+        "provinceCode": "710000",
+        "provinceName": "台湾省",
+        "iccard": "710000",
+        "zip": "886",
+        "children": []
+      },
+      {
+        "id": 477779,
+        "countryCode": "460",
+        "provinceCode": "810000",
+        "provinceName": "香港特别行政区",
+        "iccard": "810000",
+        "zip": "999077",
+        "children": []
+      },
+      {
+        "id": 477780,
+        "countryCode": "460",
+        "provinceCode": "820000",
+        "provinceName": "澳门特别行政区",
+        "iccard": "820000",
+        "zip": "999078",
+        "children": []
+      }
+    ]
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

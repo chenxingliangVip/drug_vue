@@ -1,0 +1,140 @@
+{
+  "success": true,
+  "result": [
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "04",
+      "actionTime": "2018-09-20 03:01:24.0",
+      "haviorType": "1",
+      "message":"IM聊天",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "04",
+      "actionTime": "2018-09-20 02:41:12.0",
+      "haviorType": "1",
+      "message":"IM聊天",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030001",
+      "username": "2861661298",
+      "action": "99",
+      "actionTime": "2018-09-20 00:49:22.0",
+      "haviorType": "1",
+      "message":"IM聊天",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "04",
+      "actionTime": "2018-09-20 00:46:35.0",
+      "haviorType": "2",
+      "message":"发送邮件给zhangsan/lisi",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "04",
+      "actionTime": "2018-09-20 00:46:31.0",
+      "haviorType": "2",
+      "message":"发送邮件给zhangsan/lisi",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030001",
+      "username": "2861661298",
+      "action": "99",
+      "actionTime": "2018-09-19 11:00:42.0",
+      "haviorType": "3",
+      "message":"访问微博",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "04",
+      "actionTime": "2018-09-19 10:50:29.0",
+      "haviorType": "3",
+      "message":"访问微博",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030001",
+      "username": "2861661298",
+      "action": "02",
+      "actionTime": "2018-09-19 07:08:15.0",
+      "haviorType": "4",
+      "message":"访问SNS",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "04",
+      "actionTime": "2018-09-19 06:39:04.0",
+      "haviorType": "4",
+      "message":"访问SNS",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030001",
+      "username": "2861661298",
+      "action": "99",
+      "actionTime": "2018-09-19 06:24:15.0",
+      "haviorType": "4",
+      "message":"访问SNS",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030001",
+      "username": "2861661298",
+      "action": "02",
+      "actionTime": "2018-09-19 06:24:08.0",
+      "haviorType": "4",
+      "message":"访问SNS",
+      "mailFrom": null,
+      "rcptto": null
+    },
+    {
+      "account": "13700998877",
+      "type": "1030036",
+      "username": null,
+      "action": "99",
+      "actionTime": "2018-09-19 04:15:29.0",
+      "haviorType": "4",
+      "message":"访问SNS",
+      "mailFrom": null,
+      "rcptto": null
+    }
+  ],
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "result": {
+    "totalCount": null,
+    "title": null,
+    "categoriesList": [
+      "<30s",
+      "30s~1min",
+      "1min~3min",
+      "3min~5min"
+    ],
+    "dataList": [],
+    "seriesList": [],
+    "pieSeriesList": [
+      [
+        "<30s",
+        "30"
+      ],
+      [
+        "30s~1min",
+        "78"
+      ],
+      [
+        "1min~3min",
+        "139"
+      ],
+      [
+        "3min~5min",
+        "53"
+      ]
+    ]
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

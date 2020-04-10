@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "result": {"tableData":[{
+      "mobileNum":"13700998877",
+      "equipmentId":"5645661",
+      "appName":"google",
+      "startTime":"1533398399",
+      "endTime":"1533398399",
+      "dataSource":"分光",
+      "count":100
+    },{
+      "mobileNum":"13700998877",
+      "equipmentId":"5645661",
+      "appName":"百度",
+      "startTime":"1533398399",
+      "endTime":"1533398399",
+      "dataSource":"分光",
+      "count":20
+    },{
+      "mobileNum":"13700998877",
+      "equipmentId":"5645661",
+      "appName":"360",
+      "startTime":"1533398399",
+      "endTime":"1533398399",
+      "dataSource":"分光",
+      "count":10
+    }],
+    "chartData":{
+      "xAxisData":[100,20,10],
+      "legendData":["google","百度","360"]
+    }},
+    "messages": "查询数据源成功！",
+    "errCode": null,
+    "errMessages": null
+  }

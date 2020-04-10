@@ -1,0 +1,16 @@
+{
+  "success" : true,
+  "result" : [ {
+    "name" : "岳不群",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1957-02-05",
+    "cardno" : "610582195510051234",
+    "spouseName" : "宁中则",
+    "spouseCardno" : "610582195702051244",
+    "maritalStatus" : "已婚"
+  } ],
+  "messages" : null,
+  "errCode" : null,
+  "errMessages" : null
+}

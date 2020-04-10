@@ -1,0 +1,49 @@
+{"success": true,
+  "result": {
+    "疑似码址1": [
+      {
+        "id": "1",
+        "tableName": "t_res_20181114100237",
+        "tableNameCn": "疑似码址数据表1",
+        "resourceId": "22",
+        "resourceName": "疑似码址1",
+        "type": "1",
+        "children": []
+      },
+      {
+        "id": "2",
+        "tableName": "t_res_20181015135217",
+        "tableNameCn": "疑似码址数据表2",
+        "resourceId": "22",
+        "resourceName": "疑似码址1",
+        "type": "1",
+        "children": []
+      }
+    ],
+    "疑似码址2": [
+      {
+        "id": "4",
+        "tableName": "t_res_20180713100647",
+        "tableNameCn": "疑似码址数据表3",
+        "resourceId": "555",
+        "resourceName": "疑似码址2",
+        "type": "1",
+        "children": []
+      }
+    ],
+    "疑似码址3": [
+      {
+        "id": "3",
+        "tableName": "t_res_20181015135217",
+        "tableNameCn": "疑似码址数据表4",
+        "resourceId": "44",
+        "resourceName": "疑似码址3",
+        "type": "1",
+        "children": []
+      }
+    ]
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

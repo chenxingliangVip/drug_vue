@@ -1,0 +1,454 @@
+{
+  "result": {
+    "chart": [
+      "cardno",
+      "name",
+      "sex",
+      "nation",
+      "birthday"
+    ],
+    "data": [
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin02",
+        "id": "dd9f65e9f9674d628583e14e6ce65204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "91",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "attr",
+            "value": "张三"
+          },
+          {
+            "id": "92",
+            "key": "sex",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "attr",
+            "value": "男"
+          },
+          {
+            "id": "93",
+            "key": "birthday",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "attr",
+            "value": "1999-01-01"
+          },
+          {
+            "id": "94",
+            "key": "nation",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "attr",
+            "value": "汉族"
+          },
+          {
+            "id": "95",
+            "key": "cardno",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "code",
+            "value": "320199199901011949"
+          },
+          {
+            "id": "96",
+            "key": "pic",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "attr",
+            "value": "pic1/img_p122.jpg"
+          },
+          {
+            "id": "97",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "attr",
+            "value": "李四"
+          },
+          {
+            "id": "50",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce65204",
+            "type": "code",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "user01",
+        "id": "d02f65e9f9674d628583e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "81",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "张三"
+          },
+          {
+            "id": "82",
+            "key": "sex",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "男"
+          },
+          {
+            "id": "83",
+            "key": "birthday",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "1888-01-01"
+          },
+          {
+            "id": "84",
+            "key": "nation",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "汉族"
+          },
+          {
+            "id": "85",
+            "key": "cardno",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "code",
+            "value": "320188188801011848"
+          },
+          {
+            "id": "86",
+            "key": "pic",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "pic1/img_p122.jpg"
+          },
+          {
+            "id": "87",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "李四"
+          },
+          {
+            "id": "52",
+            "key": "sex",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "d02f65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "男"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin01",
+        "id": "daff65e9f9674d628583e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "71",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "张三"
+          },
+          {
+            "id": "72",
+            "key": "sex",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "男"
+          },
+          {
+            "id": "73",
+            "key": "birthday",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "1777-01-01"
+          },
+          {
+            "id": "74",
+            "key": "nation",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "汉族"
+          },
+          {
+            "id": "75",
+            "key": "cardno",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "code",
+            "value": "320177177701011747"
+          },
+          {
+            "id": "76",
+            "key": "pic",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "pic1/img_p122.jpg"
+          },
+          {
+            "id": "77",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "李四"
+          },
+          {
+            "id": "53",
+            "key": "birthday",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "daff65e9f9674d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "1999-01-01"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin01",
+        "id": "dd9f65e9f9636d628583e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "61",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "张三"
+          },
+          {
+            "id": "62",
+            "key": "sex",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "男"
+          },
+          {
+            "id": "63",
+            "key": "birthday",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "1666-01-01"
+          },
+          {
+            "id": "64",
+            "key": "nation",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "汉族"
+          },
+          {
+            "id": "65",
+            "key": "cardno",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "code",
+            "value": "320166166601011646"
+          },
+          {
+            "id": "66",
+            "key": "pic",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "pic1/img_p122.jpg"
+          },
+          {
+            "id": "67",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "李四"
+          },
+          {
+            "id": "54",
+            "key": "nation",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9636d628583e14e6ce4d204",
+            "type": "attr",
+            "value": "汉族"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin01",
+        "id": "dd9f65e9f96746588583e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "55",
+            "key": "cardno",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f96746588583e14e6ce4d204",
+            "type": "code",
+            "value": "320156199901011545"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin01",
+        "id": "dd9f65e9f96749828583e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "56",
+            "key": "pic",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f96749828583e14e6ce4d204",
+            "type": "attr",
+            "value": "pic1/img_p122.jpg"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "user02",
+        "id": "dd9f65e9f9674d623253e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "57",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d623253e14e6ce4d204",
+            "type": "attr",
+            "value": "李四"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin02",
+        "id": "dd9f65e9f9674d628583e1366ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "58",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e1366ce4d204",
+            "type": "code",
+            "value": "3"
+          }
+        ]
+      },
+      {
+        "countNum": 10,
+        "createTime": 1537226412201,
+        "creator": "dolphin01",
+        "id": "dd9f65e9f9674d628583e14e6ce4d204",
+        "lastUpdatePerson": "dolphin01",
+        "lastUpdateTime": 1537226421933,
+        "status": 0,
+        "targetArchives": [
+          {
+            "id": "59",
+            "key": "name",
+            "orderIndex": 0,
+            "status": 0,
+            "targetId": "dd9f65e9f9674d628583e14e6ce4d204",
+            "type": "code",
+            "value": "1"
+          }
+        ]
+      }
+    ],
+    "list": [
+      "cardno",
+      "name",
+      "sex",
+      "nation",
+      "birthday"
+    ],
+    "total": 10
+  },
+  "success": true
+}

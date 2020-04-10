@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "result": [
+    [
+      {
+        "beginTime": null,
+        "userNum": "15895339869",
+        "relateNum": "15895339869",
+        "count": 0,
+        "codeTypeName": "手机号"
+      },
+      {
+        "beginTime": null,
+        "userNum": "18761594517",
+        "relateNum": "18761594517",
+        "count": 0,
+        "codeTypeName": "手机号"
+      },
+      {
+        "beginTime": null,
+        "userNum": "18801514188",
+        "relateNum": "18801514188",
+        "count": 0,
+        "codeTypeName": "手机号"
+      },
+      {
+        "beginTime": null,
+        "userNum": "13700998877",
+        "relateNum": "13700998877",
+        "count": 0,
+        "codeTypeName": "手机号"
+      }
+    ],
+    [
+      {
+        "beginTime": null,
+        "userNum": "15895339869",
+        "relateNum": "96121",
+        "count": 8,
+        "codeTypeName": "手机号"
+      }
+    ],
+    [
+      {
+        "beginTime": null,
+        "userNum": "18801514188",
+        "relateNum": "96121",
+        "count": 2,
+        "codeTypeName": "手机号"
+      },
+      {
+        "beginTime": null,
+        "userNum": "18761594517",
+        "relateNum": "96121",
+        "count": 2,
+        "codeTypeName": "手机号"
+      }
+    ],
+    [
+      {
+        "beginTime": null,
+        "userNum": "15895339869",
+        "relateNum": "15862046692",
+        "count": 1,
+        "codeTypeName": "手机号"
+      }
+    ]
+  ],
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

@@ -1,0 +1,2034 @@
+{
+  "result": [
+    {
+      "code": "cardno",
+      "data": [
+        {
+          "code": "陕西华山001号",
+          "codeType": "address",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "6222200166412341234",
+          "codeType": "bankno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1706-02-25",
+          "codeType": "birthday",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "340402198802171012",
+          "codeType": "cardno",
+          "count": 1000,
+          "firstDate": "2017-09-19 00:00:00",
+          "lastDate": "2018-09-19 23:59:59",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "382801195510051222",
+          "codeType": "cardno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "皖C-X1211",
+          "codeType": "carno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "软通动力",
+          "codeType": "company",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "sx001",
+          "codeType": "companyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "jzx456",
+          "codeType": "containerno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10",
+          "codeType": "count",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "qazwsx@163.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "HH356",
+          "codeType": "familyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G19901245",
+          "codeType": "gangaoback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "123456",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:07:55",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "123456",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:07:31",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "123456",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:02:09",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:00:43",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:59:36",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:58:36",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "1111",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:58:35",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:53:15",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "T12341234",
+          "codeType": "gangaopass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G12341234",
+          "codeType": "huzhao",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008680891011",
+          "codeType": "imei",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008660691000",
+          "codeType": "imsi",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.2.25.41",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.1.25.35",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13112345678",
+          "codeType": "mobile",
+          "count": 10,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cucc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13700998877",
+          "codeType": "mobile",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cmcc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "33243435345",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "575756756765",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "35364534534",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "3453453453",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "35465646",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "36476574",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:30:13",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "666666",
+          "codeType": "msn",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "王思",
+          "codeType": "name",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "汉族",
+          "codeType": "nation",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "B1661234",
+          "codeType": "otherid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02578781732",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02512345678",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1",
+          "codeType": "phone",
+          "count": 0,
+          "lastDate": "2018-09-17 10:43:43",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "pic1/img_p1.jpg",
+          "codeType": "pic",
+          "count": 3,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p03.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p02.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "/pic1/img_p3.jpg",
+          "codeType": "pic",
+          "count": 0,
+          "lastDate": "2018-09-12 10:55:16",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "JH003",
+          "codeType": "policeid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "123456",
+          "codeType": "policeid",
+          "count": 0,
+          "lastDate": "2018-09-13 17:01:52",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "yhntgb",
+          "codeType": "pwd",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "123456789",
+          "codeType": "qq",
+          "count": 0,
+          "lastDate": "2018-09-11 10:11:53",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "78556",
+          "codeType": "qqGroup",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A12341234",
+          "codeType": "sailor",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "女",
+          "codeType": "sex",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "012341234",
+          "codeType": "taiwanback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "lllllll1111222",
+          "codeType": "taiwanback",
+          "count": 0,
+          "lastDate": "2018-09-13 15:05:59",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "A123456789",
+          "codeType": "taiwanid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T456789",
+          "codeType": "taiwanpass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "user01",
+          "codeType": "user",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        }
+      ],
+      "dataType": "personFile",
+      "id": "01a32f5654ad545e00a6646546",
+      "keyword": "340402198802171012",
+      "regionName": "咸阳市"
+    },
+    {
+      "code": "cardno",
+      "data": [
+        {
+          "code": "陕西华山001号",
+          "codeType": "address",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "6222200166412341234",
+          "codeType": "bankno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1706-02-25",
+          "codeType": "birthday",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "382801195510051222",
+          "codeType": "cardno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "皖C-X1211",
+          "codeType": "carno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "软通动力",
+          "codeType": "company",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "sx001",
+          "codeType": "companyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "jzx456",
+          "codeType": "containerno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10",
+          "codeType": "count",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "qazwsx@163.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "HH356",
+          "codeType": "familyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G19901245",
+          "codeType": "gangaoback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T12341234",
+          "codeType": "gangaopass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G12341234",
+          "codeType": "huzhao",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008680891011",
+          "codeType": "imei",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008660691000",
+          "codeType": "imsi",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.2.25.41",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.1.25.35",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13112345678",
+          "codeType": "mobile",
+          "count": 10,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cucc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13700998877",
+          "codeType": "mobile",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cmcc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "666666",
+          "codeType": "msn",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "李霞",
+          "codeType": "name",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "汉族",
+          "codeType": "nation",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "B1661234",
+          "codeType": "otherid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02578781732",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02512345678",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p122.jpg",
+          "codeType": "pic",
+          "count": 3,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p3.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p2.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "JH003",
+          "codeType": "policeid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "yhntgb",
+          "codeType": "pwd",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "78556",
+          "codeType": "qqGroup",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A12341234",
+          "codeType": "sailor",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "女",
+          "codeType": "sex",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "012341234",
+          "codeType": "taiwanback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A123456789",
+          "codeType": "taiwanid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T456789",
+          "codeType": "taiwanpass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "user01",
+          "codeType": "user",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        }
+      ],
+      "dataType": "personFile",
+      "id": "456546546546546546",
+      "keyword": "382801195510051222",
+      "regionName": "咸阳市"
+    },
+    {
+      "code": "cardno",
+      "data": [
+        {
+          "code": "陕西华山001号",
+          "codeType": "address",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "6222200166412341234",
+          "codeType": "bankno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1706-02-25",
+          "codeType": "birthday",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "382801195510051222",
+          "codeType": "cardno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "皖C-X1211",
+          "codeType": "carno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "软通动力",
+          "codeType": "company",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "sx001",
+          "codeType": "companyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "jzx456",
+          "codeType": "containerno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10",
+          "codeType": "count",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "qazwsx@163.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "HH356",
+          "codeType": "familyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G19901245",
+          "codeType": "gangaoback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T12341234",
+          "codeType": "gangaopass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G12341234",
+          "codeType": "huzhao",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008680891011",
+          "codeType": "imei",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008660691000",
+          "codeType": "imsi",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.2.25.41",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.1.25.35",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13112345678",
+          "codeType": "mobile",
+          "count": 10,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cucc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13700998877",
+          "codeType": "mobile",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cmcc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "666666",
+          "codeType": "msn",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "李霞",
+          "codeType": "name",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "汉族",
+          "codeType": "nation",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "B1661234",
+          "codeType": "otherid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02578781732",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02512345678",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p122.jpg",
+          "codeType": "pic",
+          "count": 3,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p3.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p2.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "JH003",
+          "codeType": "policeid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "yhntgb",
+          "codeType": "pwd",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "78556",
+          "codeType": "qqGroup",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A12341234",
+          "codeType": "sailor",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "女",
+          "codeType": "sex",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "012341234",
+          "codeType": "taiwanback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A123456789",
+          "codeType": "taiwanid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T456789",
+          "codeType": "taiwanpass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "user01",
+          "codeType": "user",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        }
+      ],
+      "dataType": "personFile",
+      "id": "9879865465465465",
+      "keyword": "382801195510051222",
+      "regionName": "咸阳市"
+    },
+    {
+      "code": "cardno",
+      "data": [
+        {
+          "code": "陕西华山001号",
+          "codeType": "address",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "6222200166412341234",
+          "codeType": "bankno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1706-02-25",
+          "codeType": "birthday",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "382801195510051222",
+          "codeType": "cardno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "皖C-X1211",
+          "codeType": "carno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "软通动力",
+          "codeType": "company",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "sx001",
+          "codeType": "companyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "jzx456",
+          "codeType": "containerno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10",
+          "codeType": "count",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "qazwsx@163.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "HH356",
+          "codeType": "familyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G19901245",
+          "codeType": "gangaoback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T12341234",
+          "codeType": "gangaopass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G12341234",
+          "codeType": "huzhao",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008680891011",
+          "codeType": "imei",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008660691000",
+          "codeType": "imsi",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.2.25.41",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.1.25.35",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13112345678",
+          "codeType": "mobile",
+          "count": 10,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cucc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13700998877",
+          "codeType": "mobile",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cmcc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "666666",
+          "codeType": "msn",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "李霞",
+          "codeType": "name",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "汉族",
+          "codeType": "nation",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "B1661234",
+          "codeType": "otherid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02578781732",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02512345678",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p122.jpg",
+          "codeType": "pic",
+          "count": 3,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p3.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p2.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "JH003",
+          "codeType": "policeid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "yhntgb",
+          "codeType": "pwd",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "78556",
+          "codeType": "qqGroup",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A12341234",
+          "codeType": "sailor",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "女",
+          "codeType": "sex",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "012341234",
+          "codeType": "taiwanback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A123456789",
+          "codeType": "taiwanid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T456789",
+          "codeType": "taiwanpass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "user01",
+          "codeType": "user",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        }
+      ],
+      "dataType": "personFile",
+      "id": "98763543216565465465",
+      "keyword": "382801195510051222",
+      "regionName": "咸阳市"
+    },
+    {
+      "code": "cardno",
+      "data": [
+        {
+          "code": "陕西华山001号",
+          "codeType": "address",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "6222200166412341234",
+          "codeType": "bankno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1706-02-25",
+          "codeType": "birthday",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "340402198802171012",
+          "codeType": "cardno",
+          "count": 1000,
+          "firstDate": "2017-09-19 00:00:00",
+          "lastDate": "2018-09-19 23:59:59",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "382801195510051222",
+          "codeType": "cardno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "皖C-X1211",
+          "codeType": "carno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "软通动力",
+          "codeType": "company",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "sx001",
+          "codeType": "companyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "jzx456",
+          "codeType": "containerno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10",
+          "codeType": "count",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "qazwsx@163.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993@qq.com",
+          "codeType": "email",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "HH356",
+          "codeType": "familyno",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G19901245",
+          "codeType": "gangaoback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "123456",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:07:55",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "123456",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:07:31",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "123456",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:02:09",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 17:00:43",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:59:36",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:58:36",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "1111",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:58:35",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "132132132",
+          "codeType": "gangaoback",
+          "count": 0,
+          "lastDate": "2018-09-13 16:53:15",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "T12341234",
+          "codeType": "gangaopass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "G12341234",
+          "codeType": "huzhao",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008680891011",
+          "codeType": "imei",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "460008660691000",
+          "codeType": "imsi",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.2.25.41",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "10.1.25.35",
+          "codeType": "ip",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13112345678",
+          "codeType": "mobile",
+          "count": 10,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cucc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "13700998877",
+          "codeType": "mobile",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "mobileOperateCode": "cmcc",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "12345667",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "7554545",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "21311256",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "22222222",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "55555555",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:31:34",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "6666666",
+          "codeType": "mobile",
+          "count": 0,
+          "lastDate": "2018-09-12 09:30:13",
+          "mobileOperateCode": "",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "666666",
+          "codeType": "msn",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "王悦",
+          "codeType": "name",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "汉族",
+          "codeType": "nation",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "B1661234",
+          "codeType": "otherid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02578781732",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "02512345678",
+          "codeType": "phone",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "1",
+          "codeType": "phone",
+          "count": 0,
+          "lastDate": "2018-09-17 10:43:43",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "pic1/img_p001.jpg",
+          "codeType": "pic",
+          "count": 3,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p003.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "pic1/img_p002.jpg",
+          "codeType": "pic",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "/pic1/img_p3.jpg",
+          "codeType": "pic",
+          "count": 0,
+          "lastDate": "2018-09-12 10:55:16",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "JH003",
+          "codeType": "policeid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "123456",
+          "codeType": "policeid",
+          "count": 0,
+          "lastDate": "2018-09-13 17:01:52",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "yhntgb",
+          "codeType": "pwd",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "5047673",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "87357993",
+          "codeType": "qq",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "123456789",
+          "codeType": "qq",
+          "count": 0,
+          "lastDate": "2018-09-11 10:11:53",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "78556",
+          "codeType": "qqGroup",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "A12341234",
+          "codeType": "sailor",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "女",
+          "codeType": "sex",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "012341234",
+          "codeType": "taiwanback",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "lllllll1111222",
+          "codeType": "taiwanback",
+          "count": 0,
+          "lastDate": "2018-09-13 15:05:59",
+          "upadteRecord": "true"
+        },
+        {
+          "code": "A123456789",
+          "codeType": "taiwanid",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "T456789",
+          "codeType": "taiwanpass",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        },
+        {
+          "code": "user01",
+          "codeType": "user",
+          "count": 1,
+          "firstDate": "2017-08-01 12:00:00",
+          "lastDate": "2018-08-01 12:00:00",
+          "upadteRecord": "false"
+        }
+      ],
+      "dataType": "personFile",
+      "id": "465465465465465221",
+      "keyword": "340402198802171012",
+      "regionName": "咸阳市"
+    }
+  ],
+  "success": true
+}

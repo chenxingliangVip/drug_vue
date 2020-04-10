@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "result": [
+    {
+      "id": "01",
+      "name": "综合查询结果页面",
+      "queryDepth": 100,
+      "status": 0,
+      "createTime": 1550184445121,
+      "lastUpdateTime": 1550184437721,
+      "userList": null,
+      "deptList": null,
+      "roleList": null,
+      "authList": [
+        {
+          "id": "1",
+          "depthId": "01",
+          "authId": "user01",
+          "authType": "user",
+          "authName": "user01"
+        },
+        {
+          "id": "2",
+          "depthId": "01",
+          "authId": "395cb662e9d64934b288ff39d9c0b77f",
+          "authType": "dept",
+          "authName": "云度部门"
+        },
+        {
+          "id": "3",
+          "depthId": "01",
+          "authId": "INIT_ROLE_4",
+          "authType": "role",
+          "authName": "普通用户"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "name": "试试手气",
+      "queryDepth": 100,
+      "status": 0,
+      "createTime": 1550184445121,
+      "lastUpdateTime": 1550184437721,
+      "userList": null,
+      "deptList": null,
+      "roleList": null,
+      "authList": []
+    }
+  ],
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

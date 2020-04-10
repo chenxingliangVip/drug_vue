@@ -1,0 +1,79 @@
+{
+  "success": true,
+  "result": {
+    "columInfo": [
+      {
+        "columnName": "mobileNum",
+        "coloumNameCn": "移动号码"
+      },
+      {
+        "columnName": "equipmentId",
+        "coloumNameCn": "设备号"
+      },
+      {
+        "columnName": "appName",
+        "coloumNameCn": "应用名称"
+      },
+      {
+        "columnName": "startTime",
+        "coloumNameCn": "首次时间"
+      },
+      {
+        "columnName": "endTime",
+        "coloumNameCn": "末次时间"
+      },
+      {
+        "columnName": "dataSource",
+        "coloumNameCn": "来源"
+      },
+      {
+        "columnName": "count",
+        "coloumNameCn": "次数"
+      }
+    ],
+    "tableData": [
+      {
+        "mobileNum": "13700998877",
+        "equipmentId": "5645661",
+        "appName": "google",
+        "startTime": "1533398399",
+        "endTime": "1533398399",
+        "dataSource": "分光",
+        "count": 100
+      },
+      {
+        "mobileNum": "13700998877",
+        "equipmentId": "5645661",
+        "appName": "百度",
+        "startTime": "1533398399",
+        "endTime": "1533398399",
+        "dataSource": "分光",
+        "count": 20
+      },
+      {
+        "mobileNum": "13700998877",
+        "equipmentId": "5645661",
+        "appName": "360",
+        "startTime": "1533398399",
+        "endTime": "1533398399",
+        "dataSource": "分光",
+        "count": 10
+      }
+    ],
+    "chartData": {
+      "xAxisData": [
+        100,
+        20,
+        10
+      ],
+      "legendData": [
+        "google",
+        "百度",
+        "360"
+      ]
+    }
+  },
+  "messages": "查询数据源成功！",
+  "errCode": null,
+  "errMessages": null
+}

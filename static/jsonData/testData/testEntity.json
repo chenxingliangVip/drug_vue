@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "result": [{
+    "typeName":"话单信息",
+    "children":[{
+      "tableName": "t_res_20180713155240",
+      "tableNameCn": "话单信息表_0004",
+      "secondType": "话单信息",
+      "partitionFormat": null,
+      "search_time": null,
+      "isPhysical": false,
+      "solrCollectionName": "lzy_solr_group",
+      "physicalTableName": "physical_table_08",
+      "visualTableSuffix": "_view_201808",
+      "realColumn": "field_1,field_2",
+      "condition":"t_res_20180814111623_4",
+      "codeTypes":"email"
+    }, {
+      "tableName": "t_res_20180814111623_4",
+      "tableNameCn": "住宿信息",
+      "secondType": "基础数据",
+      "partitionFormat": null,
+      "search_time": null,
+      "isPhysical": false,
+      "solrCollectionName": "lzy_solr_group",
+      "physicalTableName": "physical_table_08",
+      "visualTableSuffix": "_view_201808",
+      "realColumn":
+      "field_1,field_2",
+      "condition": "t_res_20180713155240",
+      "codeTypes":"id_card"
+    }]
+  },
+    {
+      "typeName":"话单信息",
+      "children":[{
+        "tableName": "t_res_20180713155240",
+        "tableNameCn": "话单信息表_0004",
+        "secondType": "话单信息",
+        "partitionFormat": null,
+        "search_time": null,
+        "isPhysical": false,
+        "solrCollectionName": "lzy_solr_group",
+        "physicalTableName": "physical_table_08",
+        "visualTableSuffix": "_view_201808",
+        "realColumn": "field_1,field_2",
+        "condition":"t_res_20180814111623_4",
+        "codeTypes":"email"
+      }, {
+        "tableName": "t_res_20180814111623_4",
+        "tableNameCn": "住宿信息",
+        "secondType": "基础数据",
+        "partitionFormat": null,
+        "search_time": null,
+        "isPhysical": false,
+        "solrCollectionName": "lzy_solr_group",
+        "physicalTableName": "physical_table_08",
+        "visualTableSuffix": "_view_201808",
+        "realColumn":
+        "field_1,field_2",
+        "condition": "t_res_20180713155240",
+        "codeTypes":"id_card"
+      }]
+    }],
+  "messages": "查询数据源成功！",
+  "errCode": null,
+  "errMessages": null
+}

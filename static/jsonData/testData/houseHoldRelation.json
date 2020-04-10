@@ -1,0 +1,88 @@
+{
+  "success" : true,
+  "result" : [ {
+    "name" : "岳不群",
+    "sex" : "男",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1955-10-05",
+    "cardno" : "610582195510051234",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "户主"
+  }, {
+    "name" : "宁中则",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1957-02-05",
+    "cardno" : "610582195702051244",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "妻子"
+  }, {
+    "name" : "岳灵珊",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1983-06-11",
+    "cardno" : "610582198306111283",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "女儿"
+  }, {
+    "name" : "岳不群",
+    "sex" : "男",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1955-10-05",
+    "cardno" : "610582195510051234",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "户主"
+  }, {
+    "name" : "宁中则",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1957-02-05",
+    "cardno" : "610582195702051244",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "妻子"
+  }, {
+    "name" : "岳灵珊",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1983-06-11",
+    "cardno" : "610582198306111283",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "女儿"
+  }, {
+    "name" : "岳不群",
+    "sex" : "男",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1955-10-05",
+    "cardno" : "610582195510051234",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "户主"
+  }, {
+    "name" : "宁中则",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1957-02-05",
+    "cardno" : "610582195702051244",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "妻子"
+  }, {
+    "name" : "岳灵珊",
+    "sex" : "女",
+    "region" : "陕西省-渭南市/华阴市",
+    "birthday" : "1983-06-11",
+    "cardno" : "610582198306111283",
+    "policeStation" : "华山派出所",
+    "houseHoldNum" : "H21032219",
+    "houseHoldRelation" : "女儿"
+  } ],
+  "messages" : null,
+  "errCode" : null,
+  "errMessages" : null
+}

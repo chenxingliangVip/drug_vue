@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "result": {
+    "cityData": {
+      "totalCount": null,
+      "title": null,
+      "categoriesList": [
+        "台州市",
+        "盐城市",
+        "杭州市"
+      ],
+      "dataList": [],
+      "seriesList": [],
+      "pieSeriesList": [
+        [
+          "台州市",
+          1
+        ],
+        [
+          "盐城市",
+          1
+        ],
+        [
+          "杭州市",
+          1
+        ]
+      ]
+    },
+    "provinceData": {
+      "totalCount": null,
+      "title": null,
+      "categoriesList": [
+        "浙江省",
+        "江苏省"
+      ],
+      "dataList": [],
+      "seriesList": [],
+      "pieSeriesList": [
+        [
+          "浙江省",
+          2
+        ],
+        [
+          "江苏省",
+          1
+        ]
+      ]
+    }
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

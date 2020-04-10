@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "result": {
+    "totalCount": null,
+    "title": null,
+    "categoriesList": [
+      "被叫",
+      "主叫"
+    ],
+    "dataList": [],
+    "seriesList": [],
+    "pieSeriesList": [
+      [
+        "被叫",
+        12386
+      ],
+      [
+        "主叫",
+        343
+      ]
+    ]
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

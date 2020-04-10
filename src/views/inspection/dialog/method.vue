@@ -1,0 +1,424 @@
+<template>
+  <el-dialog :visible.sync="dialogAddVisible"
+             append-to-body
+             :close-on-click-modal="false"
+             width="40%"
+             title="新增·检验方法">
+    <el-form ref="dataForm"
+             label-position="left"
+             size="mini"
+             label-width="0px">
+      <div class="dialog-title"><span>新增检验方法</span></div>
+      <el-divider></el-divider>
+      <el-row>
+        <el-col :span="12">
+          <div class="el-dialog-item"><label>检项名称：</label>
+            <el-select v-model="methodData.itemName" v-if="type == 'add' || type == 'edit'"
+                       size="mini"
+                       clearable
+                       filterable
+                       allow-create
+                       style="width: 140px">
+              <el-option v-for="item in testItems"
+                         :key="item.id"
+                         :label="item.itemName"
+                         :value="item.itemName"/>
+            </el-select>
+            <span v-else>{{methodData.itemName?methodData.itemName:"无"}}</span>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="el-dialog-item el-form-right"><label class="w3"
+                                                           style="margin-right:-0.5em">申请号</label>：
+            <el-input clearable  v-model="formNo"
+                      size="mini"
+                      disabled
+                      style="width: 140px;"/>
+          </div>
+        </el-col>
+      </el-row>
+
+      <el-row>
+        <el-col :span="12">
+          <div class="el-dialog-item"><label>方法依据：</label>
+            <el-input clearable  v-model="methodData.methodJudge"  v-if="type == 'add' || type == 'edit'"
+                      size="mini"
+                      style="width: 140px;"/>
+            <span v-else>{{methodData.methodJudge?methodData.methodJudge:"无"}}</span>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="el-dialog-item el-form-right"><label class="w2"
+                                                           style="margin-right:-2em">部门</label>：
+            <el-input clearable  v-model="user.deptName" disabled
+                      size="mini"
+                      style="width: 140px;"/>
+          </div>
+        </el-col>
+      </el-row>
+
+      <el-row>
+        <el-col :span="12">
+          <div class="el-dialog-item"><label>方法类别：</label>
+            <el-select v-model="methodData.methodType" v-if="type == 'add' || type == 'edit'"
+                       size="mini"
+                       clearable
+                       style="width: 140px">
+              <el-option v-for="item in methodTypeMap"
+                         :key="item.value"
+                         :label="item.label"
+                         :value="item.id"/>
+            </el-select>
+            <span v-else>{{methodData.methodType?methodData.methodType:"无"}}</span>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="el-dialog-item el-form-right"><label class="w3"
+                                                           style="margin-right:-0.5em">申请人</label>：
+            <el-input clearable  v-model="user.userName" disabled
+                      size="mini"
+                      style="width: 140px;"/>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
+          <div class="el-dialog-item"><label>方法名称：</label>
+            <el-input clearable  v-model="methodData.methodName" v-if="type == 'add' || type == 'edit'"
+                      size="mini"
+                      style="width: 140px;"/>
+            <span v-else>{{methodData.methodName}}</span>
+
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="el-dialog-item el-form-right"><label>申请时间： </label>
+            <el-date-picker v-model="nowTime"
+                            disabled
+                            size="mini"
+                            format="yyyy-MM-dd"
+                            value-format="yyyy-MM-dd"
+                            type="date"
+                            style="width: 140px;">
+            </el-date-picker>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <div class="el-dialog-item"><label>方法编号：</label>
+            <el-input clearable  v-model="methodData.methodCode" :disabled="type =='see'"
+                      size="mini"
+                      style="width: 140px;"/>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
+          <div class="el-dialog-item"><label>方法属性：</label>
+            <el-select v-model="methodData.codeAttrId" :disabled="type != 'add' && type != 'edit'"
+                       size="mini"
+                       clearable
+                       style="width: 140px">
+              <el-option v-for="item in codeAttrs"
+                         :key="item.id"
+                         :label="item.itemName"
+                         :value="item.id"/>
+            </el-select>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="el-dialog-item el-form-right"><label>工时：</label>
+            <el-input clearable  v-model="methodData.manHour"  :disabled="type =='see'"
+                      size="mini"
+                      type="number"
+                      style="width: 140px;"/>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
+          <div class="el-dialog-item"
+               style="height:20px;"><label>检验方法：</label>
+
+          </div>
+        </el-col>
+        <el-col :span="12"
+                class="el-button-version">
+          <div class="el-dialog-item el-form-right"><label>版本：</label>
+            <el-select v-model="methodData.methodVersion" v-show="isCheckSelect"
+                       size="mini"
+                       clearable
+                       style="width: 140px">
+              <el-option v-for="item in versionList"
+                         :key="item.id"
+                         :label="item.versionName"
+                         :value="item.versionName"/>
+            </el-select>
+            <el-input clearable  v-model="methodData.methodVersion" v-show="!isCheckSelect"
+                      size="mini"
+                      disabled
+                      style="width: 140px;"/>
+          </div>
+          <el-button :type="isCheckSelect? 'primary':'info'"
+                     size="mini"
+                     style="width: 16px; height:16px; min-height:16px;font-size:8px;margin:2px 10px 0 0"
+                     @click="checkStatus">
+            正
+          </el-button>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <div class="el-dialog-item"
+               style="margin-bottom:0px;">
+            <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <div class="el-dialog-item"
+               style="margin-top:10px;"><label>检测记录 ：</label></div>
+          <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
+
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <div class="el-dialog-item"
+               style="margin-top:10px;"><label>补充说明 ：</label></div>
+          <el-input clearable
+            type="textarea"
+            :rows="2"
+            :disabled="type =='see'"
+            placeholder="请输入内容"
+            v-model="methodData.remark">
+          </el-input>
+
+        </el-col>
+      </el-row>
+      <el-row v-show="methodData.checkStatus=='1'">
+        <el-col :span="24">
+          <div class="el-dialog-item"
+               style="margin-top:10px;">
+            <label>审批意见 ：</label>
+            {{applyReason}}
+          </div>
+        </el-col>
+      </el-row>
+    </el-form>
+    <div slot="footer" v-show="type !='see'"
+         class="dialog-footer">
+      <el-button type="primary"
+                 size="mini"
+                 @click="updateTestMethod"
+                 style="width: 80px;">
+        提交
+      </el-button>
+    </div>
+  </el-dialog>
+</template>
+<script>
+  import { quillEditor } from 'vue-quill-editor'
+  import 'quill/dist/quill.core.css'
+  import 'quill/dist/quill.snow.css'
+  import 'quill/dist/quill.bubble.css'
+  import { getToken } from '@/utils/auth' // 验权
+  export default {
+    name: "method",
+    props: ["editData","type"],
+    components: {quillEditor},
+    data() {
+      return {
+        methodData: {
+          id: "",
+          itemName:"",
+          methodType: "",
+          methodName: "",
+          methodCode: "",
+          codeAttrId: "",
+          manHour: "",
+          methodVersion: "",
+          testRecord: "",
+          methodDesc: "",
+          methodJudge: "",
+          remark: ""
+        },
+        formNo:"提交生成",
+        isCheckSelect:false,
+        nowTime:new Date(),
+        dialogAddVisible: false,
+        count:0,
+        user:{deptId:"",userName:""},
+        methodTypeMap:[{label:"工业品",value:"工业品"},{label:"药用辅料",value:"药用辅料"}],
+        codeAttrs:[],
+        versionList:[],
+        testItems:[],
+        applyReason:""
+      }
+    },
+    mounted(){
+      let user = JSON.parse(getToken());
+      this.user = user;
+      this.getCodeAttrList();
+      this.getCodeItemList();
+      this.getVersionList();
+    },
+    methods: {
+      checkStatus() {
+        this.isCheckSelect = !this.isCheckSelect;
+        this.methodData.methodVersion = "";
+        if(!this.isCheckSelect){
+          this.methodData.methodVersion = "S0";
+        }
+      },
+      getCodeAttrList() {
+        let self = this;
+        self.$http({
+          url: "/drug/codeItem/queryCodeItemList",
+          method: "post",
+          params: {itemCode: "method_attr"}
+        }).then(resp => {
+          if (resp.success) {
+            self.codeAttrs = resp.result;
+          }
+        });
+      },
+      getCodeItemList() {
+        let self = this;
+        self.$http({
+          url: "/drug/codeItem/queryCodeItemList",
+          method: "post",
+          params: {itemCode: "test_item"}
+        }).then(resp => {
+          if (resp.success) {
+            self.testItems = resp.result;
+          }
+        });
+      },
+      getVersionList() {
+        let self = this;
+        self.$http({
+          url: "/drug/version/queryVersionList",
+          method: "post",
+        }).then(resp => {
+          if (resp.success) {
+            self.versionList = resp.result;
+          }
+        });
+      },
+      checkValue(){
+        if(!this.methodData.methodName){
+          this.showTip("请输入方法名称！");
+          return false;
+        }
+        if(!this.methodData.methodCode){
+          this.showTip("请输入方法编号！");
+          return false;
+        }
+        if(!this.methodData.codeAttrId){
+          this.showTip("请输入方法属性！");
+          return false;
+        }
+        if(!this.methodData.manHour){
+          this.showTip("请输入工时！");
+          return false;
+        }
+        if(!this.methodData.methodVersion){
+          this.showTip("请输入版本号！");
+          return false;
+        }
+        if(!this.methodData.testRecord){
+          this.showTip("请输入检测方法！");
+          return false;
+        }
+        if(!this.methodData.methodDesc){
+          this.showTip("请输入检测记录！");
+          return false;
+        }
+        return true;
+      },
+      showTip(msg){
+        let self = this;
+        self.$notify({
+          title: '提示',
+          message: msg,
+          type: 'warning'
+        });
+      },
+      updateTestMethod(){
+        let self = this;
+        if(!self.checkValue()){
+          return;
+        }
+        delete self.methodData.createTime;
+        delete self.methodData.updateTime;
+        self.methodData.userId = self.$store.getters.userId;
+        self.methodData.userName = self.$store.getters.userName;
+        self.methodData.testRecordSummary = self.methodData.testRecord.replace(/<[^>]+>/g,"");
+        self.methodData.methodDescSummary = self.methodData.methodDesc.replace(/<[^>]+>/g,"");
+        self.methodData.checkStatus = '0';
+        self.methodData.status = '0';
+        let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";
+        if (this.count == 0) {
+          self.$http({
+            url: url,
+            method: "post",
+            data: JSON.stringify(self.methodData),
+            dataType: 'json',
+            contentType: "application/json",
+          }).then(resp => {
+            if (resp.success) {
+              self.$eventBus.$emit("updateTestMethodList");
+              self.$notify({
+                title: '提示',
+                message: "操作成功！",
+                type: 'success'
+              });
+              self.dialogAddVisible = false;
+              return
+            }
+            self.$notify({
+              title: '提示',
+              message: "出现异常，请联系管理员",
+              type: 'error'
+            });
+            this.count--;
+          });
+          this.count++;
+        }
+      },
+      getApplyReason() {
+        let self = this;
+        self.$http({
+          url: "/drug/fmApprove/queryFmApproveByRelateId",
+          method: "post",
+          params:{relateId:self.methodData.id}
+        }).then(resp => {
+          if (resp.success) {
+            self.applyReason = resp.result.content;
+          }
+        });
+      }
+    },
+    watch: {
+      editData(val){
+        this.count = 0;
+        this.dialogAddVisible = true;
+        for (let key in this.methodData) {
+          if (!val.hasOwnProperty(key)) {
+            val[key] = "";
+          }
+        }
+        this.methodData = val;
+        if(this.type != 'add'){
+          this.formNo = val.id;
+        }
+        if(this.type =='edit'){
+          this.getApplyReason();
+        }
+      }
+    }
+  }
+</script>

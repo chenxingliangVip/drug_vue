@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "result": [
+    {
+      "id" : "9ed169b98fd24ba8ae65927edc5ebf3f",
+      "pId" : "null",
+      "username" : "user01",
+      "moduleType" : "重点档案",
+      "queryContent" : "目标：岳不群",
+      "queryReason" : null,
+      "queryTime" : null,
+      "curQueryDepth" : 1,
+      "queryLogList" : [ ],
+      "startRow" : null,
+      "endRow" : null,
+      "startTime" : null,
+      "endTime" : null
+    }, {
+      "id" : "12893e114f7643318236ca1ec23966d2",
+      "pId" : "null",
+      "username" : "user01",
+      "moduleType" : "重点档案",
+      "queryContent" : "目标码址：15956325632",
+      "queryReason" : null,
+      "queryTime" : null,
+      "curQueryDepth" : 1,
+      "queryLogList" : [ ],
+      "startRow" : null,
+      "endRow" : null,
+      "startTime" : null,
+      "endTime" : null
+    }
+  ],
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

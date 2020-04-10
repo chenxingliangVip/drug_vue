@@ -1,0 +1,116 @@
+{"success": true,
+  "result": {
+    "data": [
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      },
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      },
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      },
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      },
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      },
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      },
+      {
+        "FILD7": "测试数据",
+        "FILD3": "测试数据",
+        "FILD4": "测试数据",
+        "FILD5": "测试数据",
+        "FILD6": "测试数据",
+        "FILD1": "测试数据",
+        "FILD2": "15696325632"
+      }
+    ],
+    "tableHearder": [
+      {
+        "id": "1",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD1",
+        "columnNameCn": "字段1"
+      },
+      {
+        "id": "112",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD2",
+        "columnNameCn": "字段12"
+      },
+      {
+        "id": "123",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD3",
+        "columnNameCn": "字段13"
+      },
+      {
+        "id": "14",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD4",
+        "columnNameCn": "字段14"
+      },
+      {
+        "id": "15",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD5",
+        "columnNameCn": "字段15"
+      },
+      {
+        "id": "116",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD6",
+        "columnNameCn": "字段16"
+      },
+      {
+        "id": "17",
+        "tableName": "t_res_20181114100237",
+        "columnName": "FILD7",
+        "columnNameCn": "字段17"
+      }
+    ]
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

@@ -1,0 +1,142 @@
+{
+  "success": true,
+  "result": {
+    "data":[
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "e42ab23a-0c3c-456e-8a62-41a4a9e2cd88",
+        "field_2": "342202181110005351",
+        "field_7": "2018-06-05 01:48:16",
+        "field_8": "江苏省南京市雨花台区小行路6号",
+        "field_5": "01",
+        "field_6": "七天",
+        "field_9": "2018-06-05 09:20:39"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "7b3ef94a-b7dc-49d7-8951-25f6cc3945d7",
+        "field_2": "342225199110255251",
+        "field_7": "2018-06-05 08:19:16",
+        "field_8": "安徽省合肥市包河区包河大道与繁华大道交汇处",
+        "field_5": "01",
+        "field_6": "七天",
+        "field_9": "2018-06-05 12:36:09"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "4f7070f0-7ce3-497e-b399-ff7f6a7d3c6c",
+        "field_2": "343825199113035051",
+        "field_7": "2018-06-04 16:33:16",
+        "field_8": "安徽省合肥市包河区徽州大道319号",
+        "field_5": "01",
+        "field_6": "锦江之星",
+        "field_9": "2018-06-05 04:43:09"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "de926ecf-a442-4a59-a86f-2009c434228a",
+        "field_2": "340725189110055361",
+        "field_7": "2018-06-04 16:38:36",
+        "field_8": "安徽省合肥市包河区徽州大道319号",
+        "field_5": "02",
+        "field_6": "七天",
+        "field_9": "2018-06-05 04:45:49"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "3097d738-8443-4e13-819f-714db358dd26",
+        "field_2": "348228199816035311",
+        "field_7": "2018-06-04 13:32:22",
+        "field_8": "安徽省合肥市包河区徽州大道319号",
+        "field_5": "01",
+        "field_6": "桔子酒店",
+        "field_9": "2018-06-05 03:12:42"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "a2798d31-27aa-469e-abd4-308466347293",
+        "field_2": "342523190110035451",
+        "field_7": "2018-06-04 05:42:08",
+        "field_8": "江苏省南京市江宁区东麒路66号",
+        "field_5": "02",
+        "field_6": "七天",
+        "field_9": "2018-06-04 23:17:35"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "51e05bce-2dfe-4b43-b3a6-252a6d9a77ff",
+        "field_2": "345225199117075353",
+        "field_7": "2018-06-05 01:54:02",
+        "field_8": "江苏省南京市雨花台区软件大道109号",
+        "field_5": "01",
+        "field_6": "七天",
+        "field_9": "2018-06-05 09:23:32"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "7e81de67-e6b9-4dd6-a38c-16a8b16d6f2f",
+        "field_2": "342225899410735351",
+        "field_7": "2018-06-05 10:15:02",
+        "field_8": "江苏省南京市雨花西路118号",
+        "field_5": "01",
+        "field_6": "七天",
+        "field_9": "2018-06-05 13:34:02"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "d13b9e8a-f25c-468f-81cc-7a4d324bdb88",
+        "field_2": "342225199610233451",
+        "field_7": "2018-06-05 06:29:58",
+        "field_8": "江苏省南京市江宁区东麒路66号",
+        "field_5": "01",
+        "field_6": "锦江之星",
+        "field_9": "2018-06-05 11:41:30"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "89b2c5a9-b2f8-457b-8d0e-e69f3031f3bc",
+        "field_2": "342225109172015353",
+        "field_7": "2018-06-05 14:47:42",
+        "field_8": "安徽省合肥市包河区包河大道与繁华大道交汇处",
+        "field_5": "02",
+        "field_6": "莫泰",
+        "field_9": "2018-06-05 15:50:22"
+      },
+      {
+        "field_3": "username",
+        "field_4": "身份证",
+        "field_1": "4629be0b-cdf1-4f6f-814e-2928483a84b1",
+        "field_2": "342625199116055856",
+        "field_7": "2018-06-05 02:31:00",
+        "field_8": "江苏省南京市雨花台区小行路6号",
+        "field_5": "01",
+        "field_6": "汉庭",
+        "field_9": "2018-06-05 09:42:01"
+      }
+    ],
+    "tableHearder":[
+      {"columnNameCn":"id","columnName":"field_1"},
+      {"columnNameCn":"码址","columnName":"field_2"},
+      {"columnNameCn":"用户名","columnName":"field_3"},
+      {"columnNameCn":"身份证","columnName":"field_4"},
+      {"columnNameCn":"标识","columnName":"field_5"},
+      {"columnNameCn":"酒店","columnName":"field_6"},
+      {"columnNameCn":"开始时间","columnName":"field_7"},
+      {"columnNameCn":"地址","columnName":"field_8"},
+      {"columnNameCn":"结束时间","columnName":"field_9"}
+    ]
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

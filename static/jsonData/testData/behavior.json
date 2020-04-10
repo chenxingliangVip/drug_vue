@@ -1,0 +1,1504 @@
+{
+  "success": true,
+  "result": [
+    [
+      {
+        "firstDate": null,
+        "lastDate": null,
+        "count": null,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "340402198802171012",
+        "entityType": null
+      }
+    ],
+    [
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 15,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031513",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 16,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031514",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 17,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031515",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 18,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031516",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 19,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031517",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 15,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031513",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 16,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031514",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 17,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031515",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 18,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031516",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 19,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031517",
+        "entityType": "person"
+      },{
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 15,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031513",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 16,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031514",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 17,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031515",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 18,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031516",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 19,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031517",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 15,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031513",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 16,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031514",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 17,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031515",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 18,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031516",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 19,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031517",
+        "entityType": "person"
+      }
+    ],
+    [
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 6,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031544",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 7,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031545",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 8,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031546",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 9,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031547",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 10,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031548",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 11,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031549",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 12,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031510",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 13,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031511",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 14,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031512",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 6,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031544",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 7,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031545",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 8,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031546",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 9,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031547",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 10,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031548",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 11,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031549",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 12,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031510",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 13,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031511",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 14,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031512",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 6,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031544",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 7,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031545",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 8,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031546",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 9,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031547",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 10,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031548",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 11,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031549",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 12,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031510",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 13,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031511",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 14,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031512",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 6,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031544",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 7,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031545",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 8,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031546",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 9,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031547",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 10,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031548",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 11,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031549",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 12,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031510",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 13,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031511",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 14,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031512",
+        "entityType": "person"
+      }
+    ],
+    [
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },{
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2018-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 2,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031540",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 3,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031541",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 4,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031542",
+        "entityType": "person"
+      },
+      {
+        "firstDate": "2018-07-06 12:00:00",
+        "lastDate": "2012-07-08 12:00:00",
+        "count": 5,
+        "codeTypeName": "身份证号",
+        "closenessType": null,
+        "codeType": "cardno",
+        "code": "430304198102031543",
+        "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 3,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031541",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 4,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031542",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 5,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031543",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 2,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031540",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 3,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031541",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 4,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031542",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 5,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031543",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 2,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031540",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 3,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031541",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 4,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031542",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2018-07-08 12:00:00",
+      "count": 5,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031543",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 2,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031540",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 3,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031541",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 4,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031542",
+      "entityType": "person"
+    },
+    {
+      "firstDate": "2018-07-06 12:00:00",
+      "lastDate": "2012-07-08 12:00:00",
+      "count": 5,
+      "codeTypeName": "身份证号",
+      "closenessType": null,
+      "codeType": "cardno",
+      "code": "430304198102031543",
+      "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 3,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031541",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 4,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031542",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 5,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031543",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 2,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031540",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 3,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031541",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 4,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031542",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 5,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031543",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 2,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031540",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 3,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031541",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 4,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031542",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2018-07-08 12:00:00",
+    "count": 5,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031543",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 2,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031540",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 3,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031541",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 4,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031542",
+    "entityType": "person"
+  },
+  {
+    "firstDate": "2018-07-06 12:00:00",
+    "lastDate": "2012-07-08 12:00:00",
+    "count": 5,
+    "codeTypeName": "身份证号",
+    "closenessType": null,
+    "codeType": "cardno",
+    "code": "430304198102031543",
+    "entityType": "person"
+}
+    ]
+  ],
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

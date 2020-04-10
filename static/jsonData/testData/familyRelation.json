@@ -1,0 +1,17 @@
+{
+  "success" : true,
+  "result" : [ {
+    "relateNum" : "15675248951",
+    "registration" : "江苏省南京市",
+    "name" : null,
+    "cardno" : null,
+    "company" : null,
+    "address" : null,
+    "groupType" : "family",
+    "grouoTypeName" : "家庭亲情号",
+    "phoneShortNum" : "70584"
+  } ],
+  "messages" : null,
+  "errCode" : null,
+  "errMessages" : null
+}

@@ -1,0 +1,17 @@
+{
+  "success" : true,
+  "result" : [ {
+    "relateNum" : "13812348578",
+    "registration" : "江苏省连云港市",
+    "name" : null,
+    "cardno" : null,
+    "company" : null,
+    "address" : null,
+    "groupType" : "group",
+    "grouoTypeName" : "集团亲情号",
+    "phoneShortNum" : "68475"
+  } ],
+  "messages" : null,
+  "errCode" : null,
+  "errMessages" : null
+}

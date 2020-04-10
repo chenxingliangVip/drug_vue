@@ -1,0 +1,29 @@
+{
+  "errCode": null,
+  "errMessages": null,
+  "messages": null,
+  "success": true,
+  "result": {
+    "total": 12,
+    "data": [
+      {
+        "code": "100",
+        "id": [
+          "cardno",
+          "340402198802171012"
+        ],
+        "keyword": "1000",
+        "regionName": "",
+        "data": [
+          {
+            "code": "2000",
+            "codeType": "mobile",
+            "count": "2",
+            "firstDate": "2018-10-30",
+            "lastDate": "2019-2-1"
+          }
+        ]
+      }
+    ]
+  }
+}

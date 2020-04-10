@@ -1,0 +1,12 @@
+{
+  "success" : true,
+  "result" : {
+    "dataShowMethod" : "chart",
+    "picUrl" : "http://10.1.46.26:15003/dolphin/archive-pic/",
+    "appHost" : "http://10.1.46.26:15003",
+    "simbaHost" : "http://10.1.46.1:15003"
+  },
+  "messages" : null,
+  "errCode" : null,
+  "errMessages" : null
+}

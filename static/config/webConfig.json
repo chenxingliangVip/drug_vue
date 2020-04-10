@@ -1,0 +1,20 @@
+{
+  "_DESC":"web前端配置",
+
+  "devEnvironment":"dev",
+
+  "targetProxy":"http://192.168.43.68:8081/",
+
+  "host":"localhost",
+
+  "port":8888,
+
+  "customization":{
+
+    "st_Target":false,
+
+    "st_habit_display_label":false,
+
+    "topN":3
+  }
+}

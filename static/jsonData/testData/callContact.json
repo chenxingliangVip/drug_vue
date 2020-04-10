@@ -1,0 +1,121 @@
+{
+  "success": true,
+  "result": [
+    [
+      {
+        "firstDate": null,
+        "lastDate": null,
+        "count": null,
+        "codeTypeName": "电话",
+        "closenessType": null,
+        "codeType": "mobile",
+        "code": "15956326526",
+        "mobileCode":"001",
+        "countryname":"江苏省",
+        "cityname":"南京市",
+        "entityType": null
+      }
+    ],
+    [
+      {
+        "firstDate": "2018-07-08 12:00:00",
+        "lastDate": null,
+        "count": 15,
+        "codeTypeName": "电话",
+        "closenessType": null,
+        "codeType": "mobile",
+        "code": "15632321223",
+        "mobileCode":"001",
+        "countryname":"江苏省",
+        "cityname":"南京市",
+        "entityType": null
+      },
+      {
+        "firstDate": "2018-07-08 12:00:00",
+        "lastDate": null,
+        "count": 15,
+        "codeTypeName": "电话",
+        "closenessType": null,
+        "codeType": "mobile",
+        "code": "15632321223",
+        "mobileCode":"001",
+        "countryname":"江苏省",
+        "cityname":"南京市",
+        "entityType": null
+      }
+    ],
+    [
+      {
+        "firstDate": "2018-07-08 12:00:00",
+        "lastDate": null,
+        "count": 15,
+        "codeTypeName": "电话",
+        "closenessType": null,
+        "codeType": "mobile",
+        "code": "15632321223",
+        "mobileCode":"001",
+        "countryname":"江苏省",
+        "cityname":"南京市",
+        "entityType": null
+      }
+    ],
+    [
+      {
+        "firstDate": "2018-07-08 12:00:00",
+        "lastDate": null,
+        "count": 15,
+        "codeTypeName": "电话",
+        "closenessType": null,
+        "codeType": "mobile",
+        "code": "15632321223",
+        "mobileCode":"001",
+        "countryname":"江苏省",
+        "cityname":"南京市",
+        "entityType": null
+      }
+    ],
+    [
+      {
+        "name":"全部地区",
+        "code":"",
+        "total":190
+      },
+      {
+        "name":"江苏省-南京市",
+        "code":"100",
+        "total":20
+      },
+      {
+        "name":"江苏省-盐城市",
+        "code":"100",
+        "total":30
+      },
+      {
+        "name":"江苏省-高淳市",
+        "code":"100",
+        "total":20
+      },
+      {
+        "name":"江苏省-苏州市",
+        "code":"100",
+        "total":120,
+        "data":[ {
+          "firstDate": "2018-07-08 12:00:00",
+          "lastDate": null,
+          "count": 15,
+          "codeTypeName": "电话",
+          "closenessType": null,
+          "codeType": "mobile",
+          "code": "15632321223",
+          "mobileCode":"001",
+          "countryname":"江苏省",
+          "cityname":"南京市",
+          "entityType": null
+        }]
+      }
+    ]
+  ],
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

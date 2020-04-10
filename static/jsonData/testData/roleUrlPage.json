@@ -1,0 +1,100 @@
+{
+    "result": {
+        "permissionList": [
+            "system:access",
+            "system:exit",
+            "compreQuery:access",
+            "archive:add",
+            "archive:edit",
+            "imFeeling:access",
+           "primaryData:access",
+           "relation:access",
+           "keyArchives:access",
+           "keyFile:access",
+           "statistics:access",
+           "home:access",
+           "codeAttrManage:access",
+          "relationFile:access",
+          "pree:access",
+          "archiveCount:access"
+        ],
+        "urlList": [
+            "/compreQuery/noData",
+            "/compreQuery/docDetail",
+            "/compreQuery/index",
+            "/index",
+            "/archiveUpdate/editArchive",
+            "/userPermission",
+            "/j_spring_cas_security_logout",
+            "/labelCheck/index",
+            "/imFeeling/index",
+            "/labelCheck/queryLables",
+            "/archiveUpdate/addArchive",
+            "/dist/static/**",
+            "/dist/index.html",
+            "/codeAttr/queryCodes",
+            "/archive/query*",
+            "/keyArchives/index",
+            "home/index"
+        ],
+        "user": {
+            "accountNonExpired": true,
+            "accountNonLocked": true,
+            "adminFlag": 1,
+            "authorities": [
+                {
+                    "authority": "system:access",
+                    "role": "system:access"
+                },
+                {
+                    "authority": "system:exit",
+                    "role": "system:exit"
+                },
+                {
+                    "authority": "compreQuery:access",
+                    "role": "compreQuery:access"
+                },
+                {
+                    "authority": "archive:add",
+                    "role": "archive:add"
+                },
+                {
+                    "authority": "archive:edit",
+                    "role": "archive:edit"
+                },
+                {
+                    "authority": "imFeeling:access",
+                    "role": "imFeeling:access"
+                }
+            ],
+            "credentialsNonExpired": true,
+            "deptId": "INIT_DEPT_1",
+            "deptName": "安全部",
+            "endTime": 1691774133000,
+            "name": "user01",
+            "password": "65b6669e7105c8edc473bc09deb1f72f",
+            "roles": [
+                {
+                    "deptId": "INIT_DEPT_1",
+                    "deptName": "安全部",
+                    "enableDelete": 1,
+                    "endDate": 1691774133000,
+                    "name": "普通用户",
+                    "remark": "系统默认角色，不要使用，可以拷贝该角色使用",
+                    "startDate": 1534007733000,
+                    "status": 0,
+                    "uuid": "INIT_ROLE_4",
+                    "workday": 2,
+                    "workdayName": "不限"
+                }
+            ],
+            "startTime": 1534007733000,
+            "status": 0,
+            "testUser": "false",
+            "userInfos": [],
+            "username": "user01",
+            "uuid": "88dfae93f97a432abc4670651a319051"
+        }
+    },
+    "success": true
+}

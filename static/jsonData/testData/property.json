@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "result": {
+    "picUrl": "http://10.1.46.26:15003/dolphin/archive-pic/",
+    "logOut":"http://10.1.46.26:8080"
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}

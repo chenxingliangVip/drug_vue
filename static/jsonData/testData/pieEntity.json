@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "result": {
+    "nation": {
+      "totalCount": null,
+      "title": null,
+      "categoriesList": [
+        "汉族",
+        "蒙古族"
+      ],
+      "dataList": [],
+      "seriesList": [],
+      "pieSeriesList": [
+        [
+          "汉族",
+          8
+        ],
+        [
+          "蒙古族",
+          1
+        ]
+      ]
+    },
+    "sex": {
+      "totalCount": null,
+      "title": null,
+      "categoriesList": [
+        "男",
+        "女"
+      ],
+      "dataList": [],
+      "seriesList": [],
+      "pieSeriesList": [
+        [
+          "男",
+          44
+        ],
+        [
+          "女",
+          27
+        ]
+      ]
+    },
+    "birth": {
+      "totalCount": null,
+      "title": null,
+      "categoriesList": [
+        "28岁",
+        "31岁",
+        "23岁",
+        "26岁",
+        "53岁",
+        "36岁"
+      ],
+      "dataList": [],
+      "seriesList": [],
+      "pieSeriesList": [
+        [
+          "28岁",
+          3
+        ],
+        [
+          "31岁",
+          2
+        ],
+        [
+          "23岁",
+          1
+        ],
+        [
+          "26岁",
+          1
+        ],
+        [
+          "53岁",
+          1
+        ],
+        [
+          "36岁",
+          1
+        ]
+      ]
+    }
+  },
+  "messages": null,
+  "errCode": null,
+  "errMessages": null
+}
