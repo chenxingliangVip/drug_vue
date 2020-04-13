@@ -18,9 +18,8 @@ export default {
       initValue: '',
       defaultConfig: {
         // VUE CLI 3 会添加 process.env.BASE_URL 的环境变量，而 VUE CLI 2 没有，所以借此设置 UEDITOR_HOME_URL，能涵盖大部分 Vue 开发者的使用场景
-        UEDITOR_HOME_URL: process.env.BASE_URL
-          ? process.env.BASE_URL + 'UEditor/'
-          : '/public/UEditor/',
+        // UEDITOR_HOME_URL:  '/drug/static/UEditor/',
+        UEDITOR_HOME_URL:  '/static/UEditor/',
         enableAutoSave: false
       }
     }
@@ -244,6 +243,10 @@ export default {
     // 设置内容
     _setContent(value) {
       value === this.editor.getContent() || this.editor.setContent(value)
+    },
+
+    getPlainTxt(){
+     return  this.editor.getPlainTxt();
     },
     contentChangeHandler() {
       this.$emit('input', this.editor.getContent())

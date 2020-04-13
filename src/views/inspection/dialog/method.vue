@@ -172,7 +172,8 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-bottom:0px;">
-            <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
+            <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />-->
+            <vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>
           </div>
         </el-col>
       </el-row>
@@ -180,8 +181,8 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-top:10px;"><label>检测记录 ：</label></div>
-          <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
-
+          <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />-->
+          <vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>
         </el-col>
       </el-row>
       <el-row>
@@ -225,6 +226,7 @@
   import 'quill/dist/quill.snow.css'
   import 'quill/dist/quill.bubble.css'
   import { getToken } from '@/utils/auth' // 验权
+
   export default {
     name: "method",
     props: ["editData","type"],
@@ -255,7 +257,17 @@
         codeAttrs:[],
         versionList:[],
         testItems:[],
-        applyReason:""
+        applyReason:"",
+        editorConfig: {
+          // 编辑器不自动被内容撑高
+          autoHeightEnabled: false,
+          // 初始容器高度
+          initialFrameHeight: 300,
+          // 初始容器宽度
+          initialFrameWidth: '100%',
+
+          serverUrl: '/api/uploadPic',
+        }
       }
     },
     mounted(){
@@ -356,8 +368,8 @@
         delete self.methodData.updateTime;
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
-        self.methodData.testRecordSummary = self.methodData.testRecord.replace(/<[^>]+>/g,"");
-        self.methodData.methodDescSummary = self.methodData.methodDesc.replace(/<[^>]+>/g,"");
+        self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
+        self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
         self.methodData.checkStatus = '0';
         self.methodData.status = '0';
         let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";

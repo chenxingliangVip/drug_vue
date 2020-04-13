@@ -108,7 +108,7 @@
       </template>
     </drug-table>
     <method-dialog :editData="detailData" :type="operateType"></method-dialog>
-    <form action="/drug/file/downloadFile" method="post"
+    <form action="/api/drug/file/downloadFile" method="post"
           style="display: none;" ref="downloadFile">
       <input name="path" :value="downPath"/>
     </form>
@@ -238,7 +238,7 @@ export default {
             splitRow:[]
           },
           {
-            title:"No.3 检验方法",
+            title:"No.2 检验方法",
             colIndex:4,
             cellList:[],
             splitRow:[]
