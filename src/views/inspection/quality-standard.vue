@@ -226,6 +226,7 @@ export default {
         if (resp.success) {
           self.tableLoading = false;
           self.tableData = resp.result;
+          self.$eventBus.$emit("updateCheck");
           self.tableHeader = [
             {"columnName": "createTimeFt", "coloumNameCn": "时间", "width": "90px"},
             {"columnName": "id", "coloumNameCn": "申请号", "width": "70px"},

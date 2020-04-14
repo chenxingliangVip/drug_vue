@@ -101,7 +101,7 @@
         color: #fff;
         font-size: 14px;
         font-weight: 600;
-        font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+        font-family: SimHei;
         letter-spacing: 1em;
         vertical-align: middle;
       }

@@ -11,7 +11,7 @@
                @selection-change="handleSelectionChange"
               :style="{ width:option.width?option.width:'100%' }">
       <el-table-column type="selection" align="center" v-if="isMultipleSelection && displayTableData.length > 0"
-        width="55">
+        width="40">
       </el-table-column>
 
       <el-table-column v-if="col.status != '-1'" v-for="(col, index) in tableHeader" :key="index"

@@ -3,7 +3,7 @@
              width="40%"
              append-to-body
              :close-on-click-modal="false"
-             :visible.sync="dialogAddVisible">
+             :visible.sync="dialogAddVisible" class="Input_Dialog">
     <el-form ref="dataForm"
              size="mini"
              label-width="80px">
@@ -513,5 +513,10 @@
   .el-dialog .el-button--red {
     background-color: #c00400;
     border-color: #c00400;
+  }
+  .Input_Dialog {
+  	.el-input,.el-select {
+  		width: 180px !important
+  	}
   }
 </style>

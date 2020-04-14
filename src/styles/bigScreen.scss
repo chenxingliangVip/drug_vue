@@ -231,10 +231,10 @@ body {
                 height: 100%;
             }
             .middleLeft {
-                width: 35%;
+                width: 270px;
                 border: 1px solid #3a679e47;
                 box-shadow: 0px 0px 10px 10px #3a679e47 inset;
-                padding: 15px 0px;
+                padding: 15px 0px;padding-left: 15px;
                 .TimeForm {
                     float: left;
                     width: 50%;
@@ -257,7 +257,7 @@ body {
                     img {
                         width: 25px;
                         position: absolute;
-                        left: 8px;
+                        left: 3px;
                         top: 2px;
                     }
                     p {
@@ -281,13 +281,18 @@ body {
                         font-size: 16px;
                         border: 1px solid #3a679e47;
                         box-shadow: 0px 0px 10px 10px #3a679e47 inset;
-                        padding: 5px 10px;
-                        margin: 0 10px;
+                        margin: 0 10px;    
+                        display: block;
+                        width: 100px;
+                        height: 30px;
+                        float: right;
+                        line-height: 30px;
+                        text-align: center;
                     }
                 }
             }
             .line {
-                width: 35%;
+                width: calc(70% - 270px);
                 height: 100%;
                 float: left;
 //              background: url('../assets/img/line.png');
@@ -302,6 +307,9 @@ body {
             }
         }
         .bottom {
+            h2 {
+                width: 270px   
+            }
             .lastTxt {
                 border-top: 1px solid #3a679e47;
                 border-bottom: 1px solid #3a679e47;

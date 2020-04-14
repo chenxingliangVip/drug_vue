@@ -4,7 +4,7 @@
     <div class="login-container">
 
       <img src="@/assets/logo.png" class="app-login-logo" />
-
+			<p class="title_txt">威尔分析测试平台</p>
       <el-form ref="loginForm"
                :rules="loginRules"
                :model="loginForm"
@@ -166,7 +166,12 @@ export default {
     color: #fff;
   }
 }
-
+.title_txt {
+	color: #fff;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 14px;
+}
 .login-container {
   .el-input {
     width: 80%;
@@ -260,7 +265,12 @@ export default {
 	    background-position: 50% 50%;
 	    width: 100%;
 	    height: 100%;
-	    opacity: 0.8;
+	    /*opacity: 0.8;*/
+	    -webkit-filter: blur(3px);
+	    -moz-filter: blur(3px);
+	    -o-filter: blur(3px);
+	    -ms-filter: blur(3px);
+	    filter: blur(3px);
     }
   }
 

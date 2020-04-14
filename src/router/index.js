@@ -206,6 +206,12 @@ export const constantRouterMap = [
         component: () => import("@/views/system/backup.vue"),
         name: "backup",
         meta: { title: "数据备份",permission:"copy:system" ,image:require('@/assets/img/sysback.png')}
+      },
+      {
+        path: "picture",
+        component: () => import("@/views/system/picture.vue"),
+        name: "picture",
+        meta: { title: "图片管理",permission:"picture:system" ,image:require('@/assets/img/pictureIcon.png')}
       }
     ]
   }

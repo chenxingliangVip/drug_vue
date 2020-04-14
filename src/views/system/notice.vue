@@ -97,6 +97,7 @@ export default {
         method: "post",
         params:self.searchParam
       }).then(resp => {
+      	self.$eventBus.$emit("updateTxtNum");
         if (resp.success) {
           self.tableLoading = false;
           self.tableData = resp.result;
