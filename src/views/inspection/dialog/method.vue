@@ -3,12 +3,15 @@
              append-to-body
              :close-on-click-modal="false"
              width="40%"
-             title="新增·检验方法">
+             :title="titleTxt + '·检验方法'">
     <el-form ref="dataForm"
              label-position="left"
              size="mini"
              label-width="0px">
-      <div class="dialog-title"><span>新增检验方法</span></div>
+      <div class="dialog-title">
+      	<span v-if="type == 'xd' || type == 'edit'" style="color: #cb0000 !important"><i class="el-icon-edit"> {{titleTxt}}检验方法 </i></span>
+      	<span v-else style="color: #2e827f !important">{{titleTxt}}检验方法</span>
+      </div>
       <el-divider></el-divider>
       <el-row>
         <el-col :span="12">
@@ -233,6 +236,7 @@
     components: {quillEditor},
     data() {
       return {
+         titleTxt: '',
         methodData: {
           id: "",
           itemName:"",
@@ -245,7 +249,7 @@
           testRecord: "",
           methodDesc: "",
           methodJudge: "",
-          remark: ""
+          remark: "",
         },
         formNo:"提交生成",
         isCheckSelect:false,
@@ -276,6 +280,7 @@
       this.getCodeAttrList();
       this.getCodeItemList();
       this.getVersionList();
+      
     },
     methods: {
       checkStatus() {
@@ -430,7 +435,16 @@
         if(this.type =='edit'){
           this.getApplyReason();
         }
-      }
+    		if(this.type =='xd'){
+	      	this.titleTxt = "修订"
+	      }else if(this.type == 'edit'){
+	      	this.titleTxt = "修改"
+	      }else if(this.type == 'add'){
+	      	this.titleTxt = "新增"
+	      }else if(this.type == 'see'){
+	      	this.titleTxt = "查看"
+	      }
+      },
     }
   }
 </script>

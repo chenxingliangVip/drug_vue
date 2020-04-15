@@ -7,7 +7,10 @@
     <el-form ref="dataForm"
              label-position="left"
              size="mini">
-      <div class="dialog-title"><span>{{type == 'add'?'新增存样':'修改存样'}}</span></div>
+      <div class="dialog-title">
+      	<span v-if="type == 'add'" style="color: #2e827f !important">{{type == 'add'?'新增存样':'修改存样'}}</span>
+      	<span v-else style="color: #cb0000 !important"><i class="el-icon-edit"> {{type == 'add'?'新增存样':'修改存样'}} </i></span>
+      </div>
       <el-divider></el-divider>
       <div class="el-dialog-item"><label class="w3"
                                          style="margin-right:-0.5em">检验号</label><label>：</label>

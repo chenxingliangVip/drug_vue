@@ -33,27 +33,6 @@
         width: 60px;
     }
 }
-.uploadLogo {
-    .el-upload-list {
-        display: none;
-        width: 100%;
-        li {
-            float: left;
-            width: 30%;
-            margin-right: 10px;
-        }
-    }
-    .el-upload-list__item.is-success .el-upload-list__item-status-label {
-        display: none;
-    }
-    .el-upload-list--picture .el-upload-list__item {
-        padding: 5px 10px 10px 90px;
-        height: 80px;
-    }
-    .el-upload-list--picture .el-upload-list__item.is-success .el-upload-list__item-name {
-        line-height: 40px;
-    }
-}
 .status-col {
     .cell {
         padding: 0 10px;
@@ -369,9 +348,7 @@
     text-align: center;
     font-size: 18px;
     color: #2e827f;
-    span {
-        color: #2e827f !important;
-    }
+    
 }
 
 .w2 {
