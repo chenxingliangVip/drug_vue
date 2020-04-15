@@ -3,8 +3,8 @@
              :close-on-click-modal="clickModalHide"
              :before-close="closeDialog"
              :visible.sync="centerDialogVisible"
-             :title="type == 'add'?'编辑·角色权限管理':'新增·角色权限管理'">
-    <div class="dialog-title"><span style='color:#000'>角色权限管理编辑</span></div>
+             :title="type == 'add'?'新增·角色权限管理':'编辑·角色权限管理'">
+    <div class="dialog-title"><span style='color:#000'>角色权限管理{{titleTxt}}</span></div>
     <el-divider></el-divider>
     <div class="el-dialog-item"
          style="margin-left:20px;"><label>角色名称</label><label>：</label>
@@ -90,6 +90,7 @@
         centerDialogVisible: false,
         clickModalHide: false,
         count:0,
+        titleTxt: ''
       }
     },
     mounted(){
@@ -239,6 +240,11 @@
         }
         this.centerDialogVisible = true;
         this.count = 0;
+        if(this.type == "add"){
+        	this.titleTxt = "新增"
+        }else if(this.type == "edit"){
+        	this.titleTxt = "编辑"
+        }
       }
     }
   }

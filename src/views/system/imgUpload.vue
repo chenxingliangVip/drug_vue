@@ -5,7 +5,7 @@
 				<i class="el-icon-plus" v-show="!item.url"></i>
 				<img class="content" :src="item.url" v-show="item.url">
 
-				<input type="file" accept="image/*" @change="imgChange($event,index)">
+				<input type="file" accept="image/*" @change="imgChange($event,index)" multiple>
 				<i class="el-icon-delete" v-show="item.url" @click.stop="deleteImg(index)"></i>
 			</div>
 			<div class="name" :title="item.name" v-if="item.name" @click="checkFun(index)">
@@ -57,7 +57,7 @@
 					reader.readAsDataURL(file);
 					reader.onload = (eve) => {
 						if((this.pageImgs.length < this.limit * 1) && !this.pageImgs[index].url) {
-							this.pageImgs.unshift({
+							this.pageImgs.push({
 								file: e.target.files[0],
 								url: eve.target.result,
 								name: file.name,
@@ -145,7 +145,7 @@
 				padding: 5px;
 				cursor: pointer;
 				z-index: 2;
-				background: rgba(0, 0, 0, 0.6);
+				background: #8e8888b8;
 				color: #ffffff;
 			}
 			input {

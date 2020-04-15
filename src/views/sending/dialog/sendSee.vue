@@ -3,7 +3,9 @@
              append-to-body
              width="40%"
              title="查看·样检">
-    <div class="el-form-no">{{detailData.sampleCode}}</div>
+    <div class="el-form-no">
+    	<img class="NoImg" src="../../../assets/img/noNum.png" />{{detailData.sampleCode}}
+    </div>
     <div class="dialog-title"><span style='color:#000'>检样结果速览</span></div>
     <el-divider></el-divider>
     <el-row>
@@ -270,5 +272,7 @@
     border-radius: 3px;
     padding: 5px 10px;
   }
-
+	.NoImg {
+  	width: 30px
+  }
 </style>

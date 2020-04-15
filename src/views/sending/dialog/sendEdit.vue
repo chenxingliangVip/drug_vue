@@ -29,7 +29,8 @@
         <el-col :span="12">
           <div class="el-form-right">
             <el-form-item label-width="0px">
-              <div class="el-form-no" style="color:#cb0000;font-size: 18px">NO.{{detailData.sampleCode}}</div>
+              <div class="el-form-no" style="color:#cb0000;font-size: 18px">
+              	<img class="NoImg" src="../../../assets/img/noNum.png" />{{detailData.sampleCode}}</div>
             </el-form-item>
             <el-form-item label="是否存样：" v-show="type == 'add'"
                           class="el-form-check">
@@ -518,5 +519,8 @@
   	.el-input,.el-select {
   		width: 180px !important
   	}
+  }
+  .NoImg {
+  	width: 30px
   }
 </style>
