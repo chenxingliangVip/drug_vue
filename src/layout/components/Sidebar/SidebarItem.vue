@@ -10,7 +10,7 @@
           <img :src="onlyOneChild.meta.image" style="width: 17px;margin-right: 4px;margin-left: 15px">
           <span  slot="title">{{onlyOneChild.meta.title}}</span>
 					<span class="txt_Num" v-if="onlyOneChild.meta.title  == '信息'">{{txtNum}}</span>
-          <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #fff;">?</i></span>
+          <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #fff;">{{txtNum}}</i></span>
         </el-menu-item>
       </app-link>
     </template>
@@ -70,7 +70,7 @@ export default {
     this.onlyOneChild = null
     return {
     	txtNum: 0,
-    	InfoQuestion: false,
+    	InfoQuestion: true,
     }
   },
   methods: {
@@ -106,56 +106,13 @@ export default {
       }
       return path.resolve(this.basePath, routePath)
     },
-    fetchData() {
-      let self = this;
-      let user = JSON.parse(getToken());
-      self.$http({
-        url: "/drug/notice/queryNoticeList",
-        method: "post",
-        params: {userId:user.id,status:"1"}
-      }).then(resp => {
-        if (resp.success) {
-          self.txtNum = resp.result.length;
-        }
-      });
-    },
-    getList() {
-      let self = this;
-      self.$http({
-        url: "/drug/standard/queryMaterialStandardList",
-        method: "post",
-        params: {
-        	id: '',
-        	userName: '',
-        	materialCode:'',
-        	startTime: '',
-        	endTime:'',
-        	materialGradeId: '',
-        	materialTypeId:'',
-        	finalProd: '',
-        	status: '',
-        }
-      }).then(resp => {
-        if (resp.success) {
-			    for(let data of resp.result){
-				     if(data.checkStatusCn == '审核中' || data.checkStatusCn == '驳回'){
-				      	self.InfoQuestion = true
-				      }
-				  }
-        }
-      });
-    },
+
   },
   mounted() {
     let self = this;
-    self.fetchData();
-    self.getList();
-    self.$eventBus.$on("updateTxtNum",function () {
-      self.fetchData();
-    });
-    self.$eventBus.$on("updateCheck",function () {
-      self.getList();
-    });
+    self.$eventBus.$on("updateNoticeCount",function (count) {
+      self.txtNum = count;
+    })
   },
 }
 </script>
