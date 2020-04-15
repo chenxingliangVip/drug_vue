@@ -4,7 +4,7 @@
              width="40%"
              :close-on-click-modal="false"
              title="检样领检">
-    <div class="dialog-title"><span style='color:#cb0000'><i class="el-icon-edit"></i> 检样领检</span></div>
+    <div class="dialog-title"><span style='color:#cb0000'><i class="el-icon-paperclip"></i> 检样领检</span></div>
     <el-divider></el-divider>
     <el-row>
       <el-col :span="12">
