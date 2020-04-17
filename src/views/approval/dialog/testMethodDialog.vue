@@ -171,7 +171,7 @@
         let self = this;
         let param = {
           userName:self.user.userName,
-          userId:self.user.userId,
+          userId:self.user.id,
           content:self.detailData.content,
           id:self.detailData.fId,
           relateId:self.detailData.id,

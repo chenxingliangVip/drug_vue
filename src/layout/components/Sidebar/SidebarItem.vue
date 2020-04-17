@@ -10,7 +10,7 @@
           <img :src="onlyOneChild.meta.image" style="width: 17px;margin-right: 4px;margin-left: 15px">
           <span  slot="title">{{onlyOneChild.meta.title}}</span>
 					<span class="txt_Num" v-if="onlyOneChild.meta.title  == '信息'">{{txtNum}}</span>
-          <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #fff;">{{txtNum}}</i></span>
+          <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #cec813;">new!</i></span>
         </el-menu-item>
       </app-link>
     </template>
@@ -112,6 +112,9 @@ export default {
     let self = this;
     self.$eventBus.$on("updateNoticeCount",function (count) {
       self.txtNum = count;
+    });
+    self.$eventBus.$on("updateStandard",function (count) {
+      self.InfoQuestion = (count > 0);
     })
   },
 }
@@ -133,16 +136,16 @@ export default {
     left: 46%;
 	}
 	.txt_Icon {
-    background-color: #F56C6C;
+    /*background-color: #F56C6C;*/
     border-radius: 10px;
     color: #FFF;
     display: inline-block;
-    font-size: 14px;
+    font-size: 10px;
     height: 18px;
-    line-height: 18px;
+    line-height: 16px;
     width: 18px;
     text-align: center;
-    padding-right: 1px;
+    padding-right: 3px;
     white-space: nowrap;
     position: absolute;
     top: 9px;

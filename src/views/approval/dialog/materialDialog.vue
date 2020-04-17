@@ -229,9 +229,17 @@ export default {
         },
         submitCheck(checkStatus) {
             let self = this;
+            if(checkStatus =='5' &&!self.detailData.standardMan){
+              self.$notify({
+                title: "提示",
+                message: "请选择质量标准人",
+                type: "warning"
+              });
+              return;
+            }
             let param = {
                 userName: self.user.userName,
-                userId: self.user.userId,
+                userId: self.user.id,
                 content: self.detailData.content,
                 id: self.detailData.fId,
                 relateId: self.detailData.id,

@@ -99,7 +99,7 @@
           <el-form label-position="left"
                    label-width="66px"
                    size="mini">
-            <el-form-item label="审批意见:" v-show="type != 'add'">
+            <el-form-item label="审批意见:" v-show="type != 'add' &&type != 'dz'">
               {{applyReason}}
             </el-form-item>
           </el-form>
@@ -358,10 +358,10 @@
         self.methodData.userName = self.$store.getters.userName;
         self.methodData.moduleType = self.type == 'add'?"新增质量标准":"修订质量标准";
         self.setParam();
-        if(self.type == 'edit'||(self.type == 'approve')){
+        if(self.type == 'edit'||(self.type == 'approve') ||self.type == 'dz' ){
           self.methodData.checkStatus = '0';
         }
-        let url = this.type == 'edit' ? "/drug/standard/updateMaterialStandard" : "/drug/standard/addMaterialStandard";
+        let url = (this.type == 'edit'||this.type=='dz') ? "/drug/standard/updateMaterialStandard" : "/drug/standard/addMaterialStandard";
         if (this.count == 0) {
           self.$http({
             url: url,
@@ -517,17 +517,19 @@
         this.methodData = val;
         this.standardItemList = [];
         this.standardHistoryItemList = [];
-        if(this.type !='add'){
+        if(this.type !='add' && this.type !='dz'){
           this.getApplyReason();
         }
         if (this.type == 'edit') {
           this.title = "修订质量标准";
         }
-        if (this.type == 'add') {
+        if (this.type == 'add' || this.type == 'dz') {
           this.methodData.userId = this.user.id;
           this.methodData.userName = this.user.userName;
-          this.getMaterialStandardCount();
-          this.title = "新增质量标准";
+          if(this.type == 'add'){
+            this.getMaterialStandardCount();
+          }
+          this.title = this.type == 'add'?"新增质量标准":"修改质量标准";
           this.standardLoading = true;
           this.standTableHeader = [
             {"columnName": "itemName", "coloumNameCn": "检测项目","columnNameRe": "itemId"},

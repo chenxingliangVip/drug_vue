@@ -116,16 +116,20 @@
                 :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
       <template slot-scope="props" slot="operate">
         <div>
-          <label @click="lookDetail(props.rowData,'see')" v-if="hasRole('standard:check:see')"
+          <label v-show="props.rowData.checkStatus=='4'" @click="addMaterialStandard(props.rowData,'dz')" v-if="hasRole('standard:check:add')"
+                 class="table-view">
+            修改
+          </label>
+          <label v-show="props.rowData.checkStatus!='4'" @click="lookDetail(props.rowData,'see')" v-if="hasRole('standard:check:see')"
                  class="table-view">
             查看
           </label>
-          <span v-show="props.rowData.checkStatus!='0'">·</span>
+          <span v-show="props.rowData.checkStatus!='0' && props.rowData.checkStatus!='4'">·</span>
           <label @click="lookDetail(props.rowData,'edit')" v-if="hasRole('standard:check:edit')"
-                 class="table-view" v-show="props.rowData.checkStatus=='1'">
+                 class="table-view" v-show="props.rowData.checkStatus=='1' && props.rowData.checkStatus!='4'">
             编辑
           </label>
-          <label  v-show="props.rowData.checkStatus=='2'" @click="lookDetail(props.rowData,'approve')" v-if="hasRole('standard:check:imporve')"
+          <label  v-show="props.rowData.checkStatus=='2'&&props.rowData.checkStatus!='4'" @click="lookDetail(props.rowData,'approve')" v-if="hasRole('standard:check:imporve')"
                  class="table-view">
             修订
           </label>
@@ -140,7 +144,7 @@
 import waves from '@/views/directive/waves' // waves directive
 import drugTable from "@/components/table/index";
 import standard from "./dialog/standard"
-
+import {getToken} from '@/utils/auth' // 验权
 
 export default {
   name: '检验方法',
@@ -163,6 +167,7 @@ export default {
         materialTypeId: "",
         finalProd: "",
         status:"",
+        userId:""
       },
       detailData: {},
       operateType: "add",
@@ -213,6 +218,10 @@ export default {
     },
     getList() {
       let self = this;
+      let user = JSON.parse(getToken());
+      if(user.type !='1'){
+        this.searchParam.userId = user.id;
+      }
       self.tableLoading = true;
       let searchParam = Object.assign({}, this.searchParam);
       if (searchParam.endTime) {
@@ -247,7 +256,7 @@ export default {
       this.operateType = type;
     },
 
-    addMaterialStandard(){
+    addMaterialStandard(row,type){
       this.detailData = {
         id: "",
         createTime:new Date(),
@@ -262,7 +271,10 @@ export default {
         materialUserName:"",
         materialDateFt:""
       };
-      this.operateType = "add";
+      if(row){
+        this.detailData = Object.assign({},row);
+      }
+      this.operateType = type?type:"add";
     },
     handleEditData(rowData) {
       this.detailData = Object.assign({}, rowData);

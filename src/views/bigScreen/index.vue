@@ -453,7 +453,7 @@
 			this.getWorkHour();
 			this.getMothRate();
 			this.getdateFormat();
-			// this.setFullScreen();
+			this.setFullScreen();
 			setInterval(() => {
 				this.getdateFormat();
 			}, 1000)

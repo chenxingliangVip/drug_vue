@@ -199,7 +199,7 @@
 
       submitCheck(checkStatus) {
         let self = this;
-        let param = {userName:self.user.userName,userId:self.user.userId,sampleCode:self.detailData.sampleCode,id:self.detailData.fId,result:self.detailData.result,content:self.detailData.content,checkStatus:checkStatus};
+        let param = {userName:self.user.userName,userId:self.user.id,sampleCode:self.detailData.sampleCode,id:self.detailData.fId,result:self.detailData.result,content:self.detailData.content,checkStatus:checkStatus};
         if (this.count == 0) {
           self.$http({
             url: "/drug/fmApprove/updateSampleFmApprove",
