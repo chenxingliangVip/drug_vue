@@ -57,10 +57,10 @@
               class="svg-icon" style="cursor: pointer;width: 15px;height: 15px">
         <span style="cursor: pointer;margin-left: 5px;font-size: 12px" @click="downExcel">数据下载</span>
 
-        <img  v-if="hasRole('piancha:effiect:print')"
-              src="../../../assets/img/print.png"
-              class="svg-icon" style="cursor: pointer;margin-left: 20px;width: 15px;height: 15px">
-        <span style="cursor: pointer;margin-left: 5px;font-size: 12px">打印</span>
+        <!--<img  v-if="hasRole('piancha:effiect:print')"-->
+              <!--src="../../../assets/img/print.png"-->
+              <!--class="svg-icon" style="cursor: pointer;margin-left: 20px;width: 15px;height: 15px">-->
+        <!--<span style="cursor: pointer;margin-left: 5px;font-size: 12px">打印</span>-->
       </div>
     </div>
     <form action="/drug/file/exportExcelData" method="post"

@@ -118,6 +118,9 @@ export default {
     },
     handleFilter(){
       let self = this;
+      if(self.searchParam.name){
+        self.searchParam.name = self.searchParam.name.trim();
+      }
       if(self.activeName == 'sample'){
         self.$eventBus.$emit("updateSampleApprove",self.searchParam);
       }else if(self.activeName == 'material'){

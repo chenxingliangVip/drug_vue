@@ -11,7 +11,7 @@
              label-width="0px">
       <div class="dialog-title"><span>新增部门</span></div>
       <el-divider></el-divider>
-      <div class="el-dialog-item el-dialog-input" style="margin-top:40px;">
+      <div class="el-dialog-item el-dialog-input" style="margin-top:10px;">
         <el-checkbox v-model="firstChecked"></el-checkbox>
         <label style=" margin-left: 10px;">一级：</label>
         <el-input clearable  size="mini" :disabled="!firstChecked" v-model="firstValue" v-show="!secondChecked"
@@ -51,6 +51,21 @@
           style="width: 140px"/>
       </div>
 
+      <div class="el-dialog-item  el-dialog-input" style="margin-top: 30px">
+        <label ><span>部门类型 ：</span></label>
+        <template>
+          <el-radio v-model="deptDetail.deptType" label="1">送样部门</el-radio>
+          <el-radio v-model="deptDetail.deptType" label="2">送检部门</el-radio>
+        </template>
+      </div>
+
+      <div class="el-dialog-item  el-dialog-input">
+        <label ><span>所属科室 ：</span></label>
+        <template>
+          <el-checkbox v-model="deptDetail.office">是</el-checkbox>
+        </template>
+      </div>
+
     </el-form>
     <div slot="footer"
          class="dialog-footer">
@@ -72,7 +87,7 @@
         centerDialogVisible: false,
         clickModalHide: false,
         count: 0,
-        deptDetail: {id:"",deptName:"",deptLevel:"",pId:"",createUser:""},
+        deptDetail: {id:"",deptName:"",deptLevel:"",pId:"",createUser:"",office:false,deptType:"1"},
         firstChecked: false,
         secondChecked: false,
         thirdChecked: false,
@@ -139,6 +154,7 @@
           this.deptDetail.deptLevel = "3";
           this.deptDetail.pId = this.secondValue;
         }
+        self.deptDetail.office = self.deptDetail.office?"1":"0";
         if (this.count == 0) {
           self.$http({
             url: "/drug/dept/addDeptDetail",
@@ -173,7 +189,7 @@
       },
       editData(val) {
         let user = JSON.parse(getToken());
-        this.deptDetail = {id:"",deptName:"",deptLevel:"",pId:"",createUser:""};
+        this.deptDetail = {id:"",deptName:"",deptLevel:"",pId:"",createUser:"",office:false,deptType:"1"};
         this.deptDetail.createUser = user.id;
         this.count = 0;
         this.centerDialogVisible = true;

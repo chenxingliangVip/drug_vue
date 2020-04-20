@@ -124,7 +124,7 @@ export default {
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "userName", "coloumNameCn": "存样人"},
             {"columnName": "createTimeFt", "coloumNameCn": "存样时间"},
-            {"columnName": "materialName", "coloumNameCn": "检品名称"},];
+            {"columnName": "materialName", "coloumNameCn": "样品名称"},];
           self.option.showOperate = true;
         }
       });

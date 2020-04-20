@@ -55,7 +55,7 @@
       </div>
       <div>
         <div class="filter-item">
-          <span>样品编码:</span>
+          <span>物料编码:</span>
           <el-input clearable  v-model="searchParam.materialCode"
                     size="mini"
                     style="width: 100px;"
@@ -267,11 +267,11 @@ export default {
       let param ={
         id:row.id,
         sampleCode:row.sampleCode,
-        title:"检验报告",
+        title:"威尔研究院测试中心检验报告",
         printPerson:"打印人："+this.user.userName +" "+day,
         graphWordList:[
           {
-            title:"No.1 检样信息",
+            title:"检样信息",
             colIndex:5,
             cellList:[],
             splitRow:[]
@@ -378,10 +378,10 @@ export default {
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
             {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "sampleTypeName", "coloumNameCn": "样品规模"},
-            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "locationName", "coloumNameCn": "送样地点"},
             {"columnName": "checkStatusCn", "coloumNameCn": "流程状态"}];
           self.option.showOperate = true;
@@ -411,7 +411,7 @@ export default {
       this.operateType = "add";
       this.$eventBus.$emit("openSendEdit",this.detailData,this.operateType,this.codeItemMap);
     },
-		
+
     batchDelete(){
       let param = {ids:[],sampleCode:""};
       let sampleCodes = [];

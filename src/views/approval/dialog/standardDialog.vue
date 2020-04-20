@@ -11,7 +11,8 @@
                  size="mini"
                  label-width="0px">
           <div class="dialog-title"><span style='color:#cb0000'>质量标准修订·审批</span>
-            <img src="../../../assets/img/disapprove.jpg" v-if="detailData.checkStatus == '2'" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
+            <img src="../../../assets/img/bohui.png" v-if="detailData.checkStatus == '4'" style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
+            <img src="../../../assets/img/disapprove.jpg" v-else-if="detailData.checkStatus == '2'" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
             <img v-else src="../../../assets/img/approve.jpg" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
           </div>
           <el-divider></el-divider>

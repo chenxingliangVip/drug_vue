@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="tab-container">
+    <div class="tab-container" @click="inputJJ">
       <el-tabs style="margin-top:5px;"  @tab-click="handleClick"
                type="border-card">
         <el-tab-pane label="myTask" >
@@ -62,7 +62,7 @@
                   <span class="svg-container">
                     <img src="../../assets/img/code.png" style="width: 17px">
                   </span>
-                  <el-input clearable  placeholder="扫码输入检验单号"
+                  <el-input clearable  placeholder="扫码输入检验单号" id="sampleCodeJJ"
                             style="width: 160px" autofocus v-model="sampleCode"
                             size="mini" />
                 </div>
@@ -79,7 +79,7 @@
             待领任务
             <el-badge :value="takeTask.backCount" />
           </span>
-          <drug-table  @getBackData="getTakeTaskList"  :backCount="takeTask.backCount" :tableData="takeTask.tableData" :tableLoading="takeTask.tableLoading" :tableHeader="takeTask.tableHeader" :option="takeTask.option">
+          <drug-table    :tableData="takeTask.tableData" :tableLoading="takeTask.tableLoading" :tableHeader="takeTask.tableHeader" :option="takeTask.option">
             <template slot-scope="props" slot="operate">
               <div v-if="hasRole('sample:check:add')">
                 <el-button
@@ -104,6 +104,7 @@ import { parseTime } from '@/utils'
 import drugTable from "@/components/table/index";
 import takeTask from "./dialog/takeTask"
 import myTask from "./dialog/myTask"
+import {getToken} from '@/utils/auth' // 验权
 
 export default {
   name: '检效管理',
@@ -151,6 +152,7 @@ export default {
     self.getMyTaskList();
     self.getTakeTaskList();
     self.getSearchSampleTask();
+    self.inputJJ();
     self.$eventBus.$on("updateDetectionList",function () {
       for(let key in self.searchParam){
         self.searchParam[key] = '';
@@ -158,9 +160,16 @@ export default {
       self.getMyTaskList();
       self.getTakeTaskList();
       self.getSearchSampleTask();
+    });
+    self.$eventBus.$on("autoInputJJ",function () {
+      self.inputJJ();
     })
   },
   methods: {
+    inputJJ(){
+      let input=document.getElementById('sampleCodeJJ');
+      input.focus();
+    },
     handleClick(tab, event){
       this.tab = tab.label;
     },
@@ -267,13 +276,15 @@ export default {
       if(searchParam.endTime){
         searchParam.endTime = searchParam.endTime+" 23:59:59";
       }
-      let start = typeof startIndex =="number"?startIndex:0;
-      let total = typeof pageRow == "number"?pageRow:15;
-      searchParam.startIndex = start;
-      searchParam.totalPage = total;
+      // let start = typeof startIndex =="number"?startIndex:0;
+      // let total = typeof pageRow == "number"?pageRow:15;
+      // searchParam.startIndex = start;
+      // searchParam.totalPage = total;
+      let user = JSON.parse(getToken());
+      searchParam.deptId = user.deptId;
       delete searchParam.userId;
       self.$http({
-        url: "/drug/sampleItem/querySampleItemList",
+        url: "/drug/sampleItem/queryTakeSampleItemList",
         method: "post",
         params:searchParam
       }).then(resp => {

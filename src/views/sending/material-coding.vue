@@ -3,11 +3,23 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
+          <!--<span>物料名称:</span>-->
+          <!--<el-input clearable  v-model="searchParam.materialName"-->
+                    <!--size="mini"-->
+                    <!--style="width: 100px;"-->
+                    <!--@keyup.enter.native="getList"/>-->
           <span>物料名称:</span>
-          <el-input clearable  v-model="searchParam.materialName"
-                    size="mini"
-                    style="width: 100px;"
-                    @keyup.enter.native="getList"/>
+          <el-select v-model="searchParam.materialName"
+                     size="mini"
+                     clearable
+                     filterable
+                     style="width: 100px">
+            <el-option v-for="item in tableData"
+                       :key="item.id"
+                       :label="item.materialName"
+                       :value="item.materialName"/>
+          </el-select>
+
         </div>
         <div class="filter-item">
           <span>物料编码:</span>
@@ -43,8 +55,8 @@
                       @keyup.enter.native="getList"/>
           </div>
           <div class="filter-item">
-            <span style="letter-spacing:0.5em;margin-right:-0.5em;">终产品</span><span>:</span>
-            <el-input clearable  v-model="searchParam.finalProd"
+            <span >参考物料:</span>
+            <el-input clearable  v-model="searchParam.refItem"
                       size="mini"
                       style="width: 100px;"
                       @keyup.enter.native="getList"/>
@@ -63,7 +75,7 @@
             </el-select>
           </div>
           <div class="filter-item"
-               style="margin-left:33px;">
+               style="margin-left:13px;">
             <span class="w2"
                   style="margin-right:-2em">等级</span><span>:</span>
             <el-select v-model="searchParam.materialGradeId"
@@ -141,7 +153,7 @@
           startTime: "",
           endTime: "",
           userName: "",
-          finalProd: "",
+          refItem: "",
           materialGradeId: "",
           materialTypeId: "",
           materialName: "",
@@ -189,7 +201,7 @@
               {"columnName": "materialGradeName", "coloumNameCn": "等级"},
               {"columnName": "checkMaterialStatusCn", "coloumNameCn": "状态", "width": "60px"},
               {"columnName": "nameAbbr", "coloumNameCn": "英文简称"},
-              {"columnName": "materialDescr", "coloumNameCn": "产品描述"},
+              {"columnName": "refItem", "coloumNameCn": "参考物料"},
               {"columnName": "finalProd", "coloumNameCn": "终产品"},
               {"columnName": "remark", "coloumNameCn": "说明"}];
             self.option.showOperate = true;

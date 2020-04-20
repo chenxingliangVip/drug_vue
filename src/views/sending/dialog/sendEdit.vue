@@ -49,19 +49,19 @@
         </el-radio-group>
       </el-form-item>
 
-      <el-form-item label="终 产 品：">
+      <!--<el-form-item label="终 产 品：">-->
 
-        <el-select v-model="detailData.finalProduct"  :disabled="finalProductEdit" @change="finalChange"
-                   size="mini"
-                   filterable
-                   clearable
-                   style="width: 100px">
-          <el-option v-for="item in finalProds"
-                     :key="item.id"
-                     :label="item.finalProd"
-                     :value="item.finalProd" />
-        </el-select>
-      </el-form-item>
+        <!--<el-select v-model="detailData.finalProduct"  :disabled="finalProductEdit" @change="finalChange"-->
+                   <!--size="mini"-->
+                   <!--filterable-->
+                   <!--clearable-->
+                   <!--style="width: 100px">-->
+          <!--<el-option v-for="item in finalProds"-->
+                     <!--:key="item.id"-->
+                     <!--:label="item.finalProd"-->
+                     <!--:value="item.finalProd" />-->
+        <!--</el-select>-->
+      <!--</el-form-item>-->
 
       <el-form-item label="样品规格：">
         <el-select v-model="detailData.materialTypeId" @change="typeChange"

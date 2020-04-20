@@ -45,10 +45,20 @@
           </div>
           <div class="filter-item">
             <span>方法名称:</span>
-            <el-input clearable  v-model="searchParam.methodName"
-                      size="mini"
-                      style="width: 100px;"
-                      @keyup.enter.native="getList" />
+            <!--<el-input clearable  v-model="searchParam.methodName"-->
+                      <!--size="mini"-->
+                      <!--style="width: 100px;"-->
+                      <!--@keyup.enter.native="getList" />-->
+            <el-select v-model="searchParam.methodName"
+                       size="mini"
+                       clearable
+                       filterable
+                       style="width: 100px">
+              <el-option v-for="item in tableData"
+                         :key="item.id"
+                         :label="item.methodName"
+                         :value="item.methodName" />
+            </el-select>
           </div>
           <div class="filter-item">
             <span>流程状态:</span>

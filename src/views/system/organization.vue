@@ -10,6 +10,14 @@
                  @click="handleCreate">
         新增
       </el-button>
+      <el-button class="filter-btn-item" v-if="hasRole('org:system:add')"
+                 size="mini"
+                 style="margin-left: 10px;width: 80px;"
+                 type="success"
+                 icon="el-icon-edit-outline"
+                 @click="handleEdit">
+        编辑
+      </el-button>
 
       <el-button class="filter-btn-item" v-if="hasRole('org:system:delete')"
                  size="mini"
@@ -33,6 +41,7 @@
                    :default-expanded-keys="['4fa2f931-b307-40d5-83fb-81a199f8c621']"
                    node-key="id"
                    ref="tree"
+                   check-strictly
                    :props="defaultProps"
                    highlight-current>
           </el-tree>
@@ -41,10 +50,12 @@
       </div>
     </div>
     <organize-edit :editData="editData" :deptList="deptList"></organize-edit>
+    <organize-add ></organize-add>
   </div>
 </template>
 <script>
 import organizeEdit from './organizeEdit';
+import organizeAdd from './organizeAdd';
 export default {
   name: '组织管理',
   data() {
@@ -57,7 +68,7 @@ export default {
       editData:{}
     }
   },
-  components:{organizeEdit},
+  components:{organizeEdit,organizeAdd},
   mounted(){
     let self = this;
     self.getList();
@@ -79,6 +90,21 @@ export default {
           }
         }
       });
+    },
+
+    handleEdit(){
+      let self = this;
+      let checkNodes = self.$refs.tree.getCheckedNodes();
+      if(!checkNodes || checkNodes.length != 1){
+        self.$notify({
+          title: '提示',
+          message: "选择一个节点！",
+          type: 'warning'
+        });
+        return
+      }
+      self.$eventBus.$emit("openOrganizeAdd",checkNodes[0]);
+
     },
 
     handleDelete() {

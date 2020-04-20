@@ -11,7 +11,7 @@
         </div>
         <div class="filter-item">
           <span>审核状态:</span>
-          <el-select v-model="searchParam.status"
+          <el-select v-model="searchParam.checkStatus"
                      size="mini"
                      clearable
                      style="width: 90px">
@@ -75,9 +75,8 @@
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span style="letter-spacing:0.5em;margin-right:-0.5em;">终产品</span>
-          <span>:</span>
-          <el-input clearable  v-model="searchParam.finalProd"
+          <span >物料名称:</span>
+          <el-input clearable  v-model="searchParam.materialName"
                     size="mini"
                     style="width: 90px;"
                     @keyup.enter.native="getList" />
@@ -104,12 +103,12 @@
                    type="info"
                    icon="el-icon-delete"
                    @click="batchDelete">删除</el-button>
-        <el-button class="filter-btn-item" v-if="hasRole('standard:check:add')"
-                   size="mini"
-                   style="margin-left: 5px;width: 70px;"
-                   type="primary"
-                   icon="el-icon-edit"
-                   @click="addMaterialStandard">新增</el-button>
+        <!--<el-button class="filter-btn-item" v-if="hasRole('standard:check:add')"-->
+                   <!--size="mini"-->
+                   <!--style="margin-left: 5px;width: 70px;"-->
+                   <!--type="primary"-->
+                   <!--icon="el-icon-edit"-->
+                   <!--@click="addMaterialStandard">新增</el-button>-->
       </div>
     </div>
     <drug-table @getSelection="getSelection" :isMultipleSelection="true" :tableData="tableData"
@@ -165,8 +164,9 @@ export default {
         endTime: "",
         materialGradeId: "",
         materialTypeId: "",
+        materialName: "",
         finalProd: "",
-        status:"",
+        checkStatus:"",
         userId:""
       },
       detailData: {},

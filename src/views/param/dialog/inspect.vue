@@ -19,7 +19,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item"><label>检验规则：</label>
-            <el-select v-model="inspectData.typeId"
+            <el-select v-model="inspectData.typeId" @change="typeChange"
                        size="mini"
                        clearable
                        style="width: 100px">
@@ -32,9 +32,19 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item"><label>规 则 值：</label>
-            <el-input clearable  v-model="inspectData.checkValue"
+            <el-input clearable  v-model="inspectData.checkValue" v-show="chooseValue != '样品名称'"
                       size="mini"
                       style="width: 100px;" />
+            <el-select v-model="inspectData.checkValue"  v-show="chooseValue == '样品名称'"
+                       size="mini"
+                       clearable
+                       filterable
+                       style="width: 100px">
+              <el-option v-for="item in materials"
+                         :key="item.id"
+                         :label="item.materialName"
+                         :value="item.materialName" />
+            </el-select>
           </div>
         </el-col>
       </el-row>
@@ -59,9 +69,17 @@
         </el-checkbox-group>
       </div>
       <div class="el-dialog-group"><label>送样部门：</label>
-        <el-checkbox-group v-model="inspectData.deptIds"
+        <el-checkbox-group v-model="inspectData.syDeptIds"
                            style="width:87%">
-          <el-checkbox v-for="item in dept"
+          <el-checkbox v-for="item in syDept"
+                       :label="item.id"
+                       :key="item.id">{{item.deptName}}</el-checkbox>
+        </el-checkbox-group>
+      </div>
+      <div class="el-dialog-group dialogcolumn" ><label style="margin-bottom: 5px">检测部门：</label>
+        <el-checkbox-group v-model="inspectData.jcDeptIds"
+                           style="width:100%; border: 1px solid #2e827f;padding: 2px 10px;border-radius: 5px;">
+          <el-checkbox v-for="item in jcDept"
                        :label="item.id"
                        :key="item.id">{{item.deptName}}</el-checkbox>
         </el-checkbox-group>
@@ -85,7 +103,7 @@
     data(){
       return{
         count:0,
-        inspectData:{locationId:"",attrId:"",typeId:"",checkValue:"",serialNo:"",deptIds:[]},
+        inspectData:{serialType:"1",locationId:"",attrId:"",typeId:"",checkValue:"",serialNo:"",syDeptIds:[],jcDeptIds:[]},
         dialogAddVisible: false,
         rules:[],
         location:[],
@@ -93,11 +111,43 @@
         regular:[],
         dept:[],
 
+        syDept:[],
+        jcDept:[],
+
         attrIds:[],
-        locationIds:[]
+        locationIds:[],
+
+        materials:[],
+
+        chooseValue:""
       }
     },
+    mounted(){
+      this.getMaterials();
+    },
     methods:{
+
+      typeChange(val){
+        this.inspectData.checkValue = "";
+        for(let data of this.regular){
+          if(data.id == val){
+            this.chooseValue = data.itemName;
+            break;
+          }
+        }
+      },
+
+      getMaterials() {
+        let self = this;
+        self.$http({
+          url: "/drug/material/queryAllMaterialsWithOperate",
+          method: "post",
+        }).then(resp => {
+          if (resp.success) {
+            self.materials = resp.result;
+          }
+        });
+      },
       handleCheckedLocationChange(value){
          for(let i = 0;i <this.locationIds.length;i++){
             if(this.locationIds[i] != value){
@@ -123,22 +173,32 @@
           });
           return false;
         }
-        if(!this.inspectData.typeId){
+        if((this.inspectData.serialNo+"").length !=4){
           this.$notify({
             title: '提示',
-            message: "规则不能为空！",
+            message: "规则序号长度为4！",
             type: 'warning'
           });
           return false;
         }
-        if(!this.inspectData.checkValue){
+        if(this.inspectData.serialType != (this.inspectData.serialNo+"").substring(0,1)){
           this.$notify({
             title: '提示',
-            message: "规则值不能为空！",
+            message: "规则序号以"+this.inspectData.serialType+"开头",
             type: 'warning'
           });
           return false;
         }
+
+        if(this.inspectData.jcDeptIds.length == 0){
+          this.$notify({
+            title: '提示',
+            message: "请选择检测部门！",
+            type: 'warning'
+          });
+          return false;
+        }
+
         return true;
       },
       updateRule(){
@@ -168,7 +228,7 @@
             }
             self.$notify({
               title: '提示',
-              message: "出现异常，请联系管理员",
+              message: "规则序号不能重复",
               type: 'error'
             });
             this.count--;
@@ -194,8 +254,12 @@
         this.method_attr = this.codeItemMap["method_attr"];
         this.regular = this.codeItemMap["regular"];
         this.dept = this.codeItemMap["dept"];
+        this.syDept = this.dept.filter(item => { return item.deptType == '1'});
+        this.jcDept = this.dept.filter(item => { return item.deptType == '2'});
         this.dialogAddVisible = true;
         this.inspectData = val;
+        this.inspectData.jcDeptIds = this.inspectData.jcDeptIds||[];
+        this.inspectData.syDeptIds = this.inspectData.syDeptIds||[];
       }
     }
   }
@@ -232,5 +296,8 @@
     color: #878989;
     font-size: 13px;
     margin-bottom: 10px;
+  }
+  .dialogcolumn {
+    flex-direction: column;
   }
 </style>

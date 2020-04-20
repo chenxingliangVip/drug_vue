@@ -2,6 +2,7 @@
   <el-dialog :visible.sync="dialogAddVisible"
              append-to-body
              width="40%"
+             @closed="emitAutoInput"
              :close-on-click-modal="false"
              title="检验结果录入">
     <div class="dialog-title"><span>检验结果录入</span></div>
@@ -144,6 +145,9 @@
       drugTable
     },
     methods:{
+      emitAutoInput(){
+        this.$eventBus.$emit("autoInputJJ");
+      },
       getSampleDetail(){
         let self = this;
         self.tableLoading = true;

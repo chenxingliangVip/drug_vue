@@ -1,6 +1,6 @@
 <template>
 
-  <div class='app-container'>
+  <div class='app-container' :style="backgroundStyle">
     <div class="login-container">
 
       <img src="@/assets/logo.png" class="app-login-logo" />
@@ -90,23 +90,36 @@ export default {
       },
       passwordType: 'password',
       capsTooltip: false,
+      backgroundStyle:{ backgroundImage: 'url(' + require('../../assets/img/bg_login.jpg') + ')',}
     }
   },
-  created() {
-    // window.addEventListener('storage', this.afterQRScan)
-  },
+
   mounted() {
     if (this.loginForm.username === '') {
       this.$refs.username.focus()
     } else if (this.loginForm.password === '') {
       this.$refs.password.focus()
     }
-  },
-  destroyed() {
-    // window.removeEventListener('storage', this.afterQRScan)
+    this.getLoginPicture();
   },
 
   methods: {
+
+    getLoginPicture() {
+      let self = this;
+      self.$http({
+        url: "/drug/images/queryImagesList",
+        method: "post",
+        params:{fileType:"0",fileCheck:"1"}
+      }).then(resp => {
+        if (resp.success) {
+          if(resp.result.length > 0){
+            self.backgroundStyle.backgroundImage = "url("+resp.result[0].fileBlob+")"
+          }
+        }
+      });
+    },
+
     checkCapslock(e) {
       const { key } = e
       this.capsTooltip = key && key.length === 1 && key >= 'A' && key <= 'Z'
@@ -201,50 +214,6 @@ export default {
     }
   }
 }
-
-// /* 修复input 背景不协调 和光标变色 */
-// /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
-
-// $bg: #283443;
-// $light_gray: #fff;
-// $cursor: #fff;
-
-// @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
-//   .login-container .el-input input {
-//     color: $cursor;
-//   }
-// }
-
-// .login-container {
-//   .el-input {
-//     display: inline-block;
-//     height: 47px;
-
-//     input {
-//       background: transparent;
-//       border: 0px;
-//       -webkit-appearance: none;
-//       border-radius: 0px;
-//       padding: 12px 5px 12px 15px;
-//       color: $light_gray;
-//       height: 47px;
-//       caret-color: $cursor;
-
-//       &:-webkit-autofill {
-//         box-shadow: 0 0 0px 1000px $bg inset !important;
-//         -webkit-text-fill-color: $cursor !important;
-//       }
-//     }
-//   }
-
-//   .el-form-item {
-//     border: 1px solid rgba(255, 255, 255, 0.1);
-//     background: rgba(0, 0, 0, 0.1);
-//     border-radius: 5px;
-//     color: #454545;
-//   }
-// }
-//
 </style>
 
 <style lang="scss" scoped>
@@ -254,24 +223,25 @@ export default {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    /*background: url('../../assets/img/bg_login.jpg') no-repeat center;
+    background:no-repeat center;
+    /*background: url('../../assets/img/bg_login.jpg') no-repeat center;*/
     background-size: cover;
-    background-position: 50% 50%;*/
-    &:before {
-    	content: '';
-    	position: absolute;
-    	background: url('../../assets/img/bg_login.jpg') no-repeat center;
-	    background-size: cover;
-	    background-position: 50% 50%;
-	    width: 100%;
-	    height: 100%;
-	    /*opacity: 0.8;*/
-	    -webkit-filter: blur(3px);
-	    -moz-filter: blur(3px);
-	    -o-filter: blur(3px);
-	    -ms-filter: blur(3px);
-	    filter: blur(3px);
-    }
+    background-position: 50% 50%;
+    /*&:before {*/
+    	/*content: '';*/
+    	/*position: absolute;*/
+    	/*background: url('../../assets/img/bg_login.jpg') no-repeat center;*/
+	    /*background-size: cover;*/
+	    /*background-position: 50% 50%;*/
+	    /*width: 100%;*/
+	    /*height: 100%;*/
+	    /*!*opacity: 0.8;*!*/
+	    /*-webkit-filter: blur(3px);*/
+	    /*-moz-filter: blur(3px);*/
+	    /*-o-filter: blur(3px);*/
+	    /*-ms-filter: blur(3px);*/
+	    /*filter: blur(3px);*/
+    /*}*/
   }
 
   .login-container {

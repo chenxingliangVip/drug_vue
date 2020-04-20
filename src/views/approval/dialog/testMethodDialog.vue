@@ -6,7 +6,8 @@
              title="检验方法 · 审批">
 
     <div class="dialog-title"><span style="margin-left:25px">检验方法审批</span>
-      <img src="../../../assets/img/disapprove.jpg" v-if="detailData.checkStatus == '2'" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
+      <img src="../../../assets/img/bohui.png" v-if="detailData.checkStatus == '4'" style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
+      <img src="../../../assets/img/disapprove.jpg" v-else-if="detailData.checkStatus == '2'" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
       <img v-else src="../../../assets/img/approve.jpg" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
     </div>
     <el-divider></el-divider>

@@ -1,8 +1,8 @@
 <template>
 	<div class="imgupload">
-		<div class="imgItemParent" v-for="(item,index ) in pageImgs" :key="index">
-			<div class="imgItem" :class="{active:item.check}">
-				<i class="el-icon-plus" v-show="!item.url"></i>
+		<div class="imgItemParent" v-for="(item,index ) in pageImgs" :key="index" v-show="index < limit">
+			<div class="imgItem" :class="{active:item.check}" >
+				<i class="el-icon-plus" v-show="!item.url "></i>
 				<img class="content" :src="item.url" v-show="item.url">
 
 				<input type="file" accept="image/*" @change="imgChange($event,index)" multiple>
@@ -21,19 +21,27 @@
 
 <script>
 	export default {
-		props: ['imgList', 'limit', 'isMultiple'],
+		props: ['imgList', 'limit', 'isMultiple','type'],
 		data() {
 			return {
 				pageImgs: [{}]
 			}
 		},
 		methods: {
-			setParentImglist() {
-				this.$emit('update:imgList', JSON.parse(JSON.stringify(this.pageImgs)))
-			},
 			deleteImg(index) { //删除图片
-				this.pageImgs.splice(index, 1);
-				this.setParentImglist();
+        let self = this;
+        let imgObj = self.pageImgs[index];
+        let params = {id:imgObj.id};
+        self.$http({
+          url: "/drug/images/deleteImages",
+          method: "post",
+          params: params,
+        }).then(resp => {
+          if (resp.success) {
+            self.pageImgs.splice(index, 1);
+          }
+        });
+
 			},
 			checkFun(index) { //选中图片
 				if(this.isMultiple) {
@@ -45,7 +53,6 @@
 						return item;
 					})
 				}
-				this.setParentImglist();
 			},
 			imgChange(e, index) { //选择文件
 				if(e.target.files.length) {
@@ -56,28 +63,62 @@
 					var reader = new FileReader();
 					reader.readAsDataURL(file);
 					reader.onload = (eve) => {
-						if((this.pageImgs.length < this.limit * 1) && !this.pageImgs[index].url) {
+						if(!this.pageImgs[index].url) {
 							this.pageImgs.push({
-								file: e.target.files[0],
 								url: eve.target.result,
 								name: file.name,
 								check: false
 							})
+              this.uploadImageToBack(file.name,eve.target.result);
 						} else {
+						  let id = this.pageImgs[index].id;
 							this.$set(this.pageImgs, index, {
-								file: e.target.files[0],
 								url: eve.target.result,
 								name: file.name,
 								check: false
-							})
+							});
+              this.updateImages(id,file.name,eve.target.result);
 						}
-						this.setParentImglist();
 					}
 
 				}
-			}
+			},
+
+      updateImages(id,name,url){
+			  let self = this;
+        let params = {id:id,fileName:name,fileType:this.type,fileBlob:url};
+        self.$http({
+          url: "/drug/images/updateImages",
+          method: "post",
+          data: JSON.stringify(params),
+          dataType: 'json',
+          contentType: "application/json",
+        }).then(resp => {
+
+        });
+      },
+
+      uploadImageToBack(fileName,fileBlob){
+			  let self = this;
+			  let params = {fileName:fileName,fileType:this.type,fileBlob:fileBlob};
+        self.$http({
+          url: "/drug/images/addImages",
+          method: "post",
+          data: JSON.stringify(params),
+          dataType: 'json',
+          contentType: "application/json",
+        }).then(resp => {
+          if (resp.success) {
+            self.$eventBus.$emit("updateImagesList",self.type)
+          }
+        });
+      }
 		},
-		created() {}
+	 watch:{
+     imgList(val){
+        this.pageImgs = val;
+     }
+   }
 	}
 </script>
 

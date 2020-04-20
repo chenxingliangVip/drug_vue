@@ -211,14 +211,7 @@
 				nowTime: new Date(),
 				nowDate: new Date(),
 				nowWeek: new Date(),
-				Img: [ //轮播图片
-					{
-						src: require("@/assets/img/imgOne.png")
-					},
-					{
-						src: require("@/assets/img/imgTwo.png")
-					}
-				],
+				Img: [],
 			}
 		},
 		methods: {
@@ -372,12 +365,28 @@
             if(key =='送检样品'){
               stack ="";
             }
+            let color ="";
+            let shadowColor = "";
+            if(key =='未检样品'){
+              color ="rgba(152, 251, 152, 0.77)";
+              shadowColor = "#2d82ca";
+            }
+            if(key =='送检样品'){
+              color ="#f56c6c";
+              shadowColor = "#2d82ca";
+            }
+            if(key =='送检样品'){
+              color ="#64a7e0";
+              shadowColor = "#2d82ca";
+            }
             let seri = {
               name: key,
               type: 'bar',
               stack: stack,  //stack 数据堆叠，同个类目轴上系列配置相同的stack值可以堆叠放置
               itemStyle: {
                 normal: {
+                  color: color,
+                  shadowColor: shadowColor,
                   shadowBlur: 20,
                 }
               },
@@ -439,6 +448,23 @@
         });
       },
 
+      getPictureList() {
+        let self = this;
+        self.$http({
+          url: "/drug/images/queryImagesList",
+          method: "post",
+          params:{fileType:"1",fileCheck:"1"}
+        }).then(resp => {
+          if (resp.success) {
+            self.Img = [];
+            for(let data of resp.result){
+              let src = {src:data.fileBlob};
+              self.Img.push(src);
+            }
+          }
+        });
+      },
+
 
 		},
 		mounted() {
@@ -454,6 +480,7 @@
 			this.getMothRate();
 			this.getdateFormat();
 			this.setFullScreen();
+			this.getPictureList();
 			setInterval(() => {
 				this.getdateFormat();
 			}, 1000)

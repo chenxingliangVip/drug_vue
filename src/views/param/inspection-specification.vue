@@ -47,7 +47,7 @@
                        size="mini"
                        clearable
                        style="width: 100px">
-              <el-option v-for="item in codeItemMap.dept"
+              <el-option v-for="item in jcDept"
                          :key="item.id"
                          :label="item.deptName"
                          :value="item.id" />
@@ -83,23 +83,30 @@
         </div>
       </div>
     </div>
-    <drug-table @getSelection="getSelection" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
-      <template slot-scope="props" slot="operate">
-        <div >
-          <el-button type="text" v-if="hasRole('rule:param:edit')"
-                     @click="handleEditData(props.rowData)"
-                     size='mini'>
-            编辑
-          </el-button>
-          <span v-if="hasRole('rule:param:edit')">·</span>
-          <el-button type="text"  v-if="hasRole('rule:param:delete')"
-                     @click="handleDelete(props.rowData)"
-                     size='mini'>
-            删除
-          </el-button>
-        </div>
-      </template>
-    </drug-table>
+    <div class="tab-container">
+      <el-tabs  v-model="activeName" style="margin-top:5px;" class="tabNav" type="border-card" @tab-click="handleClick">
+        <el-tab-pane :label="item.label" :name="item.value" v-for="(item,index) in ruleArray" :key="index">
+          <drug-table @getSelection="getSelection" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+            <template slot-scope="props" slot="operate">
+              <div >
+                <el-button type="text" v-if="hasRole('rule:param:edit')"
+                           @click="handleEditData(props.rowData)"
+                           size='mini'>
+                  编辑
+                </el-button>
+                <span v-if="hasRole('rule:param:edit')">·</span>
+                <el-button type="text"  v-if="hasRole('rule:param:delete')"
+                           @click="handleDelete(props.rowData)"
+                           size='mini'>
+                  删除
+                </el-button>
+              </div>
+            </template>
+          </drug-table>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
+
     <inspect :editData="editData" :type="operateType" :codeItemMap="codeItemMap"></inspect>
   </div>
 </template>
@@ -115,6 +122,7 @@ export default {
   directives: { waves },
   data() {
     return {
+      totalData:[],
       tableData: [],
       tableHeader:[],
       tableLoading:true,
@@ -123,7 +131,15 @@ export default {
       searchParam:{locationId:"",attrId:"",typeId:"",deptId:"",checkValue:""},
       codeItemMap:{location:[],method_attr:[],regular:[],dept:[]},
       operateType:"add",
-      editData:{}
+      editData:{},
+      ruleArray:[ {label:"规则一",value:"1"},
+                  {label:"规则二",value:"2"},
+                  {label:"规则三",value:"3"},
+                  {label:"规则四",value:"4"},
+                  {label:"规则五",value:"5"},
+                  {label:"规则六",value:"6"}],
+      activeName:"1",
+      jcDept:[]
     }
   },
   mounted() {
@@ -136,6 +152,15 @@ export default {
     this.getItemCode();
   },
   methods: {
+    handleClick(){
+      let tableData = [];
+      for(let data of this.totalData){
+        if(data.serialType == this.activeName){
+          tableData.push(data);
+        }
+      }
+      this.tableData = tableData;
+    },
     getList() {
       let self = this;
       self.tableLoading = true;
@@ -146,11 +171,17 @@ export default {
       }).then(resp => {
         if (resp.success) {
           self.tableLoading = false;
-          self.tableData = resp.result;
+          self.totalData = JSON.parse(JSON.stringify(resp.result));
+          let tableData = [];
+          for(let data of resp.result){
+            if(data.serialType == self.activeName){
+              tableData.push(data);
+            }
+          }
+          self.tableData = tableData;
           self.tableHeader =  [{"columnName": "serialNo", "coloumNameCn": "等级","width":"60px"},
             {"columnName": "location", "coloumNameCn": "送样地点"},
             {"columnName": "attrName", "coloumNameCn": "方法属性"},
-            // {"columnName": "material", "coloumNameCn": "物料名称"},
             {"columnName": "typeName", "coloumNameCn": "检验规则"},
             {"columnName": "checkValue", "coloumNameCn": "规则值"},
             {"columnName": "deptNames", "coloumNameCn": "检验组"}];
@@ -168,7 +199,7 @@ export default {
       this.operateType = "edit";
     },
     addTestRule(){
-      this.editData ={locationId:"",attrId:"",typeId:"",checkValue:"",deptIds:[]};
+      this.editData ={serialType:this.activeName,locationId:"",attrId:"",typeId:"",checkValue:"",jcDeptIds:[],syDeptIds:[]};
       this.operateType = "add";
     },
     batchDelete(){
@@ -247,6 +278,7 @@ export default {
         if (resp.success) {
           if(resp.result.length > 0){
             self.codeItemMap.dept = resp.result;
+            self.jcDept = resp.result.filter(item => { return item.deptType == '2'});
           }
         }
       });

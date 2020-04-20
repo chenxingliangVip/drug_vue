@@ -13,8 +13,13 @@
                 v-if="detailData.checkStatus == '2'"
                 style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;"
             />
+          <img
+            v-if="detailData.checkStatus == '4'"
+            src="../../../assets/img/bohui.png"
+            style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;"
+          />
             <img
-                v-else
+                v-if="detailData.checkStatus != '2' && detailData.checkStatus != '4'"
                 src="../../../assets/img/approve.jpg"
                 style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;"
             />

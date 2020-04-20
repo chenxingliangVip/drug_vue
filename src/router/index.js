@@ -151,12 +151,13 @@ export const constantRouterMap = [
         component: () => import("@/views/param/inspection-specification.vue"),
         name: "inspection-specification",
         meta: { title: "检验规则" , permission:"rule:param",image:require('@/assets/img/param-rule.png')}
-      },{
-        path: "testRule-manage",
-        component: () => import("@/views/param/testRule-manage.vue"),
-        name: "inspection-specification",
-        meta: { title: "检验规则管理" , permission:"testRule:param",image:require('@/assets/img/param-testRule.png')}
       },
+      // {
+      //   path: "testRule-manage",
+      //   component: () => import("@/views/param/testRule-manage.vue"),
+      //   name: "inspection-specification",
+      //   meta: { title: "检验规则管理" , permission:"testRule:param",image:require('@/assets/img/param-testRule.png')}
+      // },
       {
         path: "index",
         component: () => import("@/views/param/index.vue"),
@@ -216,7 +217,7 @@ export const constantRouterMap = [
         path: "picture",
         component: () => import("@/views/system/picture.vue"),
         name: "picture",
-        meta: { title: "图片管理",permission:"picture:system" ,image:require('@/assets/img/pictureIcon.png')}
+        meta: { title: "图片管理",permission:"images:system" ,image:require('@/assets/img/pictureIcon.png')}
       }
     ]
   }
