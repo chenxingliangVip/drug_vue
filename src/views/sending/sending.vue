@@ -134,6 +134,13 @@
                    @click="addSend">
           新增
         </el-button>
+        <el-button class="filter-btn-item same-contrast"
+                   size="mini"
+                   style="margin-left: 10px;width: 80px;float: right;"
+                   type="primary"
+                   @click="sameContrast">
+          同样对比
+        </el-button>
       </div>
     </div>
     <drug-table :backCount="backCount" @getSelection="getSelection" @getBackData="getList" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
@@ -152,6 +159,7 @@
     </drug-table>
     <send-edit ></send-edit>
     <send-see></send-see>
+    <same-contrast></same-contrast>
     <form action="/drug/file/downloadFile" method="post"
           style="display: none;" ref="downloadFile">
       <input name="path" :value="downPath"/>
@@ -165,10 +173,11 @@ import { formatDate } from '@/utils/formatDate'
 import drugTable from "@/components/table/index";
 import sendEdit from "./dialog/sendEdit"
 import sendSee from "./dialog/sendSee"
+import sameContrast from "./dialog/sameContrast"
 import {getToken} from '@/utils/auth' // 验权
 export default {
   name: '送检',
-  components: { drugTable,sendEdit,sendSee },
+  components: { drugTable,sendEdit,sendSee,sameContrast },
   directives: { waves },
   data() {
     return {
@@ -204,7 +213,7 @@ export default {
 
       backCount:0,
       codeItemMap:{location:[],type:[],dept:[],grade:[],scope:[]},
-      downPath:""
+      downPath:"",
     }
   },
   mounted() {
@@ -402,7 +411,7 @@ export default {
       this.operateType = "add";
       this.$eventBus.$emit("openSendEdit",this.detailData,this.operateType,this.codeItemMap);
     },
-
+		
     batchDelete(){
       let param = {ids:[],sampleCode:""};
       let sampleCodes = [];
@@ -471,7 +480,9 @@ export default {
         }
       });
     },
-
+		sameContrast(){
+				this.$eventBus.$emit("openSameContrast");
+		}
   },
 }
 </script>
@@ -490,6 +501,11 @@ export default {
     border-radius: 3px;
     padding: 5px 10px;
 }
-
+.same-contrast {
+	background: #2e827f;
+	&:hover {
+		opacity: .8;
+	}
+}
 
 </style>

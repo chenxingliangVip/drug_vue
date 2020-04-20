@@ -35,7 +35,7 @@
                    class="hamburger-container"
                    @toggleClick="toggleSideBar" />
 
-        <div class="el-small-title">- {{smallTitle}} -</div>
+        <div class="el-small-title">—— {{smallTitle}} ——</div>
       </el-row>
 
     </div>
