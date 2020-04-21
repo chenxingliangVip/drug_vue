@@ -181,7 +181,7 @@
           self.items = [];
           self.changeMaterial(materialName);
           self.getTableHeader();
-          self.getSampleItemList();
+          // self.getSampleItemList();
 		    })
 		}
 	}
