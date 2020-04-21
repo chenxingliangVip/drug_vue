@@ -291,11 +291,7 @@ export default {
         if (resp.success) {
           self.takeTask.tableLoading = false;
           self.takeTask.tableData = resp.result;
-          if(self.takeTask.tableData.length > 0){
-            self.takeTask.backCount = self.takeTask.tableData[0].count;
-          }else{
-            self.takeTask.backCount = 0;
-          }
+          self.takeTask.backCount = self.takeTask.tableData.length;
           for(let data of resp.result){
             data.itemCount = data.singleCount+"/"+data.totalCount;
           }
