@@ -60,11 +60,41 @@
 				</el-col>
 			</el-row>
 
-			<div class="tableList" v-for="(value, key) in tableMap" :key="key">
+			<!--<div class="tableList" v-for="(value, key) in tableMap" :key="key">
 				<p class="titleSpan">{{key}}</p>
 				<drug-table  :filterPage="false" :isMultipleSelection="true"
 					:tableData="value.samples" :tableLoading="value.loading" :tableHeader="tableHeader">
 				</drug-table>
+			</div>-->
+			
+			<div class="tableList">
+				<p class="titleSpan">水分</p>
+				<table border="1" class="tableMain">
+					<tr>
+					    <th>检单号</th>
+					    <th>申请人</th>
+					    <th>送检时间</th>
+					    <th>样品名称</th>
+					    <th>样品批号</th>
+					    <th>样品规格</th>
+					    <th>样品等级</th>
+					    <th>样品规模</th>
+					    <th>送样地点</th>
+					    <th>流程状态</th>
+					</tr>
+					<tr>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					    <td><p class="mainData"></p></td>
+					</tr>
+				</table>
 			</div>
 
 		</el-form>
@@ -190,10 +220,38 @@
 <style lang="scss" scoped>
 	.tableList {
 		margin-bottom: 15px;
+		overflow: auto;
 		.titleSpan {
 			color: #2e827f;
 			margin-bottom: 5px;
 			margin-top: 0px;
+		}
+		.tableMain {
+			width: 100%;
+			border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            white-space: nowrap;
+            th,td {
+            	border: 1px solid #cad9ea;
+	            color: #666;
+	            height: 30px;
+	            font-size: 12px;
+	            width: 10%;
+            }
+            th {
+            	background-color: #2e827f;
+            	color: #fff;
+            }
+            td {
+            	.mainData {
+            		text-align: center;
+            		margin: 0 auto;
+            		padding: 5px 0px;
+            		overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+            		width: 85px;
+            	}
+            }
 		}
 	}
 	.el-range-editor.el-input__inner {
