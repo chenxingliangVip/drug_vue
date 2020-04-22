@@ -72,26 +72,21 @@
       height: 50px;
       line-height: 50px;
 //    font-size: 15px;
-      border-left: 8px solid #f1f2f0;
         &.is-active {
             background: #39a7a2  !important;
-            border-left: 8px solid #39a7a2;
         }
     }
     .el-menu--inline {
         .el-menu-item {
             background: #dadada !important;
-            border-left: 8px solid #dadada;
             padding-left: 30px !important;
             &:hover {
 //              background: #f1f2f0;
                 background: #39a7a2  !important;
-                border-left: 8px solid #39a7a2;
                 transition: all .3s;
             }
             &.is-active {
                 background: #39a7a2  !important;
-                border-left: 8px solid #39a7a2;
             }
         }
     }
@@ -100,13 +95,11 @@
       height: 50px;
       line-height: 50px;
       font-size: 15px;
-      border-left: 8px solid #f1f2f0;
       padding-left: 10px !important;
       background-color: #f1f2f0 !important;
       color: #333 !important;
       &:hover {
 //      background-color: $menuHover !important;
-        border-left: 8px solid #39a7a2;
         background: #39a7a2 !important;
         transition: all .3s;
       }
@@ -121,7 +114,6 @@
       padding-left: 10px !important;
       &:hover {
 //      background-color: $menuHover !important;
-        border-left: 8px solid #39a7a2;
         background: #39a7a2 !important;
         transition: all .3s;
       }

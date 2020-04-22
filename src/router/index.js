@@ -22,6 +22,10 @@ export const constantRouterMap = [
     component: login
   },
   {
+    path: '/page403',
+    component: () => import("@/views/page403.vue"),
+  },
+  {
     path: '',
     component: login
   },{

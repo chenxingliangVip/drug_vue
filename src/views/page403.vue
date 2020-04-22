@@ -1,16 +1,11 @@
 <template>
   <!-- 403 -->
   <div class="error-tip-info">
-    <div class="error-flag">
-      <span class="error-flag-pic"><i class="fa fa-hand-stop-o"></i></span>
-      <span class="error-code">403</span>
-    </div>
     <div class="error-tip">
       <p class="error-tip-text">没有权限</p>
       <p class="error-tip-describing">您暂时还没有权限访问该页面，请联系管理员！</p>
     </div>
-    <el-button @click="$router.back(-1)" icon='arrow-left' class="pan-back-btn">返回</el-button>
-    <el-button @click="backupLogin" icon='arrow-left' class="pan-back-btn" style="background: #6da3e6">退出</el-button>
+    <el-button @click="backupLogin" type="info" icon='arrow-left' class="pan-back-btn">返回</el-button>
   </div>
 </template>
 
