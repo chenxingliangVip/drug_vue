@@ -44,12 +44,12 @@
 }
 
 .el-input--mini .el-input__inner {
-    height: 20px;
-    line-height: 20px;
+    height: 24px;
+    line-height: 24px;
 }
 
 .el-input--mini .el-input__icon {
-    line-height: 20px;
+    line-height: 24px;
 }
 
 .el-button--mini {
@@ -299,8 +299,8 @@
 
 .filter-item {
     span {
-        height: 20px;
-        line-height: 20px;
+        height: 24px;
+        line-height: 24px;
         font-size: 13px;
         color: #7f7d7d;
         margin-right: 5px;
@@ -309,8 +309,8 @@
 
 .filter-btn-item {
     span {
-        height: 20px;
-        line-height: 20px;
+        height: 24px;
+        line-height: 24px;
         font-size: 13px;
         color: #fff;
         margin-right: 5px;
@@ -333,9 +333,9 @@
     i {
         background: #2e827f;
         color: #fff;
-        width: 50px;
+        width: 60px;
         border-radius: 3px;
-        padding: 2px;
+        padding: 4px;
         text-align: center;
     }
     &:hover {
