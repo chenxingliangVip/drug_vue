@@ -1,8 +1,11 @@
 <template>
-  <div :class="{'has-logo':showLogo}">
-    <logo v-if="showLogo"
-          :collapse="isCollapse" />
-    <el-scrollbar wrap-class="scrollbar-wrapper">
+  <div :class="{'has-logo':showLogo}" class="leftMain">
+    <!--<logo v-if="showLogo"
+          :collapse="isCollapse" />-->
+    <div style="width: 200px;height: 100px;background: #2e827f;">
+    	
+    </div>
+    <el-scrollbar wrap-class="scrollbar-wrapper"  class="left_menuList">
       <el-menu :default-active="activeMenu"
                :collapse="isCollapse"
                :background-color="variables.menuHover"
@@ -10,7 +13,7 @@
                :unique-opened="false"
                :active-text-color="variables.menuActiveText"
                :collapse-transition="false"
-               mode="vertical">
+               mode="vertical" class="meunList_contain">
         <sidebar-item v-for="route in permission_routes"
                       :key="route.path"
                       :item="route"
@@ -53,3 +56,19 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+	.leftMain {
+			.left_menuList {
+				background: #f1f2f0;
+				.el-menu {
+					background-color: #f1f2f0 !important;
+				}
+				.meunList_contain {
+					a {
+						background-color: #f1f2f0 !important;
+					}
+				}
+			}
+	}
+	
+</style>

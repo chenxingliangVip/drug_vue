@@ -503,3 +503,6 @@
 .sameData .el-range-separator {
     line-height: 14px !important;
 }
+.el-pagination button, .el-pagination span:not([class*=suffix]) {
+    font-size: 12px;
+}

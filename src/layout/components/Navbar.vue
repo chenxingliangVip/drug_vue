@@ -2,7 +2,10 @@
   <div>
     <div class="navbar">
       <el-row class="el-row-header">
-        <el-col :offset="6"
+        <el-col :offset="1" :span="3">
+    			<img src="@/assets/logo.png" class="sidebar-logoImg">
+        </el-col>
+        <el-col :offset="2"
                 :span="12"
                 class="el-col-title">
           <div>威尔研究院  · 智慧检验大数据管理系统</div>
@@ -35,7 +38,9 @@
                    class="hamburger-container"
                    @toggleClick="toggleSideBar" />
 
-        <div class="el-small-title">—— {{smallTitle}} ——</div>
+        <div class="el-small-title">——&nbsp;&nbsp;&nbsp;{{smallTitle}}&nbsp;&nbsp;&nbsp;——</div>
+        
+        <h1 class="sidebar-titleTime">{{ date| parseTime('{y}-{m}-{d} {h}:{i}:{s}')  }} </h1>
       </el-row>
 
     </div>
@@ -61,7 +66,8 @@
     data() {
       return {
         smallTitle: null,
-        user:{}
+        user:{},
+        date: new Date()
       }
     },
     watch: {
@@ -75,6 +81,16 @@
     mounted(){
       let user = JSON.parse(getToken());
       this.user = user;
+      
+      var that = this
+      this.timer = setInterval(function() {
+        that.date = new Date()
+      }, 1000)
+    },
+    beforeDestroy() {
+      if (this.timer) {
+        clearInterval(this.timer) //在vue实例销毁钱，清除我们的定时器
+      }
     },
     created() {
       this.getBreadcrumb()
@@ -107,7 +123,8 @@
         removeToken();
         location.reload();
       }
-    }
+    },
+    
   }
 </script>
 
@@ -122,8 +139,37 @@
 
     .el-row-header {
       height: 100px;
-      border-left: solid 2px #fff;
+      /*border-left: solid 2px #fff;*/
     }
+		.sidebar-logoImg {
+			height: 35px;
+	    margin-top: 30px;
+	    vertical-align: middle;
+    }
+    .sidebar-titleTime {
+    	display: inline-block;
+	    margin: 0;
+	    color: #2e827f;
+	    font-weight: normal;
+	    line-height: 50px;
+	    font-size: 14px;
+	    font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+	    vertical-align: middle;
+	    position: absolute;
+	    top: 0;
+	    right: 10px;
+    }
+    .sidebar-name {
+        display: inline-block;
+        height: 30px;
+        padding-top: 5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: SimHei;
+        letter-spacing: 1em;
+        vertical-align: middle;
+      }
     .el-row-breadcrumb {
       height: 48px;
       background: #fff;
@@ -172,7 +218,7 @@
     .right-menu {
       float: right;
       height: 100%;
-      margin-top: 60px;
+      margin-top: 58px;
       line-height: 30px;
 
       &:focus {
