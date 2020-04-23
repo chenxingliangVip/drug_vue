@@ -8,9 +8,7 @@
   .sidebar-container {
     transition: width 0.28s;
     width: $sideBarWidth !important;
-//  background-color: $menuBg;
-    background-color: #f1f2f0;
-    color: #333;
+    background-color: $menuBg;
     height: 100%;
     position: fixed;
     font-size: 0px;
@@ -36,12 +34,12 @@
 
     .el-scrollbar {
       height: 100%;
-      margin-top: 10px;
+      margin-top: 30px;
     }
 
     &.has-logo {
       .el-scrollbar {
-        height: calc(100% - 144px - 40px);
+        height: calc(100% - 144px - 90px);
       }
     }
 
@@ -53,8 +51,7 @@
       display: inline-block;
       width: 100%;
       overflow: hidden;
-//    background-color: #2e827f;
-      background-color: #f1f2f0;
+      background-color: #2e827f;
     }
 
     .svg-icon {
@@ -68,55 +65,16 @@
     }
 
     .el-menu-item {
-//    margin-top: 2px;
+      margin-top: 2px;
       height: 50px;
       line-height: 50px;
-//    font-size: 15px;
-        &.is-active {
-            background: #39a7a2  !important;
-        }
-    }
-    .el-menu--inline {
-        .el-menu-item {
-            background: #dadada !important;
-            padding-left: 30px !important;
-            &:hover {
-//              background: #f1f2f0;
-                background: #39a7a2  !important;
-                transition: all .3s;
-            }
-            &.is-active {
-                background: #39a7a2  !important;
-            }
-        }
+      font-size: 15px;
     }
     .el-submenu__title {
-//    margin-top: 2px;
+      margin-top: 2px;
       height: 50px;
       line-height: 50px;
-      font-size: 15px;
-      padding-left: 10px !important;
-      background-color: #f1f2f0 !important;
-      color: #333 !important;
-      &:hover {
-//      background-color: $menuHover !important;
-        background: #39a7a2 !important;
-        transition: all .3s;
-      }
-      i {
-    //    color: #fff;
-          color: #333;
-        }
-    }
-    // menu hover
-    .submenu-title-noDropdown {
-      font-size: 15px;
-      padding-left: 10px !important;
-      &:hover {
-//      background-color: $menuHover !important;
-        background: #39a7a2 !important;
-        transition: all .3s;
-      }
+      font-size: 16px;
     }
     .el-menu--inline,.nest-menu {
         .el-menu-item {
@@ -128,49 +86,60 @@
       margin-left: 15px;
     }
 
+    // menu hover
+    .submenu-title-noDropdown {
+      font-size: 16px;
+      &:hover {
+        background-color: $menuHover !important;
+      }
+    }
+
+    .el-submenu__title {
+      &:hover {
+        background-color: $menuHover !important;
+      }
+    }
+
+    .el-submenu__title i {
+      color: #fff;
+    }
 
     .is-active > .el-submenu__title {
-//    color: $subMenuActiveText !important;
+      color: $subMenuActiveText !important;
     }
 
     & .nest-menu .el-submenu > .el-submenu__title,
     & .el-submenu .el-menu-item {
       min-width: $sideBarWidth !important;
-//    background-color: $subMenuBg !important;
+      background-color: $subMenuBg !important;
 
       &:hover {
-//      background-color: $subMenuHover !important;
+        background-color: $subMenuHover !important;
       }
     }
   }
 
   .el-footer {
     font-size: 8px;
-//  color: #fff;
-    color: #333;
+    color: #fff;
     line-height: 60px;
     padding: 0px;
     text-align: center;
     transform: scale(0.8);
-    overflow: hidden;
-    margin-top: 20px;
   }
   .el-submenu {
-//  background-color: #2e827f;
-    background-color: #f1f2f0 !important;
-    color: #333 !important;
+    background-color: #2e827f;
   }
 
   .el-menu-item-title {
     width: 100%;
-//  background-color: #2e827f;
-    background-color: #f1f2f0 !important;
-    color: #333 !important;
+    background-color: #2e827f;
     padding-top: 2px;
     .el-submenu__title {
       margin-top: 0px;
     }
   }
+
   .hideSidebar {
     .sidebar-container {
       width: 54px !important;
@@ -286,7 +255,6 @@
   > .el-menu--popup {
     max-height: 100vh;
     overflow-y: auto;
-    background: #f1f2f0 !important;
 
     &::-webkit-scrollbar-track-piece {
       background: #d3dce6;

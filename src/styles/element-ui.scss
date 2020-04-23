@@ -333,9 +333,9 @@
     i {
         background: #2e827f;
         color: #fff;
-        width: 60px;
+        width: 50px;
         border-radius: 3px;
-        padding: 4px;
+        padding: 3px;
         text-align: center;
     }
     &:hover {
@@ -502,7 +502,4 @@
 }
 .sameData .el-range-separator {
     line-height: 14px !important;
-}
-.el-pagination button, .el-pagination span:not([class*=suffix]) {
-    font-size: 12px;
 }

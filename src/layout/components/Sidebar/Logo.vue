@@ -1,5 +1,5 @@
 <template>
-  <div class="app-sidebar leftMain_top">
+  <div class="app-sidebar">
     <div class="sidebar-logo-container"
          :class="{'collapse':collapse}">
       <transition name="sidebarLogoFade">
@@ -17,16 +17,16 @@
                  class="sidebar-logo">
 
           </el-row>
-          <el-row class="left_txt">
+          <el-row>
             <div class="sidebar-name">威尔药业</div>
           </el-row>
-          <el-row class="left_time">
+          <el-row>
             <h1 class="sidebar-title">{{ date| parseTime('{y}-{m}-{d} {h}:{i}:{s}')  }} </h1>
           </el-row>
         </div>
       </transition>
     </div>
-    <el-row class="sidebar-logo-line-container left_line">
+    <el-row class="sidebar-logo-line-container">
       <div class="sidebar-logo-line-badge"></div>
       <div class="sidebar-logo-line"></div>
     </el-row>
@@ -79,15 +79,14 @@
     position: relative;
     width: 100%;
     height: 144px;
-    background: #f1f2f0;
+    background: #2e827f;
     text-align: center;
     overflow: hidden;
     //   border-bottom: solid 2px #32bad8;
 
     & .sidebar-logo-link {
-      height: 100px;
+      height: 100%;
       width: 100%;
-      background: #2e827f;
 
       & .sidebar-logo {
         height: 35px;
@@ -144,28 +143,5 @@
     width: 183px;
     margin-top: 3px;
     background-color: #fff;
-  }
-  .leftMain_top {
-  	.sidebar-logo {
-  		height: 40px;
-  	}
-  	.left_txt {
-  		height: 35px;
-  	}
-  	.left_time {
-  		background: #f1f2f0;
-  		.sidebar-title {
-  			color: #333;
-  		}
-  	}
-  	.left_line {
-  		background: #f1f2f0;
-  		.sidebar-logo-line-badge {
-  			background-color: #2e827f;
-  		}
-  		.sidebar-logo-line {
-  			background-color: #2e827f;
-  		}
-  	}
   }
 </style>

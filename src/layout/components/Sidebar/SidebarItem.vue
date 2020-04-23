@@ -4,7 +4,7 @@
       <app-link v-if="onlyOneChild.meta"
                 :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)"
-                      :class="{'submenu-title-noDropdown':!isNest}" class="meunList_item">
+                      :class="{'submenu-title-noDropdown':!isNest}">
           <!--<item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)"-->
                 <!--:title="onlyOneChild.meta.title" />-->
           <img :src="onlyOneChild.meta.image" style="width: 17px;margin-right: 4px;margin-left: 15px">
@@ -18,7 +18,7 @@
     <div v-else class="el-menu-item-title">
       <el-submenu ref="subMenu" v-if="hasRole(item)"
                   :index="resolvePath(item.path)"
-                  popper-append-to-body class="meunList_subitem">
+                  popper-append-to-body>
         <template slot="title">
           <!--<item v-if="item.meta"-->
                 <!--:icon="item.meta && item.meta.icon"-->
@@ -119,7 +119,7 @@ export default {
   },
 }
 </script>
-<style scoped lang="scss">
+<style scoped>
 	.txt_Num {
 		background-color: #F56C6C;
     border-radius: 10px;
@@ -133,7 +133,7 @@ export default {
     white-space: nowrap;
     position: absolute;
     top: 8px;
-    left: 41%;
+    left: 46%;
 	}
 	.txt_Icon {
     /*background-color: #F56C6C;*/
@@ -149,16 +149,6 @@ export default {
     white-space: nowrap;
     position: absolute;
     top: 9px;
-    right: 15%;
-	}
-	.meunList_item {
-		background-color: #f1f2f0 !important;
-		color: #333 !important;
-	}
-	.meunList_subitem {
-		.el-submenu__title {
-			background-color: #f1f2f0 !important;
-		  color: #333 !important;
-		}
+    right: 20%;
 	}
 </style>
