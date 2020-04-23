@@ -246,8 +246,8 @@ export default {
 
       cellList.push(this.getCell("样品规格",2,"EEEEEE"));
       cellList.push(this.getCell(row.materialType,2));
-      cellList.push(this.getCell("样品规模",2,"sampleTypeName"));
-      cellList.push(this.getCell(row.materialType,2));
+      cellList.push(this.getCell("样品规模",2,"EEEEEE"));
+      cellList.push(this.getCell(row.sampleTypeName,2));
 
       cellList.push(this.getCell("样品等级",3,"EEEEEE"));
       cellList.push(this.getCell(row.materialGrade,3));

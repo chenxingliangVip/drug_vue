@@ -70,7 +70,7 @@ export default {
 
   methods: {
     handlePrint(row){
-      this.$eventBus.$emit("openRecordDialog",row.sampleId);
+      this.$eventBus.$emit("openRecordDialog",row.sampleId,row.filePath);
     },
     getList() {
       let self = this;

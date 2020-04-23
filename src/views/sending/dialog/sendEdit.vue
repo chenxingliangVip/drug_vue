@@ -343,8 +343,12 @@
         self.detailData.saveTmp = self.detailData.saveTmp?"1":"0";
         let standardItems = [];
         for(let data of this.selectChoice){
-          let o = {testStaffOrg:self.user.deptId,methodId:data.methodId,manHour:data.manHour,sampleId:self.detailData.sampleCode,itemId:data.itemId,itemName:data.itemName,itemQualityStandard:data.itemQualityStandard};
-          standardItems.push(o);
+          let o = {methodDesc:data.methodDesc,testRecord:data.testRecord,
+            testStaffOrg:self.user.deptId,methodId:data.methodId,
+            manHour:data.manHour,sampleId:self.detailData.sampleCode,
+            itemId:data.itemId,itemName:data.itemName,
+            itemQualityStandard:data.itemQualityStandard};
+            standardItems.push(o);
         }
         self.detailData.standardItems = standardItems;
         let url = this.type == 'add' ? "/drug/sample/addSampleDetail" : "/drug/sample/updateSample";

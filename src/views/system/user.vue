@@ -62,6 +62,9 @@
         </div>
       </template>
     </drug-table>
+    <user-edit :editData="userDetail" :type="operateType" :existLogin="tableData" >
+
+    </user-edit>
   </div>
 </template>
 

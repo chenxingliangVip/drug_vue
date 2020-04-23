@@ -18,6 +18,11 @@ export const constantRouterMap = [
     hidden: true
   },
   {
+    path: "/iframe",
+    component: () => import("@/views/iframe/index.vue"),
+    props: (route) => ({ query: route.query.code })
+  },
+  {
     path: '/',
     component: login
   },
