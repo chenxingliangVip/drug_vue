@@ -233,7 +233,7 @@
 
     </el-form>
     <div slot="footer" v-show="type == 'edit'||type == 'add'" class="dialog-footer">
-      <el-button type="primary" size="mini" style="width: 80px;" @click="updateMaterial">提 交</el-button>
+      <el-button type="green" size="mini" style="width: 80px;" @click="updateMaterial">提 交</el-button>
     </div>
   </el-dialog>
 </template>

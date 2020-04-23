@@ -134,7 +134,7 @@
                 >
         复检批准
       </el-button>
-      <el-button type="primary" v-else @click="submitCheck('5')"
+      <el-button type="green" v-else @click="submitCheck('5')"
                  size="mini"
                  style="width: 80px;margin-left:30%"
                 >

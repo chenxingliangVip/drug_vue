@@ -170,7 +170,7 @@
                 style="width: 80px;"
             >驳回</el-button>
             <el-button
-                type="primary"
+                type="green"
                 v-if="hasRole('material:approve:do')"
                 size="mini"
                 @click="submitCheck('5')"

@@ -132,7 +132,7 @@
     </el-form>
     <div slot="footer"
          class="dialog-footer">
-      <el-button type="primary"
+      <el-button type="green"
                  size="mini" @click="updateSendDetail"
                  style="width: 80px;">
         提 交
@@ -506,13 +506,6 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-  }
-
-  .el-dialog .el-button--primary {
-    background-color: #2e827f;
-    border-color: #2e827f;
-    border-radius: 3px;
-    padding: 5px 10px;
   }
 
   .el-dialog .el-button--red {

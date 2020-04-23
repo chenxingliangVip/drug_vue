@@ -181,9 +181,10 @@ export default {
 }
 .title_txt {
 	color: #fff;
-	text-align: center;
+	text-align-last: justify;
 	margin-top: 10px;
-	font-size: 14px;
+	font-size: 16px;
+	padding-right: 10px;
 }
 .login-container {
   .el-input {

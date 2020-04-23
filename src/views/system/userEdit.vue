@@ -4,14 +4,17 @@
              :close-on-click-modal="false"
              width="24%"
              :before-close="closeDialog"
-             title="新增用户">
+             :title="type == 'add'?'新增·用户':'编辑·用户'">
     <el-form ref="dataForm"
              :rules="rules"
              :model="loginData"
              label-position="left"
              size="mini"
              >
-      <div class="dialog-title"><span><i class="el-icon-folder-add"></i> 新增用户</span></div>
+      <div class="dialog-title">
+		  	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增用户</span>
+		  	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> 编辑用户</span>
+      </div>
       <el-divider></el-divider>
       <el-form-item label=" 部    门 ：" prop="deptId" style="margin-bottom: 10px">
         <el-select v-model="loginData.deptId"
@@ -73,7 +76,7 @@
                  size="mini"
                  @click="submitForm"
                  style="width: 80px;">
-        完成
+       提 交
       </el-button>
     </div>
   </el-dialog>

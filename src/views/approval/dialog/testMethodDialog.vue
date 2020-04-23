@@ -117,7 +117,7 @@
                  style="width: 80px;">
         驳回
       </el-button>
-      <el-button type="primary"
+      <el-button type="green"
                  size="mini" @click="submitCheck('5')"
                  style="width: 80px;margin-left:30%">
         批准

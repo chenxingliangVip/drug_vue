@@ -129,7 +129,7 @@
                   :tableHeader="standHistoryTableHeader" ></drug-table>
       <div slot="footer"
            class="dialog-footer">
-        <el-button type="primary" v-show="type != 'see'"
+        <el-button type="green" v-show="type != 'see'"
                    size="mini" @click="updateStandard"
                    style="width: 80px;">
           提 交

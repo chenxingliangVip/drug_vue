@@ -35,7 +35,7 @@
       <el-button type="green"   @click="updateDept"
                  size="mini"
                  style="width: 80px;">
-        编辑
+        提 交
       </el-button>
     </div>
   </el-dialog>

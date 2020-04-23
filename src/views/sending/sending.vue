@@ -137,7 +137,7 @@
         <el-button class="filter-btn-item same-contrast"
                    size="mini"
                    style="margin-left: 10px;width: 80px;float: right;"
-                   type="primary"
+                   type="green"
                    @click="sameContrast">
           同样对比
         </el-button>

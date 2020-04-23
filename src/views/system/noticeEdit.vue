@@ -141,7 +141,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .el-button.disabled_btn {
     pointer-events: none;
     cursor: not-allowed;
@@ -153,6 +153,11 @@
     border-color: #d09c4f;
     border-radius: 3px;
     padding: 5px 10px;
+    &:hover {
+    background-color: #d09c4f;
+    border-color: #d09c4f;
+    	opacity: .8;
+    }
   }
 </style>
 

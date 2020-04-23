@@ -214,7 +214,7 @@
     </el-form>
     <div slot="footer" v-show="type !='see'"
          class="dialog-footer">
-      <el-button type="primary"
+      <el-button type="green"
                  size="mini"
                  @click="updateTestMethod"
                  style="width: 80px;">

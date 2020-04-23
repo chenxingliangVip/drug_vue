@@ -255,13 +255,19 @@
 }
 
 .el-button--red:hover {
-    box-shadow: 0px 0px 50px #c00400 inset;
+//  box-shadow: 0px 0px 50px #c00400 inset;
+    background-color: #c00400;
+    border-color: #c00400;
     color: #fff;
+    opacity: .8;
 }
 
 .el-button--red:focus {
-    box-shadow: 0px 0px 50px #c00400 inset;
+//  box-shadow: 0px 0px 50px #c00400 inset;
+    background-color: #c00400;
+    border-color: #c00400;
     color: #fff;
+    opacity: .8;
 }
 
 .el-button--green {
@@ -271,12 +277,18 @@
 }
 
 .el-button--green:hover {
-    box-shadow: 0px 0px 50px #2e827f inset;
+//  box-shadow: 0px 0px 50px #2e827f inset;
+    background-color: #2e827f;
+    border-color: #2e827f;
+    opacity: .8;
     color: #fff;
 }
 
 .el-button--green:focus {
-    box-shadow: 0px 0px 50px #2e827f inset;
+//  box-shadow: 0px 0px 50px #2e827f inset;
+    background-color: #2e827f;
+    border-color: #2e827f;
+    opacity: .8;
     color: #fff;
 }
 
@@ -346,7 +358,7 @@
 .dialog-title {
     margin-top: 10px;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
     color: #2e827f;
     
 }

@@ -64,18 +64,18 @@
 
     <div slot="footer"
          class="dialog-footer">
-      <el-button type="green"
+      <el-button type="info"
                  size="mini"
                  style="width: 80px;"
-                 @click="savePermission"
-                >
-        完成
-      </el-button>
-      <el-button type="primary"
-                 size="mini"
-                 style="width: 80px;margin-left:30%"
                  @click="closeDialog">
-        返回
+        返 回
+      </el-button>
+      <el-button type="green"
+                 size="mini"
+                 @click="savePermission"
+                 style="width: 80px;margin-left:30%"
+                >
+        提 交
       </el-button>
     </div>
   </el-dialog>

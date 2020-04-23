@@ -72,7 +72,7 @@
       <el-button type="green"   @click="saveDept"
                  size="mini"
                  style="width: 80px;">
-        完成
+        提 交
       </el-button>
     </div>
   </el-dialog>

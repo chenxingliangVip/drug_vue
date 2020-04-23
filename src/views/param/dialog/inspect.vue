@@ -91,7 +91,7 @@
     </el-form>
     <div slot="footer"
          class="dialog-footer">
-      <el-button type="primary"
+      <el-button type="green"
                  size="mini"
                  style="width: 80px;"
          @click="updateRule">提 交</el-button>

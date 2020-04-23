@@ -37,7 +37,7 @@
     </el-form>
     <div slot="footer"
          class="dialog-footer">
-      <el-button type="primary"
+      <el-button type="green"
                  size="mini" @click="updateDetail"
                  style="width: 80px;">
         	提 交
