@@ -1,5 +1,11 @@
 <template>
-	<el-dialog title="同样对比" width="70%" append-to-body :close-on-click-modal="false" :visible.sync="dialogAddVisible" class="Input_Dialog">
+	<el-dialog title="同样对比"
+             v-loading="dialogLoading"
+             width="70%"
+             append-to-body
+             :close-on-click-modal="false"
+             :visible.sync="dialogAddVisible"
+             class="Input_Dialog">
 		<el-form ref="dataForm" size="mini" label-width="80px">
 			<div class="dialog-title"><span>同样对比</span></div>
 			<el-divider></el-divider>
@@ -66,33 +72,31 @@
 					:tableData="value.samples" :tableLoading="value.loading" :tableHeader="tableHeader">
 				</drug-table>
 			</div>-->
-			
-			<div class="tableList">
-				<p class="titleSpan">水分</p>
+
+			<div class="tableList" v-for="(value,key) in tableMap" :key="key">
+				<p class="titleSpan">{{key}}</p>
 				<table border="1" class="tableMain">
 					<tr>
-					    <th>检单号</th>
-					    <th>申请人</th>
 					    <th>送检时间</th>
-					    <th>样品名称</th>
+					    <th>检单号</th>
 					    <th>样品批号</th>
 					    <th>样品规格</th>
 					    <th>样品等级</th>
 					    <th>样品规模</th>
-					    <th>送样地点</th>
-					    <th>流程状态</th>
+					    <th>检项名称</th>
+					    <th>质量标准</th>
+					    <th>检测结果</th>
 					</tr>
-					<tr>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
-					    <td><p class="mainData"></p></td>
+					<tr v-for="(item,index) in value.samples" :key="index">
+					    <td><p class="mainData" :title="item.createTimeFt">{{item.createTimeFt}}</p></td>
+					    <td><p class="mainData" :title="item.sampleCode">{{item.sampleCode}}</p></td>
+					    <td><p class="mainData" :title="item.sampleNum">{{item.sampleNum}}</p></td>
+					    <td><p class="mainData" :title="item.materialType">{{item.materialType}}</p></td>
+					    <td><p class="mainData" :title="item.materialGrade">{{item.materialGrade}}</p></td>
+					    <td><p class="mainData" :title="item.sampleTypeName">{{item.sampleTypeName}}</p></td>
+					    <td><p class="mainData" :title="item.itemName">{{item.itemName}}</p></td>
+					    <td><p class="mainData" :title="item.itemQualityStandard">{{item.itemQualityStandard}}</p></td>
+					    <td><p class="mainData" :title="item.testResult">{{item.testResult}}</p></td>
 					</tr>
 				</table>
 			</div>
@@ -111,6 +115,7 @@
 		data() {
 			return {
 				dialogAddVisible: false,
+				dialogLoading: true,
         materials:[],
         sampleData:{materialName:"",materialCode:"",startTime:"",endTime:""},
         items:[],
@@ -140,12 +145,12 @@
           }
         });
       },
-      handleCheckedChange(){
+      handleCheckedChange(itemName,flag){
         let self = this;
         let tableMap = {};
         for(let data of self.selectItems){
           for(let item of self.items){
-            if(item.itemName == data){
+            if(item.itemName == data && (!flag || itemName ==item.itemName)){
               let key = item.itemName + item.samples.length;
               tableMap[key] = item;
             }
@@ -170,6 +175,9 @@
 
       getSampleItemList(){
         let self = this;
+        self.selectItems = [];
+        self.items = [];
+        self.tableMap = {};
         self.$http({
           url: "/drug/sample/querySampleByMaterialCode",
           method: "post",
@@ -185,6 +193,9 @@
               for(let c_data of data.standardItems){
                 if(repeat.indexOf(c_data.itemName) < 0){
                   let item = {itemId:c_data.itemId,itemName:c_data.itemName,samples:[],loading:true};
+                  data.itemName = c_data.itemName;
+                  data.itemQualityStandard = c_data.itemQualityStandard;
+                  data.testResult = c_data.testResult;
                   item.samples.push(data);
                   items.push(item);
                   repeat.push(c_data.itemName);
@@ -192,9 +203,16 @@
                   let exist = items.find(ex=>ex.itemName == c_data.itemName);
                   exist.samples.push(data)
                 }
+                if(self.selectItems.length == 0){
+                  self.selectItems.push(c_data.itemName);
+                }
               }
             }
             self.items = items;
+            if(self.selectItems.length > 0){
+              self.handleCheckedChange(self.selectItems[0],true);
+            }
+            self.dialogLoading = false;
           }
         });
       }
@@ -204,14 +222,13 @@
       self.getMaterials();
 			self.$eventBus.$on("openSameContrast",function (materialName) {
           self.dialogAddVisible = true;
+          self.dialogLoading = true;
           self.sampleData.materialName = materialName;
           self.sampleData.startTime = "";
           self.sampleData.endTime = "";
-          self.selectItems = [];
-          self.items = [];
           self.changeMaterial(materialName);
-          self.getTableHeader();
-          // self.getSampleItemList();
+          // self.getTableHeader();
+          self.getSampleItemList();
 		    })
 		}
 	}

@@ -49,7 +49,7 @@
       </el-col>
     </el-row>
     <div class="el-dialog-table">
-      <drug-table  @getSelection="getSelection" :filterPage="false" :isMultipleSelection="true"
+      <drug-table  @getSelection="getSelection" :filterPage="false"
                    :tableData="tableData" :tableLoading="tableLoading"
                    :tableHeader="tableHeader"  >
       </drug-table>
@@ -58,7 +58,7 @@
     <div slot="footer" v-if="hasRole('report:effiect:print')"
          class="dialog-footer">
       <el-button type="primary"
-                 size="mini" @click="printSample"
+                 size="mini" @click="openPrintView"
                  style="width: 80px;">
 
         复打
@@ -89,7 +89,9 @@
         tableHeader:[],
         tableLoading:true,
         selectChoice:[],
-        choiceSize:""
+        choiceSize:"",
+
+        filePath:""
       }
     },
     components:{
@@ -97,9 +99,10 @@
     },
     mounted(){
       let self = this;
-      self.$eventBus.$on("openRecordDialog",function (sampleId,operateType) {
+      self.$eventBus.$on("openRecordDialog",function (sampleId,filePath) {
         self.dialogAddVisible = true;
         self.count = 0;
+        self.filePath = filePath;
         self.detailData.sampleId = sampleId;
         self.getSampleItems();
         self.getSampleDetail();
@@ -107,6 +110,12 @@
       })
     },
     methods:{
+
+      openPrintView(){
+        let time = (new Date()).getTime();
+        let routeData = this.$router.resolve({ path: "/iframe?filePath="+this.filePath+"&&time="+time });
+        window.open(routeData.href, '_blank');
+      },
 
       printSample(){
         let self = this;
@@ -180,7 +189,7 @@
             self.tableHeader =  [
               {"columnName": "itemName", "coloumNameCn": "检项名称"},
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"}];
-            self.choiceSize = "0/"+self.tableData.length
+            self.choiceSize = self.tableData.length+"/"+self.tableData.length
           }
         });
       }

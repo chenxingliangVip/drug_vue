@@ -239,6 +239,7 @@ export default {
       let param ={
         id:row.id,
         title:"检验记录单",
+        sampleCode:row.id,
         printPerson:"打印人："+this.user.userName +" "+day,
         graphWordList:[
           {
@@ -271,13 +272,13 @@ export default {
         cellList1.push(this.getCell("",i));
         cellList1.push(this.getCell("",i));
       }
-      cellList1.push(this.getCell("检 验 人",9));
+      cellList1.push(this.getCell("检验人",9));
       cellList1.push(this.getCell(row.userName,9));
 
-      cellList1.push(this.getCell("检验时间",9));
-      cellList1.push(this.getCell(row.updateTimeFt,9));
+      cellList1.push(this.getCell("检 验 时 间",9));
+      cellList1.push(this.getCell("  "+row.updateTimeFt+"  ",9));
 
-      cellList1.push(this.getCell("说    明",10));
+      cellList1.push(this.getCell("说  明",10));
       cellList1.push(this.getCell(row.remark,10));
       cellList1.push(this.getCell("",10));
       cellList1.push(this.getCell("",10));

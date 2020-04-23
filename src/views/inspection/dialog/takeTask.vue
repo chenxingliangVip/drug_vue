@@ -134,6 +134,7 @@
         }).then(resp => {
           if (resp.success) {
             self.dialogAddVisible = false;
+            self.openPrintView();
             self.$eventBus.$emit("updateDetectionList");
             self.$notify({
               title: '提示',
@@ -150,6 +151,12 @@
           });
         });
         this.count++;
+      },
+
+      openPrintView(){
+        let time = (new Date()).getTime();
+        let routeData = this.$router.resolve({ path: "/iframe?code="+this.detailData.sampleId+"&&time="+time });
+        window.open(routeData.href, '_blank');
       },
 
       getSelection(val){
