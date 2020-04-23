@@ -240,12 +240,12 @@ export default {
             {"columnName": "id", "coloumNameCn": "申请号", "width": "70px"},
             {"columnName": "userName", "coloumNameCn": "申请人", "width": "70px"},
             {"columnName": "standardCode", "coloumNameCn": "标准编码"},
-            {"columnName": "checkStatusCn", "coloumNameCn": "状态", "width": "60px"},
             {"columnName": "materialName", "coloumNameCn": "物料名称"},
             {"columnName": "materialType", "coloumNameCn": "规格"},
             {"columnName": "materialGrade", "coloumNameCn": "等级"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
-            {"columnName": "remark", "coloumNameCn": "补充说明"}];
+            {"columnName": "remark", "coloumNameCn": "补充说明"},
+            {"columnName": "checkStatusCn", "coloumNameCn": "状态", "width": "60px"},];
           self.option.showOperate = true;
         }
       });

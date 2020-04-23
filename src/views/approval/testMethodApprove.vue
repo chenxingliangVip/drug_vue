@@ -78,8 +78,8 @@
               {"columnName": "methodName", "coloumNameCn": "方法名称"},
               {"columnName": "codeAttrName", "coloumNameCn": "方法属性","width":"70px"},
               {"columnName": "createTimeFt", "coloumNameCn": "送审时间","width":"90px"},
-              {"columnName": "checkApproveStatusCn", "coloumNameCn": "审核状态"},
               {"columnName": "updateTimeFt", "coloumNameCn": "完成时间"},
+              {"columnName": "checkApproveStatusCn", "coloumNameCn": "审核状态"},
             ];
             self.option.showOperate = true;
           }

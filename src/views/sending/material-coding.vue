@@ -199,11 +199,11 @@
               {"columnName": "materialName", "coloumNameCn": "物料名称"},
               {"columnName": "materialTypeName", "coloumNameCn": "规格"},
               {"columnName": "materialGradeName", "coloumNameCn": "等级"},
-              {"columnName": "checkMaterialStatusCn", "coloumNameCn": "状态", "width": "60px"},
               {"columnName": "nameAbbr", "coloumNameCn": "英文简称"},
               {"columnName": "refItem", "coloumNameCn": "参考物料"},
               {"columnName": "finalProd", "coloumNameCn": "终产品"},
-              {"columnName": "remark", "coloumNameCn": "说明"}];
+              {"columnName": "remark", "coloumNameCn": "说明"},
+              {"columnName": "checkMaterialStatusCn", "coloumNameCn": "状态", "width": "60px"},];
             self.option.showOperate = true;
           }
         });

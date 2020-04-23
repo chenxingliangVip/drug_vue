@@ -75,8 +75,8 @@
               {"columnName": "standardCode", "coloumNameCn": "标准编码"},
               {"columnName": "materialCode", "coloumNameCn": "物料编码"},
               {"columnName": "createTimeFt", "coloumNameCn": "送审时间","width":"90px"},
-              {"columnName": "checkStandardStatusCn", "coloumNameCn": "审核状态"},
               {"columnName": "updateTimeFt", "coloumNameCn": "完成时间"},
+              {"columnName": "checkStandardStatusCn", "coloumNameCn": "审核状态"},
             ];
             self.option.showOperate = true;
           }
