@@ -1,14 +1,16 @@
 <template>
   <el-dialog
     width="40%"
-    :title="type=='add'?'新增·物料编码':(type =='see'?'物料编码':'修改·物料编码')"
+    :title="type=='add'?'新增·物料编码':(type =='see'?'查看·物料编码':'编辑·物料编码')"
     append-to-body
     :close-on-click-modal="false"
     :visible.sync="dialogAddVisible"
   >
     <el-form ref="dataForm" label-position="left" size="mini" label-width="0px">
       <div class="dialog-title">
-        <span>{{type=='add'?'新增物料编码':(type =='see'?'物料编码':'修改物料编码')}}</span>
+        <span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增物料编码</span>
+        <span v-else-if="type=='see'"><i class="el-icon-view"></i> 查看物料编码</span>
+        <span v-else style="color: #cb0000"><i class="el-icon-edit"></i> 编辑物料编码</span>
       </div>
       <el-divider></el-divider>
       <el-row>
@@ -231,7 +233,7 @@
 
     </el-form>
     <div slot="footer" v-show="type == 'edit'||type == 'add'" class="dialog-footer">
-      <el-button type="primary" size="mini" style="width: 80px;" @click="updateMaterial">提交</el-button>
+      <el-button type="primary" size="mini" style="width: 80px;" @click="updateMaterial">提 交</el-button>
     </div>
   </el-dialog>
 </template>

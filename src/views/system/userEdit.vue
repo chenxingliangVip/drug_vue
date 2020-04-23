@@ -11,7 +11,7 @@
              label-position="left"
              size="mini"
              >
-      <div class="dialog-title"><span>新增用户</span></div>
+      <div class="dialog-title"><span><i class="el-icon-folder-add"></i> 新增用户</span></div>
       <el-divider></el-divider>
       <el-form-item label=" 部    门 ：" prop="deptId" style="margin-bottom: 10px">
         <el-select v-model="loginData.deptId"

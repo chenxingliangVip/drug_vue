@@ -4,7 +4,7 @@
                 width="55%"
                 append-to-body
                :close-on-click-modal="false"
-               :title="title">
+               :title="dialogtitle">
       <div class="formClick" @click.capture="closeEdit">
         <el-form ref="dataForm"
                  label-position="left"
@@ -12,7 +12,7 @@
                  label-width="0px">
           <div class="dialog-title">
           	<span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'><i class="el-icon-edit"> {{title}} </i></span>
-          	<span v-else style="color: #2e827f !important">{{title}}</span>
+          	<span v-else style="color: #2e827f !important"><i class="el-icon-view"></i> {{title}}</span>
           </div>
           <el-divider></el-divider>
           <el-row type="flex"
@@ -132,7 +132,7 @@
         <el-button type="primary" v-show="type != 'see'"
                    size="mini" @click="updateStandard"
                    style="width: 80px;">
-          提交
+          提 交
         </el-button>
       </div>
     </el-dialog>
@@ -154,6 +154,7 @@
     data() {
       return {
         title: "",
+        dialogtitle: "",
         methodData: {
           id: "",
           createTime: null,
@@ -522,6 +523,7 @@
         }
         if (this.type == 'edit') {
           this.title = "修订质量标准";
+          this.dialogtitle = "修订·质量标准";
         }
         if (this.type == 'add' || this.type == 'dz') {
           this.methodData.userId = this.user.id;
@@ -530,6 +532,7 @@
             this.getMaterialStandardCount();
           }
           this.title = this.type == 'add'?"新增质量标准":"修改质量标准";
+          this.dialogtitle = this.type == 'add'?"新增·质量标准":"修改·质量标准";
           this.standardLoading = true;
           this.standTableHeader = [
             {"columnName": "itemName", "coloumNameCn": "检测项目","columnNameRe": "itemId"},
@@ -543,7 +546,8 @@
             self.standardLoading = false;
           })
         }else{
-          self.title =this.type == 'see'? "质量标准版本查看":(this.type == 'edit'?"质量标准版本编辑":"修订质量标准版本");
+          self.title =this.type == 'see'? "查看质量标准版本":(this.type == 'edit'?"编辑质量标准版本":"修订质量标准版本");
+          self.dialogtitle =this.type == 'see'? "查看·质量标准版本":(this.type == 'edit'?"编辑·质量标准版本":"修订·质量标准版本");
           self.getStandardItem(val);
           if(this.type == 'approve'){
             self.getMaterialStandardCount();

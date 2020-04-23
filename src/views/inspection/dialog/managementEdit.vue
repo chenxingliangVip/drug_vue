@@ -3,13 +3,13 @@
              append-to-body
              width="35%"
              :close-on-click-modal="false"
-             :title="type == 'add'?'新增存样':'修改存样'">
+             :title="type == 'add'?'新增·存样':'修改·存样'">
     <el-form ref="dataForm"
              label-position="left"
              size="mini">
       <div class="dialog-title">
-      	<span v-if="type == 'add'" style="color: #2e827f !important">{{type == 'add'?'新增存样':'修改存样'}}</span>
-      	<span v-else style="color: #cb0000 !important"><i class="el-icon-edit"> {{type == 'add'?'新增存样':'修改存样'}} </i></span>
+      	<span v-if="type == 'add'" style="color: #2e827f !important"><i class="el-icon-folder-add"></i> 新增存样</span>
+      	<span v-else style="color: #cb0000 !important"><i class="el-icon-edit"> 修改存样</i></span>
       </div>
       <el-divider></el-divider>
       <div class="el-dialog-item"><label class="w3"
@@ -40,7 +40,7 @@
       <el-button type="primary"
                  size="mini" @click="updateDetail"
                  style="width: 80px;">
-        完成
+        	提 交
       </el-button>
     </div>
   </el-dialog>
@@ -164,3 +164,11 @@
     }
   }
 </script>
+<style scoped>
+	.el-dialog .el-button--primary {
+    background-color: #2e827f;
+    border-color: #2e827f;
+    border-radius: 3px;
+    padding: 5px 10px;
+  }
+</style>

@@ -1,11 +1,14 @@
 <template>
-  <el-dialog :title="type=='add'?'新增·样检':'修改·样检'"
+  <el-dialog :title="type=='add'?'新增·检验规则':'编辑·检验规则'"
              width="50%"
              append-to-body
              :close-on-click-modal="false"
              :visible.sync="dialogAddVisible">
     <el-form ref="dataForm" size="mini" label-width="80px">
-      <div class="dialog-title"><span>样品送检</span></div>
+      <div class="dialog-title">
+      	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增检验规则</span>
+      	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> 编辑检验规则</span>
+      </div>
       <el-divider></el-divider>
       <el-row>
         <el-col :span="24">
@@ -91,7 +94,7 @@
       <el-button type="primary"
                  size="mini"
                  style="width: 80px;"
-         @click="updateRule">完成</el-button>
+         @click="updateRule">提 交</el-button>
     </div>
   </el-dialog>
 </template>

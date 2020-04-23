@@ -3,7 +3,7 @@
              :before-close="closeDialog"
              :visible.sync="centerDialogVisible"
              width="40%"
-             title="新增部门">
+             title="编辑·部门">
     <el-form ref="dataForm"
              label-position="left"
              size="mini"

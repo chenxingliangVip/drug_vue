@@ -1,5 +1,5 @@
 <template>
-  <el-dialog :title="type == 'edit'?'新增·样检':'查看·样检'"
+  <el-dialog :title="type == 'add'?'新增·样检':'查看·样检'"
              width="40%"
              append-to-body
              :close-on-click-modal="false"
@@ -7,7 +7,7 @@
     <el-form ref="dataForm"
              size="mini"
              label-width="80px">
-      <div class="dialog-title"><span>样品送检</span></div>
+      <div class="dialog-title"><span><i class="el-icon-folder-add"></i> 新增样品送检</span></div>
       <el-divider></el-divider>
 
       <el-row>
@@ -135,7 +135,7 @@
       <el-button type="primary"
                  size="mini" @click="updateSendDetail"
                  style="width: 80px;">
-        提交
+        提 交
       </el-button>
     </div>
   </el-dialog>

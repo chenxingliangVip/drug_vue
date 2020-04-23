@@ -1,10 +1,13 @@
 <template>
-  <el-dialog width="40%" append-to-body :title="type == 'add'?'新增·发布':'修改·发布'"
+  <el-dialog width="40%" append-to-body :title="type == 'add'?'新增·发布':'编辑·发布'"
              :close-on-click-modal="clickModalHide"
              :before-close="closeDialog"
              :visible.sync="centerDialogVisible"
         >
-    <div class="dialog-title"><span>{{type == 'add'?'新增发布':'修改发布'}}</span></div>
+    <div class="dialog-title">
+	  	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增发布</span>
+	  	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> 编辑发布</span>
+    </div>
     <el-divider></el-divider>
     <div>
       <el-form ref="dataForm"
@@ -47,18 +50,18 @@
       <div slot="footer"
            class="dialog-footer"
            style="margin-top:40px">
-        <el-button type="green" @click="updateNotice('0')"
+        <el-button type="primary" @click="updateNotice('0')"
                    size="mini"
                    style="width: 80px;"
                    :class="messageData.publishStatus =='1'?'disabled_btn':''"
           >
-          保存
+          暂 存
         </el-button>
-        <el-button type="primary"
+        <el-button type="green"
                    size="mini"
                    :class="messageData.publishStatus =='1'?'disabled_btn':''"
                    style="width: 80px;margin-left:30%"  @click="updateNotice('1')">
-          发布
+          发 布
         </el-button>
       </div>
     </div>
@@ -138,12 +141,18 @@
   }
 </script>
 
-<style>
-  .disabled_btn {
+<style scoped>
+  .el-button.disabled_btn {
     pointer-events: none;
     cursor: not-allowed;
     background-color: #7e8c8d !important;
     border:  #7e8c8d !important;
+  }
+  .el-dialog .el-button--primary {
+    background-color: #d09c4f;
+    border-color: #d09c4f;
+    border-radius: 3px;
+    padding: 5px 10px;
   }
 </style>
 
