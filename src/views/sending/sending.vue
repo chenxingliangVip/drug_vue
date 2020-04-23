@@ -48,10 +48,6 @@
                        :value="item.value" />
           </el-select>
         </div>
-        <div class="filter-item filter-item-btn-search">
-          <i class="el-icon-search" style="cursor:pointer;"
-             @click="getList">
-          </i></div>
       </div>
       <div>
         <div class="filter-item">
@@ -116,6 +112,10 @@
                           style="width: 140px;">
           </el-date-picker>
         </div>
+        <div class="filter-item filter-item-btn-search">
+          <i class="el-icon-search" style="cursor:pointer;"
+             @click="getList">
+          </i></div>
       </div>
       <div>
         <el-button class="filter-btn-item" v-if="hasRole('yangpin:send:delete')"
