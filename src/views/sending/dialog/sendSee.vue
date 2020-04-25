@@ -48,7 +48,7 @@
     <div class="flex-row-space-between"
          style="margin:10px 0 3px 0;">
       <div style="line-height:20px;"><span style="color:#878989">检项选择：</span></div>
-      <el-button :type="isCheckSelect? 'red':'info'" @click="changeCheck" v-show="buttonShow"
+      <el-button :type="isCheckSelect? 'red':'info'" @click="changeCheck" v-if="buttonShow"
                  size="mini"
                  style="width: 60px; height:20px; min-height:20px;">
         复检
@@ -124,10 +124,14 @@
       let user = JSON.parse(getToken());
       this.user = user;
       self.$eventBus.$on("openSendSee",function (editData) {
+        let time = (new Date()).getTime();
+        let stamp = (time - editData.updateTime)/(1000*3600);
+        self.detailData = editData;
         self.dialogAddVisible = true;
         self.count = 0;
-        self.buttonShow = editData.checkStatus == '4'?true:false;
-        self.detailData = editData;
+        self.buttonShow = (editData.checkStatus == '4'||editData.checkStatus == '5')?true:false;
+        self.buttonShow = (self.buttonShow && (stamp < 72)) ?true:false;
+        self.buttonShow = (self.buttonShow && (self.detailData.userId == self.$store.getters.userId)) ?true:false;
         self.getSampleItems();
       })
     },
@@ -204,10 +208,10 @@
               return false;
             }
           }
-          if(data.resultId == 'Y'){
-            this.showTip("检验项合格，无需复检");
-            return false;
-          }
+          // if(data.resultId == 'Y'){
+          //   this.showTip("检验项合格，无需复检");
+          //   return false;
+          // }
           if(!data.resultId ){
             this.showTip("检验项未检测，无需复检");
             return false;
@@ -233,7 +237,7 @@
               if(data.resultId == "N"){
                 data.resultIdCn="不合格";
               }
-              if(data.resultId && data.resultId =='N'){
+              if(data.resultId ){
                 self.isCheckSelect = true;
               }
             }

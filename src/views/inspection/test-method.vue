@@ -118,7 +118,7 @@
       </template>
     </drug-table>
     <method-dialog :editData="detailData" :type="operateType"></method-dialog>
-    <form action="/api/drug/file/downloadFile" method="post"
+    <form action="/drug/file/downloadFile" method="post"
           style="display: none;" ref="downloadFile">
       <input name="path" :value="downPath"/>
     </form>

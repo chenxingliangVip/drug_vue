@@ -370,9 +370,7 @@ export default {
         if (resp.success) {
           self.tableLoading = false;
           self.tableData = resp.result;
-          if(self.tableData.length > 0){
-            self.backCount = self.tableData[0].count;
-          }
+          self.backCount = self.tableData.length > 0?self.tableData[0].count:0;
           self.tableHeader =  [
             {"columnName": "sampleCode", "coloumNameCn": "检单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
