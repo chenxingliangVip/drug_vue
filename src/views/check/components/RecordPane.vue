@@ -28,7 +28,7 @@
       <drug-table  :tableData="tableData" :tableLoading="tableLoading"
                    :tableHeader="tableHeader" :option="option">
         <template slot-scope="props" slot="operate">
-          <img src="../../../assets/img/print.png"   @click="handlePrint(props.rowData)"
+          <img src="../../../assets/img/print.png"   @click="openPrintView(props.rowData)"
                 class="svg-icon" style="cursor: pointer;width: 15px;height: 15px;margin-top: 4px">
         </template>
       </drug-table>
@@ -69,6 +69,23 @@ export default {
   },
 
   methods: {
+    openPrintView(row){
+      let time = (new Date()).getTime();
+      let routeData = this.$router.resolve({ path: "/iframe?filePath="+row.filePath+"&&time="+time });
+      window.open(routeData.href, '_blank');
+      this.updatePrintCount(row);
+    },
+
+    updatePrintCount(row){
+      let self = this;
+      self.$http({
+        url: "/drug/record/updateRecordLog",
+        method: "post",
+        params:{id:row.id}
+      }).then(resp => {
+      });
+    },
+
     handlePrint(row){
       this.$eventBus.$emit("openRecordDialog",row.sampleId,row.filePath);
     },
@@ -84,10 +101,9 @@ export default {
           self.tableLoading = false;
           self.tableData = resp.result;
           self.tableHeader =  [
+            {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "workNum", "coloumNameCn": "工号"},
             {"columnName": "userName", "coloumNameCn": "姓名"},
-            {"columnName": "deptName", "coloumNameCn": "组别"},
-            {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "itemNum", "coloumNameCn": "项数"},
             {"columnName": "printNum", "coloumNameCn": "打印数"},
             {"columnName": "createTimeFt", "coloumNameCn": "打印时间"}];
