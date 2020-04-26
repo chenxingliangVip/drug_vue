@@ -6,8 +6,8 @@
              :visible.sync="dialogAddVisible">
     <el-form ref="dataForm" size="mini" label-width="80px">
       <div class="dialog-title">
-      	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增检验规则</span>
-      	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> 编辑检验规则</span>
+      	<span v-if="type=='add'">新增检验规则</span>
+      	<span v-else style='color:#cb0000'>编辑检验规则</span>
       </div>
       <el-divider></el-divider>
       <el-row>

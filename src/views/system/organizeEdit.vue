@@ -9,7 +9,7 @@
              label-position="left"
              size="mini"
              label-width="0px">
-      <div class="dialog-title"><span><i class="el-icon-folder-add"></i> 新增部门</span></div>
+      <div class="dialog-title"><span>新增部门</span></div>
       <el-divider></el-divider>
       <div class="el-dialog-item el-dialog-input" style="margin-top:10px;">
         <el-checkbox v-model="firstChecked"></el-checkbox>

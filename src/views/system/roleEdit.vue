@@ -5,8 +5,8 @@
              :visible.sync="centerDialogVisible"
              :title="type == 'add'?'新增·角色权限管理':'编辑·角色权限管理'">
     <div class="dialog-title">
-	  	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> {{titleTxt}}角色权限管理</span>
-	  	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> {{titleTxt}}角色权限管理</span>
+	  	<span v-if="type=='add'">{{titleTxt}}角色权限管理</span>
+	  	<span v-else style='color:#cb0000'>{{titleTxt}}角色权限管理</span>
     </div>
     <el-divider></el-divider>
     <div class="el-dialog-item"

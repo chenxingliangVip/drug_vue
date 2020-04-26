@@ -9,8 +9,9 @@
              size="mini"
              label-width="0px">
       <div class="dialog-title">
-      	<span v-if="type == 'xd' || type == 'edit'" style="color: #cb0000 !important"><i class="el-icon-edit"> {{titleTxt}}检验方法 </i></span>
-      	<span v-else style="color: #2e827f !important"><i class="el-icon-folder-add"></i> {{titleTxt}}检验方法</span>
+      	<span v-if="type == 'xd' || type == 'edit'" style="color: #cb0000 !important">{{titleTxt}}检验方法 </i></span>
+      	<span v-else-if="type == 'see'" >{{titleTxt}}检验方法</span>
+      	<span v-else style="color: #2e827f !important">{{titleTxt}}检验方法</span>
       </div>
       <el-divider></el-divider>
       <el-row>
@@ -453,6 +454,5 @@
     background-color: #2e827f;
     border-color: #2e827f;
     border-radius:3px;
-    padding: 5px 10px;
   }
 </style>

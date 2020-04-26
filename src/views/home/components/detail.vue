@@ -9,7 +9,7 @@
     <el-row type="flex"
             justify="center">
       <div class="el-dialog-title">
-        <h2 style="display: inline;color: red;">{{ messageData.title }}</h2><br>
+        <h2 style="display: inline;color: #cb0000;">{{ messageData.title }}</h2><br>
         <span style="display: inline">{{ messageData.createTimeFt }}</span>
       </div>
     </el-row>

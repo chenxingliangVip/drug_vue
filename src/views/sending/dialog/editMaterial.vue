@@ -8,9 +8,9 @@
   >
     <el-form ref="dataForm" label-position="left" size="mini" label-width="0px">
       <div class="dialog-title">
-        <span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增物料编码</span>
-        <span v-else-if="type=='see'"><i class="el-icon-view"></i> 查看物料编码</span>
-        <span v-else style="color: #cb0000"><i class="el-icon-edit"></i> 编辑物料编码</span>
+        <span v-if="type=='add'">新增物料编码</span>
+        <span v-else-if="type=='see'">查看物料编码</span>
+        <span v-else style="color: #cb0000">编辑物料编码</span>
       </div>
       <el-divider></el-divider>
       <el-row>
@@ -193,7 +193,7 @@
               clearable
               type="textarea"
               maxlength="200"
-              style="width: 84%"
+              style="width: calc(100% - 65px)"
               :rows="2"
               size="small"
               placeholder="请输入200字内的描述"
@@ -211,7 +211,7 @@
               clearable
               type="textarea"
               maxlength="200"
-              style="width: 84%"
+              style="width: calc(100% - 65px)"
               :rows="2"
               size="small"
               placeholder="请输入200字内的说明"

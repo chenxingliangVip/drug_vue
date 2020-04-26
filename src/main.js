@@ -24,6 +24,9 @@ import * as filters from "./filters"; // 全局实用程序过滤器
 
 import VueUeditorWrap from './components/Ueditor/vue-ueditor-wrap'
 import {Notification} from 'element-ui';
+
+import LunarFullCalendar from "vue-lunar-full-calendar"; //日历
+Vue.use(LunarFullCalendar);
 Vue.use(ElementUI);
 
 Vue.component('vue-ueditor-wrap', VueUeditorWrap);

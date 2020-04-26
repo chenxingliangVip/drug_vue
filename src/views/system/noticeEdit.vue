@@ -5,8 +5,8 @@
              :visible.sync="centerDialogVisible"
         >
     <div class="dialog-title">
-	  	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增发布</span>
-	  	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> 编辑发布</span>
+	  	<span v-if="type=='add'">新增发布</span>
+	  	<span v-else style='color:#cb0000'>编辑发布</span>
     </div>
     <el-divider></el-divider>
     <div>

@@ -6,7 +6,7 @@
     <div class="el-form-no">
     	<img class="NoImg" src="../../../assets/img/noNum.png" />{{detailData.sampleCode}}
     </div>
-    <div class="dialog-title"><span style='color:#000'><i class="el-icon-view"></i> 检样结果速览</span></div>
+    <div class="dialog-title"><span style='color:#000'>检样结果速览</span></div>
     <el-divider></el-divider>
     <el-row>
       <el-col :span="12">

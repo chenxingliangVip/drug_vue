@@ -11,8 +11,8 @@
                  size="mini"
                  label-width="0px">
           <div class="dialog-title">
-          	<span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'><i class="el-icon-edit"> {{title}} </i></span>
-          	<span v-else style="color: #2e827f !important"><i class="el-icon-view"></i> {{title}}</span>
+          	<span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'>{{title}} </i></span>
+          	<span v-else style="color: #2e827f !important">{{title}}</span>
           </div>
           <el-divider></el-divider>
           <el-row type="flex"

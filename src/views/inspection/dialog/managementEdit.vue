@@ -8,8 +8,8 @@
              label-position="left"
              size="mini">
       <div class="dialog-title">
-      	<span v-if="type == 'add'" style="color: #2e827f !important"><i class="el-icon-folder-add"></i> 新增存样</span>
-      	<span v-else style="color: #cb0000 !important"><i class="el-icon-edit"> 修改存样</i></span>
+      	<span v-if="type == 'add'" style="color: #2e827f !important">新增存样</span>
+      	<span v-else style="color: #cb0000 !important">修改存样</i></span>
       </div>
       <el-divider></el-divider>
       <div class="el-dialog-item"><label class="w3"

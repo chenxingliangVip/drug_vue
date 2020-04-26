@@ -100,7 +100,7 @@
 				<div class="middleLeft">
 					<div class="TimeForm">
 						<p class="time">{{nowTime}}</p>
-						<p class="date">{{nowDate}} pm {{nowWeek}}</p>
+						<p class="date">{{nowDate}} {{nowWeek}}</p>
 					</div>
 					<div class="DateForm">
 						<p>
@@ -110,8 +110,8 @@
 					</div>
 				</div>
 				<div class="line">
-					<h1>威 &nbsp;&nbsp;尔 &nbsp;&nbsp;药 &nbsp;&nbsp;业</h1>
-					<h1>6&nbsp;&nbsp;0&nbsp;&nbsp;3&nbsp;&nbsp;3&nbsp;&nbsp;5&nbsp;&nbsp;5</h1>
+					<h1>威 &nbsp;&nbsp;&nbsp;尔 &nbsp;&nbsp;&nbsp;药 &nbsp;&nbsp;&nbsp;业</h1>
+					<h1>6&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;5</h1>
 				</div>
 				<div class="middleRight">
 					<p>收集样品数量<span>{{methodAndPersonAndSample.sampleCount}}个</span></p>

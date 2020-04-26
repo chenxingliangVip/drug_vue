@@ -7,7 +7,7 @@
     <el-form ref="dataForm"
              size="mini"
              label-width="80px">
-      <div class="dialog-title"><span><i class="el-icon-folder-add"></i> 新增样品送检</span></div>
+      <div class="dialog-title"><span>新增样品送检</span></div>
       <el-divider></el-divider>
 
       <el-row>

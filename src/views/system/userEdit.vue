@@ -12,8 +12,8 @@
              size="mini"
              >
       <div class="dialog-title">
-		  	<span v-if="type=='add'"><i class="el-icon-folder-add"></i> 新增用户</span>
-		  	<span v-else style='color:#cb0000'><i class="el-icon-edit"></i> 编辑用户</span>
+		  	<span v-if="type=='add'">新增用户</span>
+		  	<span v-else style='color:#cb0000'>编辑用户</span>
       </div>
       <el-divider></el-divider>
       <el-form-item label=" 部    门 ：" prop="deptId" style="margin-bottom: 10px">

@@ -360,7 +360,7 @@
     text-align: center;
     font-size: 17px;
     color: #2e827f;
-    
+    font-family: STHeiti;
 }
 
 .w2 {
@@ -515,3 +515,32 @@
 .sameData .el-range-separator {
     line-height: 14px !important;
 }
+
+//日历样式
+.fc-day-header {
+    height: 30px;
+    line-height: 30px;
+}
+.fc-widget-content {
+    .fc-content-skeleton {
+        .fc-day-top {
+            padding: 5px;
+        }
+    }
+    .fc-day-number {
+        float: left !important;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    .fc-day-cnDate {
+        float: right;
+    }
+    .fc-day-cnTerm {
+        float: right;
+    }
+}
+
+    button {
+        border: none;
+        outline: none;
+    }
