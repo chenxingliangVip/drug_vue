@@ -289,10 +289,8 @@
         let self = this;
         let year = formatDate(new Date(), "yyyy");
         let moth = formatDate(new Date(), "MM");
-        moth = parseInt(moth) >1?moth-1:12;
-        year = moth ==12?parseInt(year)-1:year;
-        let day = year+"-"+(moth > 9?moth:"0"+moth)+"-01";
-        let endDay = year+"-"+(moth > 9?moth:"0"+moth)+"-31";
+        let day = year+"-"+moth+"-01";
+        let endDay = year+"-"+moth+"-31";
         this.$http({
           url: "/drug/bigScreen/queryWorkHour",
           method: "post",
@@ -306,10 +304,8 @@
         let self = this;
         let year = formatDate(new Date(), "yyyy");
         let moth = formatDate(new Date(), "MM");
-        moth = parseInt(moth) >1?moth-1:12;
-        year = moth ==12?parseInt(year)-1:year;
-        let day = year+"-"+(moth > 9?moth:"0"+moth)+"-01";
-        let endDay = year+"-"+(moth > 9?moth:"0"+moth)+"-31";
+        let day = year+"-"+moth+"-01";
+        let endDay = year+"-"+moth+"-31";
         this.$http({
           url: "/drug/bigScreen/queryMothRate",
           method: "post",

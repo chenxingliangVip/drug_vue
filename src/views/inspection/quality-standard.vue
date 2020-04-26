@@ -117,7 +117,7 @@
         <div>
           <label v-show="props.rowData.checkStatus=='4'" @click="addMaterialStandard(props.rowData,'dz')" v-if="hasRole('standard:check:add')"
                  class="table-view">
-            修改
+            待增
           </label>
           <label v-show="props.rowData.checkStatus!='4'" @click="lookDetail(props.rowData,'see')" v-if="hasRole('standard:check:see')"
                  class="table-view">

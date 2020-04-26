@@ -87,7 +87,7 @@ export default {
             {"columnName": "workNum", "coloumNameCn": "工号"},
             {"columnName": "userName", "coloumNameCn": "姓名"},
             {"columnName": "deptName", "coloumNameCn": "组别"},
-            {"columnName": "sampleId", "coloumNameCn": "检验号"},
+            {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "itemNum", "coloumNameCn": "项数"},
             {"columnName": "printNum", "coloumNameCn": "打印数"},
             {"columnName": "createTimeFt", "coloumNameCn": "打印时间"}];

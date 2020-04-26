@@ -372,7 +372,7 @@ export default {
           self.tableData = resp.result;
           self.backCount = self.tableData.length > 0?self.tableData[0].count:0;
           self.tableHeader =  [
-            {"columnName": "sampleCode", "coloumNameCn": "检单号"},
+            {"columnName": "sampleCode", "coloumNameCn": "检验单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
             {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
@@ -478,29 +478,7 @@ export default {
       });
     },
 		sameContrast(){
-      if(this.selectChoice.length == 0){
-        this.$notify({
-          title: '提示',
-          message: "请选择对比项！",
-          type: 'warning'
-        });
-        return;
-      }
-      let materialName = "";
-      for(let data of this.selectChoice){
-        if(!materialName){
-          materialName = data.materialName;
-         }
-        if(materialName != data.materialName){
-          this.$notify({
-            title: '提示',
-            message: "请选择相同样品名称对比！",
-            type: 'warning'
-          });
-          return;
-        }
-      }
-      this.$eventBus.$emit("openSameContrast",materialName);
+      this.$eventBus.$emit("openSameContrast");
 		}
   },
 }

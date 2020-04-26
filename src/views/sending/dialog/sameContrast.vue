@@ -66,14 +66,7 @@
 				</el-col>
 			</el-row>
 
-			<!--<div class="tableList" v-for="(value, key) in tableMap" :key="key">
-				<p class="titleSpan">{{key}}</p>
-				<drug-table  :filterPage="false" :isMultipleSelection="true"
-					:tableData="value.samples" :tableLoading="value.loading" :tableHeader="tableHeader">
-				</drug-table>
-			</div>-->
-
-			<div class="tableList" v-for="(value,key) in tableMap" :key="key">
+			<div class="tableList" v-for="(value,key) in tableMap" :key="key" v-show="Object.keys(tableMap).length > 0">
 				<p class="titleSpan">{{key}}</p>
 				<table border="1" class="tableMain">
 					<tr>
@@ -101,6 +94,21 @@
 				</table>
 			</div>
 
+      <div v-show="Object.keys(tableMap).length == 0"  class="tableList" style="margin-top: 10px">
+        <table border="1" class="tableMain">
+          <tr>
+            <th>送检时间</th>
+            <th>检单号</th>
+            <th>样品批号</th>
+            <th>样品规格</th>
+            <th>样品等级</th>
+            <th>样品规模</th>
+            <th>检项名称</th>
+            <th>质量标准</th>
+            <th>检测结果</th>
+          </tr>
+        </table>
+      </div>
 		</el-form>
 	</el-dialog>
 </template>
@@ -220,15 +228,12 @@
 		mounted() {
       let self = this;
       self.getMaterials();
-			self.$eventBus.$on("openSameContrast",function (materialName) {
+			self.$eventBus.$on("openSameContrast",function () {
           self.dialogAddVisible = true;
           self.dialogLoading = true;
-          self.sampleData.materialName = materialName;
+          self.sampleData.materialName = "";
           self.sampleData.startTime = "";
           self.sampleData.endTime = "";
-          self.changeMaterial(materialName);
-          // self.getTableHeader();
-          self.getSampleItemList();
 		    })
 		}
 	}

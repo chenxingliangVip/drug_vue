@@ -347,6 +347,7 @@
           params.push(param);
         }
         this.methodData.matrialStandradItems = params;
+        this.methodData.type = this.type;
       },
       updateStandard() {
         let self = this;

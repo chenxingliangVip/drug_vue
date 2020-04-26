@@ -201,6 +201,14 @@
             color.color = "red";
           }
         }
+        if(key =='houseStatus'){
+          let house = row.house;
+          if(house){
+            color.color =  "#54A0EA";
+          }else{
+            color.color = "red";
+          }
+        }
         if(key == 'checkMaterialStatusCn'){
           let userStatus = row.checkStatus;
           if(userStatus == 0){

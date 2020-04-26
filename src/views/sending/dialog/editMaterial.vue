@@ -107,7 +107,7 @@
             <label>参考物料：</label>
             <el-select
               v-model="materialData.refItem"
-              :disabled="type == 'see'"
+              :disabled="type == 'see' || refMaterialDisabled"
               size="mini"
               clearable
               filterable
@@ -265,6 +265,9 @@
         count: 0,
         applyReason: "",
 
+        //参考物料
+        refMaterialDisabled:true,
+
         materialCount: 0,
         materialGradeValue:"",
         materialGradeValueMap:{"工业级":"01","药用级":"02","注射级":"03"}
@@ -308,14 +311,17 @@
 
       changeMaterialType() {
         this.materialData.materialCode = "";
+        this.materialData.refItem = "";
         for (let data of this.grades) {
           if (data.id == this.materialData.materialTypeId) {
             let tag = "P";
             if (data.itemName == "原料") {
               tag = "M";
             }
+            this.refMaterialDisabled = (data.itemName == "原料" || data.itemName == "成品")?true:false;
             this.materialData.materialCode = tag+this.materialGradeValue+this.getRandom();
             this.materialData.artNode =data.itemName.replace(/[^0-9]/ig,"");
+            break;
           }
         }
       },
@@ -439,6 +445,7 @@
         this.dialogAddVisible = true;
         this.count = 0;
         this.materialData = val;
+        this.refMaterialDisabled = true;
         if (this.type == "add") {
           if (this.levels && this.levels.length > 0) {
             this.materialData.materialGradeId = this.levels[0].id

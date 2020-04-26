@@ -133,7 +133,7 @@
 
 <script>
   import waves from '@/views/directive/waves' // waves directive
-  import {parseTime} from '@/utils'
+  import {sortStr} from '@/utils/common.js'
   import drugTable from "@/components/table/index";
   import materialEdit from "./dialog/editMaterial"
 
@@ -201,7 +201,7 @@
               {"columnName": "materialGradeName", "coloumNameCn": "等级"},
               {"columnName": "nameAbbr", "coloumNameCn": "英文简称"},
               {"columnName": "refItem", "coloumNameCn": "参考物料"},
-              {"columnName": "finalProd", "coloumNameCn": "终产品"},
+              // {"columnName": "finalProd", "coloumNameCn": "终产品"},
               {"columnName": "remark", "coloumNameCn": "说明"},
               {"columnName": "checkMaterialStatusCn", "coloumNameCn": "状态", "width": "60px"},];
             self.option.showOperate = true;
@@ -298,6 +298,7 @@
           }
         });
       },
+
       getLevelList() {
         let self = this;
         self.$http({
@@ -306,7 +307,8 @@
           params: {itemCode: "grade"}
         }).then(resp => {
           if (resp.success) {
-            self.levels = resp.result;
+            let sortArray = sortStr(resp.result,"serialNo");
+            self.levels = sortArray;
           }
         });
       },

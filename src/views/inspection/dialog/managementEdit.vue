@@ -50,7 +50,7 @@
     name:"managementEdit",
     data(){
       return{
-        detailData:{sampleId:"",materialName:"",materialType:"",house:""},
+        detailData:{sampleId:"",materialName:"",materialType:"",house:"",saveTmp:""},
         type:"",
         count:0,
         dialogAddVisible:false,
@@ -102,6 +102,14 @@
         }
         if(!this.detailData.materialName){
           this.showTip("检验号不存在！");
+          return false;
+        }
+        if(!this.detailData.house){
+          this.showTip("库位号不能为空！");
+          return false;
+        }
+        if(this.detailData.saveTmp !='1'){
+          this.showTip("检验方法未存样！");
           return false;
         }
         return true;
@@ -156,9 +164,11 @@
         if(data){
           this.detailData.materialName = data.materialName;
           this.detailData.materialType = data.materialType;
+          this.detailData.saveTmp = data.saveTmp;
         }else{
           this.detailData.materialName = "";
           this.detailData.materialType = "";
+          this.detailData.saveTmp = "";
         }
       }
     }

@@ -119,12 +119,13 @@ export default {
           self.tableLoading = false;
           self.tableData = resp.result;
           self.tableHeader =  [{"columnName": "sampleId", "coloumNameCn": "检验单号","width":"90px"},
-            {"columnName": "house", "coloumNameCn": "库位号","width":"70px"},
+            {"columnName": "materialName", "coloumNameCn": "样品名称"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "userName", "coloumNameCn": "存样人"},
             {"columnName": "createTimeFt", "coloumNameCn": "存样时间"},
-            {"columnName": "materialName", "coloumNameCn": "样品名称"},];
+            {"columnName": "house", "coloumNameCn": "库位号","width":"70px"},
+            {"columnName": "houseStatus", "coloumNameCn": "状态"}];
           self.option.showOperate = true;
         }
       });

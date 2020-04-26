@@ -4,7 +4,7 @@
          style="margin-left:20px">
       <div>
         <div class="filter-item">
-          <span>检验号:</span>
+          <span>检验单号:</span>
           <el-input clearable  v-model="searchParam.sampleCode"
                     size="mini"
                     style="width: 100px;"
