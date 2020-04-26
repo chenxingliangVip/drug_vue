@@ -15,6 +15,7 @@
         </div>
       </div>
     </div>
+    <div class="footImg"></div>
   </div>
 </template>
 
@@ -99,5 +100,17 @@
 }
 .clear {
   clear: both;
+}
+.footImg {
+	width: 40%;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: url(../../assets/img/background_img.png) 100%;
+	background-size: cover;
+}
+.app-container {
+	height: calc(100vh - 148px);
 }
 </style>
