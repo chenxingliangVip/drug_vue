@@ -14,6 +14,10 @@
           <deviation-rate-pane />
         </el-tab-pane>
         <el-tab-pane label="检验记录单复打" v-if="hasRole('report:effiect')">
+           <span slot="label">
+            检验单复打
+            <el-badge :value="recordCount" />
+          </span>
           <record-pane />
         </el-tab-pane>
       </el-tabs>
@@ -41,11 +45,14 @@ export default {
   directives: { waves },
   data() {
     return {
-
+      recordCount:0
     }
   },
-  created() {
-
+  mounted() {
+    let self = this;
+    self.$eventBus.$on("updateRecordCount",function (count) {
+      self.recordCount = count;
+    });
   },
   methods: {
 

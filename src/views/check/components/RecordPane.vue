@@ -98,6 +98,7 @@ export default {
         params:self.searchParam
       }).then(resp => {
         if (resp.success) {
+          let count =0;
           self.tableLoading = false;
           self.tableData = resp.result;
           self.tableHeader =  [
@@ -106,8 +107,14 @@ export default {
             {"columnName": "userName", "coloumNameCn": "姓名"},
             {"columnName": "itemNum", "coloumNameCn": "项数"},
             {"columnName": "printNum", "coloumNameCn": "打印数"},
-            {"columnName": "createTimeFt", "coloumNameCn": "打印时间"}];
+            {"columnName": "createTimeFt", "coloumNameCn": "盖章时间"}];
           self.option.showOperate = true;
+          for(let data of resp.result){
+            if(data.printNum == 0){
+              count++;
+            }
+          }
+          self.$eventBus.$emit("updateRecordCount",count);
         }
       });
     },
