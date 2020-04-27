@@ -2,7 +2,7 @@
     <el-dialog title="参数设定-年历管理" width="1165px" append-to-body :close-on-click-modal="false" class="el-dialog-param" :visible.sync="dialogCalendarVisible">
         <div class="dialog-title"><span style='color:#000'>年历管理</span></div>
         <el-divider></el-divider>
-
+        <el-button class="calendarBtn" type="primary" size="mini">提 交</el-button>
         <div class="calendar-dropdown"  v-if="calendar.show">
             <CalendarDate 
                 :zero="calendar.zero" 
@@ -243,5 +243,8 @@
     .el-dialog-item {
         display: inline-block;
     }
-    
+    .calendarBtn {
+    	float: right;
+    	width: 80px;
+    }
 </style>
