@@ -11,7 +11,7 @@
           <span  slot="title">{{onlyOneChild.meta.title}}</span>
 					<span class="txt_Num" v-if="onlyOneChild.meta.title  == '信息'">{{txtNum}}</span>
           <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #cec813;">new!</i></span>
-          <img src="@/assets/img/errorImg.png" class="txt_Error"  v-if="onlyOneChild.meta.title  == '数据备份'"/>
+          <img src="@/assets/img/errorImg.png" class="txt_Error"  v-if="onlyOneChild.meta.title  == '数据备份' && dbTag"/>
         </el-menu-item>
       </app-link>
     </template>
@@ -72,6 +72,7 @@ export default {
     return {
     	txtNum: 0,
     	InfoQuestion: true,
+      dbTag:false
     }
   },
   methods: {
@@ -116,6 +117,9 @@ export default {
     });
     self.$eventBus.$on("updateStandard",function (count) {
       self.InfoQuestion = (count > 0);
+    });
+    self.$eventBus.$on("updateDbBack",function () {
+      self.dbTag = true;
     })
   },
 }

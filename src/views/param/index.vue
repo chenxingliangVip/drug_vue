@@ -115,13 +115,42 @@
                         imgSrc: require("@/assets/img/paramImg8.jpg")
                     }
                 ],
+
+              chooseCal:[]
             }
         },
+
+      mounted(){
+        let self = this;
+        self.getList();
+        self.$eventBus.$on("updateCalendarList",function () {
+          self.getList();
+        })
+      },
         methods: {
+          getList() {
+            let self = this;
+            self.tableLoading = true;
+            self.$http({
+              url: "/drug/calendar/queryCalendarList",
+              method: "post",
+            }).then(resp => {
+              if(resp.success) {
+                let choose = [];
+                for(let data of resp.result){
+                  let year = parseInt(data.year);
+                  let mouth = parseInt(data.mouth);
+                  let day = parseInt(data.day);
+                  choose.push([year, mouth, day])
+                }
+                self.chooseCal = choose;
+              }
+            });
+          },
             openDialog(type) {
                 for(let data of this.paramList) {
                     if(type == "cal") {
-                        this.$eventBus.$emit("openCalendar");
+                        this.$eventBus.$emit("openCalendar",this.chooseCal);
                     } else if(data.type == type) {
                         data.paramData = {
                             id: ""
@@ -143,13 +172,13 @@
         padding-right: 50px;
         height: calc(100vh - 148px);
     }
-    
+
     .btn-ul {
         list-style-type: none;
         width: 100%;
         padding-left: 0;
     }
-    
+
     .btn-ul li {
         width: 20%;
         float: left;
@@ -175,20 +204,20 @@
     			transition: all 0.5s;
         }
     }
-    
+
     .clear {
         clear: both;
     }
-    
+
     .el-dialog-item {
         display: inline-block;
     }
-    
+
     .el-button--mini {
         border-radius: 8px;
         font-size: 18px;
     }
-    
+
     .el-button [class*=el-icon-]+span {
         line-height: 36px;
     }

@@ -13,6 +13,7 @@ export default {
       self.getNoticeCount();
       self.getStandardFlag();
     }, 5000);
+    self.getDbBackCount();
   },
   methods:{
     getStandardFlag() {
@@ -44,6 +45,19 @@ export default {
           }
         });
       }
+    },
+    getDbBackCount() {
+      let self = this;
+      self.$http({
+        url: "/drug/db/queryDbBackList",
+        method: "post",
+      }).then(resp => {
+        if (resp.success) {
+          if(resp.result.length > 0 && resp.result[0].backStatus == '1'){
+            self.$eventBus.$emit("updateDbBack");
+          }
+        }
+      });
     },
   }
 }

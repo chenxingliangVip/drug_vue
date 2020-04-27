@@ -53,7 +53,7 @@
         <div class="calendar-years" :class="{'show':yearsShow}">
             <span v-for="y in years" @click.stop="selectYear(y)" :class="{'active':y==year}">{{y}}</span>
         </div>
- 
+
     </div>
 </template>
 
@@ -122,7 +122,7 @@ export default {
         months:{
             type: Array,
             default:function(){
-                return window.navigator.language.toLowerCase() == "zh-cn"?['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']:['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                return ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
             }
         },
         // 自定义事件
@@ -191,6 +191,10 @@ export default {
         this.init()
     },
     methods: {
+
+        setMultiDays(val){
+          this.multiDays = val;
+        },
         init(){
             if (this.month === 0) {
                 let now = new Date();
@@ -203,25 +207,25 @@ export default {
                     if (this.range) { //范围
                         this.year = parseInt(this.value[0][0])
                         this.month = parseInt(this.value[0][1]) - 1
-                        this.day = parseInt(this.value[0][2]) 
-    
+                        this.day = parseInt(this.value[0][2])
+
                         let year2 = parseInt(this.value[1][0])
                         let month2 = parseInt(this.value[1][1]) - 1
-                        let day2 = parseInt(this.value[1][2]) 
-    
+                        let day2 = parseInt(this.value[1][2])
+
                         this.rangeBegin = [this.year, this.month,this.day]
                         this.rangeEnd = [year2, month2 , day2]
                     }else if(this.multi){//多选
                         this.multiDays=this.value;
                         this.year = parseInt(this.value[0][0])
                         this.month = parseInt(this.value[0][1]) - 1
-                        this.day = parseInt(this.value[0][2]) 
+                        this.day = parseInt(this.value[0][2])
                     }else{ //单选
                         this.year = parseInt(this.value[0])
                         this.month = parseInt(this.value[1]) - 1
-                        this.day = parseInt(this.value[2]) 
+                        this.day = parseInt(this.value[2])
                     }
-                }  
+                }
             }
             this.render(this.year, this.month)
         },
@@ -252,8 +256,8 @@ export default {
                         k++;
                     }
                 }
-       
-                
+
+
                 if (this.range) { // 范围
                     // console.log("日期范围",this.getLunarInfo(this.year,this.month+1,i))
                     let options = Object.assign(
@@ -304,11 +308,11 @@ export default {
                             }
                         }
                     }
-                    
+
                     temp[line].push(options)
                 } else { // 单选
                      // console.log(this.lunar(this.year,this.month,i));
-                    
+
                     let chk = new Date()
                     let chkY = chk.getFullYear()
                     let chkM = chk.getMonth()
@@ -389,7 +393,7 @@ export default {
                             this.getLunarInfo(this.computedNextYear(),this.computedNextMonth(true),d),
                             this.getEvents(this.computedNextYear(),this.computedNextMonth(true),d),
                         ))
-                    }  
+                    }
                 }
             }
             this.days = temp
@@ -480,7 +484,7 @@ export default {
         },
         //  下月
         next(e) {
-            
+
             e.stopPropagation()
             if (this.month == 11) {
                 this.month = 0
@@ -504,7 +508,7 @@ export default {
                     this.rangeBeginTemp = this.rangeBegin
                     this.rangeEnd = [this.year, this.month, this.days[k1][k2].day]
                     this.rangeEndTemp = 0
-                    
+
                 } else {
                     this.rangeEnd = [this.year, this.month,this.days[k1][k2].day]
                     this.rangeEndTemp = 1
@@ -597,19 +601,19 @@ export default {
                     return vv.day==this.day && !vv.disabled
                 })
                 if(day!=undefined ){
-                  day.selected=true  
+                  day.selected=true
                 }
-                
+
             })
         },
         // 日期补零
         zeroPad(n){
             return String(n < 10 ? '0' + n : n)
         },
-        // 根据年月，获取整月的日期 
+        // 根据年月，获取整月的日期
         getFullMonth() {
-            let daysCount = new Date(this.year, this.month + 1, 0).getDate() 
-            var dateArray = []; 
+            let daysCount = new Date(this.year, this.month + 1, 0).getDate()
+            var dateArray = [];
 	            for(var i= 1; i <= daysCount; i++) {
 		                let _date = [this.year,this.month + 1, i]
 		                dateArray.push(_date)
@@ -620,13 +624,13 @@ export default {
         chooseAll() {
             if (this.multi) {
                 // 当前所有月
-                let fullMonth = this.getFullMonth() 
+                let fullMonth = this.getFullMonth()
                  // 非当前月所有天
                 let filterDay = this.multiDays.filter(v => {
                     return !(this.year === v[0] && this.month + 1 === v[1])
                 })
                 // this.multiDays = fullMonth.concat(filterDay)
-                this.multiDays = fullMonth 
+                this.multiDays = fullMonth
                 this.$emit('select',this.multiDays)
                 this.$emit('currentYearMon',this.year, this.month+1)
             }
@@ -635,7 +639,7 @@ export default {
         chooseReverse(){
              if (this.multi) {
                 // 当前所有月
-                let fullMonth = this.getFullMonth() 
+                let fullMonth = this.getFullMonth()
                 // 非当前月所有天
                 let filterDay = this.multiDays.filter(v => {
                     return !(this.year === v[0] && this.month + 1 === v[1])
@@ -654,7 +658,7 @@ export default {
                         if (v[2] === full) {
                            let index = _fullMonth.indexOf(v[2])
                            _fullMonth.splice(index, 1)
-                        } 
+                        }
                     })
                 })
                 _fullMonth.map(v => reverse.push([this.year, this.month + 1, v]) )
@@ -685,7 +689,7 @@ export default {
     display: none;
 }
 .calendar .choose-reverse {
-    float: right;    
+    float: right;
     padding: 0px 7px 0px;
     font-size: 12px;
     border-radius: 3px;
@@ -760,7 +764,7 @@ export default {
     float:right;
     text-align: center;
 }
- 
+
 .calendar table {
     clear: both;
     width: 100%;
@@ -788,7 +792,7 @@ export default {
 .calendar td.week{
     font-size:10px;
     pointer-events:none !important;
-    cursor: default !important;    
+    cursor: default !important;
 }
 .calendar td.disabled {
     color: #ccc;
@@ -828,7 +832,7 @@ export default {
     left:0;
     right:0;
     text-align: center;
-    
+
     padding:2px;
     font-size:8px;
     line-height: 1.2;
@@ -908,6 +912,6 @@ export default {
 .calendar-years>span.active{
     border:1px solid #5e7a88;
     background-color: #5e7a88;
-    color:#fff; 
+    color:#fff;
 }
 </style>

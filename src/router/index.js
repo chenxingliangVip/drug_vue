@@ -93,6 +93,12 @@ export const constantRouterMap = [
     },
     children: [
       {
+        path: "deptTask",
+        component: () => import("@/views/inspection/deptTask.vue"),
+        name: "deptTask",
+        meta: { title: "部门任务" ,permission:"deptTask:check",image:require('@/assets/img/deptTask.png')}
+      },
+      {
         path: "sample-detection",
         component: () => import("@/views/inspection/sample-detection.vue"),
         name: "sample-detection",
