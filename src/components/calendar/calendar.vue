@@ -682,6 +682,7 @@ export default {
     border-color: #2d8cf0;
     height: 30px;
     line-height: 30px;
+    display: none;
 }
 .calendar .choose-reverse {
     float: right;    
@@ -693,6 +694,7 @@ export default {
     border-color: #2d8cf0;
     height: 30px;
     line-height: 30px;
+    display: none;
 }
 .calendar {
     margin:auto;
@@ -708,7 +710,7 @@ export default {
     font-size: 20px;
     line-height: 40px;
     color:#5e7a88;
-    border-bottom: 1px solid #e8eaec;
+    /*border-bottom: 1px solid #e8eaec;*/
 }
 .calendar-tools span{
     cursor: pointer;
@@ -778,6 +780,10 @@ export default {
     cursor: pointer;
     position: relative;
     vertical-align: top;
+    border: 1px solid #eee;
+    padding-top: 5px;
+    height: 60px;
+    line-height: 60px;
 }
 .calendar td.week{
     font-size:10px;
@@ -818,7 +824,7 @@ export default {
 }
 .calendar td .text{
     position: absolute;
-    top:28px;
+    top:33px;
     left:0;
     right:0;
     text-align: center;

@@ -49,6 +49,7 @@
 
       </div>
     </div>
+    <div class="footImg"></div>
     <organize-edit :editData="editData" :deptList="deptList"></organize-edit>
     <organize-add ></organize-add>
   </div>
@@ -158,7 +159,7 @@ export default {
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .el-div-tree {
   .tree-container /deep/ .el-tree > .el-tree-node:after {
     border-top: none;
@@ -173,8 +174,17 @@ export default {
 
 .app-main-container {
   margin: 10px 25px;
+	height: calc(100vh - 252px);
 }
-
+	.footImg {
+    	width: 40%;
+    	height: 200px;
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+    	background: url(../../assets/img/background_img.png) 100%;
+    	background-size: cover;
+    }
 .el-dev-logo {
   text-align: center;
   width: 86px;

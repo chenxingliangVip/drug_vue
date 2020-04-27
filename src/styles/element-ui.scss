@@ -517,30 +517,3 @@
 }
 
 //日历样式
-.fc-day-header {
-    height: 30px;
-    line-height: 30px;
-}
-.fc-widget-content {
-    .fc-content-skeleton {
-        .fc-day-top {
-            padding: 5px;
-        }
-    }
-    .fc-day-number {
-        float: left !important;
-        font-size: 16px;
-        margin-left: 5px;
-    }
-    .fc-day-cnDate {
-        float: right;
-    }
-    .fc-day-cnTerm {
-        float: right;
-    }
-}
-
-    button {
-        border: none;
-        outline: none;
-    }

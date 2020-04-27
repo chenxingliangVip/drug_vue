@@ -11,6 +11,7 @@
           <span  slot="title">{{onlyOneChild.meta.title}}</span>
 					<span class="txt_Num" v-if="onlyOneChild.meta.title  == '信息'">{{txtNum}}</span>
           <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #cec813;">new!</i></span>
+          <img src="@/assets/img/errorImg.png" class="txt_Error"  v-if="onlyOneChild.meta.title  == '数据备份'"/>
         </el-menu-item>
       </app-link>
     </template>
@@ -119,7 +120,7 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 	.txt_Num {
 		background-color: #F56C6C;
     border-radius: 10px;
@@ -150,5 +151,12 @@ export default {
     position: absolute;
     top: 9px;
     right: 20%;
+	}
+	.txt_Error {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 9px;
+    right: 22%;
 	}
 </style>
