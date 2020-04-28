@@ -529,12 +529,12 @@
     .el-dialog-item  {
         label {
             width: auto;
-            overflow:hidden;
-            white-space:nowrap;
-            text-overflow:ellipsis;
         }
         .dialogTxt {
             width: 70px;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
         }
     }
 }

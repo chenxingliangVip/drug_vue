@@ -3,7 +3,7 @@
              append-to-body
              width="42%"
              :close-on-click-modal="false"
-             title="复检 · 审批">
+             title="复检 · 审批" class="standard_Dialog">
 
     <div class="dialog-title"><span style="color:#cb0000;margin-left:25px">复检审批</span>
       <img src="../../../assets/img/bohui.png" v-if="detailData.checkStatus == '4'" style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
@@ -82,7 +82,7 @@
     <el-row>
       <el-col :span="24">
         <div class="el-dialog-item">
-          <div><label>审批意见：</label></div>
+          <div><label class="dialogTxt">审批意见：</label></div>
           <el-input clearable  type="textarea" :disabled="(detailData.checkStatus != '2' && detailData.checkStatus != '3') || resetItem.tableData.length > 0"
                     maxlength="200"
                     :rows="2"
@@ -351,4 +351,14 @@
     vertical-align: middle;
     margin-bottom: 2px;
   }
+.dialog-title {
+	img {
+		width: 80px;
+		position: absolute !important;
+		right: 20px;
+		top: 47px;
+		margin-top: 0 !important;
+    background: #fff;
+	}
+}
 </style>

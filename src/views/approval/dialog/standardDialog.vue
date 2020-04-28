@@ -371,4 +371,14 @@
     vertical-align: middle;
     margin-bottom: 2px;
   }
+.dialog-title {
+	img {
+		width: 80px;
+		position: absolute !important;
+		right: 20px;
+		top: 47px;
+		margin-top: 0 !important;
+    background: #fff;
+	}
+}
 </style>
