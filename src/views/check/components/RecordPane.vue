@@ -28,8 +28,18 @@
       <drug-table  :tableData="tableData" :tableLoading="tableLoading"
                    :tableHeader="tableHeader" :option="option">
         <template slot-scope="props" slot="operate">
-          <img src="../../../assets/img/print.png"   @click="openPrintView(props.rowData)"
-                class="svg-icon" style="cursor: pointer;width: 15px;height: 15px;margin-top: 4px">
+          <div >
+            <label @click="seePrint(props.rowData)"
+                   class="table-view" style="cursor: pointer;">
+              查看
+            </label>
+            <label @click="openPrintView(props.rowData)"
+                   class="table-view" style="cursor: pointer;">
+              · &nbsp;打印
+            </label>
+          </div>
+          <!--<img src="../../../assets/img/print.png"   @click="openPrintView(props.rowData)"-->
+                <!--class="svg-icon" style="cursor: pointer;width: 15px;height: 15px;margin-top: 4px">-->
         </template>
       </drug-table>
       <record-dialog></record-dialog>
@@ -74,6 +84,11 @@ export default {
       let routeData = this.$router.resolve({ path: "/iframe?filePath="+row.filePath+"&&time="+time });
       window.open(routeData.href, '_blank');
       this.updatePrintCount(row);
+    },
+    seePrint(row){
+      let time = (new Date()).getTime();
+      let routeData = this.$router.resolve({ path: "/iframe?filePath="+row.filePath+"&&time="+time });
+      window.open(routeData.href, '_blank');
     },
 
     updatePrintCount(row){

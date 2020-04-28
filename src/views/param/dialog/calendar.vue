@@ -33,14 +33,8 @@
                     multi: true,
                     show: true,
                     zero: true,
-                    value: [
-                        [2019, 7, 8],
-                        [2019, 7, 9]
-                    ], //默认日期
-                    disabled: [
-                        [2017, 12, 24],
-                        [2017, 12, 25]
-                    ], //默认日期
+                    value: [], //默认日期
+                    disabled: [], //默认日期
                     lunar: true, //显示农历
                     select: (value) => {
 
@@ -56,10 +50,10 @@
                     },
                     currentYearMon: (year, mon) => {
 
-                        // let currSelectDays = this.calendar.value.filter(v => {
-                        //     return year === v[0] && mon === v[1]
-                        // })
-                        // this.chooseReverse(year, mon, currSelectDays)
+                        let currSelectDays = this.calendar.value.filter(v => {
+                            return year === v[0] && mon === v[1]
+                        })
+                        this.chooseReverse(year, mon, currSelectDays)
 
                     },
                     nextMonth: (mon, year) => {

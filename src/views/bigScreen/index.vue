@@ -460,27 +460,31 @@
           }
         });
       },
-
+      init(){
+        let startDay = new Date("2020-01-01");
+        this.timestap = parseInt((new Date().getTime() - startDay.getTime())/(1000*3600*24));
+        this.getBigScreenSampleList();
+        this.pageShow();
+        this.getMothTotal();
+        this.queryMothSampleSeasonTotal();
+        this.getMethodAndPersonAndSampleCount();
+        this.getYearSample();
+        this.getWorkHour();
+        this.getMothRate();
+        this.getdateFormat();
+        this.getPictureList();
+      }
 
 		},
 		mounted() {
-      let startDay = new Date("2020-01-01");
-      this.timestap = parseInt((new Date().getTime() - startDay.getTime())/(1000*3600*24));
-		  this.getBigScreenSampleList();
-			this.pageShow();
-			this.getMothTotal();
-			this.queryMothSampleSeasonTotal();
-			this.getMethodAndPersonAndSampleCount();
-			this.getYearSample();
-			this.getWorkHour();
-			this.getMothRate();
-			this.getdateFormat();
-			this.setFullScreen();
-			this.getPictureList();
+      this.init();
+      this.setFullScreen();
 			setInterval(() => {
 				this.getdateFormat();
-			}, 1000)
-
+			}, 1000);
+      setInterval(() => {
+        this.init();
+      }, 1000*60*5)
 		}
 	}
 </script>

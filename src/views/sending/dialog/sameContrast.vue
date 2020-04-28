@@ -71,7 +71,7 @@
 				<table border="1" class="tableMain">
 					<tr>
 					    <th>送检时间</th>
-					    <th>检单号</th>
+					    <th>检验单号</th>
 					    <th>样品批号</th>
 					    <th>样品规格</th>
 					    <th>样品等级</th>
