@@ -83,6 +83,14 @@
                         imgSrc: require("@/assets/img/paramImg4.jpg")
                     },
                     {
+                        label: "送样地点",
+                        type: "address",
+                        paramData: {},
+                        ps: "manage:param:address",
+                        icon: "el-icon-map-location",
+                        imgSrc: require("@/assets/img/paramImg7.jpg")
+                    },
+                    {
                         label: "样品规模",
                         type: "size",
                         paramData: {},
@@ -97,14 +105,6 @@
                         ps: "manage:param:name",
                         icon: "el-icon-share",
                         imgSrc: require("@/assets/img/paramImg6.jpg")
-                    },
-                    {
-                        label: "送样地点",
-                        type: "address",
-                        paramData: {},
-                        ps: "manage:param:address",
-                        icon: "el-icon-map-location",
-                        imgSrc: require("@/assets/img/paramImg7.jpg")
                     },
                     {
                         label: "年历管理",
