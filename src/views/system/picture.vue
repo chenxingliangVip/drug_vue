@@ -1,14 +1,20 @@
 <template>
     <div class="app-container upLoadPicture">
         <div class="title">登录页背景图片</div>
-        <el-button type="primary" class="makePic" size="small" @click="submit1">设置图片</el-button>
+        <div class="button_bn">
+        	<el-button type="primary" class="makePic" size="small" @click="submit1">设置图片</el-button>
+        	<span ><i class="el-icon-info"></i> 背景图片尺寸1920*1080px</span>
+        </div>
         <br /><br />
         <img-upload limit="3" :imgList="imgArr1" :type="logoType"></img-upload>
         <br />
         <hr>
         <br />
         <div class="title">看板轮播图片</div>
-        <el-button type="primary" class="makePic" size="small" @click="submit2">设置图片</el-button>
+        <div class="button_bn">
+        	<el-button type="primary" class="makePic" size="small" @click="submit2">设置图片</el-button>
+        	<span ><i class="el-icon-info"></i> 轮播图片尺寸350*250px</span>
+        </div>
         <br /><br />
         <img-upload limit="30" :imgList="imgArr2" :type="screenType" :isMultiple="true"></img-upload>
     </div>
@@ -140,5 +146,15 @@
                 opacity: .8;
             }
         }
+    }
+    .button_bn {
+    	span {
+    		margin-left: 20px;
+    		color: #666;
+    		font-size: 13px;
+    		i{
+    			color: #F56C6C
+    		}
+    	}
     }
 </style>
