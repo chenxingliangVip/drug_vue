@@ -3,7 +3,7 @@
              append-to-body
              width="35%"
              :close-on-click-modal="false"
-             :title="type == 'add'?'新增·存样':'修改·存样'">
+             :title="type == 'add'?'新增·存样':'修改·存样'" class="standard_Dialog ">
     <el-form ref="dataForm"
              label-position="left"
              size="mini">
@@ -12,24 +12,24 @@
       	<span v-else style="color: #cb0000 !important">修改存样</i></span>
       </div>
       <el-divider></el-divider>
-      <div class="el-dialog-item"><label class="w3"
-                                         style="margin-right:-0.5em">检验号</label><label>：</label>
+      <div class="el-dialog-item"><label class="w3 dialogTxt"
+                                         style="margin-right:0em">检验号</label><label>：</label>
         <el-input clearable  v-model="detailData.sampleId" placeholder="扫码输入"  id="blur_input" :disabled="type !='add'"
                   size="mini"
                   style="width: 84%" />
       </div>
-      <div class="el-dialog-item"><label>样品名称</label><label>：</label>
+      <div class="el-dialog-item"><label class="dialogTxt">样品名称</label><label>：</label>
         <el-input clearable  v-model="detailData.materialName"  disabled
                   size="mini"
                   style="width: 84%" />
       </div>
-      <div class="el-dialog-item"><label>样品规格</label><label>：</label>
+      <div class="el-dialog-item"><label class="dialogTxt">样品规格</label><label>：</label>
         <el-input clearable  v-model="detailData.materialType"  disabled
                   size="mini"
                   style="width: 84%" />
       </div>
-      <div class="el-dialog-item"><label class="w3"
-                                         style="margin-right:-0.5em">库位号</label><label>：</label>
+      <div class="el-dialog-item"><label class="w3 dialogTxt"
+                                         style="margin-right:0em">库位号</label><label>：</label>
         <el-input clearable  v-model="detailData.house"
                   size="mini"
                   style="width: 84%" />

@@ -4,7 +4,7 @@
                 width="55%"
                 append-to-body
                :close-on-click-modal="false"
-               :title="dialogtitle">
+               :title="dialogtitle" class="standard_Dialog">
       <div class="formClick" @click.capture="closeEdit">
         <el-form ref="dataForm"
                  label-position="left"
