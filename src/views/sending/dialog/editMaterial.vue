@@ -4,7 +4,7 @@
     :title="type=='add'?'新增·物料编码':(type =='see'?'查看·物料编码':'编辑·物料编码')"
     append-to-body
     :close-on-click-modal="false"
-    :visible.sync="dialogAddVisible"
+    :visible.sync="dialogAddVisible" 
   >
     <el-form ref="dataForm" label-position="left" size="mini" label-width="0px">
       <div class="dialog-title">

@@ -4,7 +4,7 @@
              append-to-body
              :close-on-click-modal="false"
              :visible.sync="dialogAddVisible">
-    <el-form ref="dataForm" size="mini" label-width="80px">
+    <el-form ref="dataForm" size="mini" label-width="80px"  class="inspect_dialog">
       <div class="dialog-title">
       	<span v-if="type=='add'">新增检验规则</span>
       	<span v-else style='color:#cb0000'>编辑检验规则</span>

@@ -2,8 +2,10 @@
 
   <div class='app-container' :style="backgroundStyle">
     <div class="login-container">
-
-      <img src="@/assets/logo.png" class="app-login-logo" />
+			<div class="topImg_logo">
+	      <img src="@/assets/logo.png" class="app-login-logo" />
+	      <img src="@/assets/logoTitle.png" class="app-login-logoTitle" />
+			</div>
 			<p class="title_txt">威尔分析测试平台</p>
       <el-form ref="loginForm"
                :rules="loginRules"
@@ -43,8 +45,8 @@
                    type="primary"
                    style="width:100%;margin-bottom:30px;"
                    @click.native.prevent="handleLogin">登录</el-button>
-
       </el-form>
+			<p class="bottomTxt">Copyright  WELL. All Rights Reserved</p>
     </div>
   </div>
 </template>
@@ -180,11 +182,12 @@ export default {
   }
 }
 .title_txt {
-	color: #fff;
+	color: #35bbe8;
 	text-align-last: justify;
 	margin-top: 10px;
-	font-size: 16px;
+	font-size: 20px;
 	padding-right: 10px;
+	font-family: SimHei;
 }
 .login-container {
   .el-input {
@@ -251,28 +254,38 @@ export default {
     position: relative;
     margin-right: 100px;
     display: flex;
-    padding: 40px 60px 60px 60px;
+    padding: 40px 60px 20px 60px;
     flex-direction: column;
     justify-content: center;
     background-color: rgba(37, 103, 145, 0.7);
     overflow: hidden;
 
-    .app-login-logo {
-      height: 50px;
-    }
+		.topImg_logo {
+	    .app-login-logo {
+	    	width: 40%;
+	      height: 40px;
+	      float: left;
+	    }
+	    .app-login-logoTitle {
+	      float: left;
+	    	width: 60%;
+	      height: 40px;
+	    }
+		}
 
     .login-form {
       position: relative;
       overflow: hidden;
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
 
     .el-form-item {
       height: 36px;
       border-bottom: 1px solid #fff;
       margin-right: 20px;
-    }
-
+      margin-bottom: 25px;
+		}
     .svg-container {
       color: #fff;
       vertical-align: middle;
@@ -285,9 +298,15 @@ export default {
     }
 
     .el-btn-login {
-      margin-top: 20px;
-      background-color: #2a96d4;
-      border-color: #2a96d4;
+      margin-top: 30px;
+      background-color: #35bbe8;
+      border-color: #35bbe8;
+    }
+    .bottomTxt {
+    	color: #d2d2d2;
+    	margin: 0;
+    	font-size: 12px;
+    	text-align: center;
     }
   }
 </style>

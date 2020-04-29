@@ -4,7 +4,7 @@
         append-to-body
         :close-on-click-modal="false"
         width="40%"
-        title="物料编码 · 审批"
+        title="物料编码 · 审批"  class="standard_Dialog"
     >
         <div class="dialog-title">
             <span style="margin-left:25px">物料编码审批</span>
@@ -122,7 +122,7 @@
         <el-row>
             <el-col :span="24" style="margin-top:5px">
                 <div class="el-dialog-item">
-                    <label>产品描述:</label>
+                    <label class="dialogTxt">产品描述:</label>
                     <div style="width:87%">
                         <span>{{detailData.materialDescr}}</span>
                     </div>
@@ -133,7 +133,7 @@
         <el-row>
             <el-col :span="24" style="margin-top:5px">
                 <div class="el-dialog-item">
-                    <label>补充说明:</label>
+                    <label class="dialogTxt">补充说明:</label>
                     <div style="width:87%">
                         <span>{{detailData.remark}}</span>
                     </div>
@@ -144,7 +144,7 @@
             <el-col :span="24" style="margin-top:5px">
                 <div class="el-dialog-item">
                     <div>
-                        <label>审批意见:</label>
+                        <label class="dialogTxt">审批意见:</label>
                     </div>
                     <el-input
                         :disabled="detailData.checkStatus!='2'"
@@ -343,5 +343,15 @@ export default {
     height: 16px;
     vertical-align: middle;
     margin-bottom: 2px;
+}
+.dialog-title {
+	img {
+		width: 80px;
+		position: absolute !important;
+		right: 20px;
+		top: 47px;
+		margin-top: 0 !important;
+    	background: #fff;
+	}
 }
 </style>
