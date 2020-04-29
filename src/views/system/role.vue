@@ -9,7 +9,7 @@
           <el-button class="filter-btn-item" v-if="hasRole('role:system:delete')"
                      size="mini"
                      style="margin-left: 10px;width: 80px;"
-                     type="info"
+                     type="danger"
                      icon="el-icon-delete"
                      @click="deleteRole">删除</el-button>
           <el-button class="filter-btn-item" v-if="hasRole('role:system:add')"

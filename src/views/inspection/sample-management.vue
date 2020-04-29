@@ -36,7 +36,7 @@
           <el-button class="filter-btn-item" v-if="hasRole('saveSample:check:delete')"
                      size="mini"
                      style="margin-left: 30px;width: 80px;"
-                     type="info"
+                     type="danger"
                      icon="el-icon-delete"
                      @click="batchDelete">删除</el-button>
           <el-button class="filter-btn-item" v-if="hasRole('saveSample:check:add')"

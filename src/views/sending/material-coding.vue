@@ -97,7 +97,7 @@
           <el-button class="filter-btn-item" v-if="hasRole('material:send:delete')"
                      size="mini"
                      style="margin-left: 10px;width: 80px;"
-                     type="info"
+                     type="danger"
                      icon="el-icon-delete"
                      @click="batchDelete">删除
           </el-button>

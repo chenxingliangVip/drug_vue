@@ -22,7 +22,7 @@
       <el-button class="filter-btn-item" v-if="hasRole('org:system:delete')"
                  size="mini"
                  style="margin-left: 10px;width: 80px;"
-                 type="info"
+                 type="danger"
                  icon="el-icon-delete"
                  @click="handleDelete">
         删除

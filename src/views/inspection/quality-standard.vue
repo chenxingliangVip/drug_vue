@@ -100,7 +100,7 @@
         <el-button class="filter-btn-item" v-if="hasRole('standard:check:delete')"
                    size="mini"
                    style="margin-left: 1px;width: 70px;"
-                   type="info"
+                   type="danger"
                    icon="el-icon-delete"
                    @click="batchDelete">删除</el-button>
         <!--<el-button class="filter-btn-item" v-if="hasRole('standard:check:add')"-->
