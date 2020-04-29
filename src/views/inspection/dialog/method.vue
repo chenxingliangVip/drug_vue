@@ -3,7 +3,7 @@
              append-to-body
              :close-on-click-modal="false"
              width="40%"
-             :title="titleTxt + '·检验方法'">
+             :title="titleTxt + '·检验方法'" class="standard_Dialog">
     <el-form ref="dataForm"
              label-position="left"
              size="mini"
@@ -16,7 +16,7 @@
       <el-divider></el-divider>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>检项名称：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">检项名称：</label>
             <el-select v-model="methodData.itemName" v-if="type == 'add' || type == 'edit'"
                        size="mini"
                        clearable
@@ -44,7 +44,7 @@
 
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>方法依据：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法依据：</label>
             <el-input clearable  v-model="methodData.methodJudge"  v-if="type == 'add' || type == 'edit'"
                       size="mini"
                       style="width: 140px;"/>
@@ -63,7 +63,7 @@
 
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>方法类别：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法类别：</label>
             <el-select v-model="methodData.methodType" v-if="type == 'add' || type == 'edit'"
                        size="mini"
                        clearable
@@ -87,7 +87,7 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>方法名称：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法名称：</label>
             <el-input clearable  v-model="methodData.methodName" v-if="type == 'add' || type == 'edit'"
                       size="mini"
                       style="width: 140px;"/>
@@ -110,7 +110,7 @@
       </el-row>
       <el-row>
         <el-col :span="24">
-          <div class="el-dialog-item"><label>方法编号：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法编号：</label>
             <el-input clearable  v-model="methodData.methodCode" :disabled="type =='see'"
                       size="mini"
                       style="width: 140px;"/>
@@ -119,7 +119,7 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>方法属性：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法属性：</label>
             <el-select v-model="methodData.codeAttrId" :disabled="type != 'add' && type != 'edit'"
                        size="mini"
                        clearable

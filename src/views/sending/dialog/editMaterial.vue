@@ -4,7 +4,7 @@
     :title="type=='add'?'新增·物料编码':(type =='see'?'查看·物料编码':'编辑·物料编码')"
     append-to-body
     :close-on-click-modal="false"
-    :visible.sync="dialogAddVisible" 
+    :visible.sync="dialogAddVisible" class="standard_Dialog"
   >
     <el-form ref="dataForm" label-position="left" size="mini" label-width="0px">
       <div class="dialog-title">
@@ -16,7 +16,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label>物料名称：</label>
+            <label class="dialogTxt">物料名称：</label>
             <el-input
               clearable
               v-model="materialData.materialName"
@@ -43,7 +43,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label>英文缩写：</label>
+            <label class="dialogTxt">英文缩写：</label>
             <el-input
               clearable
               v-model="materialData.nameAbbr"
@@ -55,7 +55,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label>所属部门：</label>
+            <label class="dialogTxt">所属部门：</label>
             <el-input
               clearable
               v-model="user.deptName"
@@ -70,7 +70,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label>物料规格：</label>
+            <label class="dialogTxt">物料规格：</label>
             <el-select
               v-model="materialData.materialTypeId"
               :disabled="type == 'see'"
@@ -104,7 +104,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label>参考物料：</label>
+            <label class="dialogTxt">参考物料：</label>
             <el-select
               v-model="materialData.refItem"
               :disabled="type == 'see' || refMaterialDisabled"
@@ -125,7 +125,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label>申请时间：</label>
+            <label class="dialogTxt">申请时间：</label>
             <el-date-picker
               v-model="nowTime"
               disabled
@@ -141,7 +141,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label>物料等级：</label>
+            <label class="dialogTxt">物料等级：</label>
             <el-select
               v-model="materialData.materialGradeId"
               @change="changeMaterialGrade"
@@ -162,7 +162,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label>物料编码：</label>
+            <label class="dialogTxt">物料编码：</label>
             <el-input
               clearable
               v-model="materialData.materialCode"
@@ -174,7 +174,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label>工艺节点：</label>
+            <label class="dialogTxt">工艺节点：</label>
             <el-input
               clearable
               v-model="materialData.artNode"

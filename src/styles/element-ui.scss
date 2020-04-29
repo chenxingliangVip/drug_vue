@@ -518,10 +518,10 @@
 .label_dialog {
     .el-dialog-item  {
         label {
-            width: 70px;
+            width: 65px;
             overflow:hidden;
             white-space:nowrap;
-            text-overflow:ellipsis;
+//          text-overflow:ellipsis;
         }
     }
 }
@@ -531,20 +531,20 @@
             width: auto;
         }
         .dialogTxt {
-            width: 70px;
+            width: 65px;
             overflow:hidden;
             white-space:nowrap;
-            text-overflow:ellipsis;
+//          text-overflow:ellipsis;
         }
     }
 }
 .inspect_dialog {
     .el-dialog-group {
         label {
-            width: 70px;
+            width: 65px;
             overflow:hidden;
             white-space:nowrap;
-            text-overflow:ellipsis;
+//          text-overflow:ellipsis;
         }
     }
 }
