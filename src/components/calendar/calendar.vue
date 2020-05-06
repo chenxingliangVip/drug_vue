@@ -571,18 +571,19 @@
           }
           this.render(this.year, this.month)
         } else if (this.multi) {
+        	console.log(1)
           // 如果已经选过则过滤掉
           let filterDay = this.multiDays.filter(v => {
             return this.year === v[0] && this.month === v[1] - 1 && this.days[k1][k2].day === v[2]
           })
-          if (filterDay.length > 0) {
-            this.multiDays = this.multiDays.filter(v => {
-              return this.year !== v[0] || this.month !== v[1] - 1 || this.days[k1][k2].day !== v[2]
-            })
-          } else {
-            this.multiDays.unshift([this.year, this.month + 1, this.days[k1][k2].day]);
-            // this.multiDays.push([this.year,this.month+1,this.days[k1][k2].day]);
-          }
+//        if (filterDay.length > 0) {
+//          this.multiDays = this.multiDays.filter(v => {
+//            return this.year !== v[0] || this.month !== v[1] - 1 || this.days[k1][k2].day !== v[2]
+//          })
+//        } else {
+//          this.multiDays.unshift([this.year, this.month + 1, this.days[k1][k2].day]);
+//          // this.multiDays.push([this.year,this.month+1,this.days[k1][k2].day]);
+//        }
           this.days[k1][k2].selected = !this.days[k1][k2].selected
           this.$emit('select', this.multiDays);
           this.$emit('currentYearMon', this.year, this.month + 1)

@@ -150,7 +150,7 @@
     .button_bn {
     	span {
     		margin-left: 20px;
-    		color: #666;
+    		color: #F56C6C;
     		font-size: 13px;
     		i{
     			color: #F56C6C

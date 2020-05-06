@@ -120,33 +120,33 @@
             }
         },
 
-      mounted(){
-        let self = this;
-        self.getList();
-        self.$eventBus.$on("updateCalendarList",function () {
-          self.getList();
-        })
-      },
+        mounted(){
+	        let self = this;
+	        self.getList();
+	        self.$eventBus.$on("updateCalendarList",function () {
+	          	self.getList();
+	        })
+        },
         methods: {
-          getList() {
-            let self = this;
-            self.tableLoading = true;
-            self.$http({
-              url: "/drug/calendar/queryCalendarList",
-              method: "post",
-            }).then(resp => {
-              if(resp.success) {
-                let choose = [];
-                for(let data of resp.result){
-                  let year = parseInt(data.year);
-                  let mouth = parseInt(data.mouth);
-                  let day = parseInt(data.day);
-                  choose.push([year, mouth, day])
-                }
-                self.chooseCal = choose;
-              }
-            });
-          },
+            getList() {
+	            let self = this;
+	            self.tableLoading = true;
+	            self.$http({
+	              	url: "/drug/calendar/queryCalendarList",
+	              	method: "post",
+	            }).then(resp => {
+		            if(resp.success) {
+		                let choose = [];
+		                for(let data of resp.result){
+		                    let year = parseInt(data.year);
+		                    let mouth = parseInt(data.mouth);
+		                    let day = parseInt(data.day);
+		                    choose.push([year, mouth, day])
+		                }
+		                self.chooseCal = choose;
+		            }
+	            });
+            },
             openDialog(type) {
                 for(let data of this.paramList) {
                     if(type == "cal") {
