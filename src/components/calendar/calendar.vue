@@ -228,9 +228,9 @@
               this.rangeEnd = [year2, month2, day2]
             } else if (this.multi) {//多选
               this.multiDays = this.value;
-              this.year = parseInt(this.value[0][0])
-              this.month = parseInt(this.value[0][1]) - 1
-              this.day = parseInt(this.value[0][2])
+//            this.year = parseInt(this.value[0][0])
+//            this.month = parseInt(this.value[0][1]) - 1
+//            this.day = parseInt(this.value[0][2])
             } else { //单选
               this.year = parseInt(this.value[0])
               this.month = parseInt(this.value[1]) - 1
@@ -314,7 +314,7 @@
               options = Object.assign({
                 day: i,
                 selected: false
-              }, this.getLunarInfo(this.year, this.month + 1, i), this.getEvents(this.year, this.month + 1, i))
+              },this.getLunarInfo(this.year, this.month + 1, i), this.getEvents(this.year, this.month + 1, i))
               if (this.begin.length > 0) {
                 let beginTime = Number(new Date(parseInt(this.begin[0]), parseInt(this.begin[1]) - 1, parseInt(this.begin[2])))
                 if (beginTime > Number(new Date(this.year, this.month, i))) options.disabled = true
@@ -575,14 +575,15 @@
           let filterDay = this.multiDays.filter(v => {
             return this.year === v[0] && this.month === v[1] - 1 && this.days[k1][k2].day === v[2]
           })
-//        if (filterDay.length > 0) {
-//          this.multiDays = this.multiDays.filter(v => {
-//            return this.year !== v[0] || this.month !== v[1] - 1 || this.days[k1][k2].day !== v[2]
-//          })
-//        } else {
-//          this.multiDays.unshift([this.year, this.month + 1, this.days[k1][k2].day]);
-//          // this.multiDays.push([this.year,this.month+1,this.days[k1][k2].day]);
-//        }
+          
+          if (filterDay.length > 0) {
+            this.multiDays = this.multiDays.filter(v => {
+              return this.year !== v[0] || this.month !== v[1] - 1 || this.days[k1][k2].day !== v[2]
+            })
+          } else {
+            this.multiDays.unshift([this.year, this.month + 1, this.days[k1][k2].day]);
+            // this.multiDays.push([this.year,this.month+1,this.days[k1][k2].day]);
+          }
           this.days[k1][k2].selected = !this.days[k1][k2].selected
           this.$emit('select', this.multiDays);
           this.$emit('currentYearMon', this.year, this.month + 1)
