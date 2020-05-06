@@ -571,7 +571,6 @@
           }
           this.render(this.year, this.month)
         } else if (this.multi) {
-        	console.log(1)
           // 如果已经选过则过滤掉
           let filterDay = this.multiDays.filter(v => {
             return this.year === v[0] && this.month === v[1] - 1 && this.days[k1][k2].day === v[2]
