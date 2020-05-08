@@ -548,4 +548,17 @@
         }
     }
 }
-
+.el-menu--vertical {
+    left: 58px !important;
+}
+.el-menu--vertical:before {
+    content: '';
+    width: 0; 
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #3d9691  transparent transparent;
+    position: absolute;
+    left: -15px;
+    top: 15px;
+}

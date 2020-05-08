@@ -37,6 +37,10 @@ export const constantRouterMap = [
     path: "/bigScreen",
     component: () => import("@/views/bigScreen/index.vue"),
     name: "bigScreen",
+  },{
+    path: "/workPlace",
+    component: () => import("@/views/workPlace/index.vue"),
+    name: "workPlace",
   },
   //{
   //   path: '/board',
