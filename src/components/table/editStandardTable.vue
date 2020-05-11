@@ -153,6 +153,10 @@
 
       changeValue(row,attr) {
         if(attr == 'methodName'){
+          if(!row.itemName.value){
+            row[attr].list = [];
+            return;
+          }
           let list = row[attr].list;
           let id = row["methodId"].value;
           for (let data of list) {
@@ -164,15 +168,42 @@
               break;
             }
           }
+          if(!id){
+            row.methodName.value = "";
+            row.methodId.value = "";
+            row.methodCode.value = "";
+            row.codeAttrName.value = "";
+            row.manHour.value = "";
+            row['itemName'].list = JSON.parse(JSON.stringify(row['itemName'].tmpList));
+          }
         }
         if(attr == 'itemName'){
+          row.methodName.value = "";
+          row.methodId.value = "";
+          row.methodCode.value = "";
+          row.codeAttrName.value = "";
+          row.manHour.value = "";
+          let itemArray = [];
+
           let list = row[attr].list;
           let id = row["itemId"].value;
           for (let data of list) {
             if (data.id == id) {
               row.itemName.value = data.itemName;
+
+              for(let it of row['methodName'].tmpList){
+                if(it.itemName == data.itemName){
+                  itemArray.push(it);
+                }
+              }
+              row['methodName'].list = itemArray;
               break;
             }
+          }
+          if(!id){
+            row.itemName.value = "";
+            row.itemId.value = "";
+            row['methodName'].list = [];
           }
         }
       },

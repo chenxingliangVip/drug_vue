@@ -3,9 +3,9 @@
              append-to-body
              width="42%"
              :close-on-click-modal="false"
-             title="复检 · 审批" class="standard_Dialog">
+             :title="detailData.checkStatus =='3'?'复检 · 审批':'检验报告·审批'" class="standard_Dialog">
 
-    <div class="dialog-title"><span style="color:#cb0000;margin-left:25px">复检审批</span>
+    <div class="dialog-title"><span style="color:#cb0000;margin-left:25px">{{detailData.checkStatus =='3'?'复检审批':'检验报告审批'}}</span>
       <img src="../../../assets/img/bohui.png" v-if="detailData.checkStatus == '4'" style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
       <img src="../../../assets/img/disapprove.jpg" v-else-if="detailData.checkStatus == '2'||detailData.checkStatus == '3'" style="display: inline;float: right;margin-top: -19px; width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
       <img v-else src="../../../assets/img/approve.jpg" style="display: inline;float: right;margin-top: -19px;width: 80px;position:relative;z-index: 10; -webkit-user-drag: none;">
@@ -107,7 +107,7 @@
         </drug-edit-table>
 
       </div>
-      <el-row>
+      <el-row  v-show="detailData.checkStatus!='3'">
         <el-col :span="24"
                 style="margin-top:10px">
           <div class="el-dialog-item"><label style="color:#cb0000">复检判定：</label>
@@ -120,7 +120,7 @@
       </el-row>
     </div>
 
-    <div slot="footer" v-show="detailData.checkStatus == '2'"
+    <div slot="footer" v-show="detailData.checkStatus == '3'||detailData.checkStatus == '2'"
          class="dialog-footer ">
       <el-button type="red"
                  size="mini"
@@ -200,6 +200,17 @@
 
       submitCheck(checkStatus) {
         let self = this;
+        if('4' == checkStatus && !self.detailData.content.trim()){
+          self.$notify({
+            title: '提示',
+            message: "请填写驳回原因！",
+            type: 'warning'
+          });
+          return;
+        }
+        if(self.detailData.checkStatus == '3'){
+          checkStatus = checkStatus =='5' ?'7':'';
+        }
         let param = {userName:self.user.userName,userId:self.user.id,sampleCode:self.detailData.sampleCode,id:self.detailData.fId,result:self.detailData.result,content:self.detailData.content,checkStatus:checkStatus};
         if (this.count == 0) {
           self.$http({
@@ -269,11 +280,12 @@
               if(data.resultId == "N"){
                 data.resultIdCn="不合格";
               }
-              if(data.resultId){
-                data.resultId = {value:data.resultIdCn,type:"select"};
-              }else{
-                data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
-              }
+              // if(data.resultId){
+              //   data.resultId = {value:data.resultIdCn,type:"select"};
+              // }else{
+              //   data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
+              // }
+              data.resultId = {value:data.resultIdCn,type:"select"};
               resetDatas.push(data);
             }
 

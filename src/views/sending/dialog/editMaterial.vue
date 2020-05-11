@@ -111,7 +111,6 @@
               size="mini"
               clearable
               filterable
-              allow-create
               style="width: 130px"
             >
               <el-option

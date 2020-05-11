@@ -47,29 +47,43 @@
         </div>
         <div class="filter-item">
           <span>物料编码:</span>
-          <el-select v-model="searchParam.state"
-                     size="mini"
-                     clearable
-                     style="width: 90px">
-            <el-option v-for="item in levels"
-                       :key="item.id"
-                       :label="item.itemName"
-                       :value="item.id"/>
-          </el-select>
+          <!--<el-select v-model="searchParam.state"-->
+                     <!--size="mini"-->
+                     <!--clearable-->
+                     <!--style="width: 90px">-->
+            <!--<el-option v-for="item in levels"-->
+                       <!--:key="item.id"-->
+                       <!--:label="item.itemName"-->
+                       <!--:value="item.id"/>-->
+          <!--</el-select>-->
+          <el-input clearable  v-model="searchParam.materialCode"
+                    size="mini"
+                    style="width: 90px;"
+                    @keyup.enter.native="getList" />
         </div>
       </div>
 
       <div>
         <div class="filter-item">
           <span>申请人:</span>
-          <el-input clearable  v-model="searchParam.userName"
-                    size="mini"
-                    style="width: 90px;"
-                    @keyup.enter.native="getList" />
+          <!--<el-input clearable  v-model="searchParam.userName"-->
+                    <!--size="mini"-->
+                    <!--style="width: 90px;"-->
+                    <!--@keyup.enter.native="getList" />-->
+          <el-select v-model="searchParam.userId"
+                     size="mini"
+                     clearable
+                     filterable
+                     style="width: 90px">
+            <el-option v-for="item in loginList"
+                       :key="item.id"
+                       :label="item.userName"
+                       :value="item.id" />
+          </el-select>
         </div>
         <div class="filter-item">
-          <span>标准编号:</span>
-          <el-input clearable  v-model="searchParam.no"
+          <span>标准编码:</span>
+          <el-input clearable  v-model="searchParam.standardCode"
                     size="mini"
                     style="width: 90px;"
                     @keyup.enter.native="getList" />
@@ -167,8 +181,10 @@ export default {
         materialName: "",
         finalProd: "",
         checkStatus:"",
-        userId:""
+        userId:"",
+        standardCode:""
       },
+      loginList:[],
       detailData: {},
       operateType: "add",
 
@@ -184,11 +200,25 @@ export default {
     self.getList();
     self.getCodeAttrList();
     self.getLevelList();
+    self.getAllLogin();
     self.$eventBus.$on("updateMaterialStandardList", function () {
       self.getList();
     })
   },
   methods: {
+
+    getAllLogin(){
+      let self = this;
+      self.$http({
+        url: "/drug/queryAllLoginList",
+        method: "post",
+      }).then(resp => {
+        if (resp.success) {
+          self.loginList = resp.result;
+        }
+      });
+    },
+
     getSelection(val) {
       this.selectChoice = val;
     },

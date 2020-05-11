@@ -4,15 +4,15 @@
         <el-divider></el-divider>
         <el-button class="calendarBtn" type="primary" size="mini" @click="saveCalendar">提 交</el-button>
         <div class="calendar-dropdown">
-            <CalendarDate ref="calendars" 
-            	:zero="calendar.zero" 
-            	:disabled="calendar.disabled" 
-            	:lunar="calendar.lunar" 
-            	:value="calendar.value" 
-            	:multi="calendar.multi" 
-            	@currentYearMon="calendar.currentYearMon" 
+            <CalendarDate ref="calendars"
+            	:zero="calendar.zero"
+            	:disabled="calendar.disabled"
+            	:lunar="calendar.lunar"
+            	:value="calendar.value"
+            	:multi="calendar.multi"
+            	@currentYearMon="calendar.currentYearMon"
             	@next="calendar.nextMonth"
-            	@prev="calendar.prevMonth" 
+            	@prev="calendar.prevMonth"
             	@select="calendar.select"></CalendarDate>
         </div>
     </el-dialog>
@@ -92,7 +92,12 @@
                     contentType: "application/json",
                 }).then(resp => {
                     self.dialogCalendarVisible = false;
-                    self.$eventBus.$emit("updateCalendarList")
+                    self.$eventBus.$emit("updateCalendarList");
+                    self.$notify({
+                      title: '提示',
+                      message: "修改成功！",
+                      type: 'success'
+                    });
                 });
             },
 
@@ -146,26 +151,26 @@
         padding-left: 50px;
         padding-right: 50px;
     }
-    
+
     .btn-ul {
         list-style-type: none;
         width: 100%;
     }
-    
+
     .btn-ul li {
         width: 20%;
         float: left;
         margin-top: 50px;
     }
-    
+
     .clear {
         clear: both;
     }
-    
+
     .el-dialog-item {
         display: inline-block;
     }
-    
+
     .calendarBtn {
         float: right;
         width: 80px;

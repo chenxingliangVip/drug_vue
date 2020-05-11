@@ -7,7 +7,7 @@
                     <img src="../../assets/img/code.png" style="width: 15px">
                   </span>
           扫码审批
-          <el-input clearable  style="width: 160px; margin-left:10px;" v-model="sampleCode"
+          <el-input clearable  style="width: 160px; margin-left:10px;" autofocus v-model="sampleCode"
                     size="mini" />
         </div>
       </el-col>
@@ -19,7 +19,7 @@
                       @click="seeSampleApprove(props.rowData)"
                      size='mini'>
             <img src="../../assets/img/disagree.png" style="cursor: pointer;width: 18px" v-if="props.rowData.checkStatus=='4'">
-            <img src="../../assets/img/agreeing.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='2'">
+            <img src="../../assets/img/agreeing.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='2'||props.rowData.checkStatus=='1'">
             <img src="../../assets/img/view1.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='5'">
           </el-button>
         </div>

@@ -102,12 +102,13 @@
                  class="table-view">
             查看
           </label>
-          <label v-if="hasRole('method:check:edit')" @click="handleEditData(props.rowData,'edit')" style="cursor:pointer;" v-show="props.rowData.checkStatus=='1'"
+          <label v-if="hasRole('method:check:edit')" @click="handleEditData(props.rowData,'edit')" style="cursor:pointer;" v-show="props.rowData.checkStatus=='1'|| user.type =='1' "
                  class="table-view">
             修改
           </label>
           <label v-if="hasRole('method:check:imporve')" @click="handleEditData(props.rowData,'xd')" style="cursor:pointer;" v-show="props.rowData.checkStatus=='2'"
                  class="table-view">
+            <template v-show="user.type =='1'">·&nbsp;</template>
              修订
           </label>
           <label v-if="hasRole('method:check:download')" @click="downExcel(props.rowData)" style="cursor:pointer;" v-show="props.rowData.checkStatus=='2'"

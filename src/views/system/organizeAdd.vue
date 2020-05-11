@@ -2,7 +2,7 @@
   <el-dialog :close-on-click-modal="clickModalHide"
              :before-close="closeDialog"
              :visible.sync="centerDialogVisible"
-             width="40%"
+             width="45%"
              title="编辑·部门">
     <el-form ref="dataForm"
              label-position="left"
@@ -17,8 +17,10 @@
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
         <label style=" margin-left: 10px;"><span>部门类型 ：</span></label>
         <template>
-          <el-radio v-model="deptDetail.deptType" label="1">送样部门</el-radio>
-          <el-radio v-model="deptDetail.deptType" label="2">送检部门</el-radio>
+          <el-radio v-model="deptDetail.deptType" label="1">送检部门</el-radio>
+          <el-radio v-model="deptDetail.deptType" label="2">检验部门</el-radio>
+          <el-radio v-model="deptDetail.deptType" label="3">全选</el-radio>
+          <el-radio v-model="deptDetail.deptType" label="0">全不选</el-radio>
         </template>
       </div>
 

@@ -530,9 +530,9 @@
         if(year != this.year){
           return;
         }
-        if(parseInt(moth) > (this.month+1)){
-          return;
-        }
+        // if(parseInt(moth) > (this.month+1)){
+        //   return;
+        // }
         if (e != undefined) e.stopPropagation()
         // 日期范围
         if (this.range) {
@@ -575,7 +575,7 @@
           let filterDay = this.multiDays.filter(v => {
             return this.year === v[0] && this.month === v[1] - 1 && this.days[k1][k2].day === v[2]
           })
-          
+
           if (filterDay.length > 0) {
             this.multiDays = this.multiDays.filter(v => {
               return this.year !== v[0] || this.month !== v[1] - 1 || this.days[k1][k2].day !== v[2]

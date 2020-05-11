@@ -38,7 +38,7 @@
           <el-tree :data="deptList"
                    show-checkbox
                    :indent="0"
-                   :default-expanded-keys="['4fa2f931-b307-40d5-83fb-81a199f8c621']"
+                   :default-expanded-keys="['0','4fa2f931-b307-40d5-83fb-81a199f8c621']"
                    node-key="id"
                    ref="tree"
                    check-strictly
@@ -174,7 +174,7 @@ export default {
 
 .app-main-container {
   margin: 10px 25px;
-	height: calc(100vh - 252px);
+	/*height: calc(100vh - 252px);*/
 }
 	.footImg {
     	width: 40%;

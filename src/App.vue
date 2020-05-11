@@ -13,6 +13,10 @@ export default {
       self.getNoticeCount();
       self.getStandardFlag();
     }, 5000);
+    setInterval(() => {
+      self.getApproveCount();
+    }, 10000);
+    self.getApproveCount();
     self.getDbBackCount();
   },
   methods:{
@@ -42,6 +46,21 @@ export default {
         }).then(resp => {
           if (resp.success) {
             self.$eventBus.$emit("updateNoticeCount",resp.result);
+          }
+        });
+      }
+    },
+    getApproveCount() {
+      let self = this;
+      let user = this.$store.getters.user;
+      if(user){
+        self.$http({
+          url: "/drug/fmApprove/queryApproveUnReadCount",
+          method: "post",
+          params: {permission:user.permission.join(",")}
+        }).then(resp => {
+          if (resp.success) {
+            self.$eventBus.$emit("updateApproveCount",resp.result);
           }
         });
       }

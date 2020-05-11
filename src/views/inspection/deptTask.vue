@@ -47,7 +47,7 @@
           </i></div>
       </div>
     </div>
-    <drug-table :backCount="backCount"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+    <drug-table :backCount="backCount" @emitSpanFun="emitSpanFun"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
     </drug-table>
   </div>
 </template>
@@ -146,6 +146,18 @@ export default {
             {"columnName": "updateTimeFt", "coloumNameCn": "录入时间"},
             {"columnName": "checkStatusCn", "coloumNameCn": "状态","isClick":true},];
           self.option.showOperate = false;
+        }
+      });
+    },
+    emitSpanFun(row){
+      let self = this;
+      self.$http({
+        url: "/drug/fmApprove/queryFmApproveByRelateId",
+        method: "post",
+        params:{relateId:row.sId}
+      }).then(resp => {
+        if (resp.success) {
+          this.$alert(resp.result.content, '审核意见');
         }
       });
     },

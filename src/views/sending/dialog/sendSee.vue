@@ -129,7 +129,7 @@
         self.detailData = editData;
         self.dialogAddVisible = true;
         self.count = 0;
-        self.buttonShow = (editData.checkStatus == '4'||editData.checkStatus == '5')?true:false;
+        self.buttonShow = (editData.checkStatus == '5')?true:false;
         self.buttonShow = (self.buttonShow && (stamp < 72)) ?true:false;
         self.buttonShow = (self.buttonShow && (self.detailData.userId == self.$store.getters.userId)) ?true:false;
         self.getSampleItems();

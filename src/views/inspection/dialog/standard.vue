@@ -11,7 +11,7 @@
                  size="mini"
                  label-width="0px">
           <div class="dialog-title">
-          	<span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'>{{title}} </i></span>
+          	<span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'>{{title}} </span>
           	<span v-else style="color: #2e827f !important">{{title}}</span>
           </div>
           <el-divider></el-divider>
@@ -42,7 +42,7 @@
                    style="margin-top:20px"><label>标准编号：</label>
                 <el-input clearable  v-model="methodData.standardCode"
                           size="mini"
-                          :disabled="type == 'see'"
+                          :disabled="type == 'see' || type == 'approve'"
                           style="width: 140px;"/>
               </div>
               <div class="el-dialog-item"><label class="w2"
@@ -233,9 +233,9 @@
         let row = {
           methodId: {value: ""},
           itemId: {value: "" },
-          itemName: {value: "", edit: false,type:"select",list:this.testItems,key:"itemName"},
+          itemName: {value: "", edit: false,type:"select",list:this.testItems,tmpList:JSON.parse(JSON.stringify(this.testItems)),key:"itemName"},
           itemQualityStandard: {value: "", edit: false,type:"input"},
-          methodName: {value: "", edit: false,type:"select",list:this.testMethodList,key:"methodName"},
+          methodName: {value: "", edit: false,type:"select",list:[],tmpList:JSON.parse(JSON.stringify(this.testMethodList)),key:"methodName"},
           methodCode: {value: ""},
           codeAttrName: {value: ""},
           manHour: {value: "请选择方法..."},
@@ -410,7 +410,7 @@
           method: "post",
         }).then(resp => {
           if (resp.success) {
-            self.materialStandardCount = resp.result;
+            self.materialStandardCount = resp.result+1;
             self.methodData.id = self.getRandom();
           }
         });
@@ -482,9 +482,9 @@
               let row = {
                 methodId: {value: data.methodId},
                 itemId: {value: data.itemId},
-                itemName: {value: data.itemName, edit: false,type:"select",list:this.testItems,key:"itemName"},
+                itemName: {value: data.itemName, edit: false,type:"select",list:this.testItems,tmpList:JSON.parse(JSON.stringify(this.testItems)),key:"itemName"},
                 itemQualityStandard: {value: data.itemQualityStandard, edit: false,type:"input"},
-                methodName: {value: data.methodName, edit: false,type:"select",list:this.testMethodList,key:"methodName"},
+                methodName: {value: data.methodName, edit: false,type:"select",list:this.testMethodList,tmpList:JSON.parse(JSON.stringify(this.testMethodList)),key:"methodName"},
                 methodCode: {value: data.methodCode},
                 codeAttrName: {value: data.codeAttrName},
                 manHour: {value: data.manHour},
@@ -532,8 +532,8 @@
           if(this.type == 'add'){
             this.getMaterialStandardCount();
           }
-          this.title = this.type == 'add'?"新增质量标准":"修改质量标准";
-          this.dialogtitle = this.type == 'add'?"新增·质量标准":"修改·质量标准";
+          this.title = this.type == 'add'?"新增质量标准":(this.type=='dz'?'待增质量标准':"修改质量标准");
+          this.dialogtitle = this.type == 'add'?"新增·质量标准":(this.type=='dz'?"待增·质量标准":"修改·质量标准");
           this.standardLoading = true;
           this.standTableHeader = [
             {"columnName": "itemName", "coloumNameCn": "检测项目","columnNameRe": "itemId"},

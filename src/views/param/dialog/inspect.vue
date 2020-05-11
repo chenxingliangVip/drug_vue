@@ -35,18 +35,18 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item"><label>规 则 值：</label>
-            <el-input clearable  v-model="inspectData.checkValue" v-show="chooseValue != '样品名称'"
+            <el-input clearable  v-model="inspectData.checkValue" v-show="chooseValue == '所属部门'" disabled
                       size="mini"
                       style="width: 100px;" />
-            <el-select v-model="inspectData.checkValue"  v-show="chooseValue == '样品名称'"
+            <el-select v-model="inspectData.checkValue"  v-show="chooseValue != '所属部门'"
                        size="mini"
                        clearable
                        filterable
                        style="width: 100px">
-              <el-option v-for="item in materials"
+              <el-option v-for="item in chooseArray"
                          :key="item.id"
-                         :label="item.materialName"
-                         :value="item.materialName" />
+                         :label="item.itemName"
+                         :value="item.itemName" />
             </el-select>
           </div>
         </el-col>
@@ -71,7 +71,7 @@
                        :key="item.id">{{item.itemName}}</el-checkbox>
         </el-checkbox-group>
       </div>
-      <div class="el-dialog-group"><label>送样部门：</label>
+      <div class="el-dialog-group"><label>送检部门：</label>
         <el-checkbox-group v-model="inspectData.syDeptIds"
                            style="width:87%">
           <el-checkbox v-for="item in syDept"
@@ -79,7 +79,7 @@
                        :key="item.id">{{item.deptName}}</el-checkbox>
         </el-checkbox-group>
       </div>
-      <div class="el-dialog-group dialogcolumn" ><label style="margin-bottom: 5px">检测部门：</label>
+      <div class="el-dialog-group dialogcolumn" ><label style="margin-bottom: 5px">检验部门：</label>
         <el-checkbox-group v-model="inspectData.jcDeptIds"
                            style="width:100%; border: 1px solid #2e827f;padding: 2px 10px;border-radius: 5px;">
           <el-checkbox v-for="item in jcDept"
@@ -122,6 +122,10 @@
 
         materials:[],
 
+        materialCodes:[],
+
+        chooseArray:[],
+
         chooseValue:""
       }
     },
@@ -135,6 +139,21 @@
         for(let data of this.regular){
           if(data.id == val){
             this.chooseValue = data.itemName;
+            if(this.chooseValue == '样品名称'){
+              this.chooseArray = JSON.parse(JSON.stringify(this.materials))
+            }
+            if(this.chooseValue == '样品规格'){
+              this.chooseArray = JSON.parse(JSON.stringify(this.codeItemMap['type']))
+            }
+            if(this.chooseValue == '样品规模'){
+              this.chooseArray = JSON.parse(JSON.stringify(this.codeItemMap['scope']))
+            }
+            if(this.chooseValue == '样品等级'){
+              this.chooseArray = JSON.parse(JSON.stringify(this.codeItemMap['grade']))
+            }
+            if(this.chooseValue == '样品编码'){
+              this.chooseArray = JSON.parse(JSON.stringify(this.materialCodes))
+            }
             break;
           }
         }
@@ -147,7 +166,17 @@
           method: "post",
         }).then(resp => {
           if (resp.success) {
-            self.materials = resp.result;
+            let materials = [];
+            let materialCodes = [];
+            for(let data of resp.result){
+              data.itemName = data.materialName;
+              materials.push(data);
+              let copy = Object.assign({},data);
+              copy.itemName = data.materialCode;
+              materialCodes.push(copy);
+            }
+            self.materials = materials;
+            self.materialCodes = materialCodes;
           }
         });
       },
@@ -253,12 +282,13 @@
             this.attrIds.push(val.attrId)
           }
         }
+        console.log(this.codeItemMap)
         this.location = this.codeItemMap["location"];
         this.method_attr = this.codeItemMap["method_attr"];
         this.regular = this.codeItemMap["regular"];
         this.dept = this.codeItemMap["dept"];
-        this.syDept = this.dept.filter(item => { return item.deptType == '1'});
-        this.jcDept = this.dept.filter(item => { return item.deptType == '2'});
+        this.syDept = this.dept.filter(item => { return (item.deptType == '1'||item.deptType == '3')});
+        this.jcDept = this.dept.filter(item => { return (item.deptType == '2'||item.deptType == '3')});
         this.dialogAddVisible = true;
         this.inspectData = val;
         this.inspectData.jcDeptIds = this.inspectData.jcDeptIds||[];

@@ -111,6 +111,7 @@
           filePath:"",
           filePathName:"",
           resetPath:"",
+          checkStatus:"",
           resetPathName:""
         },
         dialogAddVisible: false,
@@ -159,7 +160,7 @@
           if (resp.success) {
             for(let key in self.detailData){
               if(!resp.result.hasOwnProperty(key)){
-                resp.result[key] = "";
+                resp.result[key] = self.detailData[key];
               }
             }
             self.detailData = resp.result;
@@ -235,7 +236,7 @@
         let tableData = this.$refs.taskTable.getTableData();
         let params = [];
         for(let data of tableData){
-          if(data.resultId.hasOwnProperty("edit")){
+          if(data.resultId && data.resultId.value){
             let resultId = data.resultId.value;
             if(resultId =='合格'){
               resultId = "Y";
@@ -244,7 +245,7 @@
               resultId = "N";
             }
 
-            let param = {testResult:data.testResult.value,id:data.id,resultId:data.resultId.value,testStaffId:self.$store.getters.userId,checkStatus:"SA"};
+            let param = {testResult:data.testResult.value,id:data.id,resultId:resultId,testStaffId:self.$store.getters.userId,checkStatus:"SA"};
             params.push(param);
           }
         }
@@ -253,7 +254,7 @@
         let tableResetData = this.$refs.taskResetTable.getTableData();
         let resetParams = [];
         for(let data of tableResetData){
-          if(data.resultId.hasOwnProperty("edit")){
+          if(data.resultId && data.resultId.value){
             let resultId = data.resultId.value;
             if(resultId =='合格'){
               resultId = "Y";
@@ -261,7 +262,7 @@
             if(resultId =='不合格'){
               resultId = "N";
             }
-            let param = {id:data.id,resultId:data.resultId.value};
+            let param = {id:data.id,resultId:resultId};
             resetParams.push(param);
           }
         }
@@ -284,7 +285,7 @@
                 type: 'success'
               });
               self.dialogAddVisible = false;
-              self.insertFmApprove(resetParams.length > 0?"1":"");
+              self.insertFmApprove((resetParams.length > 0||self.detailData.checkStatus =='RJ')?"1":"");
               return
             }
             self.$notify({
@@ -339,7 +340,8 @@
       getSampleItems(){
         let self = this;
         self.item.tableLoading = true;
-        self.submitBut = false;
+        // self.submitBut = false;
+        self.submitBut = true;
         self.$http({
           url: "/drug/sampleItem/querySampleItemSend",
           method: "post",
@@ -351,9 +353,9 @@
             let datasId = [];
             for(let data of resp.result.items){
               if(data.testStaffId == self.$store.getters.userId){
-                if(!data.resultId){
-                  self.submitBut = true;
-                }
+                // if(!data.resultId){
+                //   self.submitBut = true;
+                // }
                 data.testResult = {value:data.testResult,type:"input",edit:false};
                 data.itemName = {value:data.itemName};
                 data.itemQualityStandard = {value:data.itemQualityStandard};
@@ -363,11 +365,12 @@
                 if(data.resultId == "N"){
                   data.resultIdCn="不合格";
                 }
-                if(data.resultId){
-                  data.resultId = {value:data.resultIdCn,type:"select"};
-                }else{
-                  data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
-                }
+                data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
+                // if(data.resultId){
+                //   data.resultId = {value:data.resultIdCn,type:"select"};
+                // }else{
+                //   data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
+                // }
                 datas.push(data);
                 datasId.push(data.id);
               }

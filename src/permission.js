@@ -13,7 +13,7 @@ function hasPermission(roles, permissionRoles) {
   if (!permissionRoles) return true
   return roles.some(role => permissionRoles.indexOf(role) >= 0)
 }
-const whiteList = ['/login','/bigScreen'] // 不重定向白名单
+const whiteList = ['/login','/bigScreen','/workPlace'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
   let allPermissionNarHead = {};
   for(let k in  constantRouterMap){

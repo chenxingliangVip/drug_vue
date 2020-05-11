@@ -9,7 +9,7 @@
              size="mini"
              label-width="0px">
       <div class="dialog-title">
-      	<span v-if="type == 'xd' || type == 'edit'" style="color: #cb0000 !important">{{titleTxt}}检验方法 </i></span>
+      	<span v-if="type == 'xd' || type == 'edit'" style="color: #cb0000 !important">{{titleTxt}}检验方法 </span>
       	<span v-else-if="type == 'see'" >{{titleTxt}}检验方法</span>
       	<span v-else style="color: #2e827f !important">{{titleTxt}}检验方法</span>
       </div>
@@ -21,7 +21,6 @@
                        size="mini"
                        clearable
                        filterable
-                       allow-create
                        style="width: 140px">
               <el-option v-for="item in testItems"
                          :key="item.id"
@@ -69,9 +68,9 @@
                        clearable
                        style="width: 140px">
               <el-option v-for="item in methodTypeMap"
-                         :key="item.value"
-                         :label="item.label"
-                         :value="item.id"/>
+                         :key="item.id"
+                         :label="item.itemName"
+                         :value="item.itemName"/>
             </el-select>
             <span v-else>{{methodData.methodType?methodData.methodType:"无"}}</span>
           </div>
@@ -238,7 +237,7 @@
     data() {
       return {
          titleTxt: '',
-        methodData: {
+          methodData: {
           id: "",
           itemName:"",
           methodType: "",
@@ -258,7 +257,7 @@
         dialogAddVisible: false,
         count:0,
         user:{deptId:"",userName:""},
-        methodTypeMap:[{label:"工业品",value:"工业品"},{label:"药用辅料",value:"药用辅料"}],
+        methodTypeMap:[],
         codeAttrs:[],
         versionList:[],
         testItems:[],
@@ -281,7 +280,8 @@
       this.getCodeAttrList();
       this.getCodeItemList();
       this.getVersionList();
-      
+      this.getCodeTypeList();
+
     },
     methods: {
       checkStatus() {
@@ -312,6 +312,18 @@
         }).then(resp => {
           if (resp.success) {
             self.testItems = resp.result;
+          }
+        });
+      },
+      getCodeTypeList() {
+        let self = this;
+        self.$http({
+          url: "/drug/codeItem/queryCodeItemList",
+          method: "post",
+          params: {itemCode: "method_type"}
+        }).then(resp => {
+          if (resp.success) {
+            self.methodTypeMap = resp.result;
           }
         });
       },
@@ -372,11 +384,13 @@
         }
         delete self.methodData.createTime;
         delete self.methodData.updateTime;
+        //给方法放出编辑用的  为了不走审核
+        self.methodData.oldStatus = self.methodData.checkStatus;
+        self.methodData.checkStatus = '0';
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
         self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
         self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
-        self.methodData.checkStatus = '0';
         self.methodData.status = '0';
         let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";
         if (this.count == 0) {
@@ -426,7 +440,7 @@
         this.dialogAddVisible = true;
         for (let key in this.methodData) {
           if (!val.hasOwnProperty(key)) {
-            val[key] = "";
+            this.$set(val,key,"");
           }
         }
         this.methodData = val;

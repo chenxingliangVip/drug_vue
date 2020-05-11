@@ -115,6 +115,10 @@ export default {
         if (resp.success) {
           let count =0;
           self.tableLoading = false;
+          for(let data of resp.result){
+            let printNum = parseInt(data.printNum);
+            data.repeatPrintNum = (printNum - 1) > 0 ?(printNum - 1):0;
+          }
           self.tableData = resp.result;
           self.tableHeader =  [
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
@@ -122,6 +126,7 @@ export default {
             {"columnName": "userName", "coloumNameCn": "姓名"},
             {"columnName": "itemNum", "coloumNameCn": "项数"},
             {"columnName": "printNum", "coloumNameCn": "打印数"},
+            {"columnName": "repeatPrintNum", "coloumNameCn": "复打数"},
             {"columnName": "createTimeFt", "coloumNameCn": "盖章时间"}];
           self.option.showOperate = true;
           for(let data of resp.result){

@@ -1,5 +1,5 @@
 <template>
-	<div class="workPlace">
+	<div class="workPlace" @click="inputJJ">
 		<div class="Maincontain">
 			<div class="topImg_logo">
 		        <img src="@/assets/logo.png" class="app-login-logo" />
@@ -7,13 +7,72 @@
 			</div>
 			<div class="workForm">
 				<p class="title_txt">扫码送样工作台</p>
-				<el-input type="text" class="workInput" />
+				<el-input type="text" class="workInput" autofocus v-model="sampleCode"  placeholder="扫码输入检验单号" id="workJJ"/>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+  export default {
+    name:"workPlace",
+    data(){
+      return{
+        sampleCode:"",
+      }
+    },
+    created(){
+      this.validatorIp();
+    },
+    mounted() {
+      let self = this;
+      self.inputJJ();
+    },
+    methods:{
+
+      validatorIp(){
+        let self = this;
+        self.$http({
+          url: "/drug/sample/validatorIp",
+          method: "post",
+        }).then(resp => {
+          if(!resp.success){
+            self.$router.push({path: '/login'})
+          }
+        });
+      },
+
+      inputJJ(){
+        let input=document.getElementById('workJJ');
+        input.focus();
+      },
+
+      updateWorkSample(sampleCode){
+        let self = this;
+        self.$http({
+          url: "/drug/sample/updateWorkSample",
+          method: "post",
+          params:{sampleCode:sampleCode}
+        }).then(resp => {
+          self.sampleCode = "";
+          self.$notify({
+            title: '提示',
+            message: resp.result,
+            type: 'info'
+          });
+        });
+      },
+    },
+    watch:{
+      sampleCode(val){
+        let self =this;
+        if(!val){
+          return;
+        }
+        self.updateWorkSample(val);
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -22,8 +81,8 @@
 		height: 100%;
 		background-color: #3d9691;
     	display: flex;
-        justify-content: center; 
-        /*align-items: center;*/ 
+        justify-content: center;
+        /*align-items: center;*/
         .Maincontain {
         	width: 40%;
         	margin-top: 10%;
@@ -51,8 +110,8 @@
 					font-size: 18px;
 					font-family: serif;
 				}
-	        	
+
 	        }
-	    } 
+	    }
 	}
 </style>

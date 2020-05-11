@@ -129,7 +129,7 @@ export default {
       option:{showOperate:true},
       selectChoice:[],
       searchParam:{locationId:"",attrId:"",typeId:"",deptId:"",checkValue:""},
-      codeItemMap:{location:[],method_attr:[],regular:[],dept:[]},
+      codeItemMap:{location:[],method_attr:[],regular:[],dept:[],type:[],scope:[],grade:[]},
       operateType:"add",
       editData:{},
       ruleArray:[ {label:"规则一",value:"1"},
@@ -216,7 +216,7 @@ export default {
     },
     getItemCode() {
       let self = this;
-      self.codeItemMap = {location:[],method_attr:[],regular:[],dept:[]};
+      self.codeItemMap = {location:[],method_attr:[],regular:[],dept:[],type:[],scope:[],grade:[]};
       self.$http({
         url: "/drug/codeItem/queryCodeItemList",
         method: "post",
@@ -278,7 +278,7 @@ export default {
         if (resp.success) {
           if(resp.result.length > 0){
             self.codeItemMap.dept = resp.result;
-            self.jcDept = resp.result.filter(item => { return item.deptType == '2'});
+            self.jcDept = resp.result.filter(item => { return (item.deptType == '2'||item.deptType == '3')});
           }
         }
       });
