@@ -478,7 +478,37 @@ export default {
       });
     },
 		sameContrast(){
-      this.$eventBus.$emit("openSameContrast");
+      if(this.selectChoice.length == 0){
+        this.$notify({
+          title: '提示',
+          message: "请选择对比项！",
+          type: 'warning'
+        });
+        return;
+      }
+      let materialName = "";
+      for(let data of this.selectChoice){
+        if(!materialName){
+          materialName = data.materialName;
+        }
+        if(materialName != data.materialName){
+          this.$notify({
+            title: '提示',
+            message: "请选择相同样品名称对比！",
+            type: 'warning'
+          });
+          return;
+        }
+      }
+      if(!this.searchParam.startTime||!this.searchParam.startTime){
+        this.$notify({
+          title: '提示',
+          message: "请选择时间时间！",
+          type: 'warning'
+        });
+        return;
+      }
+      this.$eventBus.$emit("openSameContrast",materialName,this.searchParam);
 		}
   },
 }

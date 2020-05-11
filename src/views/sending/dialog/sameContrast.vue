@@ -20,6 +20,7 @@
 					<el-form-item label="日期：">
             <el-date-picker  v-model="sampleData.startTime"
                             size="mini"
+                             disabled
                             format="yyyy-MM-dd"
                             value-format="yyyy-MM-dd"
                             type="date"
@@ -28,6 +29,7 @@
             <span> - </span>
             <el-date-picker v-model="sampleData.endTime"
                             size="mini"
+                            disabled
                             format="yyyy-MM-dd"
                             value-format="yyyy-MM-dd"
                             type="date"
@@ -35,11 +37,11 @@
             </el-date-picker>
 					</el-form-item>
 				</el-col>
-				<el-col :span="4">
-					<el-button class="filter-btn-item same-contrast" size="mini" style="margin-left: 10px;width: 80px;float: right;"
-		                   type="primary" @click="getSampleItemList"> 同样对比
-			        </el-button>
-				</el-col>
+				<!--<el-col :span="4">-->
+					<!--<el-button class="filter-btn-item same-contrast" size="mini" style="margin-left: 10px;width: 80px;float: right;"-->
+		                   <!--type="primary" @click="getSampleItemList"> 同样对比-->
+			        <!--</el-button>-->
+				<!--</el-col>-->
 			</el-row>
 			<el-row>
 				<el-col :span="8">
@@ -47,6 +49,7 @@
             <el-select v-model="sampleData.materialName"  @change="changeMaterial"
                        size="mini"
                        clearable
+                       disabled
                        filterable
                        style="width: 140px">
               <el-option v-for="item in materials"
@@ -66,49 +69,43 @@
 				</el-col>
 			</el-row>
 
-			<div class="tableList" v-for="(value,key) in tableMap" :key="key" v-show="Object.keys(tableMap).length > 0">
-				<p class="titleSpan">{{key}}</p>
+			<div class="tableList" >
+				<p class="titleSpan"></p>
 				<table border="1" class="tableMain">
 					<tr>
-					    <th>送检时间</th>
-					    <th>检验单号</th>
-					    <th>样品批号</th>
-					    <th>样品规格</th>
-					    <th>样品等级</th>
-					    <th>样品规模</th>
-					    <th>检项名称</th>
-					    <th>质量标准</th>
-					    <th>检测结果</th>
+					    <th>考察项目</th>
+					    <th v-for="(item,index) in tableHeader" :key="index">{{item}}</th>
 					</tr>
-					<tr v-for="(item,index) in value.samples" :key="index">
-					    <td><p class="mainData" :title="item.createTimeFt">{{item.createTimeFt}}</p></td>
-					    <td><p class="mainData" :title="item.sampleCode">{{item.sampleCode}}</p></td>
-					    <td><p class="mainData" :title="item.sampleNum">{{item.sampleNum}}</p></td>
-					    <td><p class="mainData" :title="item.materialType">{{item.materialType}}</p></td>
-					    <td><p class="mainData" :title="item.materialGrade">{{item.materialGrade}}</p></td>
-					    <td><p class="mainData" :title="item.sampleTypeName">{{item.sampleTypeName}}</p></td>
-					    <td><p class="mainData" :title="item.itemName">{{item.itemName}}</p></td>
-					    <td><p class="mainData" :title="item.itemQualityStandard">{{item.itemQualityStandard}}</p></td>
-					    <td><p class="mainData" :title="item.testResult">{{item.testResult}}</p></td>
+					<tr v-for="(data,index) in tableData" :key="index">
+              <td><p class="mainData" :title="data.itemName">{{data.itemName}}</p>
+					    <td  v-for="(key,index) in tableHeader" :key="index"><p class="mainData" :title="data[key]">{{data[key]}}</p></td>
+					    <!--<td><p class="mainData" :title="item.sampleCode">{{item.sampleCode}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.sampleNum">{{item.sampleNum}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.materialType">{{item.materialType}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.materialGrade">{{item.materialGrade}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.sampleTypeName">{{item.sampleTypeName}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.itemName">{{item.itemName}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.itemQualityStandard">{{item.itemQualityStandard}}</p></td>-->
+					    <!--<td><p class="mainData" :title="item.testResult">{{item.testResult}}</p></td>-->
 					</tr>
 				</table>
 			</div>
 
-      <div v-show="Object.keys(tableMap).length == 0"  class="tableList" style="margin-top: 10px">
-        <table border="1" class="tableMain">
-          <tr>
-            <th>送检时间</th>
-            <th>检单号</th>
-            <th>样品批号</th>
-            <th>样品规格</th>
-            <th>样品等级</th>
-            <th>样品规模</th>
-            <th>检项名称</th>
-            <th>质量标准</th>
-            <th>检测结果</th>
-          </tr>
-        </table>
-      </div>
+      <!--<div v-show="Object.keys(tableMap).length == 0"  class="tableList" style="margin-top: 10px">-->
+        <!--<table border="1" class="tableMain">-->
+          <!--<tr>-->
+            <!--<th>送检时间</th>-->
+            <!--<th>检单号</th>-->
+            <!--<th>样品批号</th>-->
+            <!--<th>样品规格</th>-->
+            <!--<th>样品等级</th>-->
+            <!--<th>样品规模</th>-->
+            <!--<th>检项名称</th>-->
+            <!--<th>质量标准</th>-->
+            <!--<th>检测结果</th>-->
+          <!--</tr>-->
+        <!--</table>-->
+      <!--</div>-->
 		</el-form>
 	</el-dialog>
 </template>
@@ -129,6 +126,7 @@
         items:[],
         selectItems:[],
         tableHeader:[],
+        tableData:[],
         tableLoading:true,
         tableMap:{},
 			}
@@ -154,17 +152,36 @@
         });
       },
       handleCheckedChange(itemName,flag){
-        let self = this;
-        let tableMap = {};
-        for(let data of self.selectItems){
-          for(let item of self.items){
-            if(item.itemName == data && (!flag || itemName ==item.itemName)){
-              let key = item.itemName + item.samples.length;
-              tableMap[key] = item;
+        this.handleTableResult();
+        // let self = this;
+        // let tableMap = {};
+        // for(let data of self.selectItems){
+        //   for(let item of self.items){
+        //     if(item.itemName == data && (!flag || itemName ==item.itemName)){
+        //       let key = item.itemName + item.samples.length;
+        //       tableMap[key] = item;
+        //     }
+        //   }
+        // }
+        // self.tableMap = Object.assign({},tableMap);
+      },
+
+      handleTableResult(){
+        let tableHeader = new Set();
+        this.tableData = [];
+        for(let item of this.items){
+          if(this.selectItems.indexOf(item.itemName) > -1){
+            let tableData = {};
+            for(let sample of item.samples){
+              tableHeader.add(sample.sampleCode);
+              tableData[sample.sampleCode] = sample.itemQualityStandard;
             }
+            tableData["itemName"] = item.itemName;
+            this.tableData.push(tableData);
           }
         }
-        self.tableMap = Object.assign({},tableMap);
+        Array.from(tableHeader);
+        this.tableHeader = tableHeader;
       },
 
       getTableHeader(){
@@ -199,27 +216,32 @@
                 continue;
               }
               for(let c_data of data.standardItems){
+                let cc_data = {};
+                cc_data.itemName = c_data.itemName;
+                cc_data.itemQualityStandard = c_data.itemQualityStandard;
+                cc_data.sampleCode = data.sampleCode;
                 if(repeat.indexOf(c_data.itemName) < 0){
-                  let item = {itemId:c_data.itemId,itemName:c_data.itemName,samples:[],loading:true};
-                  data.itemName = c_data.itemName;
-                  data.itemQualityStandard = c_data.itemQualityStandard;
-                  data.testResult = c_data.testResult;
-                  item.samples.push(data);
+                  let item = {itemName:c_data.itemName,samples:[]};
+                  item.samples.push(cc_data);
                   items.push(item);
                   repeat.push(c_data.itemName);
                 }else{
                   let exist = items.find(ex=>ex.itemName == c_data.itemName);
-                  exist.samples.push(data)
+                  exist.samples.push(cc_data)
                 }
-                if(self.selectItems.length == 0){
-                  self.selectItems.push(c_data.itemName);
-                }
+                // if(self.selectItems.length == 0){
+                //   self.selectItems.push(c_data.itemName);
+                // }
               }
             }
             self.items = items;
-            if(self.selectItems.length > 0){
-              self.handleCheckedChange(self.selectItems[0],true);
+            for(let data of items){
+              self.selectItems.push(data.itemName);
             }
+            // if(self.selectItems.length > 0){
+            //   self.handleCheckedChange(self.selectItems[0],true);
+            // }
+            self.handleTableResult();
             self.dialogLoading = false;
           }
         });
@@ -228,12 +250,14 @@
 		mounted() {
       let self = this;
       self.getMaterials();
-			self.$eventBus.$on("openSameContrast",function () {
+			self.$eventBus.$on("openSameContrast",function (val,searchTime) {
           self.dialogAddVisible = true;
-          self.dialogLoading = true;
-          self.sampleData.materialName = "";
-          self.sampleData.startTime = "";
-          self.sampleData.endTime = "";
+          self.dialogLoading = false;
+          self.sampleData.materialName = val;
+          self.changeMaterial(val);
+          self.sampleData.startTime = searchTime.startTime;
+          self.sampleData.endTime = searchTime.endTime;
+          self.getSampleItemList();
 		    })
 		}
 	}

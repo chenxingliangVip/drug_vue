@@ -6,8 +6,8 @@
 		        <img src="@/assets/logoTitle.png" class="app-login-logoTitle" />
 			</div>
 			<div class="workForm">
-				<p class="title_txt">扫码送样工作台</p>
-				<el-input type="text" class="workInput" autofocus v-model="sampleCode"  placeholder="扫码输入检验单号" id="workJJ"/>
+				<p class="title_txt">自助扫码送样区</p>
+				<el-input type="text"  class="workInput" autofocus v-model="sampleCode"  placeholder="请扫待送样品的检验单号" id="workJJ"/>
 			</div>
 		</div>
 	</div>
@@ -107,7 +107,7 @@
 					color: #fff;
 					text-align: center;
 					margin-top: 10px;
-					font-size: 18px;
+					font-size: 30px;
 					font-family: serif;
 				}
 
