@@ -84,31 +84,35 @@
         justify-content: center;
         /*align-items: center;*/
         .Maincontain {
-        	width: 40%;
+        	width: 32%;
         	margin-top: 10%;
 	        .topImg_logo {
 				height: 85px;
 	        	.app-login-logo {
 			    	width: 40%;
-				    height: 85px;
+				    height: 70px;
 				    float: left;
 			    }
 			    .app-login-logoTitle {
 			        float: left;
 			    	width: 60%;
-			        height: 85px;
+			        height: 70px;
 			    }
 	        }
 	        .workForm {
-	        	width: 60%;
+	        	width: 70%;
 	        	margin: auto;
 	        	margin-top: 25%;
+	        	p {
+	        		margin: 0;
+	        	}
 		        .title_txt {
 					color: #fff;
 					text-align: center;
 					margin-top: 10px;
-					font-size: 30px;
+					font-size: 32px;
 					font-family: serif;
+					margin-bottom: 30px;
 				}
 
 	        }
