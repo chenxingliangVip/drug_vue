@@ -11,7 +11,7 @@
           <span  slot="title">{{onlyOneChild.meta.title}}</span>
 					<span class="txt_Num" v-if="onlyOneChild.meta.title  == '信息'">{{txtNum}}</span>
           <img src="@/assets/img/left_icona.png" v-if="onlyOneChild.meta.title  == '审批' && approveTag" class="txt_Img"/>
-          <span class="txt_Icon" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion"><i style="color: #cec813;">new!</i></span>
+          <img src="@/assets/img/left_icona.png" v-if="onlyOneChild.meta.title  == '质量标准'" v-show="InfoQuestion" class="txt_Icon"/>
           <img src="@/assets/img/errorImg.png" class="txt_Error"  v-if="onlyOneChild.meta.title  == '数据备份' && dbTag"/>
         </el-menu-item>
       </app-link>
@@ -146,8 +146,7 @@ export default {
     left: 46%;
 	}
 	.txt_Icon {
-    /*background-color: #F56C6C;*/
-    border-radius: 10px;
+    /*border-radius: 10px;
     color: #FFF;
     display: inline-block;
     font-size: 10px;
@@ -156,7 +155,9 @@ export default {
     width: 18px;
     text-align: center;
     padding-right: 3px;
-    white-space: nowrap;
+    white-space: nowrap;*/
+    width: 20px;
+		height: 20px;
     position: absolute;
     top: 9px;
     right: 20%;
