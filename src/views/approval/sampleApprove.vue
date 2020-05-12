@@ -18,9 +18,9 @@
           <el-button type="text" v-if="hasRole('report:approve:see')"
                       @click="seeSampleApprove(props.rowData)"
                      size='mini'>
-            <img src="../../assets/img/disagree.png" style="cursor: pointer;width: 18px" v-if="props.rowData.checkStatus=='4'">
+            <!--<img src="../../assets/img/disagree.png" style="cursor: pointer;width: 18px" v-if="props.rowData.checkStatus=='4'">-->
             <img src="../../assets/img/agreeing.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='2'||props.rowData.checkStatus=='1'">
-            <img src="../../assets/img/view1.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='5'">
+            <img src="../../assets/img/view1.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='5' || props.rowData.checkStatus=='4'">
           </el-button>
         </div>
       </template>

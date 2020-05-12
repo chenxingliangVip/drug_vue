@@ -6,9 +6,9 @@
           <el-button type="text"
                       @click="seeMethodApprove(props.rowData)"
                      size='mini'>
-            <img src="../../assets/img/disagree.png" style="cursor: pointer;width: 18px" v-if="props.rowData.checkStatus=='4'">
+            <!--<img src="../../assets/img/disagree.png" style="cursor: pointer;width: 18px" v-if="props.rowData.checkStatus=='4'">-->
             <img src="../../assets/img/agreeing.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='2'">
-            <img src="../../assets/img/view1.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='5'">
+            <img src="../../assets/img/view1.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='5' || props.rowData.checkStatus=='4'">
           </el-button>
         </div>
       </template>
