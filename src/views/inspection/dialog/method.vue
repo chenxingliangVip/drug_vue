@@ -16,7 +16,7 @@
       <el-divider></el-divider>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label class="dialogTxt">检项名称：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">检项名称<i class="i_colon">：</i></label>
             <el-select v-model="methodData.itemName" v-if="type == 'add' || type == 'edit'"
                        size="mini"
                        clearable
@@ -32,7 +32,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right"><label class="w3"
-                                                           style="margin-right:-0.5em">申请号</label>：
+                                                           style="margin-right:-0.5em">申请号</label><i class="i_colon">：</i>
             <el-input clearable  v-model="formNo"
                       size="mini"
                       disabled
@@ -43,7 +43,7 @@
 
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label class="dialogTxt">方法依据：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法依据<i class="i_colon">：</i></label>
             <el-input clearable  v-model="methodData.methodJudge"  v-if="type == 'add' || type == 'edit'"
                       size="mini"
                       style="width: 140px;"/>
@@ -52,7 +52,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right"><label class="w2"
-                                                           style="margin-right:-2em">部门</label>：
+                                                           style="margin-right:-2em">部门</label><i class="i_colon">：</i>
             <el-input clearable  v-model="user.deptName" disabled
                       size="mini"
                       style="width: 140px;"/>
@@ -62,7 +62,7 @@
 
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label class="dialogTxt">方法类别：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法类别<i class="i_colon">：</i></label>
             <el-select v-model="methodData.methodType" v-if="type == 'add' || type == 'edit'"
                        size="mini"
                        clearable
@@ -77,7 +77,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right"><label class="w3"
-                                                           style="margin-right:-0.5em">申请人</label>：
+                                                           style="margin-right:-0.5em">申请人</label><i class="i_colon">：</i>
             <el-input clearable  v-model="user.userName" disabled
                       size="mini"
                       style="width: 140px;"/>
@@ -86,7 +86,7 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label class="dialogTxt">方法名称：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法名称<i class="i_colon">：</i></label>
             <el-input clearable  v-model="methodData.methodName" v-if="type == 'add' || type == 'edit'"
                       size="mini"
                       style="width: 140px;"/>
@@ -95,7 +95,7 @@
           </div>
         </el-col>
         <el-col :span="12">
-          <div class="el-dialog-item el-form-right"><label>申请时间： </label>
+          <div class="el-dialog-item el-form-right"><label>申请时间<i class="i_colon">：</i> </label>
             <el-date-picker v-model="nowTime"
                             disabled
                             size="mini"
@@ -109,7 +109,7 @@
       </el-row>
       <el-row>
         <el-col :span="24">
-          <div class="el-dialog-item"><label class="dialogTxt">方法编号：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法编号<i class="i_colon">：</i></label>
             <el-input clearable  v-model="methodData.methodCode" :disabled="type =='see'"
                       size="mini"
                       style="width: 140px;"/>
@@ -118,7 +118,7 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label class="dialogTxt">方法属性：</label>
+          <div class="el-dialog-item"><label class="dialogTxt">方法属性<i class="i_colon">：</i></label>
             <el-select v-model="methodData.codeAttrId" :disabled="type != 'add' && type != 'edit'"
                        size="mini"
                        clearable
@@ -131,7 +131,7 @@
           </div>
         </el-col>
         <el-col :span="12">
-          <div class="el-dialog-item el-form-right"><label>工时：</label>
+          <div class="el-dialog-item el-form-right"><label>工时<i class="i_colon">：</i></label>
             <el-input clearable  v-model="methodData.manHour"  :disabled="type =='see'"
                       size="mini"
                       type="number"
@@ -142,13 +142,13 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item"
-               style="height:20px;"><label>检验方法：</label>
+               style="height:20px;"><label>检验方法<i class="i_colon">：</i></label>
 
           </div>
         </el-col>
         <el-col :span="12"
                 class="el-button-version">
-          <div class="el-dialog-item el-form-right"><label>版本：</label>
+          <div class="el-dialog-item el-form-right"><label>版本<i class="i_colon">：</i></label>
             <el-select v-model="methodData.methodVersion" v-show="isCheckSelect"
                        size="mini"
                        clearable
@@ -183,7 +183,7 @@
       <el-row>
         <el-col :span="24">
           <div class="el-dialog-item"
-               style="margin-top:10px;"><label>检测记录 ：</label></div>
+               style="margin-top:10px;"><label>检测记录 <i class="i_colon">：</i></label></div>
           <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />-->
           <vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>
         </el-col>
@@ -191,7 +191,7 @@
       <el-row>
         <el-col :span="24">
           <div class="el-dialog-item"
-               style="margin-top:10px;"><label>补充说明 ：</label></div>
+               style="margin-top:10px;"><label>补充说明 <i class="i_colon">：</i></label></div>
           <el-input clearable
             type="textarea"
             :rows="2"
@@ -206,7 +206,7 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-top:10px;">
-            <label>审批意见 ：</label>
+            <label>审批意见 <i class="i_colon">：</i></label>
             {{applyReason}}
           </div>
         </el-col>

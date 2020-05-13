@@ -4,7 +4,7 @@
                 width="55%"
                 append-to-body
                :close-on-click-modal="false"
-               :title="dialogtitle" class="standard_Dialog">
+               :title="dialogtitle" class="standard_Dialog dialog_FormTxt">
       <div class="formClick" @click.capture="closeEdit">
         <el-form ref="dataForm"
                  label-position="left"
@@ -20,12 +20,12 @@
             <el-col :span="12"
                     style="margin-top:10px">
               <div class="el-dialog-item"><label class="w3"
-                                                 style="margin-right:-0.5em">申请号</label><label>：</label>
+                                                 style="margin-right:-0.5em">申请号</label><label><i class="i_colon">：</i></label>
                 <el-input clearable  v-model="methodData.id" disabled
                           size="mini"
                           style="width: 140px;"/>
               </div>
-              <div class="el-dialog-item"><label>起草时间：</label>
+              <div class="el-dialog-item"><label>起草时间<i class="i_colon">：</i></label>
                 <el-date-picker v-model="methodData.createTime" disabled
                                 size="mini"
                                 type="date"
@@ -33,20 +33,20 @@
                 </el-date-picker>
               </div>
               <div class="el-dialog-item"><label class="w3"
-                                                 style="margin-right:-0.5em">起草人</label><label>：</label>
+                                                 style="margin-right:-0.5em">起草人</label><label><i class="i_colon">：</i></label>
                 <el-input clearable  v-model="methodData.userName" disabled
                           size="mini"
                           style="width: 140px;"/>
               </div>
               <div class="el-dialog-item"
-                   style="margin-top:20px"><label>标准编号：</label>
+                   style="margin-top:20px"><label>标准编号<i class="i_colon">：</i></label>
                 <el-input clearable  v-model="methodData.standardCode"
                           size="mini"
                           :disabled="type == 'see' || type == 'approve'"
                           style="width: 140px;"/>
               </div>
               <div class="el-dialog-item"><label class="w2"
-                                                 style="margin-right:-2em">版本</label><label>：</label>
+                                                 style="margin-right:-2em">版本</label><label><i class="i_colon">：</i></label>
 
                 <el-select v-model="methodData.version"
                            size="mini"
@@ -66,7 +66,7 @@
                         align="middle">
                   <legend>物料信息</legend>
                   <div style="margin:15px 15px 9px 15px">
-                    <div class="el-dialog-item"><label>物料编码：</label>
+                    <div class="el-dialog-item"><label>物料编码<i class="i_colon">：</i></label>
                       <span v-if="type != 'add'">{{methodData.materialCode}}</span>
                       <el-select v-model="methodData.materialCode" v-if="type == 'add'" @change="changeMaterial"
                                  size="mini"
@@ -79,11 +79,11 @@
                                    :value="item.materialCode"/>
                       </el-select>
                     </div>
-                    <div class="el-dialog-item"><label class="w3">申请人</label>：{{methodData.materialUserName}}</div>
-                    <div class="el-dialog-item"><label>申请时间：</label>{{methodData.materialDateFt}}</div>
-                    <div class="el-dialog-item"><label>物料规格：</label>{{methodData.materialType}}</div>
-                    <div class="el-dialog-item"><label>物料名称：</label>{{methodData.materialName}}</div>
-                    <div class="el-dialog-item"><label>物料等级：</label>{{methodData.materialGrade}}</div>
+                    <div class="el-dialog-item"><label class="w3">申请人</label><i class="i_colon">：</i>{{methodData.materialUserName}}</div>
+                    <div class="el-dialog-item"><label>申请时间<i class="i_colon">：</i></label>{{methodData.materialDateFt}}</div>
+                    <div class="el-dialog-item"><label>物料规格<i class="i_colon">：</i></label>{{methodData.materialType}}</div>
+                    <div class="el-dialog-item"><label>物料名称<i class="i_colon">：</i></label>{{methodData.materialName}}</div>
+                    <div class="el-dialog-item"><label>物料等级<i class="i_colon">：</i></label>{{methodData.materialGrade}}</div>
                   </div>
                 </el-row>
               </div>
@@ -92,20 +92,22 @@
           <el-form label-position="left"
                    label-width="66px"
                    size="mini">
-            <el-form-item label="补充说明:">
+            <el-form-item>
+            	<span class="span_colon">补充说明<i class="i_colon">:</i></span>
               <el-input clearable  type="textarea" :disabled="type == 'see'" v-model="methodData.remark"></el-input>
             </el-form-item>
           </el-form>
           <el-form label-position="left"
                    label-width="66px"
                    size="mini">
-            <el-form-item label="审批意见:" v-show="type != 'add' &&type != 'dz'">
+            <el-form-item v-show="type != 'add' &&type != 'dz'">
+            	<span class="span_colon">审批意见<i class="i_colon">:</i></span>
               {{applyReason}}
             </el-form-item>
           </el-form>
           <div class="flex-row-space-between"
                style="margin:20px 0 -20px 0;">
-            <div style="line-height:20px;"><span style="color:#878989">标准明细：</span></div>
+            <div style="line-height:20px;"><span style="color:#878989">标准明细<i class="i_colon">：</i></span></div>
             <div v-show="type != 'see'">
               <i class="el-icon-circle-plus-outline" @click="addColumn" style="cursor:pointer;"></i>
               <i class="el-icon-remove-outline" @click="deleteColumn" style="cursor:pointer;margin-left:10px"></i>

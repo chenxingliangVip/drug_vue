@@ -8,44 +8,44 @@
     <el-divider></el-divider>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>样品规格：</label><span>{{detailData.materialType}}</span></div>
+        <div class="el-dialog-item"><label>样品规格<i class="i_colon">：</i></label><span>{{detailData.materialType}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w3">检验号</label>：<span style="color: #cb0000;font-size: 14px;">{{detailData.sampleId}}</span></div>
+        <div class="el-dialog-item"><label class="w3">检验号</label><i class="i_colon">：</i><span style="color: #cb0000;font-size: 14px;">{{detailData.sampleId}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>物料编码：</label><span>{{detailData.materialCode}}</span></div>
+        <div class="el-dialog-item"><label>物料编码<i class="i_colon">：</i></label><span>{{detailData.materialCode}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w3">申请人</label>：<span>{{detailData.userName}}</span></div>
+        <div class="el-dialog-item"><label class="w3">申请人</label><i class="i_colon">：</i><span>{{detailData.userName}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>样品名称：</label><span>{{detailData.materialName}}</span></div>
+        <div class="el-dialog-item"><label>样品名称<i class="i_colon">：</i></label><span>{{detailData.materialName}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>申请时间：</label><span>{{detailData.createTimeFt}}</span></div>
+        <div class="el-dialog-item"><label>申请时间<i class="i_colon">：</i></label><span>{{detailData.createTimeFt}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>样品等级：</label><span>{{detailData.materialGrade}}</span></div>
+        <div class="el-dialog-item"><label>样品等级<i class="i_colon">：</i></label><span>{{detailData.materialGrade}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>送样地点：</label><span>{{detailData.location}}</span></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="24">
-        <div class="el-dialog-item"><label>样品规模：</label><span>{{detailData.sampleType}}</span></div>
+        <div class="el-dialog-item"><label>送样地点<i class="i_colon">：</i></label><span>{{detailData.location}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="24">
-        <div class="el-dialog-item"><label>检项数量：</label><span>{{choiceSize}}</span></div>
+        <div class="el-dialog-item"><label>样品规模<i class="i_colon">：</i></label><span>{{detailData.sampleType}}</span></div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="24">
+        <div class="el-dialog-item"><label>检项数量<i class="i_colon">：</i></label><span>{{choiceSize}}</span></div>
       </el-col>
     </el-row>
     <div class="el-dialog-table">

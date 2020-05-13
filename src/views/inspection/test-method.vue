@@ -3,21 +3,21 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
-          <span>申请号:</span>
+          <span>申请号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.id"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>方法编号:</span>
+          <span>方法编号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.methodCode"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>申请时间:</span>
+          <span>申请时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           type="date"
@@ -37,14 +37,14 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span>申请人:</span>
+            <span>申请人<i class="i_colon">:</i></span>
             <el-input clearable  v-model="searchParam.userName"
                       size="mini"
                       style="width: 100px;"
                       @keyup.enter.native="getList" />
           </div>
           <div class="filter-item">
-            <span>方法名称:</span>
+            <span>方法名称<i class="i_colon">:</i></span>
             <!--<el-input clearable  v-model="searchParam.methodName"-->
                       <!--size="mini"-->
                       <!--style="width: 100px;"-->
@@ -61,7 +61,7 @@
             </el-select>
           </div>
           <div class="filter-item">
-            <span>流程状态:</span>
+            <span>流程状态<i class="i_colon">:</i></span>
             <el-select v-model="searchParam.status"
                        size="mini"
                        clearable

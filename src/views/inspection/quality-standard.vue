@@ -3,14 +3,14 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
-          <span>申请号:</span>
+          <span>申请号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.id"
                     size="mini"
                     style="width: 90px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>审核状态:</span>
+          <span>审核状态<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.checkStatus"
                      size="mini"
                      clearable
@@ -22,7 +22,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>物料等级:</span>
+          <span>物料等级<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.materialGradeId"
                      size="mini"
                      clearable
@@ -34,7 +34,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>物料规格:</span>
+          <span>物料规格<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.materialTypeId"
                      size="mini"
                      clearable
@@ -46,7 +46,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>物料编码:</span>
+          <span>物料编码<i class="i_colon">:</i></span>
           <!--<el-select v-model="searchParam.state"-->
                      <!--size="mini"-->
                      <!--clearable-->
@@ -65,7 +65,7 @@
 
       <div>
         <div class="filter-item">
-          <span>申请人:</span>
+          <span>申请人<i class="i_colon">:</i></span>
           <!--<el-input clearable  v-model="searchParam.userName"-->
                     <!--size="mini"-->
                     <!--style="width: 90px;"-->
@@ -82,7 +82,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>标准编码:</span>
+          <span>标准编码<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.standardCode"
                     size="mini"
                     style="width: 90px;"
@@ -96,7 +96,7 @@
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>申请时间:</span>
+          <span>申请时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           type="date"

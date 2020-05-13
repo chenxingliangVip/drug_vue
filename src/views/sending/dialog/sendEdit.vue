@@ -3,7 +3,7 @@
              width="40%"
              append-to-body
              :close-on-click-modal="false"
-             :visible.sync="dialogAddVisible" class="Input_Dialog send_edit">
+             :visible.sync="dialogAddVisible" class="Input_Dialog dialog_FormTxt">
     <el-form ref="dataForm"
              size="mini"
              label-width="80px">

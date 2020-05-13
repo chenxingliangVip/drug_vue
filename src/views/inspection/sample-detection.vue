@@ -4,7 +4,7 @@
          style="margin-left:20px">
       <div>
         <div class="filter-item">
-          <span>检验单号:</span>
+          <span>检验单号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.sampleCode"
                     size="mini"
                     style="width: 100px;"
@@ -12,7 +12,7 @@
         </div>
 
         <div class="filter-item">
-          <span>送检时间:</span>
+          <span>送检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           type="date"
@@ -29,7 +29,7 @@
         </div>
 
         <div class="filter-item">
-          <span>结果录入:</span>
+          <span>结果录入<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.resultId"
                      size="mini"
                      clearable

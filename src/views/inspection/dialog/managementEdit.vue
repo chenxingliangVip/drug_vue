@@ -13,23 +13,23 @@
       </div>
       <el-divider></el-divider>
       <div class="el-dialog-item"><label class="w3 dialogTxt"
-                                         style="margin-right:0em">检验号</label><label>：</label>
+                                         style="margin-right:0em">检验号</label><label><i class="i_colon">：</i></label>
         <el-input clearable  v-model="detailData.sampleId" placeholder="扫码输入"  id="blur_input" :disabled="type !='add'"
                   size="mini"
                   style="width: 84%" />
       </div>
-      <div class="el-dialog-item"><label class="dialogTxt">样品名称</label><label>：</label>
+      <div class="el-dialog-item"><label class="dialogTxt">样品名称</label><label><i class="i_colon">：</i></label>
         <el-input clearable  v-model="detailData.materialName"  disabled
                   size="mini"
                   style="width: 84%" />
       </div>
-      <div class="el-dialog-item"><label class="dialogTxt">样品规格</label><label>：</label>
+      <div class="el-dialog-item"><label class="dialogTxt">样品规格</label><label><i class="i_colon">：</i></label>
         <el-input clearable  v-model="detailData.materialType"  disabled
                   size="mini"
                   style="width: 84%" />
       </div>
       <div class="el-dialog-item"><label class="w3 dialogTxt"
-                                         style="margin-right:0em">库位号</label><label>：</label>
+                                         style="margin-right:0em">库位号</label><label><i class="i_colon">：</i></label>
         <el-input clearable  v-model="detailData.house"
                   size="mini"
                   style="width: 84%" />

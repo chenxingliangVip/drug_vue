@@ -3,7 +3,7 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
-          <span>检验单号:</span>
+          <span>检验单号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.sampleCode"
                     size="mini"
                     style="width: 100px;"
@@ -11,7 +11,7 @@
         </div>
         <div class="filter-item">
           <span class="w3"
-                style="margin-right: -0.5em;">领检人:</span>
+                style="margin-right: -0.5em;">领检人<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.userId"
                      size="mini"
                      clearable
@@ -24,7 +24,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>领检时间:</span>
+          <span>领检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           format="yyyy-MM-dd"

@@ -4,14 +4,14 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span>样品名称:</span>
+            <span>样品名称<i class="i_colon">:</i></span>
             <el-input clearable  v-model="searchParam.materialName"
                       size="mini"
                       style="width: 100px;"
                       @keyup.enter.native="getList" />
           </div>
           <div class="filter-item">
-            <span>存样时间:</span>
+            <span>存样时间<i class="i_colon">:</i></span>
             <el-date-picker v-model="searchParam.startTime"
                             size="mini"
                             format="yyyy-MM-dd"
