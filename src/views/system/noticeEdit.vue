@@ -18,7 +18,7 @@
 
         <el-row>
           <el-col :span="12">
-            <div class="el-dialog-item"><label class="w2">日期</label><label>：</label>
+            <div class="el-dialog-item"><label class="w2">日期</label><label><i class="i_colon">：</i></label>
               <el-date-picker v-model="createTime" disabled
                               size="mini"
                               type="date"
@@ -27,7 +27,7 @@
           </el-col>
           <el-col :span="12">
             <div class="el-dialog-item el-form-right"><label class="w3"
-                                                             style="margin-right:-0.5em">发布人</label>：
+                                                             style="margin-right:-0.5em">发布人</label><i class="i_colon">：</i>
               <el-input clearable  v-model="userName"  disabled
                         size="mini"
                         style="width: 140px;" />
@@ -38,7 +38,7 @@
         <el-row>
           <el-col :span="24">
             <div class="el-dialog-item"
-                 style="display:flex"><label class="w3">主题</label><label>：</label>
+                 style="display:flex"><label class="w3">主题</label><label><i class="i_colon">：</i></label>
               <el-input clearable  v-model="messageData.title"
                         size="mini"
                         style="width:87%" />

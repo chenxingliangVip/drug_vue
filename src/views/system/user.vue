@@ -4,7 +4,7 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span>部门:</span>
+            <span>部门<i class="i_colon">:</i></span>
             <el-select v-model="queryParam.deptId"
                        size="mini"
                        clearable
@@ -16,14 +16,14 @@
             </el-select>
           </div>
           <div class="filter-item">
-            <span>姓名:</span>
+            <span>姓名<i class="i_colon">:</i></span>
             <el-input clearable  v-model="queryParam.userName"
                       size="mini"
                       style="width: 100px;"
                       @keyup.enter.native="getList" />
           </div>
           <div class="filter-item">
-            <span>工号:</span>
+            <span>工号<i class="i_colon">:</i></span>
             <el-input clearable  v-model="queryParam.workNum"
                       size="mini"
                       style="width: 100px;"

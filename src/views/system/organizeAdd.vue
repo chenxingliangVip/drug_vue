@@ -9,13 +9,13 @@
              size="mini"
              label-width="0px">
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
-        <label style=" margin-left: 10px;"><span style="letter-spacing:15px">部门：</span></label>
+        <label style=" margin-left: 10px;"><span style="letter-spacing:15px">部门<i class="i_colon">：</i></span></label>
         <el-input clearable size="mini"  v-model="deptDetail.deptName"
                   style="width: 140px"/>
       </div>
 
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
-        <label style=" margin-left: 10px;"><span>部门类型 ：</span></label>
+        <label style=" margin-left: 10px;"><span>部门类型 <i class="i_colon">：</i></span></label>
         <template>
           <el-checkbox-group v-model="deptTypes">
             <el-checkbox label="1">送检部门</el-checkbox>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
-        <label style=" margin-left: 10px;"><span>所属科室 ：</span></label>
+        <label style=" margin-left: 10px;"><span>所属科室 <i class="i_colon">：</i></span></label>
         <template>
           <el-checkbox v-model="deptDetail.office">是</el-checkbox>
         </template>
@@ -64,7 +64,6 @@
     mounted(){
       let self = this;
       self.$eventBus.$on("openOrganizeAdd",function (val) {
-        debugger
         self.deptDetail.deptName = val.deptName;
         self.deptDetail.id = val.id;
         self.deptDetail.deptType = val.deptType;

@@ -16,7 +16,8 @@
 		  	<span v-else style='color:#cb0000'>编辑用户</span>
       </div>
       <el-divider></el-divider>
-      <el-form-item label=" 部    门 ：" prop="deptId" style="margin-bottom: 10px">
+      <el-form-item prop="deptId" style="margin-bottom: 10px">
+      	<span class="span_colon">部    门 <i class="i_colon">：</i></span>
         <el-select v-model="loginData.deptId"
                    size="mini"
                    clearable
@@ -27,7 +28,8 @@
                      :value="item.id" />
         </el-select>
       </el-form-item>
-      <el-form-item label=" 职  务 ：" prop="roleId"  style="margin-bottom: 10px">
+      <el-form-item prop="roleId"  style="margin-bottom: 10px">
+      	<span class="span_colon">职  务 <i class="i_colon">：</i></span>
         <el-select v-model="loginData.roleId" @change="changeRole"
                    size="mini"
                    clearable
@@ -38,34 +40,40 @@
                      :value="item.id" />
         </el-select>
       </el-form-item>
-        <el-form-item label=" 工  号 ：" prop="workNum"  style="margin-bottom: 10px">
+        <el-form-item prop="workNum"  style="margin-bottom: 10px">
+      	<span class="span_colon">工  号  <i class="i_colon">：</i></span>
           <el-input clearable  v-model="loginData.workNum"
                     size="mini"
                     style="width: 120px" />
         </el-form-item>
-      <el-form-item label=" 姓  名 ：" prop="userName"  style="margin-bottom: 10px">
+      <el-form-item prop="userName"  style="margin-bottom: 10px">
+      	<span class="span_colon">姓  名  <i class="i_colon">：</i></span>
         <el-input clearable  v-model="loginData.userName"
                   size="mini"
                   style="width: 120px" />
       </el-form-item>
-      <el-form-item label="用户名 :" prop="userAccount"  style="margin-bottom: 10px">
+      <el-form-item prop="userAccount"  style="margin-bottom: 10px">
+      	<span class="span_colon">用户名  <i class="i_colon">：</i></span>
         <el-input clearable  v-model="loginData.userAccount"
                   size="mini"
                   style="width: 120px" />
       </el-form-item>
 
-      <el-form-item label="密 码 ：" prop="password"  style="margin-bottom: 10px" >
+      <el-form-item prop="password"  style="margin-bottom: 10px" >
+      	<span class="span_colon">密 码 <i class="i_colon">：</i></span>
         <el-input clearable  v-model="loginData.password" type="password"
                   size="mini"
                   style="width: 120px" />
         <img style="cursor: pointer;margin-left: 5px" src="../../assets/img/refresh.png"   @click="resetPassword" v-show="loginData.accountStatus !=1">
       </el-form-item>
-      <el-form-item label="确 认 ：" prop="checkPass"  style="margin-bottom: 10px"  v-if="type !='edit'">
+      <el-form-item prop="checkPass"  style="margin-bottom: 10px"  v-if="type !='edit'">
+      	<span class="span_colon">确 认  <i class="i_colon">：</i></span>
         <el-input clearable  v-model="loginData.checkPass" type="password"
                   size="mini"
                   style="width: 120px" />
       </el-form-item>
-      <div class="el-dialog-item"><label class="w2">停用</label><label>：</label>
+      <div class="el-dialog-item"
+      	<span class="span_colon">停 用 <i class="i_colon">：</i></span>
         <el-checkbox v-model="checked"
                      class="el-checkbot-disable"></el-checkbox>
       </div>

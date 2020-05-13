@@ -10,7 +10,7 @@
     </div>
     <el-divider></el-divider>
     <div class="el-dialog-item"
-         style="margin-left:20px;"><label>角色名称</label><label>：</label>
+         style="margin-left:20px;"><label>角色名称</label><label><i class="i_colon">：</i></label>
       <el-input clearable   size="mini" style="width: 15%" v-model="roleData.roleName"/>
     </div>
     <div class="el-dialog-role">

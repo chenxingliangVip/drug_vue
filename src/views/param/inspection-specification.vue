@@ -3,7 +3,7 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
-          <span>送样地点:</span>
+          <span>送样地点<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.locationId"
                      size="mini"
                      clearable
@@ -15,7 +15,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>方法属性:</span>
+          <span>方法属性<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.attrId"
                      size="mini"
                      clearable
@@ -27,7 +27,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>检验规则:</span>
+          <span>检验规则<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.typeId"
                      size="mini"
                      clearable
@@ -42,7 +42,7 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span style="letter-spacing:0.5em;margin-right:-0.5em;">检验组</span><span>:</span>
+            <span style="letter-spacing:0.5em;margin-right:-0.5em;">检验组</span><span><i class="i_colon">:</i></span>
             <el-select v-model="searchParam.deptId"
                        size="mini"
                        clearable
@@ -54,7 +54,7 @@
             </el-select>
           </div>
           <div class="filter-item">
-            <span style="letter-spacing:0.5em;margin-right:-0.5em;">规则值</span><span>:</span>
+            <span style="letter-spacing:0.5em;margin-right:-0.5em;">规则值</span><span><i class="i_colon">:</i></span>
             <el-input clearable  v-model="searchParam.checkValue"
                       size="mini"
                       style="width: 270px;"

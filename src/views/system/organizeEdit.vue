@@ -13,7 +13,7 @@
       <el-divider></el-divider>
       <div class="el-dialog-item el-dialog-input" style="margin-top:10px;">
         <el-checkbox v-model="firstChecked"></el-checkbox>
-        <label style=" margin-left: 10px;">一级：</label>
+        <label style=" margin-left: 10px;">一级<i class="i_colon">：</i></label>
         <el-input clearable  size="mini" :disabled="!firstChecked" v-model="firstValue" v-show="!secondChecked"
                   style="width: 160px"/>
         <el-select v-model="firstValue" v-show="secondChecked" @change="changeFirstCheck"
@@ -28,7 +28,7 @@
       </div>
       <div class="el-dialog-item  el-dialog-input">
         <el-checkbox v-model="secondChecked" :disabled="!firstChecked" ></el-checkbox>
-        <label style=" margin-left: 10px;">二级：</label>
+        <label style=" margin-left: 10px;">二级<i class="i_colon">：</i></label>
         <el-input clearable   :disabled="!secondChecked" v-show="!thirdChecked"
           size="mini"  v-model="secondValue"
           style="width: 160px"/>
@@ -45,7 +45,7 @@
 
       <div class="el-dialog-item  el-dialog-input">
         <el-checkbox v-model="thirdChecked" :disabled="!secondChecked"></el-checkbox>
-        <label style=" margin-left: 10px;">三级：</label>
+        <label style=" margin-left: 10px;">三级<i class="i_colon">：</i></label>
         <el-input clearable   :disabled="!secondChecked" v-show="!fourChecked"
                   size="mini"  v-model="thirdValue"
                   style="width: 160px"/>
@@ -62,14 +62,14 @@
 
       <div class="el-dialog-item  el-dialog-input">
         <el-checkbox v-model="fourChecked" :disabled="!firstChecked||!secondChecked || !thirdChecked"></el-checkbox>
-        <label style=" margin-left: 10px;">四级：</label>
+        <label style=" margin-left: 10px;">四级<i class="i_colon">：</i></label>
         <el-input clearable   :disabled="!fourChecked"
                   size="mini"  v-model="fourValue"
                   style="width: 160px"/>
       </div>
 
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 30px">
-        <label ><span>部门类型 ：</span></label>
+        <label ><span>部门类型<i class="i_colon">：</i></span></label>
         <template>
           <el-radio v-model="deptDetail.deptType" label="1">送检部门</el-radio>
           <el-radio v-model="deptDetail.deptType" label="2">检验部门</el-radio>
@@ -79,7 +79,7 @@
       </div>
 
       <div class="el-dialog-item  el-dialog-input">
-        <label ><span>所属科室 ：</span></label>
+        <label ><span>所属科室<i class="i_colon">：</i></span></label>
         <template>
           <el-checkbox v-model="deptDetail.office">是</el-checkbox>
         </template>

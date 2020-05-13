@@ -4,7 +4,7 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span>主题:</span>
+            <span>主题<i class="i_colon">:</i></span>
             <el-input clearable  v-model="searchParam.name"
                       size="mini"
                       style="width: 100px;"

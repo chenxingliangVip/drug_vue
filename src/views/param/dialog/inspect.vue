@@ -12,7 +12,7 @@
       <el-divider></el-divider>
       <el-row>
         <el-col :span="24">
-          <div class="el-dialog-item"><label>规则序号：</label>
+          <div class="el-dialog-item"><label>规则序号<i class="i_colon">：</i></label>
             <el-input clearable  v-model.number="inspectData.serialNo"
                       size="mini"
                       style="width: 100px;" />
@@ -21,7 +21,7 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>检验规则：</label>
+          <div class="el-dialog-item"><label>检验规则<i class="i_colon">：</i></label>
             <el-select v-model="inspectData.typeId" @change="typeChange"
                        size="mini"
                        clearable
@@ -34,7 +34,7 @@
           </div>
         </el-col>
         <el-col :span="12">
-          <div class="el-dialog-item"><label>规 则 值：</label>
+          <div class="el-dialog-item"><label>规 则 值<i class="i_colon">：</i></label>
             <el-input clearable  v-model="inspectData.checkValue" v-show="chooseValue == '所属部门'" disabled
                       size="mini"
                       style="width: 100px;" />
@@ -52,7 +52,7 @@
         </el-col>
       </el-row>
 
-      <div class="el-dialog-group"><label>送样地点：</label>
+      <div class="el-dialog-group"><label>送样地点<i class="i_colon">：</i></label>
         <el-checkbox-group v-model="locationIds"
                            style="width:87%"
                            @change="handleCheckedLocationChange">
@@ -62,7 +62,7 @@
         </el-checkbox-group>
       </div>
 
-      <div class="el-dialog-group"><label>方法属性：</label>
+      <div class="el-dialog-group"><label>方法属性<i class="i_colon">：</i></label>
         <el-checkbox-group v-model="attrIds"
                            style="width:87%"
                            @change="handleCheckedAttrChange">
@@ -71,7 +71,7 @@
                        :key="item.id">{{item.itemName}}</el-checkbox>
         </el-checkbox-group>
       </div>
-      <div class="el-dialog-group"><label>送检部门：</label>
+      <div class="el-dialog-group"><label>送检部门<i class="i_colon">：</i></label>
         <el-checkbox-group v-model="inspectData.syDeptIds"
                            style="width:87%">
           <el-checkbox v-for="item in syDept"
@@ -79,7 +79,7 @@
                        :key="item.id">{{item.deptName}}</el-checkbox>
         </el-checkbox-group>
       </div>
-      <div class="el-dialog-group dialogcolumn" ><label style="margin-bottom: 5px">检验部门：</label>
+      <div class="el-dialog-group dialogcolumn" ><label style="margin-bottom: 5px">检验部门<i class="i_colon">：</i></label>
         <el-checkbox-group v-model="inspectData.jcDeptIds"
                            style="width:100%; border: 1px solid #2e827f;padding: 2px 10px;border-radius: 5px;">
           <el-checkbox v-for="item in jcDept"

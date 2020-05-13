@@ -4,14 +4,14 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span>姓名:</span>
+            <span>姓名<i class="i_colon">:</i></span>
             <el-input clearable  v-model="searchParam.name"
                       size="mini"
                       style="width: 100px;"
                       @keyup.enter.native="getList" />
           </div>
           <div class="filter-item">
-            <span>日期:</span>
+            <span>日期<i class="i_colon">:</i></span>
             <el-date-picker v-model="searchParam.startTime"
                             size="mini"
                             type="date"
