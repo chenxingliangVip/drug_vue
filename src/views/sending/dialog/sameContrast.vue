@@ -73,12 +73,14 @@
 				<p class="titleSpan"></p>
 				<table border="1" class="tableMain">
 					<tr>
-					    <th>考察项目</th>
+					    <th>检项</th>
+					    <th>质量标准</th>
 					    <th v-for="(item,index) in tableHeader" :key="index">{{item}}</th>
 					</tr>
 					<tr v-for="(data,index) in tableData" :key="index">
               <td><p class="mainData" :title="data.itemName">{{data.itemName}}</p>
-					    <td  v-for="(key,index) in tableHeader" :key="index"><p class="mainData" :title="data[key]">{{data[key]}}</p></td>
+              <td><p class="mainData" :title="data.itemQualityStandard">{{data.itemQualityStandard}}</p>
+					    <td  v-for="(key,index) in tableHeader" :key="index"><p class="mainData" :title="data[key]?data[key]['testResult']:'/'">{{data[key]?data[key]['testResult']:'/'}}</p></td>
 					    <!--<td><p class="mainData" :title="item.sampleCode">{{item.sampleCode}}</p></td>-->
 					    <!--<td><p class="mainData" :title="item.sampleNum">{{item.sampleNum}}</p></td>-->
 					    <!--<td><p class="mainData" :title="item.materialType">{{item.materialType}}</p></td>-->
@@ -174,13 +176,15 @@
             let tableData = {};
             for(let sample of item.samples){
               tableHeader.add(sample.sampleCode);
-              tableData[sample.sampleCode] = sample.itemQualityStandard;
+              tableData[sample.sampleCode] = {testResult:sample.testResult};
+              tableData["itemQualityStandard"] = sample.itemQualityStandard;
             }
             tableData["itemName"] = item.itemName;
             this.tableData.push(tableData);
           }
         }
         Array.from(tableHeader);
+        console.log(this.tableData)
         this.tableHeader = tableHeader;
       },
 
@@ -220,6 +224,7 @@
                 cc_data.itemName = c_data.itemName;
                 cc_data.itemQualityStandard = c_data.itemQualityStandard;
                 cc_data.sampleCode = data.sampleCode;
+                cc_data.testResult = c_data.testResult;
                 if(repeat.indexOf(c_data.itemName) < 0){
                   let item = {itemName:c_data.itemName,samples:[]};
                   item.samples.push(cc_data);

@@ -57,7 +57,7 @@ export default {
         self.$http({
           url: "/drug/fmApprove/queryApproveUnReadCount",
           method: "post",
-          params: {permission:user.permission.join(",")}
+          params: {permission:user.permission.length>0?user.permission.join(","):''}
         }).then(resp => {
           if (resp.success) {
             self.$eventBus.$emit("updateApproveCount",resp.result);

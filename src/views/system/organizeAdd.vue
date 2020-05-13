@@ -17,10 +17,14 @@
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
         <label style=" margin-left: 10px;"><span>部门类型 ：</span></label>
         <template>
-          <el-radio v-model="deptDetail.deptType" label="1">送检部门</el-radio>
-          <el-radio v-model="deptDetail.deptType" label="2">检验部门</el-radio>
-          <el-radio v-model="deptDetail.deptType" label="3">全选</el-radio>
-          <el-radio v-model="deptDetail.deptType" label="0">全不选</el-radio>
+          <el-checkbox-group v-model="deptTypes">
+            <el-checkbox label="1">送检部门</el-checkbox>
+            <el-checkbox label="2">检验部门</el-checkbox>
+          </el-checkbox-group>
+          <!--<el-radio v-model="deptDetail.deptType" label="1">送检部门</el-radio>-->
+          <!--<el-radio v-model="deptDetail.deptType" label="2">检验部门</el-radio>-->
+          <!--<el-radio v-model="deptDetail.deptType" label="3">全选</el-radio>-->
+          <!--<el-radio v-model="deptDetail.deptType" label="0">全不选</el-radio>-->
         </template>
       </div>
 
@@ -52,6 +56,7 @@
         centerDialogVisible: false,
         clickModalHide: false,
         count: 0,
+        deptTypes:[],
         deptDetail: {id:"",deptName:"",office:false,deptType:"1"}
       }
     },
@@ -59,9 +64,17 @@
     mounted(){
       let self = this;
       self.$eventBus.$on("openOrganizeAdd",function (val) {
+        debugger
         self.deptDetail.deptName = val.deptName;
         self.deptDetail.id = val.id;
         self.deptDetail.deptType = val.deptType;
+        if(val.deptType =='1' ||val.deptType=='2'){
+          self.deptTypes.push(val.deptType);
+        }
+        if(val.deptType =='3'){
+          self.deptTypes.push('1');
+          self.deptTypes.push('2');
+        }
         self.deptDetail.office = val.office == '1'?true:false;
         self.count = 0;
         self.centerDialogVisible = true;
@@ -83,6 +96,15 @@
           return;
         }
         self.deptDetail.office = self.deptDetail.office?"1":"0";
+        if(self.deptTypes.length == 0){
+          self.deptDetail.deptType = '0';
+        }
+        if(self.deptTypes.length == 1){
+          self.deptDetail.deptType = self.deptTypes[0];
+        }
+        if(self.deptTypes.length == 2){
+          self.deptDetail.deptType = '3';
+        }
         if (this.count == 0) {
           self.$http({
             url: "/drug/dept/updateDeptDetail",

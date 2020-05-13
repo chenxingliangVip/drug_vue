@@ -500,10 +500,10 @@ export default {
           return;
         }
       }
-      if(!this.searchParam.startTime||!this.searchParam.startTime){
+      if(!this.searchParam.startTime||!this.searchParam.endTime){
         this.$notify({
           title: '提示',
-          message: "请选择时间时间！",
+          message: "请选择时间！",
           type: 'warning'
         });
         return;
