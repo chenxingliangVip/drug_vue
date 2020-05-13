@@ -16,7 +16,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label class="dialogTxt">物料名称：</label>
+            <label class="dialogTxt">物料名称<i class="i_colon">：</i></label>
             <el-input
               clearable
               v-model="materialData.materialName"
@@ -28,7 +28,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label class="w3" style="margin-right:-0.5em">申请号</label>：
+            <label class="w3" style="margin-right:-0.5em">申请号</label><i class="i_colon">：</i>
             <el-input
               clearable
               v-model="materialData.materialNum"
@@ -43,7 +43,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label class="dialogTxt">英文缩写：</label>
+            <label class="dialogTxt">英文缩写<i class="i_colon">：</i></label>
             <el-input
               clearable
               v-model="materialData.nameAbbr"
@@ -55,7 +55,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label class="dialogTxt">所属部门：</label>
+            <label class="dialogTxt">所属部门<i class="i_colon">：</i></label>
             <el-input
               clearable
               v-model="user.deptName"
@@ -70,7 +70,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label class="dialogTxt">物料规格：</label>
+            <label class="dialogTxt">物料规格<i class="i_colon">：</i></label>
             <el-select
               v-model="materialData.materialTypeId"
               :disabled="type == 'see'"
@@ -90,7 +90,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label class="w3" style="margin-right:-0.5em">申请人</label>：
+            <label class="w3" style="margin-right:-0.5em">申请人</label><i class="i_colon">：</i>
             <el-input
               clearable
               v-model="user.userName"
@@ -104,7 +104,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label class="dialogTxt">参考物料：</label>
+            <label class="dialogTxt">参考物料<i class="i_colon">：</i></label>
             <el-select
               v-model="materialData.refItem"
               :disabled="type == 'see' || refMaterialDisabled"
@@ -124,7 +124,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label class="dialogTxt">申请时间：</label>
+            <label class="dialogTxt">申请时间<i class="i_colon">：</i></label>
             <el-date-picker
               v-model="nowTime"
               disabled
@@ -140,7 +140,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label class="dialogTxt">物料等级：</label>
+            <label class="dialogTxt">物料等级<i class="i_colon">：</i></label>
             <el-select
               v-model="materialData.materialGradeId"
               @change="changeMaterialGrade"
@@ -161,7 +161,7 @@
       <el-row>
         <el-col :span="12">
           <div class="el-dialog-item">
-            <label class="dialogTxt">物料编码：</label>
+            <label class="dialogTxt">物料编码<i class="i_colon">：</i></label>
             <el-input
               clearable
               v-model="materialData.materialCode"
@@ -173,7 +173,7 @@
         </el-col>
         <el-col :span="12">
           <div class="el-dialog-item el-form-right">
-            <label class="dialogTxt">工艺节点：</label>
+            <label class="dialogTxt">工艺节点<i class="i_colon">：</i></label>
             <el-input
               clearable
               v-model="materialData.artNode"
@@ -187,7 +187,7 @@
       <el-row>
         <el-col :span="24">
           <div class="el-dialog-item" style>
-            <label>产品描述：</label>
+            <label>产品描述<i class="i_colon">：</i></label>
             <el-input
               clearable
               type="textarea"
@@ -205,7 +205,7 @@
       <el-row>
         <el-col :span="24">
           <div class="el-dialog-item">
-            <label>补充说明：</label>
+            <label>补充说明<i class="i_colon">：</i></label>
             <el-input
               clearable
               type="textarea"
@@ -224,7 +224,7 @@
       <el-row v-show="this.type != 'add'">
         <el-col :span="24">
           <div class="el-dialog-item">
-            <label>审批意见：</label>
+            <label>审批意见<i class="i_colon">：</i></label>
             <span>{{applyReason}}</span>
           </div>
         </el-col>

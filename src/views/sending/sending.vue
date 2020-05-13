@@ -3,7 +3,7 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
-          <span>检验单号:</span>
+          <span>检验单号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.sampleCode"
                     size="mini"
                     style="width: 100px;"
@@ -11,21 +11,21 @@
         </div>
         <div class="filter-item">
           <span class="w3"
-                style="margin-right: -0.5em;">申请人:</span>
+                style="margin-right: -0.5em;">申请人<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.userName"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>样品名称:</span>
+          <span>样品名称<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.materialName"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>样品规格:</span>
+          <span>样品规格<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.materialTypeId"
                      size="mini"
                      clearable
@@ -37,7 +37,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>流程状态:</span>
+          <span>流程状态<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.checkStatus"
                      size="mini"
                      clearable
@@ -51,14 +51,14 @@
       </div>
       <div>
         <div class="filter-item">
-          <span>物料编码:</span>
+          <span>物料编码<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.materialCode"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>送样地点:</span>
+          <span>送样地点<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.locationId"
                      size="mini"
                      clearable
@@ -70,7 +70,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>样品规模:</span>
+          <span>样品规模<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.sampleTypeId"
                      size="mini"
                      clearable
@@ -83,7 +83,7 @@
 
         </div>
         <div class="filter-item">
-          <span>样品等级:</span>
+          <span>样品等级<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.materialGradeId"
                      size="mini"
                      clearable
@@ -95,7 +95,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>送检时间:</span>
+          <span>送检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           format="yyyy-MM-dd"

@@ -203,3 +203,16 @@ aside {
 .multiselect--active {
   z-index: 1000 !important;
 }
+.i_colon {
+    font-style: normal;
+    font-family: sans-serif;
+}
+.span_colon {
+    color: #878989;
+}
+.send_edit {
+   .el-form-item__content {
+    margin-left: 0 !important;
+  } 
+}
+  

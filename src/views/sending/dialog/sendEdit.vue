@@ -3,7 +3,7 @@
              width="40%"
              append-to-body
              :close-on-click-modal="false"
-             :visible.sync="dialogAddVisible" class="Input_Dialog">
+             :visible.sync="dialogAddVisible" class="Input_Dialog send_edit">
     <el-form ref="dataForm"
              size="mini"
              label-width="80px">
@@ -12,12 +12,14 @@
 
       <el-row>
         <el-col :span="12">
-          <el-form-item label="申  请  人：">
+          <el-form-item>
+      			<span class="span_colon">申  请  人<i class="i_colon">：</i></span>
             <el-input clearable  v-model="user.userName" disabled
                       size="mini"
                       style="width: 100px;"></el-input>
           </el-form-item>
-          <el-form-item label="申请时间：">
+          <el-form-item>
+      			<span class="span_colon">申请时间<i class="i_colon">：</i></span>
             <el-date-picker v-model="nowTime" disabled
                             size="mini"
                             format="yyyy-MM-dd"
@@ -32,8 +34,9 @@
               <div class="el-form-no" style="color:#cb0000;font-size: 18px">
               	<img class="NoImg" src="../../../assets/img/noNum.png" />{{detailData.sampleCode}}</div>
             </el-form-item>
-            <el-form-item label="是否存样：" v-show="type == 'add'"
+            <el-form-item v-show="type == 'add'"
                           class="el-form-check">
+      				<span class="span_colon">是否存样<i class="i_colon">：</i></span>
               <el-checkbox v-model="detailData.saveTmp"></el-checkbox>
 
             </el-form-item>
@@ -41,7 +44,8 @@
         </el-col>
       </el-row>
 
-      <el-form-item label="送样地点：">
+      <el-form-item>
+      	<span class="span_colon">送样地点<i class="i_colon">：</i></span>
         <el-radio-group v-model="detailData.locationId">
           <el-radio v-for="item in codeItemMap.location"
                     :key="item.id"
@@ -63,7 +67,8 @@
         <!--</el-select>-->
       <!--</el-form-item>-->
 
-      <el-form-item label="样品规格：">
+      <el-form-item>
+      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
         <el-select v-model="detailData.materialTypeId" @change="typeChange"
                    size="mini"
                    clearable
@@ -75,7 +80,8 @@
         </el-select>
       </el-form-item>
 
-      <el-form-item label="样品名称：">
+      <el-form-item>
+      	<span class="span_colon">样品名称<i class="i_colon">：</i></span>
         <el-select v-model="detailData.materialName"  :disabled="materialNameEdit" @change="materialChange"
                    size="mini"
                    filterable
@@ -87,19 +93,22 @@
                      :value="item.id" />
         </el-select>
       </el-form-item>
-      <el-form-item label="样品批号：">
+      <el-form-item>
+      	<span class="span_colon">样品批号<i class="i_colon">：</i></span>
         <el-input clearable  v-model="detailData.sampleNum"
                   size="mini"
                   style="width: 100px;"></el-input>
       </el-form-item>
 
-      <el-form-item label="物料编码：">
+      <el-form-item>
+      	<span class="span_colon">物料编码<i class="i_colon">：</i></span>
         <el-input clearable  v-model="detailData.materialCode"
                   size="mini" disabled
                   style="width: 100px;"></el-input>
       </el-form-item>
 
-      <el-form-item label="样品等级：">
+      <el-form-item>
+      	<span class="span_colon">样品等级<i class="i_colon">：</i></span>
         <el-select v-model="detailData.materialGradeId" disabled
                    size="mini"
                    clearable
@@ -111,7 +120,8 @@
         </el-select>
       </el-form-item>
 
-      <el-form-item label="样品规模：">
+      <el-form-item>
+      	<span class="span_colon">样品规模<i class="i_colon">：</i></span>
         <el-radio-group v-model="detailData.sampleTypeId">
           <el-radio v-for="item in codeItemMap.scope"
                     :key="item.id"
@@ -120,7 +130,7 @@
       </el-form-item>
 
       <div>
-        <div><span style="color:#878989">检项选择：</span></div>
+        <div><span class="i_colon" style="color:#878989">检项选择：</span></div>
         <div class="el-dialog-table">
 
         </div>

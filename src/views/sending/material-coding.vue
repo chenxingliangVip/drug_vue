@@ -8,7 +8,7 @@
                     <!--size="mini"-->
                     <!--style="width: 100px;"-->
                     <!--@keyup.enter.native="getList"/>-->
-          <span>物料名称:</span>
+          <span>物料名称<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.materialName"
                      size="mini"
                      clearable
@@ -22,14 +22,14 @@
 
         </div>
         <div class="filter-item">
-          <span>物料编码:</span>
+          <span>物料编码<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.materialCode"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList"/>
         </div>
         <div class="filter-item">
-          <span>申请时间:</span>
+          <span>申请时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           type="date"
@@ -48,14 +48,14 @@
       <div class="flex-row-space-between">
         <div>
           <div class="filter-item">
-            <span> 申 请 人  : </span>
+            <span> 申 请 人  <i class="i_colon">:</i> </span>
             <el-input clearable  v-model="searchParam.userName"
                       size="mini"
                       style="width: 100px;"
                       @keyup.enter.native="getList"/>
           </div>
           <div class="filter-item">
-            <span >参考物料:</span>
+            <span >参考物料<i class="i_colon">:</i></span>
             <el-input clearable  v-model="searchParam.refItem"
                       size="mini"
                       style="width: 100px;"
@@ -63,7 +63,7 @@
           </div>
           <div class="filter-item">
             <span class="w2"
-                  style="margin-right:-2em">规格</span><span>:</span>
+                  style="margin-right:-2em">规格</span><span><i class="i_colon">:</i></span>
             <el-select v-model="searchParam.materialTypeId"
                        size="mini"
                        clearable
@@ -77,7 +77,7 @@
           <div class="filter-item"
                style="margin-left:13px;">
             <span class="w2"
-                  style="margin-right:-2em">等级</span><span>:</span>
+                  style="margin-right:-2em">等级</span><span><i class="i_colon">:</i></span>
             <el-select v-model="searchParam.materialGradeId"
                        size="mini"
                        clearable
