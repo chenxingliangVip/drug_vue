@@ -13,56 +13,56 @@
     <el-divider></el-divider>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>物料编码：</label><span>{{detailData.materialCode}}</span></div>
+        <div class="el-dialog-item"><label>物料编码<i class="i_colon">：</i></label><span>{{detailData.materialCode}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w3">检验号</label>：<span>{{detailData.sampleCode}}</span></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="12">
-        <div class="el-dialog-item"><label>样品名称：</label><span>{{detailData.materialName}}</span></div>
-      </el-col>
-      <el-col :span="12">
-        <div class="el-dialog-item"><label>样品规格：</label><span>{{detailData.materialType}}</span></div>
+        <div class="el-dialog-item"><label class="w3">检验号</label><i class="i_colon">：</i><span>{{detailData.sampleCode}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>样品等级：</label><span>{{detailData.materialGrade}}</span></div>
+        <div class="el-dialog-item"><label>样品名称<i class="i_colon">：</i></label><span>{{detailData.materialName}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w3">申请人</label>：<span>{{detailData.userName}}</span></div>
+        <div class="el-dialog-item"><label>样品规格<i class="i_colon">：</i></label><span>{{detailData.materialType}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>样品规模：</label><span>{{detailData.sampleTypeName}}</span></div>
+        <div class="el-dialog-item"><label>样品等级<i class="i_colon">：</i></label><span>{{detailData.materialGrade}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>送样地点：</label><span>{{detailData.locationName}}</span></div>
+        <div class="el-dialog-item"><label class="w3">申请人</label><i class="i_colon">：</i><span>{{detailData.userName}}</span></div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label>样品规模<i class="i_colon">：</i></label><span>{{detailData.sampleTypeName}}</span></div>
+      </el-col>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label>送样地点<i class="i_colon">：</i></label><span>{{detailData.locationName}}</span></div>
       </el-col>
     </el-row>
 
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>样品批号：</label><span>{{detailData.sampleNum}}</span></div>
+        <div class="el-dialog-item"><label>样品批号<i class="i_colon">：</i></label><span>{{detailData.sampleNum}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>申请时间：</label><span>{{detailData.createTimeFt}}</span></div>
+        <div class="el-dialog-item"><label>申请时间<i class="i_colon">：</i></label><span>{{detailData.createTimeFt}}</span></div>
       </el-col>
     </el-row>
 
     <el-row>
       <el-col :span="24"
               style="margin-top:10px;">
-        <div class="el-dialog-item"><label>标准编号：</label><span>{{detailData.standardCode}}</span></div>
+        <div class="el-dialog-item"><label>标准编号<i class="i_colon">：</i></label><span>{{detailData.standardCode}}</span></div>
       </el-col>
     </el-row>
 
     <div class="flex-row-space-between"
          style="margin:0">
-      <div style="line-height:16px;"><span style="color:#878989">检项：</span></div>
+      <div style="line-height:16px;"><span style="color:#878989">检项<i class="i_colon">：</i></span></div>
     </div>
     <div class="el-dialog-table el-div-version"
          style="border: 0px; margin-top: 0px;">
@@ -76,13 +76,13 @@
     <el-row>
       <el-col :span="24"
               style="margin-top:10px;">
-        <div class="el-dialog-item"><label>结果判定：</label><span>{{detailData.finalResult}}</span></div>
+        <div class="el-dialog-item"><label>结果判定<i class="i_colon">：</i></label><span>{{detailData.finalResult}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="24">
         <div class="el-dialog-item">
-          <div><label class="dialogTxt">审批意见：</label></div>
+          <div><label class="dialogTxt">审批意见<i class="i_colon">：</i></label></div>
           <el-input clearable  type="textarea" :disabled="(detailData.checkStatus != '2' && detailData.checkStatus != '3') || resetItem.tableData.length > 0"
                     maxlength="200"
                     :rows="2"
@@ -96,7 +96,7 @@
     <div v-show="resetItem.tableData.length > 0">
       <div class="flex-row-space-between"
            style="margin:0">
-        <div style="line-height:16px;"><span style="color:#cb0000">复检项：</span></div>
+        <div style="line-height:16px;"><span style="color:#cb0000">复检项<i class="i_colon">：</i></span></div>
 
       </div>
       <div class="el-dialog-table el-div-version"
@@ -110,7 +110,7 @@
       <el-row  v-show="detailData.checkStatus!='3'">
         <el-col :span="24"
                 style="margin-top:10px">
-          <div class="el-dialog-item"><label style="color:#cb0000">复检判定：</label>
+          <div class="el-dialog-item"><label style="color:#cb0000">复检判定<i class="i_colon">：</i></label>
             <el-radio-group v-model="detailData.result">
               <el-radio label="1">无误</el-radio>
               <el-radio label="2">偏差</el-radio>

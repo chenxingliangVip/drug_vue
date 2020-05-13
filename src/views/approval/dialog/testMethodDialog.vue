@@ -13,52 +13,52 @@
     <el-divider></el-divider>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>检项名称：</label><span>{{detailData.itemName}}</span></div>
+        <div class="el-dialog-item"><label>检项名称<i class="i_colon">：</i></label><span>{{detailData.itemName}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w3">申请号</label>：<span>{{detailData.id}}</span></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="12">
-        <div class="el-dialog-item"><label>方法依据：</label><span>{{detailData.methodJudge}}</span></div>
-      </el-col>
-      <el-col :span="12">
-        <div class="el-dialog-item"><label class="w2">部门</label>：<span>{{detailData.deptName}}</span></div>
+        <div class="el-dialog-item"><label class="w3">申请号</label><i class="i_colon">：</i><span>{{detailData.id}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>方法类别：</label><span>{{detailData.methodTypeName}}</span></div>
+        <div class="el-dialog-item"><label>方法依据<i class="i_colon">：</i></label><span>{{detailData.methodJudge}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w3">申请人</label>：<span>{{detailData.userName}}</span></div>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="12">
-        <div class="el-dialog-item"><label>方法名称：</label><span>{{detailData.methodName}}</span></div>
-      </el-col>
-      <el-col :span="12">
-        <div class="el-dialog-item"><label>申请时间：</label><span>{{detailData.createTimeFt}}</span></div>
+        <div class="el-dialog-item"><label class="w2">部门</label><i class="i_colon">：</i><span>{{detailData.deptName}}</span></div>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>方法编号：</label><span>{{detailData.methodCode}}</span></div>
+        <div class="el-dialog-item"><label>方法类别<i class="i_colon">：</i></label><span>{{detailData.methodTypeName}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w2">工时</label>：<span>{{detailData.manHour}}</span></div>
+        <div class="el-dialog-item"><label class="w3">申请人</label><i class="i_colon">：</i><span>{{detailData.userName}}</span></div>
       </el-col>
     </el-row>
 
     <el-row>
       <el-col :span="12">
-        <div class="el-dialog-item"><label>方法属性：</label><span>{{detailData.codeAttrName}}</span></div>
+        <div class="el-dialog-item"><label>方法名称<i class="i_colon">：</i></label><span>{{detailData.methodName}}</span></div>
       </el-col>
       <el-col :span="12">
-        <div class="el-dialog-item"><label class="w2">版本</label>：<span>{{detailData.methodVersion}}</span></div>
+        <div class="el-dialog-item"><label>申请时间<i class="i_colon">：</i></label><span>{{detailData.createTimeFt}}</span></div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label>方法编号<i class="i_colon">：</i></label><span>{{detailData.methodCode}}</span></div>
+      </el-col>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label class="w2">工时</label><i class="i_colon">：</i><span>{{detailData.manHour}}</span></div>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label>方法属性<i class="i_colon">：</i></label><span>{{detailData.codeAttrName}}</span></div>
+      </el-col>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label class="w2">版本</label><i class="i_colon">：</i><span>{{detailData.methodVersion}}</span></div>
       </el-col>
     </el-row>
 
@@ -66,7 +66,7 @@
       <el-col :span="24"
               style="margin-top:5px">
         <div class="el-dialog-item"
-             style="display: block;"><label>检验方法：</label>
+             style="display: block;"><label>检验方法<i class="i_colon">：</i></label>
           <el-input clearable  type="textarea"
                     maxlength="200"
                     :rows="4"
@@ -82,7 +82,7 @@
       <el-col :span="24"
               style="margin-top:5px">
         <div class="el-dialog-item"
-             style="display: block;"><label>检验记录：</label>
+             style="display: block;"><label>检验记录<i class="i_colon">：</i></label>
           <el-input clearable  type="textarea"
                     maxlength="200"
                     :rows="4"
@@ -98,7 +98,7 @@
       <el-col :span="24"
               style="margin-top:5px">
         <div class="el-dialog-item"
-             style="display: block;"><label>审批意见：</label>
+             style="display: block;"><label>审批意见<i class="i_colon">：</i></label>
           <el-input clearable  type="textarea"
                     maxlength="200"
                     :disabled="detailData.checkStatus != '2'"

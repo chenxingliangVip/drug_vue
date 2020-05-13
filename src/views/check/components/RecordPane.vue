@@ -4,14 +4,14 @@
          style="margin-left:10px">
       <div>
         <div class="filter-item">
-          <span>检验人:</span>
+          <span>检验人<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.userName"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span>检验号:</span>
+          <span>检验号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.sampleCode"
                     size="mini"
                     style="width: 100px;"

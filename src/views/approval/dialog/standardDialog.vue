@@ -4,7 +4,7 @@
                 width="52%"
                 append-to-body
                :close-on-click-modal="false"
-               title="质量标准修订·审批">
+               title="质量标准修订·审批" class="dialog_FormTxt"> 
       <div class="formClick" >
         <el-form ref="dataForm"
                  label-position="left"
@@ -21,21 +21,21 @@
             <el-col :span="12"
                     style="margin-top:10px">
               <div class="el-dialog-item">
-                <label class="w3" style="margin-right:-0.5em">申请号</label><label>：</label>
+                <label class="w3" style="margin-right:-0.5em">申请号</label><label><i class="i_colon">：</i></label>
                 {{detailData.id}}
               </div>
               <div class="el-dialog-item"
-                   style="margin-top:10px"><label>起草时间：</label>
+                   style="margin-top:10px"><label>起草时间<i class="i_colon">：</i></label>
                 {{detailData.createTimeFt}}
               </div>
-              <div class="el-dialog-item"><label class="w3">起草人</label><label>：</label>
+              <div class="el-dialog-item"><label class="w3">起草人</label><label><i class="i_colon">：</i></label>
                 {{detailData.userName}}
               </div>
               <div class="el-dialog-item"
-                   style="margin-top:20px"><label>标准编号：</label>
+                   style="margin-top:20px"><label>标准编号<i class="i_colon">：</i></label>
                 {{detailData.standardCode}}
               </div>
-              <div class="el-dialog-item"><label class="w2">版本</label><label>：</label>
+              <div class="el-dialog-item"><label class="w2">版本</label><label><i class="i_colon">：</i></label>
                {{detailData.version}}
               </div>
             </el-col>
@@ -45,14 +45,14 @@
                         align="middle">
                   <legend>物料信息</legend>
                   <div style="margin:15px 15px 9px 15px">
-                    <div class="el-dialog-item"><label>物料编码：</label>
+                    <div class="el-dialog-item"><label>物料编码<i class="i_colon">：</i></label>
                       {{material.materialCode}}
                     </div>
-                    <div class="el-dialog-item"><label class="w3">申请人</label>：{{material.userName}}</div>
-                    <div class="el-dialog-item"><label>申请时间：</label>{{material.createTimeFt}}</div>
-                    <div class="el-dialog-item"><label>物料规格：</label>{{material.materialTypeName}}</div>
-                    <div class="el-dialog-item"><label>物料名称：</label>{{material.materialName}}</div>
-                    <div class="el-dialog-item"><label>物料等级：</label>{{material.materialGradeName}}</div>
+                    <div class="el-dialog-item"><label class="w3">申请人</label><i class="i_colon">：</i>{{material.userName}}</div>
+                    <div class="el-dialog-item"><label>申请时间<i class="i_colon">：</i></label>{{material.createTimeFt}}</div>
+                    <div class="el-dialog-item"><label>物料规格<i class="i_colon">：</i></label>{{material.materialTypeName}}</div>
+                    <div class="el-dialog-item"><label>物料名称<i class="i_colon">：</i></label>{{material.materialName}}</div>
+                    <div class="el-dialog-item"><label>物料等级<i class="i_colon">：</i></label>{{material.materialGradeName}}</div>
                   </div>
                 </el-row>
               </div>
@@ -61,13 +61,14 @@
           <el-form label-position="left"
                    label-width="66px"
                    size="mini">
-            <el-form-item label="补充说明:">
+            <el-form-item>
+            	<span class="span_colon">补充说明<i class="i_colon">：</i></span>
               <span>{{detailData.remark}}</span>
             </el-form-item>
           </el-form>
           <div class="flex-row-space-between"
                style="margin:20px 0 -20px 0;">
-            <div style="line-height:20px;"><span style="color:#878989">标准明细：</span></div>
+            <div style="line-height:20px;"><span style="color:#878989">标准明细<i class="i_colon">：</i></span></div>
           </div>
         </el-form>
       </div>
@@ -89,7 +90,7 @@
         <el-col :span="24"
                 style="margin-top:10px">
           <div class="el-dialog-item"
-               style="display: block;"><label>审批意见：</label>
+               style="display: block;"><label>审批意见<i class="i_colon">：</i></label>
             <el-input clearable  type="textarea"
                       maxlength="200"
                       :rows="2"

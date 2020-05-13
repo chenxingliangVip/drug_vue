@@ -28,13 +28,13 @@
         <el-row>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>检项名称：</label>
+                    <label>检项名称<i class="i_colon">：</i></label>
                     <span>{{detailData.materialName}}</span>
                 </div>
             </el-col>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label class="w3">申请号</label>：
+                    <label class="w3">申请号</label><i class="i_colon">：</i>
                     <span>{{detailData.materialNum}}</span>
                 </div>
             </el-col>
@@ -42,13 +42,13 @@
         <el-row>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>英文简称：</label>
+                    <label>英文简称<i class="i_colon">：</i></label>
                     <span>{{detailData.nameAbbr}}</span>
                 </div>
             </el-col>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label class="w2">部门</label>：
+                    <label class="w2">部门</label><i class="i_colon">：</i>
                     <span>{{detailData.name}}</span>
                 </div>
             </el-col>
@@ -56,13 +56,13 @@
         <el-row>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>物料规格：</label>
+                    <label>物料规格<i class="i_colon">：</i></label>
                     <span>{{detailData.materialTypeName}}</span>
                 </div>
             </el-col>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label class="w3">申请人</label>：
+                    <label class="w3">申请人</label><i class="i_colon">：</i>
                     <span>{{detailData.userName}}</span>
                 </div>
             </el-col>
@@ -71,13 +71,13 @@
         <el-row>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>参考物料：</label>
+                    <label>参考物料<i class="i_colon">：</i></label>
                     <span>{{detailData.refItem}}</span>
                 </div>
             </el-col>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>申请时间：</label>
+                    <label>申请时间<i class="i_colon">：</i></label>
                     <span>{{detailData.createTimeFt}}</span>
                 </div>
             </el-col>
@@ -85,7 +85,7 @@
         <el-row>
             <el-col :span="24">
                 <div class="el-dialog-item">
-                    <label>物料等级：</label>
+                    <label>物料等级<i class="i_colon">：</i></label>
                     <span>{{detailData.materialGradeName}}</span>
                 </div>
             </el-col>
@@ -94,13 +94,13 @@
         <el-row>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>物料编码：</label>
+                    <label>物料编码<i class="i_colon">：</i></label>
                     <span>{{detailData.materialCode}}</span>
                 </div>
             </el-col>
             <el-col :span="12" >
                 <div class="el-dialog-item" v-show="detailData.checkStatus=='2'">
-                    <label style="color:#2e827f">新建质量标准人：</label>
+                    <label style="color:#2e827f">新建质量标准人<i class="i_colon">：</i></label>
                     <el-select
                         v-model="detailData.standardMan"
                         size="mini"
@@ -122,7 +122,7 @@
         <el-row>
             <el-col :span="24" style="margin-top:5px">
                 <div class="el-dialog-item">
-                    <label class="dialogTxt">产品描述:</label>
+                    <label class="dialogTxt">产品描述<i class="i_colon">：</i></label>
                     <div style="width:87%">
                         <span>{{detailData.materialDescr}}</span>
                     </div>
@@ -133,7 +133,7 @@
         <el-row>
             <el-col :span="24" style="margin-top:5px">
                 <div class="el-dialog-item">
-                    <label class="dialogTxt">补充说明:</label>
+                    <label class="dialogTxt">补充说明<i class="i_colon">：</i></label>
                     <div style="width:87%">
                         <span>{{detailData.remark}}</span>
                     </div>
@@ -144,7 +144,7 @@
             <el-col :span="24" style="margin-top:5px">
                 <div class="el-dialog-item">
                     <div>
-                        <label class="dialogTxt">审批意见:</label>
+                        <label class="dialogTxt">审批意见<i class="i_colon">：</i></label>
                     </div>
                     <el-input
                         :disabled="detailData.checkStatus!='2'"

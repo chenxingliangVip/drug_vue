@@ -3,14 +3,14 @@
     <div class="filter-container">
       <div class="filter-container-item">
         <div class="filter-item">
-          <span>名称</span>
+          <span>名称<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.name"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="handleFilter" />
         </div>
         <div class="filter-item">
-          <span>审核状态</span>
+          <span>审核状态<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.checkStatus"
                      size="mini"
                      clearable
@@ -22,7 +22,7 @@
           </el-select>
         </div>
         <div class="filter-item">
-          <span>时间</span>
+          <span>时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           format="yyyy-MM-dd"

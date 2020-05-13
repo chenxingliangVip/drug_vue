@@ -17,7 +17,7 @@
           </el-radio-group>
         </div>
         <div class="filter-item">
-          <span>时间:</span>
+          <span>时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           type="date"
