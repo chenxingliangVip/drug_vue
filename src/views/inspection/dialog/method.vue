@@ -175,8 +175,8 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-bottom:0px;">
-            <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />-->
-            <vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>
+            <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
+            <!--<vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>-->
           </div>
         </el-col>
       </el-row>
@@ -184,8 +184,8 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-top:10px;"><label>检测记录 <i class="i_colon">：</i></label></div>
-          <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />-->
-          <vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>
+          <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
+          <!--<vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>-->
         </el-col>
       </el-row>
       <el-row>

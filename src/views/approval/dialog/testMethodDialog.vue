@@ -67,13 +67,14 @@
               style="margin-top:5px">
         <div class="el-dialog-item"
              style="display: block;"><label>检验方法<i class="i_colon">：</i></label>
-          <el-input clearable  type="textarea"
-                    maxlength="200"
-                    :rows="4"
-                    disabled
-                    style="width: 100%"
-                    size="small"
-                    v-model="detailData.methodDescSummary"> </el-input>
+          <!--<el-input clearable  type="textarea"-->
+                    <!--maxlength="200"-->
+                    <!--:rows="4"-->
+                    <!--disabled-->
+                    <!--style="width: 100%"-->
+                    <!--size="small"-->
+                    <!--v-model="detailData.methodDescSummary"> </el-input>-->
+          <quill-editor ref="text" disabled  v-model="detailData.methodDescSummary" class="myQuillEditor"  />
         </div>
       </el-col>
     </el-row>
@@ -83,13 +84,14 @@
               style="margin-top:5px">
         <div class="el-dialog-item"
              style="display: block;"><label>检验记录<i class="i_colon">：</i></label>
-          <el-input clearable  type="textarea"
-                    maxlength="200"
-                    :rows="4"
-                    disabled
-                    style="width: 100%"
-                    size="small"
-                    v-model="detailData.testRecordSummary"> </el-input>
+          <!--<el-input clearable  type="textarea"-->
+                    <!--maxlength="200"-->
+                    <!--:rows="4"-->
+                    <!--disabled-->
+                    <!--style="width: 100%"-->
+                    <!--size="small"-->
+                    <!--v-model="detailData.testRecordSummary"> </el-input>-->
+          <quill-editor ref="text" disabled  v-model="detailData.testRecordSummary" class="myQuillEditor"  />
         </div>
       </el-col>
     </el-row>
@@ -129,9 +131,15 @@
 <script>
   import drugTable from "@/components/table/index";
   import {getToken} from '@/utils/auth' // 验权
+  import { quillEditor } from 'vue-quill-editor'
+  import 'quill/dist/quill.core.css'
+  import 'quill/dist/quill.snow.css'
+  import 'quill/dist/quill.bubble.css'
+
+
   export default {
     name:"testMethodDialog",
-    components:{drugTable},
+    components:{drugTable,quillEditor},
     props:[],
     data(){
       return{

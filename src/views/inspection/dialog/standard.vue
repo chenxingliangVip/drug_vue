@@ -118,7 +118,7 @@
       <div class="el-dialog-table el-div-green standard"
            style="margin-top:20px">
         <div class="drugTableCopy">
-          <drug-edit-table  @getSelection="getSelection" :filterPage="false" ref="standardTable" :isMultipleSelection="true"
+          <drug-edit-table  @getSelection="getSelection" :editType="type" :filterPage="false" ref="standardTable" :isMultipleSelection="true"
                             :tableData="standardItemList"
                             :tableLoading="standardLoading"
                             :tableHeader="standTableHeader"  ></drug-edit-table>

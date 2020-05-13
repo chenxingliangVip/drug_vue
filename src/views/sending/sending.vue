@@ -134,7 +134,7 @@
                    @click="addSend">
           新增
         </el-button>
-        <el-button class="filter-btn-item same-contrast"
+        <el-button class="filter-btn-item same-contrast" v-if="hasRole('yangpin:send:contrast')"
                    size="mini"
                    style="margin-left: 10px;width: 80px;float: right;"
                    type="green"

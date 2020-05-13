@@ -122,6 +122,13 @@
         },
         type: Boolean
       },
+
+      editType: {
+        default: function () {
+          return ""
+        },
+        type: String
+      }
     },
     data() {
       return {
@@ -272,6 +279,9 @@
         return color;
       },
       cellClick(row, column, cell, event){
+        if(this.editType == 'see'){
+          return;
+        }
         let property = column.property;
         let item = row[property];
         for(let data of this.displayTableData){

@@ -109,7 +109,7 @@
           return false;
         }
         if(this.detailData.saveTmp !='1'){
-          this.showTip("检验方法未存样！");
+          this.showTip("此检样无存样要求！");
           return false;
         }
         return true;

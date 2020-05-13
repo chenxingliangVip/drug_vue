@@ -64,6 +64,7 @@
     mounted(){
       let self = this;
       self.$eventBus.$on("openOrganizeAdd",function (val) {
+        self.deptTypes = [];
         self.deptDetail.deptName = val.deptName;
         self.deptDetail.id = val.id;
         self.deptDetail.deptType = val.deptType;
