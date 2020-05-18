@@ -25,7 +25,14 @@
           <span  :title="scope.row[col.columnName]"  @click="emitSpanFun(scope.row,col.isClick&&scope.row[col.columnName]=='驳回')" :style="col.isClick&&scope.row[col.columnName]=='驳回'?'cursor: pointer':''">{{scope.row[col.columnName]}}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="140" align="center" v-if="option.showOperate">
+      
+      <el-table-column type="expand" v-if="ismoreDetail" label="详细">
+      	<template slot-scope="props">
+      		<slot name="moreDetail"></slot>
+      	</template>
+      </el-table-column>
+      
+      <el-table-column label="操作" :width="slotWidth" align="center" v-if="option.showOperate">
         <template slot-scope="scope">
           <slot :index="scope.$index" :rowData="scope.row" :num="pageNum" :row="pageRow" name="operate">
           </slot>
@@ -134,6 +141,16 @@
         },
         type: Boolean
       },
+      slotWidth: {
+      	default: 140,
+        type: Number
+      },
+      ismoreDetail: {
+      	default: function () {
+          return false
+        },
+        type: Boolean
+      }
     },
     data() {
       return {

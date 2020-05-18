@@ -190,6 +190,27 @@
         color: #fff;
     }
 }
+.quality_max {
+    .el-dialog {
+        margin-top: 50px !important;
+        min-height: calc(100% - 100px);
+    }
+}
+.edit_standard_table {
+    .el-table .el-table__body td {
+        height: 30px;
+    }
+    .el-table {
+        max-height: 335px;
+        overflow-y: auto;
+    }
+}
+.moreDrug_table {
+    .el-table__expanded-cell {
+        padding: 0 0 15px 0px;
+        background: #fff !important;
+    }
+}
 
 // refine element ui upload
 .upload-container {

@@ -142,7 +142,11 @@
                  class="table-view" v-show="props.rowData.checkStatus=='1' && props.rowData.checkStatus!='4'">
             编辑
           </label>
-          <label  v-show="props.rowData.checkStatus=='2'&&props.rowData.checkStatus!='4'" @click="lookDetail(props.rowData,'approve')" v-if="hasRole('standard:check:imporve')"
+          <!--<label  v-show="props.rowData.checkStatus=='2'&&props.rowData.checkStatus!='4'" @click="lookDetail(props.rowData,'approve')" v-if="hasRole('standard:check:imporve')"
+                 class="table-view">
+            修订
+          </label>-->
+          <label  v-show="props.rowData.checkStatus=='2'&&props.rowData.checkStatus!='4'" @click="approveDetail(props.rowData,'approve')" v-if="hasRole('standard:check:imporve')"
                  class="table-view">
             修订
           </label>
@@ -150,6 +154,7 @@
       </template>
     </drug-table>
     <standard :editData="detailData" :type="operateType"></standard>
+    <standard-second :approveData="approveData" :type="operateType"></standard-second>
   </div>
 </template>
 
@@ -157,11 +162,12 @@
 import waves from '@/views/directive/waves' // waves directive
 import drugTable from "@/components/table/index";
 import standard from "./dialog/standard"
+import standardSecond from "./dialog/standard2"
 import {getToken} from '@/utils/auth' // 验权
 
 export default {
   name: '检验方法',
-  components: { drugTable,standard },
+  components: { drugTable,standard,standardSecond },
   directives: { waves },
   data() {
     return {
@@ -186,6 +192,7 @@ export default {
       },
       loginList:[],
       detailData: {},
+      approveData: {},
       operateType: "add",
 
       selectChoice: [],
@@ -285,7 +292,10 @@ export default {
       this.detailData = Object.assign({},rowData);
       this.operateType = type;
     },
-
+		approveDetail(rowData,type){
+      this.approveData = Object.assign({},rowData);
+      this.operateType = type;
+    },
     addMaterialStandard(row,type){
       this.detailData = {
         id: "",
