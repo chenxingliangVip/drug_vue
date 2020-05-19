@@ -28,7 +28,7 @@
       
       <el-table-column type="expand" v-if="ismoreDetail" label="详细">
       	<template slot-scope="props">
-      		<slot name="moreDetail"></slot>
+      		<slot name="moreDetail" :rowData="props.row"></slot>
       	</template>
       </el-table-column>
       
