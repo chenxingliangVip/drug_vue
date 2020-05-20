@@ -212,6 +212,9 @@
           checkStatus = checkStatus =='5' ?'7':'';
         }
         let param = {userName:self.user.userName,userId:self.user.id,sampleCode:self.detailData.sampleCode,id:self.detailData.fId,result:self.detailData.result,content:self.detailData.content,checkStatus:checkStatus};
+        if('4' == checkStatus){
+          param.refusCount = self.detailData.refusCount+1;
+        }
         if (this.count == 0) {
           self.$http({
             url: "/drug/fmApprove/updateSampleFmApprove",

@@ -13,9 +13,9 @@
         <el-tab-pane label="偏差率" v-if="hasRole('piancha:effiect')">
           <deviation-rate-pane />
         </el-tab-pane>
-        <el-tab-pane label="检验记录单复打" v-if="hasRole('report:effiect')">
+        <el-tab-pane label="检验记录单打印" v-if="hasRole('report:effiect')">
            <span slot="label">
-            检验单复打
+            检验记录单打印
             <el-badge :value="recordCount" />
           </span>
           <record-pane />

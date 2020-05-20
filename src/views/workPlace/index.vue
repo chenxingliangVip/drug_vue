@@ -47,6 +47,30 @@
         input.focus();
       },
 
+      showTip(type){
+         if(type == '3'){
+           this.$notify({
+             title: '提示',
+             message: "送样成功!",
+             type: 'success'
+           });
+         }
+        if(type == '1'){
+          this.$notify({
+            title: '提示',
+            message: "此码无效!",
+            type: 'error'
+          });
+        }
+        if(type == '2'){
+          this.$notify({
+            title: '提示',
+            message: "已送在检，别扫了！",
+            type: 'warning'
+          });
+        }
+      },
+
       updateWorkSample(sampleCode){
         let self = this;
         self.$http({
@@ -55,11 +79,7 @@
           params:{sampleCode:sampleCode}
         }).then(resp => {
           self.sampleCode = "";
-          self.$notify({
-            title: '提示',
-            message: resp.result,
-            type: 'info'
-          });
+          self.showTip(resp.result);
         });
       },
     },

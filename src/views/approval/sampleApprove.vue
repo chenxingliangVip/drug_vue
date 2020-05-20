@@ -92,6 +92,7 @@
               {"columnName": "materialGrade", "coloumNameCn": "等级"},
               {"columnName": "location", "coloumNameCn": "送样地点"},
               {"columnName": "userName", "coloumNameCn": "审核人"},
+              {"columnName": "refusCount", "coloumNameCn": "拒绝次数"},
               {"columnName": "updateTimeFt", "coloumNameCn": "审核时间"},
               {"columnName": "checkStatusCn", "coloumNameCn": "状态"}];
             self.option.showOperate = true;
