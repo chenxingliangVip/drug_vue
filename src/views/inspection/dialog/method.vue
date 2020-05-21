@@ -387,6 +387,15 @@
         }
         delete self.methodData.createTime;
         delete self.methodData.updateTime;
+				var activeEditor = tinymce.editors[0];
+				var editBody = activeEditor.getBody();
+				activeEditor.selection.select(editBody);
+				var text = activeEditor.selection.getContent( { 'format' : 'text' } );
+				
+				var activeEditor1 = tinymce.editors[1];
+				var editBody1 = activeEditor1.getBody();
+				activeEditor1.selection.select(editBody1);
+				var text1 = activeEditor1.selection.getContent( { 'format' : 'text' } );
         //给方法放出编辑用的  为了不走审核
         self.methodData.oldStatus = self.methodData.checkStatus;
         self.methodData.checkStatus = '0';
@@ -394,8 +403,9 @@
         self.methodData.userName = self.$store.getters.userName;
 //      self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
 //      self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
-				self.methodData.testRecordSummary = tinyMCE.editors[0].getContent();
-				self.methodData.methodDescSummary = tinyMCE.editors[1].getContent();
+				
+				self.methodData.testRecordSummary = text;
+				self.methodData.methodDescSummary = text1;
         self.methodData.status = '0';
         let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";
         if (this.count == 0) {
