@@ -1,8 +1,8 @@
 <template>
   <div class="dialog">
     <el-dialog :visible.sync="dialogAddVisible"
-                width="55%"
-                append-to-body
+               width="55%"
+               append-to-body
                :close-on-click-modal="false"
                :title="dialogtitle" class="standard_Dialog dialog_FormTxt">
       <div class="formClick" @click.capture="closeEdit">
@@ -11,8 +11,8 @@
                  size="mini"
                  label-width="0px">
           <div class="dialog-title">
-          	<span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'>{{title}} </span>
-          	<span v-else style="color: #2e827f !important">{{title}}</span>
+            <span v-if="type == 'edit' || type == 'approve'" style='color:#cb0000 !important'>{{title}} </span>
+            <span v-else style="color: #2e827f !important">{{title}}</span>
           </div>
           <el-divider></el-divider>
           <el-row type="flex"
@@ -51,6 +51,7 @@
                 <el-select v-model="methodData.version"
                            size="mini"
                            clearable
+                           filterable
                            :disabled="type == 'see'"
                            style="width: 140px">
                   <el-option v-for="item in versionList"
@@ -93,7 +94,7 @@
                    label-width="66px"
                    size="mini">
             <el-form-item>
-            	<span class="span_colon">补充说明<i class="i_colon">:</i></span>
+              <span class="span_colon">补充说明<i class="i_colon">:</i></span>
               <el-input clearable  type="textarea" :disabled="type == 'see'" v-model="methodData.remark"></el-input>
             </el-form-item>
           </el-form>
@@ -101,7 +102,7 @@
                    label-width="66px"
                    size="mini">
             <el-form-item v-show="type != 'add' &&type != 'dz'">
-            	<span class="span_colon">审批意见<i class="i_colon">:</i></span>
+              <span class="span_colon">审批意见<i class="i_colon">:</i></span>
               {{applyReason}}
             </el-form-item>
           </el-form>
@@ -118,17 +119,17 @@
       <div class="el-dialog-table el-div-green standard"
            style="margin-top:20px">
         <div class="drugTableCopy">
-          <drug-edit-table  @getSelection="getSelection" :editType="type" :filterPage="false" ref="standardTable" :isMultipleSelection="true"
+          <drug-edit-table  @getSelection="getSelection" :compareItem="compareItem" :editType="type" :filterPage="false" ref="standardTable" :isMultipleSelection="true"
                             :tableData="standardItemList"
                             :tableLoading="standardLoading"
                             :tableHeader="standTableHeader"  ></drug-edit-table>
         </div>
       </div>
       <drug-table  style="margin-top: 10px" :filterPage="false"  v-show="standardHistoryItemList.length > 0 && this.type != 'edit'"
-                  :tableLoading="standardHistoryLoading"
-                  :tableData="standardHistoryItemList"
-                  :option="historyOption"
-                  :tableHeader="standHistoryTableHeader" ></drug-table>
+                   :tableLoading="standardHistoryLoading"
+                   :tableData="standardHistoryItemList"
+                   :option="historyOption"
+                   :tableHeader="standHistoryTableHeader" ></drug-table>
       <div slot="footer"
            class="dialog-footer">
         <el-button type="green" v-show="type != 'see'"
@@ -174,6 +175,7 @@
           materialUserName: "",
           materialDateFt: ""
         },
+        compareItem:"",
         dialogAddVisible: false,
         count: 0,
         materialStandardCount: 0,
@@ -453,7 +455,7 @@
       },
       getStandardItem(val) {
         let self = this;
-        let param = {id: val.id, standardCode: val.standardCode};
+        let param = {id: val.id, standardCode: val.standardCode,parentId: val.parentId};
         self.standardHistoryLoading = true;
         self.standardLoading = true;
         self.$http({
@@ -519,6 +521,7 @@
         let self = this;
         this.dialogAddVisible = true;
         this.methodData = val;
+        this.compareItem = this.methodData.materialGrade?this.methodData.materialGrade.substring(0,2):"";
         this.standardItemList = [];
         this.standardHistoryItemList = [];
         if(this.type !='add' && this.type !='dz'){
@@ -544,7 +547,7 @@
             {"columnName": "methodCode", "coloumNameCn": "方法编号"},
             {"columnName": "codeAttrName", "coloumNameCn": "方法属性"},
             {"columnName": "manHour", "coloumNameCn": "工时"}
-            ];
+          ];
           self.$nextTick(() => {
             self.standardLoading = false;
           })

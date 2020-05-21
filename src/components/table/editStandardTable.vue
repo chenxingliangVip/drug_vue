@@ -128,6 +128,12 @@
           return ""
         },
         type: String
+      },
+      compareItem: {
+        default: function () {
+          return ""
+        },
+        type: String
       }
     },
     data() {
@@ -199,7 +205,7 @@
               row.itemName.value = data.itemName;
 
               for(let it of row['methodName'].tmpList){
-                if(it.itemName == data.itemName){
+                if(it.itemName == data.itemName && it.methodType&&this.compareItem &&it.methodType.indexOf(this.compareItem)>-1){
                   itemArray.push(it);
                 }
               }

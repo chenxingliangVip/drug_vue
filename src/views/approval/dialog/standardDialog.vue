@@ -4,7 +4,7 @@
                 width="52%"
                 append-to-body
                :close-on-click-modal="false"
-               title="质量标准修订·审批" class="dialog_FormTxt"> 
+               title="质量标准修订·审批" class="dialog_FormTxt">
       <div class="formClick" >
         <el-form ref="dataForm"
                  label-position="left"
@@ -237,7 +237,7 @@
 
       getStandardItem() {
         let self = this;
-        let param = {id: self.detailData.id, standardCode: self.detailData.standardCode};
+        let param = {id: self.detailData.id, standardCode: self.detailData.standardCode,parentId: self.detailData.parentId};
         self.standardHistoryLoading = true;
         self.standardLoading = true;
         self.$http({

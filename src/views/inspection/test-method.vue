@@ -193,8 +193,8 @@ export default {
             {"columnName": "methodName", "coloumNameCn": "方法名称"},
             {"columnName": "codeAttrName", "coloumNameCn": "方法属性","width":"70px"},
             {"columnName": "manHour", "coloumNameCn": "工时","width":"50px"},
-            {"columnName": "testRecordSummary", "coloumNameCn": "检测方法"},
-            {"columnName": "methodDescSummary", "coloumNameCn": "检测记录"},
+            {"columnName": "methodDescSummary", "coloumNameCn": "检测方法"},
+            {"columnName": "testRecordSummary", "coloumNameCn": "检测记录"},
             {"columnName": "checkStatusCn", "coloumNameCn": "状态"},];
           self.option.showOperate = true;
         }

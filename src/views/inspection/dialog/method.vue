@@ -176,7 +176,7 @@
           <div class="el-dialog-item"
                style="margin-bottom:0px;">
                <!--<Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.methodDesc"></Tinymce>-->
-            <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
+            <quill-editor ref="editMethod" @change="onEditorChangeDesc"  :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
             <!--<vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>-->
           </div>
         </el-col>
@@ -186,7 +186,7 @@
           <div class="el-dialog-item"
                style="margin-top:10px;"><label>检测记录 <i class="i_colon">：</i></label></div>
                <!--<Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.testRecord"></Tinymce>-->
-          <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
+          <quill-editor ref="editRecord" @change="onEditorChangeRecord"  :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
           <!--<vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>-->
         </el-col>
       </el-row>
@@ -287,6 +287,12 @@
 
     },
     methods: {
+      onEditorChangeRecord({ editor, html, text }){
+        this.methodData.testRecordSummary = text;
+      },
+      onEditorChangeDesc({ editor, html, text }){
+        this.methodData.methodDescSummary = text;
+      },
       checkStatus() {
         this.isCheckSelect = !this.isCheckSelect;
         this.methodData.methodVersion = "";
@@ -391,7 +397,7 @@
 //				var editBody = activeEditor.getBody();
 //				activeEditor.selection.select(editBody);
 //				var text = activeEditor.selection.getContent( { 'format' : 'text' } );
-//				
+//
 //				var activeEditor1 = tinymce.editors[1];
 //				var editBody1 = activeEditor1.getBody();
 //				activeEditor1.selection.select(editBody1);
@@ -401,9 +407,9 @@
         self.methodData.checkStatus = '0';
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
-        self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
-        self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
-				
+        // self.methodData.testRecordSummary = self.$refs.editRecord.getContents();
+        // self.methodData.methodDescSummary = self.$refs.editMethod.getContents();
+
 //				self.methodData.testRecordSummary = text;
 //				self.methodData.methodDescSummary = text1;
         self.methodData.status = '0';

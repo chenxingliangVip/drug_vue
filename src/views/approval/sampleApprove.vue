@@ -16,7 +16,7 @@
       <template slot-scope="props" slot="operate">
         <div >
           <el-button type="text" v-if="hasRole('report:approve:see')"
-                      @click="seeSampleApprove(props.rowData)"
+                     @click="seeSampleApprove(props.rowData)"
                      size='mini'>
             <!--<img src="../../assets/img/disagree.png" style="cursor: pointer;width: 18px" v-if="props.rowData.checkStatus=='4'">-->
             <img src="../../assets/img/agreeing.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='2'||props.rowData.checkStatus=='1'">
@@ -56,7 +56,7 @@
       self.getAllSampleCode();
       self.$eventBus.$on("updateSampleApprove",function (searchForm) {
         if(searchForm){
-           self.searchParam = searchForm;
+          self.searchParam = searchForm;
         }
         self.getList(0,20);
       })
@@ -84,6 +84,9 @@
             if(self.tableData.length > 0){
               self.backCount = self.tableData[0].count;
               self.$eventBus.$emit("updateApproveCount","sample",self.tableData[0].msgCount);
+            }else{
+              self.backCount = 0;
+              self.$eventBus.$emit("updateApproveCount","sample",0);
             }
             self.tableHeader =  [
               {"columnName": "sampleCode", "coloumNameCn": "检验号"},

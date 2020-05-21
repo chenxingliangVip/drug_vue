@@ -25,27 +25,25 @@
 	                <template slot-scope="props" slot="moreDetail">
 	                 	<div class="tableList" >
 	                		<span class="left_icon"><i class="el-icon-caret-right"></i></span>
-							<table border="1" class="tableMain">
-								<tr>
-								    <th>序号</th>
-								    <th>检项名称</th>
-								    <th>质量标准</th>
-								    <th>方法名称</th>
-								    <th>方法编号</th>
-								    <th>方法属性</th>
-								    <th>工时</th>
-								</tr>
-								<tr>
-									<td>1</td>
-								    <td><p class="mainData" title=""></p></td>
-								    <td><p class="mainData" title=""></p></td>
-								    <td><p class="mainData"></p></td>
-								    <td><p class="mainData"></p></td>
-								    <td><p class="mainData"></p></td>
-								    <td><p class="mainData"></p></td>
-								</tr>
-							</table>
-						</div>
+                      <table border="1" class="tableMain">
+                        <tr>
+                            <th>检项名称</th>
+                            <th>质量标准</th>
+                            <th>方法名称</th>
+                            <th>方法编号</th>
+                            <th>方法属性</th>
+                            <th>工时</th>
+                        </tr>
+                        <tr v-for="(c_chid,index) in props.rowData.matrialStandradItems" :key="index">
+                            <td><p class="mainData" title="">{{c_chid.itemName}}</p></td>
+                            <td><p class="mainData" title="">{{c_chid.itemQualityStandard}}</p></td>
+                            <td><p class="mainData">{{c_chid.methodName}}</p></td>
+                            <td><p class="mainData">{{c_chid.methodCode}}</p></td>
+                            <td><p class="mainData">{{c_chid.methodAttr}}</p></td>
+                            <td><p class="mainData">{{c_chid.manHour}}</p></td>
+                        </tr>
+                      </table>
+						        </div>
 	                </template>
 	            </drug-table>
             </div>
@@ -142,7 +140,7 @@
 	                    </div>
 	                </el-form>
 	            </div>
-	            
+
 	            <div class="el-dialog-table el-div-green standard" style="margin-top:20px">
 	                <div class="drugTableCopy">
 	                    <drug-edit-table class="edit_standard_table"
@@ -150,6 +148,7 @@
 	                        :editType="type"
 	                        :filterPage="false"
 	                        ref="standardTable"
+                          :compareItem="compareItem"
 	                        :isMultipleSelection="true"
 	                        :tableData="standardItemList"
 	                        :tableLoading="standardLoading"
@@ -157,7 +156,7 @@
 	                    ></drug-edit-table>
 	                </div>
 	            </div>
-	            
+
 	            <div slot="footer" class="dialog-footer">
 	                <el-button type="green" v-show="type != 'see'" size="mini" @click="updateStandard" style="width: 80px;">提 交</el-button>
 	            </div>
@@ -208,6 +207,7 @@ export default {
 
             testItems: [],
             testMethodList: [],
+            compareItem:"",
 
             standardItemList: [],
             standTableHeader: [],
@@ -215,7 +215,7 @@ export default {
             selectChoice: [],
             standardHistoryItemList: [],
             standHistoryTableHeader: [],
-            historyOption: { 
+            historyOption: {
 //          	headerStyle: { background: "grey" },
             },
             standardHistoryLoading: true,
@@ -251,35 +251,21 @@ export default {
                 this.standardItemList = standardTable;
             }
         },
-        addColumn() {
-            let row = {
-                methodId: { value: "" },
-                itemId: { value: "" },
-                itemName: {
-                    value: "",
-                    edit: false,
-                    type: "select",
-                    list: this.testItems,
-                    tmpList: JSON.parse(JSON.stringify(this.testItems)),
-                    key: "itemName"
-                },
-                itemQualityStandard: { value: "", edit: false, type: "input" },
-                methodName: {
-                    value: "",
-                    edit: false,
-                    type: "select",
-                    list: [],
-                    tmpList: JSON.parse(JSON.stringify(this.testMethodList)),
-                    key: "methodName"
-                },
-                methodCode: { value: "" },
-                codeAttrName: { value: "" },
-                manHour: { value: "请选择方法..." }
-            };
-            let standardTable = this.$refs.standardTable.getTableData();
-            standardTable.push(row);
-            this.standardItemList = standardTable;
-        },
+      addColumn() {
+        let row = {
+          methodId: {value: ""},
+          itemId: {value: "" },
+          itemName: {value: "", edit: false,type:"select",list:this.testItems,tmpList:JSON.parse(JSON.stringify(this.testItems)),key:"itemName"},
+          itemQualityStandard: {value: "", edit: false,type:"input"},
+          methodName: {value: "", edit: false,type:"select",list:[],tmpList:JSON.parse(JSON.stringify(this.testMethodList)),key:"methodName"},
+          methodCode: {value: ""},
+          codeAttrName: {value: ""},
+          manHour: {value: "请选择方法..."},
+        };
+        let standardTable = this.$refs.standardTable.getTableData();
+        standardTable.push(row);
+        this.standardItemList = standardTable;
+      },
         getCount() {
             let count = this.materialStandardCount;
             if (count < 10) {
@@ -482,76 +468,53 @@ export default {
                 }
             });
         },
-        getStandardItem(val) {
-            let self = this;
-            let param = { id: val.id, standardCode: val.standardCode };
-            self.standardHistoryLoading = true;
-            self.standardLoading = true;
-            self.$http({
-                url: "/drug/standard/queryMatrialStandradItemList",
-                method: "post",
-                params: param
-            }).then(resp => {
-                if (resp.success) {
-                    self.standardHistoryLoading = false;
-                    self.standardLoading = false;
-                    self.standardHistoryItemList = resp.result.histories;
-                    self.standHistoryTableHeader = [
-                        { columnName: "version", coloumNameCn: "版本" },
-                        { columnName: "standardCode", coloumNameCn: "标准编号" },
-                        { columnName: "remark", coloumNameCn: "补充说明" },
-                        { columnName: "userName", coloumNameCn: "修订人" },
-                        { columnName: "createTimeFt", coloumNameCn: "修改时间" }
-                    ];
+      getStandardItem(val) {
+        let self = this;
+        let param = {id: val.id, standardCode: val.standardCode,parentId: val.parentId};
+        self.standardHistoryLoading = true;
+        self.standardLoading = true;
+        self.$http({
+          url: "/drug/standard/queryMatrialStandradItemList",
+          method: "post",
+          params: param
+        }).then(resp => {
+          if (resp.success) {
+            self.standardHistoryLoading = false;
+            self.standardLoading = false;
+            self.standardHistoryItemList = resp.result.histories;
+            self.standHistoryTableHeader = [
+              {"columnName": "standardCode", "coloumNameCn": "标准编号"},
+              {"columnName": "version", "coloumNameCn": "版本"},
+              {"columnName": "remark", "coloumNameCn": "补充说明"},
+              {"columnName": "userName", "coloumNameCn": "修订人"},
+              {"columnName": "createTimeFt", "coloumNameCn": "修改时间"}];
 
-                    self.standTableHeader = [
-                        { columnName: "itemName", coloumNameCn: "检测项目", columnNameRe: "itemId" },
-                        { columnName: "itemQualityStandard", coloumNameCn: "质量标准" },
-                        { columnName: "methodName", coloumNameCn: "方法名称", columnNameRe: "methodId" },
-                        { columnName: "methodCode", coloumNameCn: "方法编号" },
-                        { columnName: "codeAttrName", coloumNameCn: "方法属性" },
-                        { columnName: "manHour", coloumNameCn: "工时" }
-                    ];
-                    let standardItemList = [];
-                    for (let data of resp.result.newVersions) {
-                        let row = {
-                            methodId: { value: data.methodId },
-                            itemId: { value: data.itemId },
-                            itemName: {
-                                value: data.itemName,
-                                edit: false,
-                                type: "select",
-                                list: this.testItems,
-                                tmpList: JSON.parse(
-                                    JSON.stringify(this.testItems)
-                                ),
-                                key: "itemName"
-                            },
-                            itemQualityStandard: {
-                                value: data.itemQualityStandard,
-                                edit: false,
-                                type: "input"
-                            },
-                            methodName: {
-                                value: data.methodName,
-                                edit: false,
-                                type: "select",
-                                list: this.testMethodList,
-                                tmpList: JSON.parse(
-                                    JSON.stringify(this.testMethodList)
-                                ),
-                                key: "methodName"
-                            },
-                            methodCode: { value: data.methodCode },
-                            codeAttrName: { value: data.codeAttrName },
-                            manHour: { value: data.manHour }
-                        };
-                        standardItemList.push(row);
-                    }
-                    self.standardItemList = standardItemList;
-                }
-            });
-        },
+            self.standTableHeader = [
+              {"columnName": "itemName", "coloumNameCn": "检测项目","columnNameRe": "itemId"},
+              {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
+              {"columnName": "methodName", "coloumNameCn": "方法名称","columnNameRe": "methodId"},
+              {"columnName": "methodCode", "coloumNameCn": "方法编号"},
+              {"columnName": "codeAttrName", "coloumNameCn": "方法属性"},
+              {"columnName": "manHour", "coloumNameCn": "工时"}];
+            let standardItemList = [];
+            for (let data of resp.result.newVersions) {
+              let row = {
+                methodId: {value: data.methodId},
+                itemId: {value: data.itemId},
+                itemName: {value: data.itemName, edit: false,type:"select",list:this.testItems,tmpList:JSON.parse(JSON.stringify(this.testItems)),key:"itemName"},
+                itemQualityStandard: {value: data.itemQualityStandard, edit: false,type:"input"},
+                methodName: {value: data.methodName, edit: false,type:"select",list:this.testMethodList,tmpList:JSON.parse(JSON.stringify(this.testMethodList)),key:"methodName"},
+                methodCode: {value: data.methodCode},
+                codeAttrName: {value: data.codeAttrName},
+                manHour: {value: data.manHour},
+              };
+              standardItemList.push(row);
+            }
+            self.standardItemList = standardItemList;
+          }
+
+        });
+      },
         closeEdit() {
             this.$eventBus.$emit("setEditFalse");
         },
@@ -573,6 +536,7 @@ export default {
             let self = this;
             this.dialogAddVisible = true;
             this.methodData = val;
+            this.compareItem = this.methodData.materialGrade?this.methodData.materialGrade.substring(0,2):"";
             this.standardItemList = [];
             this.standardHistoryItemList = [];
             self.getStandardItem(val);

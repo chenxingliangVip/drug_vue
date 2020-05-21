@@ -74,7 +74,7 @@
                     <!--style="width: 100%"-->
                     <!--size="small"-->
                     <!--v-model="detailData.methodDescSummary"> </el-input>-->
-                   
+
                <!--<Tinymce v-if="dialogAddVisible" v-model="detailData.methodDescSummary" :readonly="true"></Tinymce>-->
           <quill-editor ref="text" disabled  v-model="detailData.methodDescSummary" class="myQuillEditor"  />
         </div>
@@ -93,7 +93,7 @@
                     <!--style="width: 100%"-->
                     <!--size="small"-->
                     <!--v-model="detailData.testRecordSummary"> </el-input>-->
-                    
+
                <!--<Tinymce v-if="dialogAddVisible" v-model="detailData.testRecordSummary" :readonly="true"></Tinymce>-->
           <quill-editor ref="text" disabled  v-model="detailData.testRecordSummary" class="myQuillEditor"  />
         </div>

@@ -3,7 +3,7 @@
     <div class="filter-container">
       <div class="filter-container-item">
         <div class="filter-item">
-          <span>名称<i class="i_colon">:</i></span>
+          <span>{{name}}<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.name"
                     size="mini"
                     style="width: 100px;"
@@ -80,122 +80,124 @@
 </template>
 
 <script>
-import waves from '@/views/directive/waves' // waves directive
-import { parseTime } from '@/utils'
-import drugTable from "@/components/table/index";
-import sampleApprove from "./sampleApprove"
-import materialApprove from "./materialApprove"
-import testMethodApprove from "./testMethodApprove"
-import materialStandardApprove from "./materialStandardApprove"
+  import waves from '@/views/directive/waves' // waves directive
+  import { parseTime } from '@/utils'
+  import drugTable from "@/components/table/index";
+  import sampleApprove from "./sampleApprove"
+  import materialApprove from "./materialApprove"
+  import testMethodApprove from "./testMethodApprove"
+  import materialStandardApprove from "./materialStandardApprove"
 
-export default {
-  name: '样品检验',
-  components: { drugTable,sampleApprove,materialApprove,testMethodApprove ,materialStandardApprove},
-  directives: { waves },
-  data() {
-    return {
-      count:0,
-      activeName:"sample",
-      searchParam:{
-        name:"",
-        checkStatus:"",
-        startTime:"",
-        endTime:""
-      },
-      countMap:{sample:0,material:0,method:0,standard:0},
-      stateOptions:[{label:"审核中",value:"2"},{label:"驳回",value:"4"},{label:"完成",value:"5"}]
-    }
-  },
-  mounted(){
-    let self =this;
-    self.$eventBus.$on("updateApproveCount",function (type,count) {
-        self.countMap[type] = count;
-    })
-  },
-  methods: {
-    handleClick(){
-
-    },
-    handleFilter(){
-      let self = this;
-      if(self.searchParam.name){
-        self.searchParam.name = self.searchParam.name.trim();
+  export default {
+    name: '样品检验',
+    components: { drugTable,sampleApprove,materialApprove,testMethodApprove ,materialStandardApprove},
+    directives: { waves },
+    data() {
+      return {
+        count:0,
+        activeName:"sample",
+        searchParam:{
+          name:"",
+          checkStatus:"",
+          startTime:"",
+          endTime:""
+        },
+        name:"检验号",
+        nameMap:{sample:"检验号",material:"物料编码",method:"申请号",standard:"物料编码"},
+        countMap:{sample:0,material:0,method:0,standard:0},
+        stateOptions:[{label:"审核中",value:"2"},{label:"驳回",value:"4"},{label:"完成",value:"5"}]
       }
-      if(self.activeName == 'sample'){
-        self.$eventBus.$emit("updateSampleApprove",self.searchParam);
-      }else if(self.activeName == 'material'){
-        self.$eventBus.$emit("updateMaterialApprove",self.searchParam);
-      }else if(self.activeName == 'method'){
-        self.$eventBus.$emit("updateTestMethodApprove",self.searchParam);
-      }else if(self.activeName == 'standard'){
-        self.$eventBus.$emit("updateMaterialStandardApprove",self.searchParam);
+    },
+    mounted(){
+      let self =this;
+      self.$eventBus.$on("updateApproveCount",function (type,count) {
+        self.countMap[type] = count;
+      })
+    },
+    methods: {
+      handleClick(e){
+        this.name = this.nameMap[e.name];
+      },
+      handleFilter(){
+        let self = this;
+        if(self.searchParam.name){
+          self.searchParam.name = self.searchParam.name.trim();
+        }
+        if(self.activeName == 'sample'){
+          self.$eventBus.$emit("updateSampleApprove",self.searchParam);
+        }else if(self.activeName == 'material'){
+          self.$eventBus.$emit("updateMaterialApprove",self.searchParam);
+        }else if(self.activeName == 'method'){
+          self.$eventBus.$emit("updateTestMethodApprove",self.searchParam);
+        }else if(self.activeName == 'standard'){
+          self.$eventBus.$emit("updateMaterialStandardApprove",self.searchParam);
+        }
       }
     }
   }
-}
 </script>
 
 <style lang="scss" >
-.el-div-version {
-  .el-table {
-    .el-table__header th {
-      background-color: #d8dad7;
-      color: #7e7f7d;
+  .el-div-version {
+    .el-table {
+      .el-table__header th {
+        background-color: #d8dad7;
+        color: #7e7f7d;
+      }
     }
   }
-}
 </style>
 
 <style lang="scss" scoped>
-.app-container {
-  padding: 20px 0;
-}
-
-.el-input-scan {
-  font-size: 13px;
-  color: #d81a06;
-}
-
-.svg-container {
-  padding: 6px 0px 6px 15px;
-  vertical-align: middle;
-  width: 30px;
-  display: inline-block;
-}
-
-.svg-pending {
-  width: 50px;
-  height: 50px;
-  fill: currentColor;
-  overflow: hidden;
-  float: right;
-  margin-top: -20px;
-  transform: rotate(15deg);
-}
-
-.el-col-frame {
-  border: 1px solid #dcdfe6;
-  width: 100%;
-  legend {
-    background: #fff;
-    margin-left: -9px;
-    writing-mode: tb-rl;
-    color: #878989;
-    padding: 10px 0;
+  .app-container {
+    padding: 20px 0;
   }
-}
 
-.el-dialog .el-button--primary {
-  background-color: #2e827f;
-  border-color: #2e827f;
+  .el-input-scan {
+    font-size: 13px;
+    color: #d81a06;
+  }
+
+  .svg-container {
+    padding: 6px 0px 6px 15px;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+  }
+
+  .svg-pending {
+    width: 50px;
+    height: 50px;
+    fill: currentColor;
+    overflow: hidden;
+    float: right;
+    margin-top: -20px;
+    transform: rotate(15deg);
+  }
+
+  .el-col-frame {
+    border: 1px solid #dcdfe6;
+    width: 100%;
+    legend {
+      background: #fff;
+      margin-left: -9px;
+      writing-mode: tb-rl;
+      color: #878989;
+      padding: 10px 0;
+    }
+  }
+
+  .el-dialog .el-button--primary {
+    background-color: #2e827f;
+    border-color: #2e827f;
     border-radius: 3px;
     padding: 5px 10px;
-}
+  }
 
-.el-button .svg-icon {
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-  margin-bottom: 2px;
-}
+  .el-button .svg-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+  }
 </style>
