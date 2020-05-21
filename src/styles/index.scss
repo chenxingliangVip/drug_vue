@@ -218,3 +218,15 @@ aside {
 .ql-editor {
     min-height: 100px;
 }
+
+.mce-branding.mce-widget.mce-label.mce-flow-layout-item.mce-last{
+    display: none;
+}
+.mce-container-body.ce-stack-layout{
+    overflow: auto;
+}
+.mce-edit-area {
+    iframe {
+//      height: auto !important;
+    }
+}

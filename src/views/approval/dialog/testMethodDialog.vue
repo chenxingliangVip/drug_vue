@@ -2,7 +2,7 @@
   <el-dialog :visible.sync="dialogAddVisible"
              append-to-body
              :close-on-click-modal="false"
-             width="40%"
+             width="55%"
              title="检验方法 · 审批">
 
     <div class="dialog-title"><span style="margin-left:25px">检验方法审批</span>
@@ -74,7 +74,9 @@
                     <!--style="width: 100%"-->
                     <!--size="small"-->
                     <!--v-model="detailData.methodDescSummary"> </el-input>-->
-          <quill-editor ref="text" disabled  v-model="detailData.methodDescSummary" class="myQuillEditor"  />
+                   
+               <Tinymce v-model="detailData.methodDescSummary" ></Tinymce>
+          <!--<quill-editor ref="text" disabled  v-model="detailData.methodDescSummary" class="myQuillEditor"  />-->
         </div>
       </el-col>
     </el-row>
@@ -91,7 +93,9 @@
                     <!--style="width: 100%"-->
                     <!--size="small"-->
                     <!--v-model="detailData.testRecordSummary"> </el-input>-->
-          <quill-editor ref="text" disabled  v-model="detailData.testRecordSummary" class="myQuillEditor"  />
+                    
+               <Tinymce v-model="detailData.testRecordSummary" ></Tinymce>
+          <!--<quill-editor ref="text" disabled  v-model="detailData.testRecordSummary" class="myQuillEditor"  />-->
         </div>
       </el-col>
     </el-row>
@@ -129,6 +133,7 @@
   </el-dialog>
 </template>
 <script>
+	import Tinymce from '@/components/TinymceNew/index'
   import drugTable from "@/components/table/index";
   import {getToken} from '@/utils/auth' // 验权
   import { quillEditor } from 'vue-quill-editor'
@@ -139,7 +144,7 @@
 
   export default {
     name:"testMethodDialog",
-    components:{drugTable,quillEditor},
+    components:{drugTable,quillEditor,Tinymce},
     props:[],
     data(){
       return{
