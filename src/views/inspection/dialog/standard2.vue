@@ -377,6 +377,7 @@ export default {
             delete self.methodData.updateTime;
             self.methodData.userId = self.$store.getters.userId;
             self.methodData.userName = self.$store.getters.userName;
+            self.methodData.parentId = self.methodData.parentId;
             self.methodData.moduleType = self.type == "add" ? "新增质量标准" : "修订质量标准";
             self.setParam();
             if ( self.type == "approve" ) {
@@ -403,8 +404,8 @@ export default {
                     }
                     self.$notify({
                         title: "提示",
-                        message: "出现异常，请联系管理员",
-                        type: "error"
+                        message: "版本号重复！",
+                        type: "warning"
                     });
                     this.count--;
                 });
