@@ -175,8 +175,8 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-bottom:0px;">
-               <Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.methodDesc"></Tinymce>
-            <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />-->
+               <!--<Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.methodDesc"></Tinymce>-->
+            <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
             <!--<vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>-->
           </div>
         </el-col>
@@ -185,8 +185,8 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-top:10px;"><label>检测记录 <i class="i_colon">：</i></label></div>
-               <Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.testRecord"></Tinymce>
-          <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />-->
+               <!--<Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.testRecord"></Tinymce>-->
+          <quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
           <!--<vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>-->
         </el-col>
       </el-row>
@@ -387,25 +387,25 @@
         }
         delete self.methodData.createTime;
         delete self.methodData.updateTime;
-				var activeEditor = tinymce.editors[0];
-				var editBody = activeEditor.getBody();
-				activeEditor.selection.select(editBody);
-				var text = activeEditor.selection.getContent( { 'format' : 'text' } );
-				
-				var activeEditor1 = tinymce.editors[1];
-				var editBody1 = activeEditor1.getBody();
-				activeEditor1.selection.select(editBody1);
-				var text1 = activeEditor1.selection.getContent( { 'format' : 'text' } );
+//				var activeEditor = tinymce.editors[0];
+//				var editBody = activeEditor.getBody();
+//				activeEditor.selection.select(editBody);
+//				var text = activeEditor.selection.getContent( { 'format' : 'text' } );
+//				
+//				var activeEditor1 = tinymce.editors[1];
+//				var editBody1 = activeEditor1.getBody();
+//				activeEditor1.selection.select(editBody1);
+//				var text1 = activeEditor1.selection.getContent( { 'format' : 'text' } );
         //给方法放出编辑用的  为了不走审核
         self.methodData.oldStatus = self.methodData.checkStatus;
         self.methodData.checkStatus = '0';
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
-//      self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
-//      self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
+        self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
+        self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
 				
-				self.methodData.testRecordSummary = text;
-				self.methodData.methodDescSummary = text1;
+//				self.methodData.testRecordSummary = text;
+//				self.methodData.methodDescSummary = text1;
         self.methodData.status = '0';
         let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";
         if (this.count == 0) {

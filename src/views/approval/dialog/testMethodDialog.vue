@@ -75,8 +75,8 @@
                     <!--size="small"-->
                     <!--v-model="detailData.methodDescSummary"> </el-input>-->
                    
-               <Tinymce v-if="dialogAddVisible" v-model="detailData.methodDescSummary" :readonly="true"></Tinymce>
-          <!--<quill-editor ref="text" disabled  v-model="detailData.methodDescSummary" class="myQuillEditor"  />-->
+               <!--<Tinymce v-if="dialogAddVisible" v-model="detailData.methodDescSummary" :readonly="true"></Tinymce>-->
+          <quill-editor ref="text" disabled  v-model="detailData.methodDescSummary" class="myQuillEditor"  />
         </div>
       </el-col>
     </el-row>
@@ -94,8 +94,8 @@
                     <!--size="small"-->
                     <!--v-model="detailData.testRecordSummary"> </el-input>-->
                     
-               <Tinymce v-if="dialogAddVisible" v-model="detailData.testRecordSummary" :readonly="true"></Tinymce>
-          <!--<quill-editor ref="text" disabled  v-model="detailData.testRecordSummary" class="myQuillEditor"  />-->
+               <!--<Tinymce v-if="dialogAddVisible" v-model="detailData.testRecordSummary" :readonly="true"></Tinymce>-->
+          <quill-editor ref="text" disabled  v-model="detailData.testRecordSummary" class="myQuillEditor"  />
         </div>
       </el-col>
     </el-row>

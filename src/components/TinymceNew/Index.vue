@@ -137,6 +137,7 @@ export default {
                 default_link_target: "_blank",
                 link_title: false,
                 readonly:_this.readonly,
+//              protect: [/[\n\f\r\t\v]/g],
                 nonbreaking_force_tab: true, // inserting nonbreaking space &nbsp; need Nonbreaking Space Plugin
                 init_instance_callback: editor => {
                     if (_this.value) {
