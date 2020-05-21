@@ -175,7 +175,7 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-bottom:0px;">
-               <Tinymce v-model="methodData.methodDesc"></Tinymce>
+               <Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.methodDesc"></Tinymce>
             <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />-->
             <!--<vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>-->
           </div>
@@ -185,7 +185,7 @@
         <el-col :span="24">
           <div class="el-dialog-item"
                style="margin-top:10px;"><label>检测记录 <i class="i_colon">：</i></label></div>
-               <Tinymce v-model="methodData.testRecord"></Tinymce>
+               <Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.testRecord"></Tinymce>
           <!--<quill-editor ref="text" :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />-->
           <!--<vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>-->
         </el-col>
@@ -392,8 +392,10 @@
         self.methodData.checkStatus = '0';
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
-        self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
-        self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
+//      self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
+//      self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
+				self.methodData.testRecordSummary = tinyMCE.editors[0].getContent();
+				self.methodData.methodDescSummary = tinyMCE.editors[1].getContent();
         self.methodData.status = '0';
         let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";
         if (this.count == 0) {

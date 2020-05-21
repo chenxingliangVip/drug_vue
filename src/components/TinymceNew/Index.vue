@@ -1,5 +1,5 @@
 <template>
-    <div :class="{fullscreen:fullscreen}" class="tinymce-container" :style="{width:containerWidth}">
+    <div :class="{fullscreen:fullscreen}" class="tinymce-container" :style="{width:containerWidth}"> 
         <textarea :id="tinymceId" class="tinymce-textarea" />
     </div>
 </template>
@@ -46,12 +46,16 @@ export default {
         height: {
             type: [Number, String],
             required: false,
-            default: 360
+            default: 120
         },
         width: {
             type: [Number, String],
             required: false,
             default: "auto"
+        },
+        readonly: {
+            type: Boolean,
+            default: false
         }
     },
     data() {
@@ -132,6 +136,7 @@ export default {
                 imagetools_cors_hosts: ["www.tinymce.com", "codepen.io"],
                 default_link_target: "_blank",
                 link_title: false,
+                readonly:_this.readonly,
                 nonbreaking_force_tab: true, // inserting nonbreaking space &nbsp; need Nonbreaking Space Plugin
                 init_instance_callback: editor => {
                     if (_this.value) {
