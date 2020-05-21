@@ -9,7 +9,6 @@
 		<el-form ref="dataForm" size="mini" label-width="80px">
 			<div class="dialog-title"><span>同样对比</span></div>
 			<el-divider></el-divider>
-
 			<el-row>
 				<el-col :span="8">
 					<el-form-item label="物料编码：">
@@ -68,7 +67,12 @@
 					</el-form-item>
 				</el-col>
 			</el-row>
-
+      <div class="el-button-excel"  style="cursor: pointer;text-align: right" @click="downExcel" >
+        <img
+          src="../../../assets/img/Excel.png"
+          class="svg-icon" style="cursor: pointer;width: 15px;height: 15px">
+        <span style="margin-left: 5px;font-size: 12px">导出</span>
+      </div>
 			<div class="tableList" >
 				<p class="titleSpan"></p>
 				<table border="1" class="tableMain">
@@ -109,6 +113,14 @@
         <!--</table>-->
       <!--</div>-->
 		</el-form>
+    <form action="/drug/file/exportExcelData" method="post"
+          style="display: none;" ref="downloadSameContrast">
+      <input name="json"  :value="templateExcel.json"/>
+      <input name="title" :value="templateExcel.title"/>
+      <input name="name" :value="templateExcel.name"/>
+      <input name="code" :value="templateExcel.code"/>
+      <input name="time" :value="templateExcel.time"/>
+    </form>
 	</el-dialog>
 </template>
 
@@ -131,9 +143,48 @@
         tableData:[],
         tableLoading:true,
         tableMap:{},
+        templateExcel: {json: "",title:"",name:"",code:"",time:""},
 			}
 		},
 		methods: {
+
+      downExcel(){
+        let self = this;
+        if(this.tableData.length == 0){
+          let self = this;
+          self.$notify({
+            title: '提示',
+            message: "无数据导出",
+            type: 'warning'
+          });
+          return;
+        }
+        let tableHeader = [
+          {"columnName": "itemName", "coloumNameCn": "检项"},
+          {"columnName": "standard", "coloumNameCn": "质量标准"}];
+        for(let data of this.tableHeader){
+          let hd =  {"columnName": data, "coloumNameCn": data};
+          tableHeader.push(hd);
+        }
+        let tableData = [];
+        for(let cdata of this.tableData){
+          let child = {itemName:cdata.itemName,standard:cdata.itemQualityStandard};
+          for(let key of this.tableHeader){
+            let value  = cdata[key]?cdata[key]['testResult']:'/';
+            child[key] = value;
+          }
+          tableData.push(child);
+        }
+        let header = {tableHeader: tableHeader,tableData:tableData};
+        self.templateExcel.title= this.sampleData.materialName+this.sampleData.materialCode;
+        self.templateExcel.name = this.sampleData.materialName;
+        self.templateExcel.code = this.sampleData.materialCode;
+        self.templateExcel.time = this.sampleData.startTime+"/"+this.sampleData.endTime;
+        this.templateExcel.json = JSON.stringify(header);
+        self.$nextTick(() => {
+          self.$refs.downloadSameContrast.submit();
+        })
+      },
 
       changeMaterial(val){
         let item = this.materials.find(item=>item.materialName==val);
@@ -184,7 +235,6 @@
           }
         }
         Array.from(tableHeader);
-        console.log(this.tableData)
         this.tableHeader = tableHeader;
       },
 

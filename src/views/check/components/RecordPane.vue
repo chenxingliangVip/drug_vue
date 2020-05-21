@@ -98,6 +98,7 @@ export default {
         method: "post",
         params:{id:row.id}
       }).then(resp => {
+        self.getList();
       });
     },
 
