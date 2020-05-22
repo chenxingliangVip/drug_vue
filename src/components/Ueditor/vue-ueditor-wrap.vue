@@ -86,8 +86,8 @@ export default {
   },
   computed: {
     mixedConfig() {
-      console.log('defaultConfig', this.defaultConfig)
-      console.log('config', this.config)
+//    console.log('defaultConfig', this.defaultConfig)
+//    console.log('config', this.config)
       return Object.assign({}, this.defaultConfig, this.config)
     }
   },
@@ -258,7 +258,7 @@ export default {
     // 基于 MutationObserver API
     _observerChangeListener() {
       const changeHandle = mutationsList => {
-        console.log(mutationsList)
+//      console.log(mutationsList)
 
         if (this.editor.document.getElementById('baidu_pastebin')) {
           return

@@ -407,8 +407,8 @@
         self.methodData.checkStatus = '0';
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
-        self.methodData.testRecordSummary = self.$refs.editRecord.getContents();
-        self.methodData.methodDescSummary = self.$refs.editMethod.getContents();
+        self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
+        self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
 
 //				self.methodData.testRecordSummary = text;
 //				self.methodData.methodDescSummary = text1;
