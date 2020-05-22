@@ -176,8 +176,8 @@
           <div class="el-dialog-item"
                style="margin-bottom:0px;">
                <!--<Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.methodDesc"></Tinymce>-->
-            <quill-editor ref="editMethod" @change="onEditorChangeDesc"  :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />
-            <!--<vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>-->
+            <!--<quill-editor ref="editMethod" @change="onEditorChangeDesc"  :disabled="type =='see'" v-model="methodData.methodDesc" class="myQuillEditor"  />-->
+            <vue-ueditor-wrap ref="editMethod" v-model="methodData.methodDesc"  :disabled="type =='see'"></vue-ueditor-wrap>
           </div>
         </el-col>
       </el-row>
@@ -186,8 +186,8 @@
           <div class="el-dialog-item"
                style="margin-top:10px;"><label>检测记录 <i class="i_colon">：</i></label></div>
                <!--<Tinymce v-if="dialogAddVisible" :readonly="type =='see'" v-model="methodData.testRecord"></Tinymce>-->
-          <quill-editor ref="editRecord" @change="onEditorChangeRecord"  :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />
-          <!--<vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>-->
+          <!--<quill-editor ref="editRecord" @change="onEditorChangeRecord"  :disabled="type =='see'" v-model="methodData.testRecord" class="myQuillEditor"  />-->
+          <vue-ueditor-wrap ref="editRecord"  v-model="methodData.testRecord" :disabled="type =='see'"></vue-ueditor-wrap>
         </el-col>
       </el-row>
       <el-row>
@@ -407,8 +407,8 @@
         self.methodData.checkStatus = '0';
         self.methodData.userId = self.$store.getters.userId;
         self.methodData.userName = self.$store.getters.userName;
-        // self.methodData.testRecordSummary = self.$refs.editRecord.getContents();
-        // self.methodData.methodDescSummary = self.$refs.editMethod.getContents();
+        self.methodData.testRecordSummary = self.$refs.editRecord.getContents();
+        self.methodData.methodDescSummary = self.$refs.editMethod.getContents();
 
 //				self.methodData.testRecordSummary = text;
 //				self.methodData.methodDescSummary = text1;
