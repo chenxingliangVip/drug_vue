@@ -1,122 +1,135 @@
 <template>
-	<div class="recordCard">
-		<div class="header">
-			<img src="@/assets/img/recordImg.png" />
-			<span class="">·检验记录单</span>
-			<div style="clear: both;"></div>
-		</div>
-		<div class="container">
-			<div class="content_item content_item1">
-				<p class="item_txt">No.1  检样信息</p>
-				<table border="1" class="mainTable">
-					<tr>
-				        <td class="column">物料编码</td>
-            			<td>P01016</td>
-				        <td class="column" rowspan="2">检 验 号</td>
-            			<td rowspan="2">T2019000001</td>
-            			<td class="img_item" rowspan="4">
-            				<img src="../../assets/img/paramImg4.jpg" />
-            			</td>
-				   </tr>
-					<tr>
-				        <td class="column">样品名称</td>
-            			<td>固体山梨醇</td>
-				    </tr>
-					<tr>
-				        <td class="column">样品规格</td>
-            			<td>成品</td>
-				        <td class="column">部    门</td>
-            			<td>中试组1</td>
-				    </tr>
-					<tr>
-				        <td class="column">样品等级</td>
-            			<td>注射级</td>
-				        <td class="column">申 请 人</td>
-            			<td>王华山</td>
-				    </tr>
-					<tr>
-				        <td class="column">样品批号</td>
-            			<td>20191225K</td>
-				        <td class="column">申请时间</td>
-            			<td colspan="2">2019-12-12  10:33:55</td>
-				    </tr>
-				</table>
-			</div>
-			<div class="content_item content_item2">
-				<p class="item_txt">No.2  检项（2/8）</p>
-				<table border="1" class="table_item2">
-					<tr>
-						<th>检项</th>
-						<th>质量标准</th>
-						<th>检验结果</th>
-						<th>备注</th>
-						<th>工时</th>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
-			</div>
-			<div class="content_item content_item3">
-				<p class="item_txt">No.3  检验方法</p>
-				<table border="1" class="table_item3">
-					<tr class="left_item">
-						<td colspan="2">
-							<h4>干燥失重</h4>
-							<p>（1）.取供试品，混合均匀，取约1g或规定重量，置于供试品图样条件下干燥至恒重的扁形称量瓶中，精密称定。</p>
-						</td>
-						<td colspan="2">
-							<p>测试温度 ℃：</p>
-							<p>供试品质量 g：</p>
-							<p>称量瓶1#恒重g：</p>
-							<p>称量瓶2#恒重g：</p>
-							<p>干燥1#恒重g：</p>
-							<p>干燥2#恒重g：</p>
-							<p>计算1#结果：</p>
-							<p>计算2#结果：</p>
-							<p>平均值：</p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"></td>
-						<td colspan="2"></td>
-					</tr>
-					<tr>
-						<td class="column">检验人</td>
-						<td></td>
-						<td class="column">检验时间</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="column">说明</td>
-						<td colspan="3"></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<div>
-			<p>打印人：李宏丽  2019-12-23 13:00:55</p>
-		</div>
-	</div>
+  <div style="width: 900px;padding-top: 44px;" id="recordCard">
+    <div class="recordCard" >
+      <div class="header" style="margin-top: 50px">
+        <img src="@/assets/img/recordImg.png" />
+        <span class="">·威尔研究院测试中心检验报告</span>
+        <div style="clear: both;"></div>
+      </div>
+      <div class="container">
+        <div class="content_item content_item1">
+          <p class="item_txt">No.1  检样信息</p>
+          <table border="1" class="mainTable">
+            <tr>
+              <td class="column">物料编码</td>
+              <td>P01016</td>
+              <td class="column" rowspan="2">检 验 号</td>
+              <td rowspan="2">T2019000001</td>
+              <td class="img_item" rowspan="4">
+                <img src="../../assets/img/paramImg4.jpg" />
+              </td>
+            </tr>
+            <tr>
+              <td class="column">样品名称</td>
+              <td>固体山梨醇</td>
+            </tr>
+            <tr>
+              <td class="column">样品规格</td>
+              <td>成品</td>
+              <td class="column">部    门</td>
+              <td>中试组1</td>
+            </tr>
+            <tr>
+              <td class="column">样品等级</td>
+              <td>注射级</td>
+              <td class="column">申 请 人</td>
+              <td>王华山</td>
+            </tr>
+            <tr>
+              <td class="column">样品批号</td>
+              <td>20191225K</td>
+              <td class="column">申请时间</td>
+              <td colspan="2">2019-12-12  10:33:55</td>
+            </tr>
+          </table>
+        </div>
+        <div class="content_item content_item2">
+          <p class="item_txt">No.2  检项（2/8）</p>
+          <table border="1" class="table_item2">
+            <tr>
+              <th>检项</th>
+              <th>质量标准</th>
+              <th>检验结果</th>
+              <th>备注</th>
+              <th>工时</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        <div class="content_item content_item3">
+          <p class="item_txt">No.3  检验方法</p>
+          <table border="1" class="table_item3">
+            <tr class="left_item">
+              <td colspan="2">
+                <h4>干燥失重</h4>
+                <p>（1）.取供试品，混合均匀，取约1g或规定重量，置于供试品图样条件下干燥至恒重的扁形称量瓶中，精密称定。</p>
+              </td>
+              <td colspan="2">
+                <p>测试温度 ℃：</p>
+                <p>供试品质量 g：</p>
+                <p>称量瓶1#恒重g：</p>
+                <p>称量瓶2#恒重g：</p>
+                <p>干燥1#恒重g：</p>
+                <p>干燥2#恒重g：</p>
+                <p>计算1#结果：</p>
+                <p>计算2#结果：</p>
+                <p>平均值：</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td class="column">检验人</td>
+              <td></td>
+              <td class="column">检验时间</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="column">说明</td>
+              <td colspan="3"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <p>打印人：李宏丽  2019-12-23 13:00:55</p>
+      </div>
+      <button @click="downLoadHtmlToPdf">pdf</button>
+    </div>
+  </div>
+
 </template>
 
 <script>
+  import { downloadPDF } from '@/utils/htmlToPdf'
 	export default {
 		data(){
-			return {  
+			return {
 			}
 		},
+    updated(){
+
+    },
+    methods:{
+      downLoadHtmlToPdf(){
+        downloadPDF(document.querySelector('#recordCard'), 'test');
+      },
+    },
 	}
-	
+
 </script>
 
 <style lang="scss" scoped>
 	.recordCard {
-		width: 800px;
+		width: 610px;
 		margin: 20px auto;
 		font-family: SimHei;
 		.header {
