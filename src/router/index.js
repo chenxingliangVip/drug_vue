@@ -41,6 +41,10 @@ export const constantRouterMap = [
     path: "/workPlace",
     component: () => import("@/views/workPlace/index.vue"),
     name: "workPlace",
+  },{
+    path: "/recordCard",
+    component: () => import("@/views/recordCard/index.vue"),
+    name: "recordCard",
   },
   //{
   //   path: '/board',
