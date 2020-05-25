@@ -45,7 +45,7 @@
         </div>
         <div class="content_item content_item2">
           <p class="item_txt">No.2  检项（2/8）</p>
-          <table border="1" class="table_item2">
+          <table  border='1' class="table_item2">
             <tr>
               <th>检项</th>
               <th>质量标准</th>
@@ -64,7 +64,7 @@
         </div>
         <div class="content_item content_item3">
           <p class="item_txt">No.3  检验方法</p>
-          <table border="1" class="table_item3">
+          <table  border='1' class="table_item3">
             <tr class="left_item">
               <td colspan="2">
                 <h4>干燥失重</h4>
@@ -131,39 +131,45 @@
 	.recordCard {
 		width: 610px;
 		margin: 20px auto;
-		font-family: SimHei;
+		font-family: STHeiti;
+		font-size: 18px;
 		.header {
 			height: 40px;
-			width: 250px;
 			margin: 0 auto;
+			text-align: center;
 			img {
 				width: 75px;
-				float: left;
 			}
 			span {
-				letter-spacing: 5px;
-				font-size: 20px;
+				letter-spacing: 2px;
+				font-size: 28px;
 				height: 40px;
 				line-height: 40px;
 			}
 		}
 		.container {
-			font-size: 14px;
+				margin-top: 20px;
 			.content_item {
-				margin-top: 10px;
-				margin-bottom: 20px;
+				margin-top: 20px;
+				margin-bottom: 30px;
 				.item_txt {
 					margin: 0;
 					margin-bottom: 6px;
-					font-weight: 600;
 				}
 				table {
 					empty-cells:show;
 					border-collapse: collapse;
 					margin:0 auto;
-					border:1px solid #333;
-					font-size: 14px;
+					font-size: 17px;
 					width: 100%;
+					border:1px solid #333;
+					th {
+						height:30px;
+						line-height: 30px;
+						padding:0 1em 0;
+						text-align: center;
+						font-weight: 400;
+					}
 				}
 				&.content_item1 {
 					.mainTable {
@@ -171,16 +177,18 @@
 						th {
 							background-repeat:repeat-x;
 						}
-						td,th{
+						td {
 							height:30px;
 							line-height: 30px;
-							border:1px solid #333;
+							/*border:1px solid #333;*/
 							padding:0 1em 0;
 							text-align: center;
 							font-weight: 400;
 							overflow:hidden;
 							text-overflow:ellipsis;
-							white-space:nowrap
+							white-space:nowrap;
+							border-right: 0;
+							border-bottom: 0;
 						}
 						tr.alter{
 							background-color:#f5fafe;
@@ -202,29 +210,35 @@
 						table-layout:fixed;
 						tr th {
 							background: #eee;
+							border-right: 0;
+							border-bottom: 0;
 						}
-						td,th{
+						td {
 							height:30px;
 							line-height: 30px;
-							border:1px solid #333;
+							/*border:1px solid #333;*/
 							padding:0 1em 0;
 							text-align: center;
 							font-weight: 400;
 							overflow:hidden;
 							text-overflow:ellipsis;
 							white-space:nowrap;
+							border-right: 0;
+							border-bottom: 0;
 						}
 					}
 				}
 				&.content_item3 {
 					.table_item3 {
-						td,th{
+						td {
 							height:30px;
 							line-height: 30px;
-							border:1px solid #333;
+							/*border:1px solid #333;*/
 							padding:0 1em 0;
 							text-align: center;
 							font-weight: 400;
+							border-right: 0;
+							border-bottom: 0;
 						}
 						.column {
 							background: #eee;
