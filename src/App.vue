@@ -53,7 +53,7 @@ export default {
     getApproveCount() {
       let self = this;
       let user = this.$store.getters.user;
-      if(user){
+      if(user&&user.permission){
         self.$http({
           url: "/drug/fmApprove/queryApproveUnReadCount",
           method: "post",

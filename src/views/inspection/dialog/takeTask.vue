@@ -315,8 +315,8 @@
           cellList12.push(this.getCell("检验人",9*(standardItems.length)));
           cellList12.push(this.getCell(row.userName,9*(standardItems.length)));
 
-          cellList12.push(this.getCell("检验时间",9*(standardItems.length),"",3000));
-          cellList12.push(this.getCell(" 年  月  日 ",9*(standardItems.length),"",3000));
+          cellList12.push(this.getCell("检验时间",9*(standardItems.length),"",2400));
+          cellList12.push(this.getCell(" 年  月  日 ",9*(standardItems.length),"",2400));
 
           cellList12.push(this.getCell("说  明",9*(standardItems.length)+1));
           cellList12.push(this.getCell(row.remark,9*(standardItems.length)+1));
