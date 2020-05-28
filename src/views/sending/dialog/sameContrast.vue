@@ -70,8 +70,8 @@
       <div class="el-button-excel"  style="cursor: pointer;text-align: right" @click="downExcel" >
         <img
           src="../../../assets/img/Excel.png"
-          class="svg-icon" style="cursor: pointer;width: 15px;height: 15px">
-        <span style="margin-left: 5px;font-size: 12px">导出</span>
+          class="svg-icon" style="cursor: pointer;width: 20px;height: 20px">
+        <span style="margin-left: 5px;font-size: 12px;float: right;line-height: 20px;">导出</span>
       </div>
 			<div class="tableList" >
 				<p class="titleSpan"></p>
