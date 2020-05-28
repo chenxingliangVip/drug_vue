@@ -6,44 +6,38 @@
              :visible.sync="dialogAddVisible" class="Input_Dialog dialog_FormTxt">
     <el-form ref="dataForm"
              size="mini"
-             label-width="80px">
+             label-width="80px" style="position: relative;">
       <div class="dialog-title"><span>新增样品送检</span></div>
       <el-divider></el-divider>
 
-      <el-row>
-        <el-col :span="12">
-          <el-form-item>
-      			<span class="span_colon">申  请  人<i class="i_colon">：</i></span>
-            <el-input clearable  v-model="user.userName" disabled
-                      size="mini"
-                      style="width: 100px;"></el-input>
-          </el-form-item>
-          <el-form-item>
-      			<span class="span_colon">申请时间<i class="i_colon">：</i></span>
-            <el-date-picker v-model="nowTime" disabled
-                            size="mini"
-                            format="yyyy-MM-dd"
-                            value-format="yyyy-MM-dd"
-                            style="width: 180px;"
-                            type="datetime" />
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <div class="el-form-right">
-            <el-form-item label-width="0px">
-              <div class="el-form-no" style="color:#cb0000;font-size: 18px">
-              	<img class="NoImg" src="../../../assets/img/noNum.png" />{{detailData.sampleCode}}</div>
-            </el-form-item>
-            <el-form-item v-show="type == 'add'"
-                          class="el-form-check">
-      				<span class="span_colon">是否存样<i class="i_colon">：</i></span>
-              <el-checkbox v-model="detailData.saveTmp"></el-checkbox>
+      <el-form-item>
+  			<span class="span_colon">申  请  人<i class="i_colon">：</i></span>
+        <el-input clearable  v-model="user.userName" disabled
+                  size="mini"
+                  style="width: 100px;margin-left: 6px;"></el-input>
+      </el-form-item>
+      <el-form-item>
+  			<span class="span_colon">申请时间<i class="i_colon">：</i></span>
+        <el-date-picker v-model="nowTime" disabled
+                        size="mini"
+                        format="yyyy-MM-dd"
+                        value-format="yyyy-MM-dd"
+                        style="width: 180px;"
+                        type="datetime" />
+      </el-form-item>
 
-            </el-form-item>
-          </div>
-        </el-col>
-      </el-row>
+      <div class="el-form-right float_right">
+        <el-form-item label-width="0px">
+          <div class="el-form-no" style="color:#cb0000;font-size: 18px">
+          	<img class="NoImg" src="../../../assets/img/noNum.png" />{{detailData.sampleCode}}</div>
+        </el-form-item>
+        <el-form-item v-show="type == 'add'"
+                      class="el-form-check">
+  				<span class="span_colon">是否存样<i class="i_colon">：</i></span>
+          <el-checkbox v-model="detailData.saveTmp"></el-checkbox>
 
+        </el-form-item>
+      </div>
       <el-form-item>
       	<span class="span_colon">送样地点<i class="i_colon">：</i></span>
         <el-radio-group v-model="detailData.locationId">
@@ -529,5 +523,10 @@
   }
   .NoImg {
   	width: 30px
+  }
+  .el-form-right.float_right {
+  	position: absolute;
+  	right: 0;
+  	top: 45px;
   }
 </style>
