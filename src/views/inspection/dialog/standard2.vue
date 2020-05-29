@@ -610,7 +610,7 @@ export default {
 	            th,td {
 		            color: #666;
 		            height: 25px;
-		            font-size: 12px;
+		            font-size: 11px;
 		            width: 10%;
 		            text-align: center;
 	            }

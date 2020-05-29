@@ -89,6 +89,7 @@
         tableHeader:[],
         tableLoading:true,
         selectChoice:[],
+        oldChoice:[],
         choiceSize:""
       }
     },
@@ -233,19 +234,19 @@
           printPerson:"打印人："+this.$store.getters.userName +" "+day,
           graphWordList:[
             {
-              title:"检样信息",
+              title:"检样信息：",
               colIndex:5,
               cellList:[],
               splitRow:[]
             },
             {
-              title:"检项( "+row.itemCount+" )",
+              title:"检项：( "+row.itemCount+" )",
               colIndex:5,
               cellList:[],
               splitRow:[]
             },
             {
-              title:"检验方法",
+              title:"检验方法：",
               colIndex:4,
               cellList:[],
               splitRow:[]
@@ -256,27 +257,28 @@
         param.graphWordList[0].splitRow = splitRow;
 
         let cellList1 = [];
+        self.oldChoice.push(...standardItems);
         cellList1.push(this.getCell("检项",0,"EEEEEE",1500));
         cellList1.push(this.getCell("质量标准",0,"EEEEEE"));
         cellList1.push(this.getCell("检验结果",0,"EEEEEE",1000));
         cellList1.push(this.getCell("备注",0,"EEEEEE",1000));
         cellList1.push(this.getCell("工时",0,"EEEEEE",800));
-        if(standardItems && standardItems.length  > 0){
-          for(let i = 0 ; i < standardItems.length ;i++){
-            cellList1.push(this.getCell(standardItems[i].itemId,i+1));
-            cellList1.push(this.getCell(standardItems[i].itemQualityStandard,i+1));
-            cellList1.push(this.getCell(standardItems[i].testResult,i+1));
-            cellList1.push(this.getCell(standardItems[i].remark,i+1));
-            cellList1.push(this.getCell(standardItems[i].manHour,i+1));
+        if(self.oldChoice && self.oldChoice.length  > 0){
+          for(let i = 0 ; i < self.oldChoice.length ;i++){
+            cellList1.push(this.getCell(self.oldChoice[i].itemId,i+1));
+            cellList1.push(this.getCell(self.oldChoice[i].itemQualityStandard,i+1));
+            cellList1.push(this.getCell(self.oldChoice[i].testResult,i+1));
+            cellList1.push(this.getCell(self.oldChoice[i].remark,i+1));
+            cellList1.push(this.getCell(self.oldChoice[i].manHour,i+1));
           }
         }
         param.graphWordList[1].cellList = cellList1;
         let cellList12 = [];
         let splitRow1 = [];
-        if(standardItems && standardItems.length  > 0){
-          for(let k = 0 ; k < standardItems.length ;k++){
-            let methodDesc = standardItems[k].methodDesc?standardItems[k].methodDesc:"无方法描述";
-            let testRecord = standardItems[k].testRecord?standardItems[k].testRecord:"无测试记录";
+        if(self.oldChoice && self.oldChoice.length  > 0){
+          for(let k = 0 ; k < self.oldChoice.length ;k++){
+            let methodDesc = self.oldChoice[k].methodDesc?self.oldChoice[k].methodDesc:"无方法描述";
+            let testRecord = self.oldChoice[k].testRecord?self.oldChoice[k].testRecord:"无测试记录";
             cellList12.push(this.getCell(methodDesc,k+8*k));
             cellList12.push(this.getCell("",k+8*k));
             cellList12.push(this.getCell(testRecord,k+8*k,"",3000));
@@ -311,17 +313,17 @@
             splitRow1.push((9*k+8)+",0,1,0");
             splitRow1.push((9*k+8)+",2,3,0");
           }
-          splitRow1.push((9*(standardItems.length)+1)+",1,3,0");
-          cellList12.push(this.getCell("检验人",9*(standardItems.length)));
-          cellList12.push(this.getCell(row.userName,9*(standardItems.length)));
+          splitRow1.push((9*(self.oldChoice.length)+1)+",1,3,0");
+          cellList12.push(this.getCell("检验人",9*(self.oldChoice.length)));
+          cellList12.push(this.getCell(row.userName,9*(self.oldChoice.length)));
 
-          cellList12.push(this.getCell("检验时间",9*(standardItems.length),"",2400));
-          cellList12.push(this.getCell(" 年  月  日 ",9*(standardItems.length),"",2400));
+          cellList12.push(this.getCell("检验时间",9*(self.oldChoice.length),"",2400));
+          cellList12.push(this.getCell(" 年  月  日 ",9*(self.oldChoice.length),"",2400));
 
-          cellList12.push(this.getCell("说  明",9*(standardItems.length)+1));
-          cellList12.push(this.getCell(row.remark,9*(standardItems.length)+1));
-          cellList12.push(this.getCell("",9*(standardItems.length)+1));
-          cellList12.push(this.getCell("",9*(standardItems.length)+1));
+          cellList12.push(this.getCell("说  明",9*(self.oldChoice.length)+1));
+          cellList12.push(this.getCell(row.remark,9*(self.oldChoice.length)+1));
+          cellList12.push(this.getCell("",9*(self.oldChoice.length)+1));
+          cellList12.push(this.getCell("",9*(self.oldChoice.length)+1));
         }
 
         param.graphWordList[2].cellList = cellList12;
@@ -353,6 +355,8 @@
       getSampleItems(){
         let self = this;
         self.tableLoading = true;
+        let userId = self.$store.getters.userId;
+        self.oldChoice = [];
         self.$http({
           url: "/drug/sampleItem/querySampleItemSend",
           method: "post",
@@ -364,6 +368,9 @@
             for(let data of resp.result.items){
                if(!data.testStaffId && !data.resultId){
                  datas.push(data);
+               }
+               if(data.testStaffId == userId){
+                  self.oldChoice.push(data);
                }
             }
             self.tableData = datas;

@@ -6,7 +6,7 @@
           <span>{{name}}<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.name"
                     size="mini"
-                    style="width: 100px;"
+                    style="width: 120px;"
                     @keyup.enter.native="handleFilter" />
         </div>
         <div class="filter-item">
@@ -14,7 +14,7 @@
           <el-select v-model="searchParam.checkStatus"
                      size="mini"
                      clearable
-                     style="width: 100px">
+                     style="width: 120px">
             <el-option v-for="item in stateOptions"
                        :key="item.value"
                        :label="item.label"

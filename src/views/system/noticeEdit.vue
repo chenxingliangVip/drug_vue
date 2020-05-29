@@ -1,5 +1,5 @@
 <template>
-  <el-dialog width="40%" append-to-body :title="type == 'add'?'新增·发布':'编辑·发布'"
+  <el-dialog width="50%" append-to-body :title="type == 'add'?'新增·发布':'编辑·发布'"
              :close-on-click-modal="clickModalHide"
              :before-close="closeDialog"
              :visible.sync="centerDialogVisible"
@@ -41,7 +41,7 @@
                  style="display:flex"><label class="w3">主题</label><label><i class="i_colon">：</i></label>
               <el-input clearable  v-model="messageData.title"
                         size="mini"
-                        style="width:87%" />
+                        style="width:92%" />
             </div>
           </el-col>
         </el-row>

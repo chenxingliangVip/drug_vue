@@ -138,7 +138,10 @@
 							<td><p class="listTime">{{item.createTimeFt}}</p></td>
 							<td><p class="listName" :title="item.materialName">{{item.materialName}}</p></td>
 							<td><p style="width:150px" :title="item.sampleNum">{{item.sampleNum}}</p></td>
-							<td><p style="width:80px">{{item.userName}}</p></td>
+							<td>
+                <p style="width:80px" v-if="item.userName !='未送样'">{{item.userName}}</p>
+                <p style="width:80px;color: yellow" v-else>{{item.userName}}</p>
+              </td>
 							<td><p  style="width:100px">{{item.deptName}}</p></td>
 						</tr>
 					</table>

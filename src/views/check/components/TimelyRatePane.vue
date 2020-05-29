@@ -50,7 +50,18 @@
                     :tableHeader="person.tableHeader" ></drug-table>
       </div>
     </div>
-
+    <div slot="footer"
+         class="dialog-footer el-button-excel">
+      <img   @click="downExcel"
+            src="../../../assets/img/Excel.png"
+            class="svg-icon" style="cursor: pointer;width: 15px;height: 15px">
+      <span style="cursor: pointer;margin-left: 5px;font-size: 12px" @click="downExcel">数据下载</span>
+    </div>
+    <form action="/drug/file/exportExcelData" method="post"
+          style="display: none;" ref="downloadTemplate">
+      <input name="json"  :value="templateExcel.json"/>
+      <input name="title" :value="templateExcel.title"/>
+    </form>
   </div>
 </template>
 
@@ -81,7 +92,8 @@ export default {
       searchParam: {
         startTime:"",
         endTime:""
-      }
+      },
+      templateExcel: {json: "",title:""},
     }
   },
   mounted() {
@@ -96,6 +108,23 @@ export default {
     this.getPersonList();
   },
   methods: {
+
+    downExcel(){
+      let self = this;
+      let header = {};
+      if(self.radio1 == 1){
+        header = {tableHeader: self.dept.tableHeader,tableData:self.dept.tableData};
+      }else{
+        header = {tableHeader: self.person.tableHeader,tableData:self.person.tableData};
+      }
+      let day =  formatDate(new Date(), "yyyyMMdd");
+      self.templateExcel.title= day+self.$store.getters.userName+"及时率";
+      this.templateExcel.json = JSON.stringify(header);
+      self.$nextTick(() => {
+        self.$refs.downloadTemplate.submit();
+      })
+    },
+
     getDeptList() {
       let self = this;
       self.dept.tableLoading = true;

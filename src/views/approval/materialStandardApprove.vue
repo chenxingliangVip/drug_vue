@@ -52,6 +52,9 @@
         if(searchParam.endTime){
           searchParam.endTime = searchParam.endTime+" 23:59:59";
         }
+        if(searchParam.name){
+          searchParam.name.trim();
+        }
         let start = typeof startIndex =="number"?startIndex:0;
         let total = typeof pageRow == "number"?pageRow:15;
         searchParam.startIndex = start;

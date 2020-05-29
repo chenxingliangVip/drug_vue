@@ -66,6 +66,9 @@
         let self = this;
         self.tableLoading = true;
         let searchParam = Object.assign({},this.searchParam);
+        if(searchParam.name){
+          searchParam.name.trim();
+        }
         if(searchParam.endTime){
           searchParam.endTime = searchParam.endTime+" 23:59:59";
         }
