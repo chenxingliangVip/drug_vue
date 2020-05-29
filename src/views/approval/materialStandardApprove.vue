@@ -6,7 +6,8 @@
           <el-button type="text"
                       @click="seeStandardApprove(props.rowData)"
                      size='mini'>
-            <img src="../../assets/img/view1.png" style="cursor: pointer">
+            <img src="../../assets/img/agreeing.png" style="cursor: pointer" v-if="props.rowData.checkStatus=='2'">
+            <img src="../../assets/img/view1.png" style="cursor: pointer" v-else>
           </el-button>
         </div>
       </template>
@@ -68,6 +69,7 @@
               self.backCount = self.tableData[0].count;
               self.$eventBus.$emit("updateApproveCount","standard",self.tableData[0].readCount);
             }
+            console.log(self.tableData)
             self.tableHeader =  [
               {"columnName": "userName", "coloumNameCn": "起修人", "width": "70px"},
               {"columnName": "materialName", "coloumNameCn": "物料名称"},
