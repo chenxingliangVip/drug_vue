@@ -8,7 +8,6 @@
 				<div class="module-top">
 					<img src="@/assets/img/iconfont.png" />
 					<h2 class="module-title">年度样品检测状态</h2>
-					<span class="right-icon"></span>
 				</div>
 				<div class="module-body">
 					<!--左侧数量-->
@@ -37,7 +36,6 @@
 				<div class="module-top">
 					<img src="@/assets/img/iconfont.png" />
 					<h2 class="module-title">月度样品检测统计</h2>
-					<span class="right-icon"></span>
 				</div>
 				<div class="module-body">
 					<!--柱状图-->
@@ -49,7 +47,6 @@
 				<div class="module-top">
 					<img src="@/assets/img/iconfont.png" />
 					<h2 class="module-title">月度检测排行榜</h2>
-					<span class="right-icon"></span>
 				</div>
 				<div class="module-body">
 					<!--工作量排行-->
@@ -125,7 +122,6 @@
 				<div class="module-top" style="width: 300px">
 					<img src="@/assets/img/iconfont.png" />
 					<h2 class="module-title">实时送样信息</h2>
-					<span class="right-icon"></span>
 				</div>
 				<div class="module-table">
 					<table>
@@ -162,7 +158,6 @@
 				<div class="module-top">
 					<img src="@/assets/img/iconfont.png" />
 					<h2 class="module-title">检测仪器</h2>
-					<span class="right-icon"></span>
 				</div>
 				<div class="item3-moduleImg">
 					<div class="block">
@@ -179,7 +174,6 @@
 				<div class="module-top">
 					<img src="@/assets/img/iconfont.png" />
 					<h2 class="module-title">科室月度送样量统计</h2>
-					<span class="right-icon"></span>
 				</div>
 				<div class="module2-body">
 					<div class="echart3" ref="echart3"></div>
