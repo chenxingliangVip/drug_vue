@@ -490,7 +490,8 @@
             self.tableHeader =  [
               {"columnName": "itemName", "coloumNameCn": "检项名称"},
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
-              {"columnName": "resultIdCn", "coloumNameCn": "检测结果"},
+              {"columnName": "testResult", "coloumNameCn": "检测结果"},
+              {"columnName": "resultIdCn", "coloumNameCn": "判定结果"},
             ];
           }
         });

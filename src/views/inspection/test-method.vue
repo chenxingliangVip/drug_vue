@@ -72,6 +72,18 @@
                          :value="item.value" />
             </el-select>
           </div>
+          <div class="filter-item">
+            <span>所有版本<i class="i_colon">:</i></span>
+            <el-select v-model="searchParam.hidden"
+                       size="mini"
+                       clearable
+                       style="width: 100px">
+              <el-option v-for="item in historyMap"
+                         :key="item.label"
+                         :label="item.label"
+                         :value="item.value" />
+            </el-select>
+          </div>
           <div class="filter-item filter-item-btn-search">
             <i class="el-icon-search"  style="cursor:pointer;"
                @click="getList"></i>
@@ -95,10 +107,10 @@
       </div>
     </div>
 
-    <drug-table @getSelection="getSelection" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+    <drug-table :backCount="backCount" @getBackData="getList"  @getSelection="getSelection" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
       <template slot-scope="props" slot="operate">
         <div >
-          <label v-if="hasRole('method:check:see')" @click="handleEditData(props.rowData,'see')"  style="cursor:pointer;" v-show="props.rowData.checkStatus=='0'"
+          <label v-if="hasRole('method:check:see')" @click="handleEditData(props.rowData,'see')"  style="cursor:pointer;" v-show="props.rowData.checkStatus=='0'||props.rowData.checkStatus=='2'"
                  class="table-view">
             查看
           </label>
@@ -144,6 +156,7 @@ export default {
       tableLoading:true,
       option:{showOperate:true},
       statusMap:[{label:"审核中",value:"0"},{label:"完成",value:"2"},{label:"驳回",value:"1"}],
+      historyMap:[{label:"是",value:""},{label:"否",value:"1"}],
       searchParam: {
         id:"",
         methodCode:"",
@@ -152,8 +165,10 @@ export default {
         userName:"",
         methodName:"",
         status:"",
+        hidden:"1"
       },
       detailData:{},
+      backCount:0,
       operateType:"add",
       user:{},
       selectChoice:[],
@@ -170,13 +185,17 @@ export default {
     })
   },
   methods: {
-    getList() {
+    getList(startIndex,pageRow) {
       let self = this;
       self.tableLoading = true;
       let searchParam = Object.assign({},this.searchParam);
       if(searchParam.endTime){
         searchParam.endTime = searchParam.endTime+" 23:59:59";
       }
+      let start = typeof startIndex =="number"?startIndex:0;
+      let total = typeof pageRow == "number"?pageRow:20;
+      searchParam.startIndex = start;
+      searchParam.totalPage = total;
       self.$http({
         url: "/drug/testMethod/queryTestMethodList",
         method: "post",
@@ -185,6 +204,7 @@ export default {
         if (resp.success) {
           self.tableLoading = false;
           self.tableData = resp.result;
+          self.backCount = self.tableData.length > 0?self.tableData[0].pageCount:0;
           self.tableHeader =  [
             {"columnName": "createTimeFt", "coloumNameCn": "时间","width":"90px"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},

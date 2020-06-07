@@ -203,9 +203,11 @@
           for (let data of list) {
             if (data.id == id) {
               row.itemName.value = data.itemName;
-
               for(let it of row['methodName'].tmpList){
-                if(it.itemName == data.itemName && it.methodType&&this.compareItem &&it.methodType.indexOf(this.compareItem)>-1){
+                if(it.itemName =='溶解度'){
+                  console.log(it)
+                }
+                if(it.itemName == data.itemName && it.methodType&&this.compareItem ){
                   itemArray.push(it);
                 }
               }

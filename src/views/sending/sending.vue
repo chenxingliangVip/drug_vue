@@ -358,6 +358,9 @@ export default {
       if(searchParam.endTime){
         searchParam.endTime = searchParam.endTime+" 23:59:59";
       }
+      if(this.user.type !=1){
+        searchParam.userId = this.user.id;
+      }
       let start = typeof startIndex =="number"?startIndex:0;
       let total = typeof pageRow == "number"?pageRow:20;
       searchParam.startIndex = start;

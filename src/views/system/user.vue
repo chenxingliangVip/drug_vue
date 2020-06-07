@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <drug-table @getSelection="getSelection" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+    <drug-table ref="itemTable" @getSelection="getSelection" :pageSizeParam="pageSizeParam" :isMultipleSelection="true" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
       <template slot-scope="props" slot="operate">
         <div  v-if="hasRole('user:system:edit')">
           <el-button type="text"
@@ -89,7 +89,8 @@ export default {
       userDetail:{},
       operateType:"add",
       queryParam:{deptId:"",workNum:"",userName:""},
-      deptList:[]
+      deptList:[],
+      pageSizeParam:20
     }
   },
   mounted() {
@@ -131,6 +132,7 @@ export default {
         params:self.queryParam
       }).then(resp => {
         if (resp.success) {
+          self.pageSizeParam = self.$refs.itemTable.getPageRow();
           self.tableLoading = false;
           self.tableData = resp.result;
           self.tableHeader =  [{"columnName": "createTimeFt", "coloumNameCn": "日期"},

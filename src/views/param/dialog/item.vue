@@ -15,7 +15,7 @@
             </div>
         </el-form>
         <div class="el-div-container">
-            <drug-table :tableData="tableData" :pageSizeParam="pageSizeParam" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+            <drug-table ref="itemTable" :tableData="tableData" :pageSizeParam="pageSizeParam" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
                 <template slot-scope="props" slot="operate">
                     <div>
                         <el-button type="text" @click="handleDelete(props.rowData)" size='mini'>
@@ -44,7 +44,7 @@
                         names.push(data.itemName);
                     }
                 }
-                if(names.includes(this.levelObj.itemName)) {
+                if(names.includes(this.levelObj.itemName.trim())) {
                     callback(new Error('名称已存在!'));
                 } else {
                     callback();
@@ -102,7 +102,7 @@
                     }
                 }).then(resp => {
                     if(resp.success) {
-                        self.pageSizeParam = 20;
+                        self.pageSizeParam = self.$refs.itemTable.getPageRow();
                         self.tableLoading = false;
                         self.tableData = resp.result;
                         self.copyTableData = JSON.parse(JSON.stringify(resp.result));
@@ -199,26 +199,26 @@
         padding-left: 50px;
         padding-right: 50px;
     }
-    
+
     .btn-ul {
         list-style-type: none;
         width: 100%;
     }
-    
+
     .btn-ul li {
         width: 20%;
         float: left;
         margin-top: 50px;
     }
-    
+
     .clear {
         clear: both;
     }
-    
+
     .el-dialog-item {
         display: inline-block;
     }
-    
+
     .dialog_icon {
         cursor: pointer;
         background: #409EFF;
@@ -232,7 +232,7 @@
             opacity: .8;
         }
     }
-    
+
     .el-div-container {
         height: 400px
     }

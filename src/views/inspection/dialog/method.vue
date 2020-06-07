@@ -108,11 +108,16 @@
         </el-col>
       </el-row>
       <el-row>
-        <el-col :span="24">
+        <el-col :span="12">
           <div class="el-dialog-item"><label class="dialogTxt">方法编号<i class="i_colon">：</i></label>
             <el-input clearable  v-model="methodData.methodCode" :disabled="type =='see'"
                       size="mini"
                       style="width: 140px;"/>
+          </div>
+        </el-col>
+        <el-col :span="12" v-show="type == 'edit' && user.type =='1'">
+          <div class="el-dialog-item el-form-right" style="margin-right: 31px"><label>展示<i class="i_colon">：</i></label>
+            <el-checkbox v-model="hidden"></el-checkbox>
           </div>
         </el-col>
       </el-row>
@@ -254,6 +259,7 @@
           methodJudge: "",
           remark: "",
         },
+        hidden:false,
         formNo:"提交生成",
         isCheckSelect:false,
         nowTime:new Date(),
@@ -405,14 +411,21 @@
         //给方法放出编辑用的  为了不走审核
         self.methodData.oldStatus = self.methodData.checkStatus;
         self.methodData.checkStatus = '0';
-        self.methodData.userId = self.$store.getters.userId;
-        self.methodData.userName = self.$store.getters.userName;
+        //明天要回复
+        // self.methodData.userId = self.$store.getters.userId;
+        // self.methodData.userName = self.$store.getters.userName;
         self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
         self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
 
 //				self.methodData.testRecordSummary = text;
 //				self.methodData.methodDescSummary = text1;
         self.methodData.status = '0';
+        if(this.type == 'edit' && this.user.type ==1){
+          self.methodData.hidden = this.hidden?'1':'0';
+        }
+        if(this.type == 'xd'){
+          self.methodData.oldId = self.methodData.id;
+        }
         let url = (this.type == 'add'||this.type=='xd') ? "/drug/testMethod/addTestMethod" : "/drug/testMethod/updateTestMethod";
         if (this.count == 0) {
           self.$http({
@@ -459,6 +472,7 @@
       editData(val){
         this.count = 0;
         this.dialogAddVisible = true;
+        this.hidden = val.hidden == '1'?true:false;
         for (let key in this.methodData) {
           if (!val.hasOwnProperty(key)) {
             this.$set(val,key,"");

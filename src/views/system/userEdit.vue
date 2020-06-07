@@ -53,7 +53,7 @@
                   style="width: 120px" />
       </el-form-item>
       <el-form-item prop="userAccount"  style="margin-bottom: 10px">
-      	<span class="span_colon">用户名  <i class="i_colon">：</i></span>
+      	<span class="span_colon">用户名<i class="i_colon"> : </i></span>
         <el-input clearable  v-model="loginData.userAccount"
                   size="mini"
                   style="width: 120px" />

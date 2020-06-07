@@ -47,7 +47,7 @@
             <el-input
               clearable
               v-model="materialData.nameAbbr"
-              :disabled="type == 'see'"
+              :disabled="type == 'see' || type=='editname'"
               size="mini"
               style="width: 130px;"
             />
@@ -73,7 +73,7 @@
             <label class="dialogTxt">物料规格<i class="i_colon">：</i></label>
             <el-select
               v-model="materialData.materialTypeId"
-              :disabled="type == 'see'"
+              :disabled="type == 'see'  || type=='editname'"
               @change="changeMaterialType"
               size="mini"
               clearable
@@ -107,7 +107,7 @@
             <label class="dialogTxt">参考物料<i class="i_colon">：</i></label>
             <el-select
               v-model="materialData.refItem"
-              :disabled="type == 'see' || refMaterialDisabled"
+              :disabled="type == 'see' || refMaterialDisabled  || type=='editname'"
               size="mini"
               clearable
               filterable
@@ -144,7 +144,7 @@
             <el-select
               v-model="materialData.materialGradeId"
               @change="changeMaterialGrade"
-              :disabled="type == 'see'"
+              :disabled="type == 'see' || type=='editname'"
               size="mini"
               style="width: 130px"
             >
@@ -197,7 +197,7 @@
               size="small"
               placeholder="请输入200字内的描述"
               v-model="materialData.materialDescr"
-              :disabled="type == 'see'"
+              :disabled="type == 'see' || type=='editname'"
             ></el-input>
           </div>
         </el-col>
@@ -215,7 +215,7 @@
               size="small"
               placeholder="请输入200字内的说明"
               v-model="materialData.remark"
-              :disabled="type == 'see'"
+              :disabled="type == 'see' || type=='editname'"
             ></el-input>
           </div>
         </el-col>
@@ -231,7 +231,7 @@
       </el-row>
 
     </el-form>
-    <div slot="footer" v-show="type == 'edit'||type == 'add'" class="dialog-footer">
+    <div slot="footer" v-show="type == 'edit'||type == 'add'  || type=='editname'" class="dialog-footer">
       <el-button type="green" size="mini" style="width: 80px;" @click="updateMaterial">提 交</el-button>
     </div>
   </el-dialog>
@@ -367,7 +367,9 @@
         delete self.materialData.updateTime;
         self.materialData.userId = self.$store.getters.userId;
         self.materialData.userName = self.$store.getters.userName;
-        self.materialData.checkStatus = "0";
+        if(self.type !='editname'){
+          self.materialData.checkStatus = "0";
+        }
         let url =
           this.type == "add"
             ? "/drug/material/addMaterial"

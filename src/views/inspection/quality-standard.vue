@@ -256,9 +256,9 @@ export default {
     getList() {
       let self = this;
       let user = JSON.parse(getToken());
-      if(user.type !='1'){
-        this.searchParam.userId = user.id;
-      }
+      // if(user.type !='1'){
+      //   this.searchParam.userId = user.id;
+      // }
       self.tableLoading = true;
       let searchParam = Object.assign({}, this.searchParam);
       if (searchParam.endTime) {

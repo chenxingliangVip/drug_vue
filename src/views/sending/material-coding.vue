@@ -3,22 +3,22 @@
     <div class="filter-container">
       <div>
         <div class="filter-item">
-          <!--<span>物料名称:</span>-->
-          <!--<el-input clearable  v-model="searchParam.materialName"-->
-                    <!--size="mini"-->
-                    <!--style="width: 100px;"-->
-                    <!--@keyup.enter.native="getList"/>-->
-          <span>物料名称<i class="i_colon">:</i></span>
-          <el-select v-model="searchParam.materialName"
-                     size="mini"
-                     clearable
-                     filterable
-                     style="width: 100px">
-            <el-option v-for="item in tableData"
-                       :key="item.id"
-                       :label="item.materialName"
-                       :value="item.materialName"/>
-          </el-select>
+          <span>物料名称:</span>
+          <el-input clearable  v-model="searchParam.materialName"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList"/>
+          <!--<span>物料名称<i class="i_colon">:</i></span>-->
+          <!--<el-select v-model="searchParam.materialName"-->
+                     <!--size="mini"-->
+                     <!--clearable-->
+                     <!--filterable-->
+                     <!--style="width: 100px">-->
+            <!--<el-option v-for="item in tableData"-->
+                       <!--:key="item.id"-->
+                       <!--:label="item.materialName"-->
+                       <!--:value="item.materialName"/>-->
+          <!--</el-select>-->
 
         </div>
         <div class="filter-item">
@@ -121,6 +121,10 @@
             查看
           </label>
           <label v-if="hasRole('material:send:edit')"  @click="handleEditData(props.rowData)" v-show="props.rowData.checkStatus =='1'"
+                 class="table-view">
+            · 编辑
+          </label>
+          <label v-if="hasRole('material:send:edit')"  @click="handleEditNameData(props.rowData)" v-show="props.rowData.checkStatus =='2'"
                  class="table-view">
             · 编辑
           </label>
@@ -235,6 +239,10 @@
       handleEditData(rowData) {
         this.detailData = Object.assign({}, rowData);
         this.operateType = "edit";
+      },
+      handleEditNameData(rowData) {
+        this.detailData = Object.assign({}, rowData);
+        this.operateType = "editname";
       },
       batchDelete(){
         let param = {ids:[],materialCode:""};

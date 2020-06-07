@@ -244,12 +244,29 @@ export default {
                 });
                 return;
             }
+            let choiceIds = [];
             for (let data of this.selectChoice) {
-                let index = this.standardItemList.indexOf(data);
-                let standardTable = this.$refs.standardTable.getTableData();
-                standardTable.splice(index, 1);
-                this.standardItemList = standardTable;
+              choiceIds.push(data.itemId.value + "-"+data.methodId.value);
             }
+            let standardTable = this.$refs.standardTable.getTableData();
+            for(let choiceId of choiceIds){
+              label:
+              for(let item of standardTable){
+                if(choiceId == item.itemId.value + "-"+item.methodId.value){
+                  let index = standardTable.indexOf(item);
+                  standardTable.splice(index, 1);
+                  break label;
+                }
+              }
+            }
+           this.standardItemList = standardTable;
+            // for (let data of this.selectChoice) {
+            //
+            //     let index = this.standardItemList.indexOf(data);
+            //     let standardTable = this.$refs.standardTable.getTableData();
+            //     standardTable.splice(index, 1);
+            //     this.standardItemList = standardTable;
+            // }
         },
       addColumn() {
         let row = {
@@ -402,12 +419,12 @@ export default {
                         self.dialogAddVisible = false;
                         return;
                     }
-                    self.$notify({
-                        title: "提示",
-                        message: "版本号重复！",
-                        type: "warning"
-                    });
-                    this.count--;
+                    // self.$notify({
+                    //     title: "提示",
+                    //     message: "版本号重复！",
+                    //     type: "warning"
+                    // });
+                    // this.count--;
                 });
                 this.count++;
             }
@@ -461,7 +478,7 @@ export default {
         getTestMethod() {
             let self = this;
             self.$http({
-                url: "/drug/testMethod/queryTestMethodList",
+                url: "/drug/testMethod/queryAllTestMethodList",
                 method: "post"
             }).then(resp => {
                 if (resp.success) {
@@ -537,6 +554,7 @@ export default {
             let self = this;
             this.dialogAddVisible = true;
             this.methodData = val;
+            this.methodData.oldId = val.id;
             this.compareItem = this.methodData.materialGrade?this.methodData.materialGrade.substring(0,2):"";
             this.standardItemList = [];
             this.standardHistoryItemList = [];

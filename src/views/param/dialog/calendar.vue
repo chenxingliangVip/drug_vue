@@ -69,10 +69,12 @@
                         });
                         return;
                     }
+                    let currentDay = data[0] + "-" +(data[1]>9?data[1]:("0"+data[1])) + "-" +(data[2] >9?data[2]:("0"+data[2]));
                     let param = {
                         mouth: data[1] + "",
                         day: data[2] + "",
-                        year: data[0] + ""
+                        year: data[0] + "",
+                        currentDay:currentDay
                     };
                     params.push(param);
                 }

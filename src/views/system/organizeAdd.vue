@@ -9,6 +9,19 @@
              size="mini"
              label-width="0px">
       <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
+        <label style=" margin-left: 10px;"><span>所属部门 <i class="i_colon">：</i></span></label>
+        <el-select v-model="deptDetail.pId"
+                   size="mini"
+                   clearable
+                   style="width: 140px;margin-left: 15px;">
+          <el-option v-for="item in deptList"
+                     :key="item.id"
+                     :label="item.deptName"
+                     :value="item.id" />
+        </el-select>
+      </div>
+
+      <div class="el-dialog-item  el-dialog-input" style="margin-top: 20px">
         <label style=" margin-left: 10px;"><span style="letter-spacing:15px">部门<i class="i_colon">：</i></span></label>
         <el-input clearable size="mini"  v-model="deptDetail.deptName"
                   style="width: 140px"/>
@@ -57,7 +70,8 @@
         clickModalHide: false,
         count: 0,
         deptTypes:[],
-        deptDetail: {id:"",deptName:"",office:false,deptType:"1"}
+        deptList:[],
+        deptDetail: {id:"",deptName:"",office:false,deptType:"1",pId:""}
       }
     },
 
@@ -68,6 +82,8 @@
         self.deptDetail.deptName = val.deptName;
         self.deptDetail.id = val.id;
         self.deptDetail.deptType = val.deptType;
+        self.deptDetail.pId = val.pId;
+        self.getDeptList(val.id);
         if(val.deptType =='1' ||val.deptType=='2'){
           self.deptTypes.push(val.deptType);
         }
@@ -82,6 +98,20 @@
     },
 
     methods: {
+      getDeptList(id) {
+        let self = this;
+        self.$http({
+          url: "/drug/dept/queryDeptChooseList",
+          method: "post",
+          params: {id:id}
+        }).then(resp => {
+          if (resp.success) {
+            if(resp.result.length > 0){
+              self.deptList = resp.result;
+            }
+          }
+        });
+      },
       closeDialog() {
         this.centerDialogVisible = false;
       },

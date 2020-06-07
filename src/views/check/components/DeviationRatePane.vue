@@ -150,8 +150,8 @@ export default {
           self.dept.tableHeader =  [
             {"columnName": "deptName", "coloumNameCn": "组别"},
             {"columnName": "personCount", "coloumNameCn": "人数"},
-            {"columnName": "sampleCount", "coloumNameCn": "检项数"},
-            {"columnName": "sampleItemCount", "coloumNameCn": "检样数"},
+            {"columnName": "sampleCount", "coloumNameCn": "检样数"},
+            {"columnName": "sampleItemCount", "coloumNameCn": "检项数"},
             {"columnName": "errorCount", "coloumNameCn": "偏差数"},
             {"columnName": "errorEffect", "coloumNameCn": "偏差率"},
           ];

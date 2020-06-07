@@ -116,12 +116,14 @@
 
         buttonShow:false,
 
-        resetItem:[]
+        resetItem:[],
+        loginList:[]
       }
     },
     mounted() {
       let self = this;
       let user = JSON.parse(getToken());
+      self.getAllLogin();
       this.user = user;
       self.$eventBus.$on("openSendSee",function (editData) {
         let time = (new Date()).getTime();
@@ -136,6 +138,18 @@
       })
     },
     methods: {
+
+      getAllLogin(){
+        let self = this;
+        self.$http({
+          url: "/drug/queryAllLoginList",
+          method: "post",
+        }).then(resp => {
+          if (resp.success) {
+            self.loginList = resp.result;
+          }
+        });
+      },
 
       changeCheck(){
         if(this.detailData.userId == this.$store.getters.userId){
@@ -244,6 +258,13 @@
             if(self.detailData.userId != self.$store.getters.userId){
               self.isCheckSelect = false;
             }
+            if(self.detailData.checkStatus == 2){
+               for(let d of resp.result.items){
+                  d.testResult = "";
+                  d.resultIdCn = "";
+               }
+            }
+
             self.tableData = resp.result.items;
             self.resetItem = [];
             for(let rd of resp.result.itemResets){
@@ -252,7 +273,8 @@
             self.tableHeader =  [
               {"columnName": "itemName", "coloumNameCn": "检项名称"},
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
-              {"columnName": "resultIdCn", "coloumNameCn": "检测结果"},
+              {"columnName": "testResult", "coloumNameCn": "检测结果"},
+              {"columnName": "resultIdCn", "coloumNameCn": "判定结果"},
             ];
           }
         });
