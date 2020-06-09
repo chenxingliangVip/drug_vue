@@ -144,6 +144,7 @@
         tableLoading:true,
         tableMap:{},
         templateExcel: {json: "",title:"",name:"",code:"",time:""},
+        selectChoice:[]
 			}
 		},
 		methods: {
@@ -238,19 +239,6 @@
         this.tableHeader = tableHeader;
       },
 
-      getTableHeader(){
-        this.tableHeader =  [
-          {"columnName": "sampleCode", "coloumNameCn": "检单号"},
-          {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
-          {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
-          {"columnName": "materialName", "coloumNameCn": "样品名称"},
-          {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
-          {"columnName": "materialType", "coloumNameCn": "样品规格"},
-          {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
-          {"columnName": "sampleTypeName", "coloumNameCn": "样品规模"},
-          {"columnName": "locationName", "coloumNameCn": "送样地点"},
-          {"columnName": "checkStatusCn", "coloumNameCn": "流程状态"}];
-      },
 
       getSampleItemList(){
         let self = this;
@@ -269,11 +257,15 @@
               if(!data.standardItems){
                 continue;
               }
+              if(self.selectChoice.indexOf(data.sampleCode) < 0){
+                continue;
+              }
               for(let c_data of data.standardItems){
                 let cc_data = {};
                 cc_data.itemName = c_data.itemName;
                 cc_data.itemQualityStandard = c_data.itemQualityStandard;
-                cc_data.sampleCode = data.sampleCode;
+                //修改检验单号为批号
+                cc_data.sampleCode = data.standardId;
                 cc_data.testResult = c_data.testResult;
                 if(repeat.indexOf(c_data.itemName) < 0){
                   let item = {itemName:c_data.itemName,samples:[]};
@@ -290,9 +282,9 @@
               }
             }
             self.items = items;
-            for(let data of items){
-              self.selectItems.push(data.itemName);
-            }
+            // for(let data of items){
+            //   self.selectItems.push(data.itemName);
+            // }
             // if(self.selectItems.length > 0){
             //   self.handleCheckedChange(self.selectItems[0],true);
             // }
@@ -305,7 +297,8 @@
 		mounted() {
       let self = this;
       self.getMaterials();
-			self.$eventBus.$on("openSameContrast",function (val,searchTime) {
+			self.$eventBus.$on("openSameContrast",function (val,searchTime,selectChoice) {
+			    self.selectChoice = selectChoice;
           self.dialogAddVisible = true;
           self.dialogLoading = false;
           self.sampleData.materialName = val;

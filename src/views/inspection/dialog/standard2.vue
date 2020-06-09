@@ -419,12 +419,12 @@ export default {
                         self.dialogAddVisible = false;
                         return;
                     }
-                    // self.$notify({
-                    //     title: "提示",
-                    //     message: "版本号重复！",
-                    //     type: "warning"
-                    // });
-                    // this.count--;
+                    self.$notify({
+                        title: "提示",
+                        message: "版本号重复！",
+                        type: "warning"
+                    });
+                    this.count--;
                 });
                 this.count++;
             }

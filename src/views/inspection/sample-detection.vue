@@ -196,6 +196,7 @@ export default {
       let total = typeof pageRow == "number"?pageRow:15;
       searchParam.startIndex = start;
       searchParam.totalPage = total;
+      searchParam.notStatus = "AP";
       searchParam.userId =  self.$store.getters.userId;
       self.$http({
         url: "/drug/sampleItem/querySampleItemList",

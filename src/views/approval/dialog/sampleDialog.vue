@@ -200,7 +200,7 @@
 
       submitCheck(checkStatus) {
         let self = this;
-        if('4' == checkStatus && !self.detailData.content.trim()){
+        if('4' == checkStatus &&(!self.detailData.content ||!self.detailData.content.trim())){
           self.$notify({
             title: '提示',
             message: "请填写驳回原因！",

@@ -117,7 +117,7 @@
         buttonShow:false,
 
         resetItem:[],
-        loginList:[]
+        loginMap:[]
       }
     },
     mounted() {
@@ -141,12 +141,16 @@
 
       getAllLogin(){
         let self = this;
+        let loginMap = {};
         self.$http({
           url: "/drug/queryAllLoginList",
           method: "post",
         }).then(resp => {
           if (resp.success) {
-            self.loginList = resp.result;
+            for(let data of resp.result){
+              loginMap[data.id] = data.userName;
+            }
+            self.loginMap = loginMap;
           }
         });
       },
@@ -262,7 +266,12 @@
                for(let d of resp.result.items){
                   d.testResult = "";
                   d.resultIdCn = "";
+                  d.testStaffIdCn = self.loginMap[d.testStaffId];
                }
+            }else{
+              for(let d of resp.result.items){
+                d.testStaffIdCn = self.loginMap[d.testStaffId];
+              }
             }
 
             self.tableData = resp.result.items;
@@ -275,6 +284,7 @@
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
               {"columnName": "testResult", "coloumNameCn": "检测结果"},
               {"columnName": "resultIdCn", "coloumNameCn": "判定结果"},
+              {"columnName": "testStaffIdCn", "coloumNameCn": "检测人"},
             ];
           }
         });

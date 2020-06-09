@@ -86,6 +86,12 @@ export const constantRouterMap = [
         component: () => import("@/views/sending/material-coding.vue"),
         name: "material-coding",
         meta: { title: "物料编码",permission:"material:send",image:require('@/assets/img/send-02.png') }
+      },
+      {
+        path: "send-dept",
+        component: () => import("@/views/sending/deptSendTask.vue"),
+        name: "send-dept",
+        meta: { title: "部门送检",permission:"send:dept",image:require('@/assets/img/send-02.png') }
       }
     ]
   },
@@ -111,6 +117,12 @@ export const constantRouterMap = [
         component: () => import("@/views/inspection/sample-detection.vue"),
         name: "sample-detection",
         meta: { title: "样品检测" , permission:"sample:check",image:require('@/assets/img/sample-check.png')}
+      },
+      {
+        path: "complete-sample",
+        component: () => import("@/views/inspection/complete-sample.vue"),
+        name: "complete-sample",
+        meta: { title: "已检查询" , permission:"complete:check",image:require('@/assets/img/complete.png')}
       },
       {
         path: "test-method",

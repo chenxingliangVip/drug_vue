@@ -24,6 +24,7 @@
         <size-dialog :paramData="paramList[5].paramData" v-if="hasRole(paramList[5].ps)"></size-dialog>
         <item-dialog :paramData="paramList[6].paramData" v-if="hasRole(paramList[6].ps)"></item-dialog>
         <calendar-dialog v-if="hasRole(paramList[7].ps)"></calendar-dialog>
+        <print :paramData="paramList[8].paramData" v-if="hasRole(paramList[8].ps)"></print>
     </div>
 </template>
 <script>
@@ -35,6 +36,7 @@
     import sizeDialog from "./dialog/size"
     import itemDialog from "./dialog/item"
     import calendarDialog from "./dialog/calendar"
+    import print from "./dialog/print"
 
     export default {
         name: '参数管理',
@@ -46,7 +48,8 @@
             methodDialog,
             addressDialog,
             sizeDialog,
-            itemDialog
+            itemDialog,
+            print
         },
         data() {
             return {
@@ -113,6 +116,14 @@
                         ps: "manage:param:cal",
                         icon: "el-icon-s-tools",
                         imgSrc: require("@/assets/img/paramImg8.jpg")
+                    },
+                    {
+                      label: "打印设置",
+                      type: "print",
+                      paramData: {},
+                      ps: "manage:param:print",
+                      icon: "el-icon-s-tools",
+                      imgSrc: require("@/assets/img/print.jpg")
                     }
                 ],
 
@@ -225,6 +236,7 @@
     	width: 40%;
     	height: 200px;
     	position: absolute;
+      z-index: -10;
     	bottom: 0;
     	right: 0;
     	background: url(../../assets/img/background_img.png) 100%;

@@ -6,7 +6,7 @@
 	      <img src="@/assets/logo.png" class="app-login-logo" />
 	      <img src="@/assets/logoTitle.png" class="app-login-logoTitle" />
 			</div>
-			<p class="title_txt">威尔分析测试平台</p>
+			<p class="title_txt">分析测试平台</p>
       <el-form ref="loginForm"
                :rules="loginRules"
                :model="loginForm"

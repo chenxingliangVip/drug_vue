@@ -12,7 +12,11 @@
             :style="{ width:option.width?option.width:'100%' }"
         >
             <el-table-column type="selection" align="center" v-if="isMultipleSelection && displayTableData.length > 0" width="40" ></el-table-column>
-						
+
+            <!--<el-table-column-->
+              <!--type="index"-->
+              <!--width="30">-->
+            <!--</el-table-column>-->
             <el-table-column v-if="col.status != '-1'"  v-for="(col, index) in tableHeader" :key="index"
                 :prop="col.columnName" :label="col.coloumNameCn" :width="col.width"
                 align="center" :min-width="col.minWidth">
@@ -111,6 +115,12 @@ export default {
             },
             type: Boolean
         },
+        showTableIndex: {
+            default: function() {
+                return false;
+            },
+            type: Boolean
+        },
 
         isStrip: {
             default: function() {
@@ -173,6 +183,10 @@ export default {
             this.pageNum = val;
             this.refreshTable();
         },
+
+       getPageRow(){
+          return this.pageRow;
+       },
         handleFilter() {
             //查询事件
             this.pageNum = 1;

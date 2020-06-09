@@ -5,7 +5,7 @@
         <el-col :offset="6"
                 :span="12"
                 class="el-col-title">
-          <div>威尔研究院  · 智慧检验大数据管理系统</div>
+          <div>分 析 测 试 平 台</div>
         </el-col>
         <el-col :span="6">
           <div class="right-menu">

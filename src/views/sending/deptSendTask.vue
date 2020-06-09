@@ -10,19 +10,26 @@
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
-          <span class="w3"
-                style="margin-right: -0.5em;">送检人<i class="i_colon">:</i></span>
-          <el-select v-model="searchParam.userId"
-                     size="mini"
-                     clearable
-                     filterable
-                     style="width: 140px">
-            <el-option v-for="item in loginList"
-                       :key="item.id"
-                       :label="item.userName"
-                       :value="item.id" />
-          </el-select>
+          <span>样品名称<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.materialName"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
         </div>
+        <!--<div class="filter-item">-->
+          <!--<span class="w3"-->
+                <!--style="margin-right: -0.5em;">送检人<i class="i_colon">:</i></span>-->
+          <!--<el-select v-model="searchParam.userId"-->
+                     <!--size="mini"-->
+                     <!--clearable-->
+                     <!--filterable-->
+                     <!--style="width: 140px">-->
+            <!--<el-option v-for="item in loginList"-->
+                       <!--:key="item.id"-->
+                       <!--:label="item.userName"-->
+                       <!--:value="item.id" />-->
+          <!--</el-select>-->
+        <!--</div>-->
         <div class="filter-item">
           <span>领检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
@@ -46,9 +53,28 @@
              @click="getList">
           </i></div>
       </div>
+      <div>
+        <el-button class="filter-btn-item same-contrast"
+                   size="mini"
+                   style="margin-left: 10px;width: 80px;float: right;"
+                   type="green"
+                   @click="sameContrast">
+          同样对比
+        </el-button>
+      </div>
     </div>
-    <drug-table :backCount="backCount" @emitSpanFun="emitSpanFun"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+    <drug-table :backCount="backCount"   @getSelection="getSelection" :isMultipleSelection="true"   @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+      <template slot-scope="props" slot="operate">
+        <div >
+          <label @click="handleEditData(props.rowData)"
+                 class="table-view" style="cursor: pointer;">
+            查看
+          </label>
+        </div>
+      </template>
     </drug-table>
+    <same-contrast></same-contrast>
+    <send-see></send-see>
   </div>
 </template>
 
@@ -57,9 +83,11 @@ import waves from '@/views/directive/waves' // waves directive
 import { formatDate } from '@/utils/formatDate'
 import drugTable from "@/components/table/index";
 import {getToken} from '@/utils/auth' // 验权
+import sendSee from "./dialog/sendSee"
+import sameContrast from "./dialog/sameContrast"
 export default {
   name: '送检',
-  components: { drugTable},
+  components: { drugTable,sendSee,sameContrast},
   directives: { waves },
   data() {
     return {
@@ -69,12 +97,15 @@ export default {
       option:{showOperate:false},
       searchParam: {
         sampleCode:"",
+        materialName:"",
         userId:"",
         startTime:"",
         endTime:"",
       },
       loginList:[],
       backCount:0,
+      detailData:{},
+      selectChoice:[]
     }
   },
   mounted() {
@@ -84,6 +115,54 @@ export default {
     self.getAllLogin();
   },
   methods: {
+
+    getSelection(val){
+      this.selectChoice = val;
+    },
+
+    sameContrast() {
+      let choiceIds = [];
+      if (this.selectChoice.length == 0) {
+        this.$notify({
+          title: '提示',
+          message: "请选择对比项！",
+          type: 'warning'
+        });
+        return;
+      }
+      if (this.selectChoice.length == 1) {
+        this.$notify({
+          title: '提示',
+          message: "请至少选择两项对比！",
+          type: 'warning'
+        });
+        return;
+      }
+      let materialName = "";
+      for (let data of this.selectChoice) {
+        if (!materialName) {
+          materialName = data.materialName;
+        }
+        if (materialName != data.materialName) {
+          this.$notify({
+            title: '提示',
+            message: "请选择相同样品名称对比！",
+            type: 'warning'
+          });
+          return;
+        }
+        choiceIds.push(data.sampleCode);
+      }
+      this.$eventBus.$emit("openSameContrast",materialName,this.searchParam,choiceIds);
+    },
+
+    handleEditData(rowData){
+      this.detailData = Object.assign({},rowData);
+      this.detailData.materialTypeId = this.detailData.materialType;
+      this.detailData.materialGradeId = this.detailData.materialGrade;
+      this.$eventBus.$emit("openSendSee",this.detailData);
+    },
+
     initPickerTime(){
       let year = formatDate(new Date(), "yyyy");
       let mouth = formatDate(new Date(), "MM");
@@ -136,7 +215,7 @@ export default {
             {"columnName": "sampleTypeName", "coloumNameCn": "样品规模"},
             {"columnName": "locationName", "coloumNameCn": "送样地点"},
             {"columnName": "checkStatusCn", "coloumNameCn": "流程状态"}];
-          self.option.showOperate = false;
+          self.option.showOperate = true;
         }
       });
     },

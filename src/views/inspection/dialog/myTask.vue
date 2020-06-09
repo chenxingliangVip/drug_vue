@@ -47,12 +47,12 @@
     <div class="flex-row-space-between">
       <div style="line-height:15px; font-size:13px;"><span style="color:#878989">检项数量<i class="i_colon">：</i></span><span>{{item.tableData.length}}/{{item.tableData.length}}</span></div>
       <span>{{detailData.filePathName}}</span>
-      <el-button type="primary"  v-show="submitBut"
+      <el-button type="primary"  v-show="submitBut && type !='see'"
                  size="mini"
                  style="width: 60px; height:15px; min-height:15px; font-size: 8px;"
                  @click="uploadSampleFile"
                 >
-        JPG上传
+        文件上传
       </el-button>
       <input type="file" id="sampleFile" style="display: none;" @change="uploadFileSample">
     </div>
@@ -82,7 +82,7 @@
 
     <div slot="footer" v-show="submitBut"
          class="dialog-footer">
-      <el-button type="primary"
+      <el-button type="primary"  v-if="type !='see'"
                  size="mini"
                  style="width: 80px;"
                  @click="takeTaskEvent"
@@ -147,6 +147,10 @@
     },
     methods:{
       emitAutoInput(){
+        let sampleFile = document.getElementById("sampleFile");
+        let sampleResetFile = document.getElementById("sampleResetFile");
+        sampleFile.value = "";
+        sampleResetFile.value = "";
         this.$eventBus.$emit("autoInputJJ");
       },
       getSampleDetail(){
@@ -181,7 +185,7 @@
         let fileList = event.target.files;
         if (fileList.length > 0) {
           let file = fileList[0];
-          if (/.(jpg|jpeg|png|gif)$/.test(file.name)) {
+          if (/.(jpg|jpeg|png|gif|pdf)$/.test(file.name)) {
             let reader = new FileReader();
             self.detailData.filePathName = self.detailData.sampleId+"_"+file.name;
             reader.readAsDataURL(file);
@@ -191,7 +195,7 @@
           } else {
             self.$notify({
               title: '提示',
-              message: "上传文件必须是JPG！！",
+              message: "上传文件必须是JPG或者是pdf！！",
               type: 'warning'
             });
           }
@@ -356,7 +360,7 @@
                 // if(!data.resultId){
                 //   self.submitBut = true;
                 // }
-                data.testResult = {value:data.testResult,type:"input",edit:false};
+
                 data.itemName = {value:data.itemName};
                 data.itemQualityStandard = {value:data.itemQualityStandard};
                 if(data.resultId == "Y"){
@@ -365,7 +369,14 @@
                 if(data.resultId == "N"){
                   data.resultIdCn="不合格";
                 }
-                data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
+                if(self.type !='see'){
+                  data.testResult = {value:data.testResult,type:"input",edit:false};
+                  data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
+                }else{
+                  data.testResult = {value:data.testResult,type:"input"};
+                  data.resultId = {value:data.resultIdCn,type:"select"};
+                }
+
                 // if(data.resultId){
                 //   data.resultId = {value:data.resultIdCn,type:"select"};
                 // }else{

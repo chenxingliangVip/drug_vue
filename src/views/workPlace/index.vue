@@ -89,7 +89,9 @@
         if(!val){
           return;
         }
-        self.updateWorkSample(val);
+        if(val.length == 10){
+          self.updateWorkSample(val);
+        }
       }
     }
   }

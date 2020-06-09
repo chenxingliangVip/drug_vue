@@ -481,10 +481,19 @@ export default {
       });
     },
 		sameContrast(){
+      let choiceIds = [];
       if(this.selectChoice.length == 0){
         this.$notify({
           title: '提示',
           message: "请选择对比项！",
+          type: 'warning'
+        });
+        return;
+      }
+      if(this.selectChoice.length == 1){
+        this.$notify({
+          title: '提示',
+          message: "请至少选择两项对比！",
           type: 'warning'
         });
         return;
@@ -502,16 +511,17 @@ export default {
           });
           return;
         }
+        choiceIds.push(data.sampleCode);
       }
-      if(!this.searchParam.startTime||!this.searchParam.endTime){
-        this.$notify({
-          title: '提示',
-          message: "请选择时间！",
-          type: 'warning'
-        });
-        return;
-      }
-      this.$eventBus.$emit("openSameContrast",materialName,this.searchParam);
+      // if(!this.searchParam.startTime||!this.searchParam.endTime){
+      //   this.$notify({
+      //     title: '提示',
+      //     message: "请选择时间！",
+      //     type: 'warning'
+      //   });
+      //   return;
+      // }
+      this.$eventBus.$emit("openSameContrast",materialName,this.searchParam,choiceIds);
 		}
   },
 }
