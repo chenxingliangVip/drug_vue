@@ -19,6 +19,7 @@
     data(){
       return{
         sampleCode:"",
+        sampleDetail:[]
       }
     },
     created(){
@@ -79,7 +80,9 @@
           params:{sampleCode:sampleCode}
         }).then(resp => {
           self.sampleCode = "";
-          self.showTip(resp.result);
+          let sample = resp.result;
+          let type = sample.checkStatus?(sample.checkStatus !=1?'2':'3'):'1';
+          self.showTip(type);
         });
       },
     },
