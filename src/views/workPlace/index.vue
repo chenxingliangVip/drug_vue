@@ -5,6 +5,26 @@
 		        <img src="@/assets/logo.png" class="app-login-logo" />
 		        <img src="@/assets/logoTitle.png" class="app-login-logoTitle" />
 			</div>
+			<div class="worktable">
+				<table border="1" >
+					<tr>
+						<th>检验编码</th>
+						<th>样品名称</th>
+						<th>样品批号</th>
+						<th>等级</th>
+						<th>送样地点</th>
+						<th>样品名称</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
 			<div class="workForm">
 				<p class="title_txt">自助扫码送样区</p>
 				<el-input type="text"  class="workInput" autofocus v-model="sampleCode"  placeholder="请扫待送样品的检验单号" id="workJJ"/>
@@ -109,10 +129,12 @@
         justify-content: center;
         /*align-items: center;*/
         .Maincontain {
-        	width: 32%;
+        	width: 100%;
         	margin-top: 10%;
 	        .topImg_logo {
+        		width: 32%;
 				height: 85px;
+				margin: 0 auto;
 	        	.app-login-logo {
 			    	width: 40%;
 				    height: 70px;
@@ -125,9 +147,9 @@
 			    }
 	        }
 	        .workForm {
-	        	width: 70%;
+        		width: 32%;
 	        	margin: auto;
-	        	margin-top: 25%;
+	        	/*margin-top: 25%;*/
 	        	p {
 	        		margin: 0;
 	        	}
@@ -140,6 +162,33 @@
 					margin-bottom: 30px;
 				}
 
+	        }
+	        .worktable {
+	        	width: 75%;
+	        	margin: 5% auto;
+	        	max-height: 242px;
+	        	min-height: 150px;
+    			overflow: auto;
+	        	table {
+					empty-cells:show;
+					border-collapse: collapse;
+					margin:0 auto;
+					font-size: 16px;
+					width: 100%;
+					border:1px solid #ccc;
+					table-layout:fixed;
+					color: #fff;
+					th,td {
+						height:30px;
+						line-height: 30px;
+						padding:0 1em 0;
+						text-align: center;
+						font-weight: 400;
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:nowrap;
+					}
+	        	}
 	        }
 	    }
 	}
