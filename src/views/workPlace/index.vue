@@ -51,17 +51,17 @@
     },
     methods:{
 
-      validatorIp(){
-        let self = this;
-        self.$http({
-          url: "/drug/sample/validatorIp",
-          method: "post",
-        }).then(resp => {
-          if(!resp.success){
-            self.$router.push({path: '/login'})
-          }
-        });
-      },
+//    validatorIp(){
+//      let self = this;
+//      self.$http({
+//        url: "/drug/sample/validatorIp",
+//        method: "post",
+//      }).then(resp => {
+//        if(!resp.success){
+//          self.$router.push({path: '/login'})
+//        }
+//      });
+//    },
 
       inputJJ(){
         let input=document.getElementById('workJJ');
@@ -127,10 +127,10 @@
 		background-color: #3d9691;
     	display: flex;
         justify-content: center;
-        /*align-items: center;*/
+        align-items: center;
         .Maincontain {
-        	width: 100%;
-        	margin-top: 10%;
+        	width: 100%;  
+        	overflow: auto;
 	        .topImg_logo {
         		width: 32%;
 				height: 85px;
@@ -164,17 +164,18 @@
 
 	        }
 	        .worktable {
-	        	width: 75%;
-	        	margin: 5% auto;
-	        	max-height: 242px;
+	        	width: 100%;
+	        	padding: 5%;
 	        	min-height: 150px;
-    			overflow: auto;
+    			
+		    	display: flex;
+		        justify-content: center;
 	        	table {
 					empty-cells:show;
 					border-collapse: collapse;
 					margin:0 auto;
 					font-size: 16px;
-					width: 100%;
+					width: 90%;
 					border:1px solid #ccc;
 					table-layout:fixed;
 					color: #fff;
