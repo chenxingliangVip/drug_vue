@@ -131,6 +131,7 @@
         .Maincontain {
         	width: 100%;  
         	overflow: auto;
+        	margin-top: -5%;
 	        .topImg_logo {
         		width: 32%;
 				height: 85px;
@@ -165,8 +166,7 @@
 	        }
 	        .worktable {
 	        	width: 100%;
-	        	padding: 5%;
-	        	min-height: 150px;
+	        	padding: 4% 0;
     			
 		    	display: flex;
 		        justify-content: center;
