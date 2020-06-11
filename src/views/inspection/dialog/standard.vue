@@ -219,18 +219,42 @@
       deleteColumn() {
         if (this.selectChoice.length < 1) {
           this.$notify({
-            title: '提示',
+            title: "提示",
             message: "请选择一列！",
-            type: 'warning'
+            type: "warning"
           });
           return;
         }
+        let choiceIds = [];
         for (let data of this.selectChoice) {
-          let index = this.standardItemList.indexOf(data);
-          let standardTable = this.$refs.standardTable.getTableData();
-          standardTable.splice(index, 1);
-          this.standardItemList = standardTable;
+          choiceIds.push(data.itemId.value + "-"+data.methodId.value);
         }
+        let standardTable = this.$refs.standardTable.getTableData();
+        for(let choiceId of choiceIds){
+          label:
+            for(let item of standardTable){
+              if(choiceId == item.itemId.value + "-"+item.methodId.value){
+                let index = standardTable.indexOf(item);
+                standardTable.splice(index, 1);
+                break label;
+              }
+            }
+        }
+        this.standardItemList = standardTable;
+        // if (this.selectChoice.length < 1) {
+        //   this.$notify({
+        //     title: '提示',
+        //     message: "请选择一列！",
+        //     type: 'warning'
+        //   });
+        //   return;
+        // }
+        // for (let data of this.selectChoice) {
+        //   let index = this.standardItemList.indexOf(data);
+        //   let standardTable = this.$refs.standardTable.getTableData();
+        //   standardTable.splice(index, 1);
+        //   this.standardItemList = standardTable;
+        // }
       },
 
       addColumn() {
@@ -446,7 +470,7 @@
       getTestMethod() {
         let self = this;
         self.$http({
-          url: "/drug/testMethod/queryTestMethodList",
+          url: "/drug/testMethod/queryAllTestMethodList",
           method: "post",
         }).then(resp => {
           if (resp.success) {

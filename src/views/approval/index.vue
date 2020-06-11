@@ -103,7 +103,7 @@
           endTime:""
         },
         name:"检验号",
-        nameMap:{sample:"检验号",material:"物料编码",method:"申请号",standard:"物料编码"},
+        nameMap:{sample:"检验号",material:"物料编码",method:"方法名称",standard:"物料名称"},
         countMap:{sample:0,material:0,method:0,standard:0},
         stateOptions:[{label:"审核中",value:"2"},{label:"驳回",value:"4"},{label:"完成",value:"5"}]
       }

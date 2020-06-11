@@ -13,15 +13,13 @@
 						<th>样品批号</th>
 						<th>等级</th>
 						<th>送样地点</th>
-						<th>样品名称</th>
 					</tr>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>{{sampleDetail.sampleCode}}</td>
+						<td>{{sampleDetail.materialName}}</td>
+						<td>{{sampleDetail.sampleNum}}</td>
+            <td>{{sampleDetail.materialGrade}}</td>
+            <td>{{sampleDetail.locationName}}</td>
 					</tr>
 				</table>
 			</div>
@@ -39,7 +37,7 @@
     data(){
       return{
         sampleCode:"",
-        sampleDetail:[]
+        sampleDetail:{}
       }
     },
     created(){
@@ -51,17 +49,17 @@
     },
     methods:{
 
-//    validatorIp(){
-//      let self = this;
-//      self.$http({
-//        url: "/drug/sample/validatorIp",
-//        method: "post",
-//      }).then(resp => {
-//        if(!resp.success){
-//          self.$router.push({path: '/login'})
-//        }
-//      });
-//    },
+     validatorIp(){
+       let self = this;
+       self.$http({
+         url: "/drug/sample/validatorIp",
+         method: "post",
+       }).then(resp => {
+         if(!resp.success){
+           self.$router.push({path: '/login'})
+         }
+       });
+     },
 
       inputJJ(){
         let input=document.getElementById('workJJ');
@@ -102,6 +100,9 @@
           self.sampleCode = "";
           let sample = resp.result;
           let type = sample.checkStatus?(sample.checkStatus !=1?'2':'3'):'1';
+          if(type =='3'){
+            self.sampleDetail = sample;
+          }
           self.showTip(type);
         });
       },
@@ -129,7 +130,7 @@
         justify-content: center;
         align-items: center;
         .Maincontain {
-        	width: 100%;  
+        	width: 100%;
         	overflow: auto;
         	margin-top: -5%;
 	        .topImg_logo {
@@ -167,7 +168,7 @@
 	        .worktable {
 	        	width: 100%;
 	        	padding: 4% 0;
-    			
+
 		    	display: flex;
 		        justify-content: center;
 	        	table {

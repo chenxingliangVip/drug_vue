@@ -48,6 +48,7 @@
     <div class="flex-row-space-between"
          style="margin:10px 0 3px 0;">
       <div style="line-height:20px;"><span style="color:#878989">检项选择<i class="i_colon">：</i></span></div>
+      <div @click="downLoadFile(detailData.filePath)" v-show="detailData.filePath" style="font-family: cursive;font-size: 14px;cursor: pointer;">附件下载</div>
       <el-button :type="isCheckSelect? 'red':'info'" @click="changeCheck" v-if="buttonShow"
                  size="mini"
                  style="width: 60px; height:20px; min-height:20px;">
@@ -62,6 +63,7 @@
     </div>
     <div>
       <div style="color:#878989;padding:10px 0 3px 0"><span>复检原因<i class="i_colon">：</i></span></div>
+      <div  @click="downLoadFile(detailData.resetPath)" v-show="detailData.resetPath" style="font-family: cursive;font-size: 14px;cursor: pointer;">附件下载</div>
       <div>
         <el-input clearable  type="textarea"
                   maxlength="300"
@@ -80,6 +82,10 @@
         提交复检
       </el-button>
     </div>
+    <form action="/drug/file/downloadFile" method="post"
+          style="display: none;" ref="downloadSampleFile">
+      <input name="path" :value="downPath"/>
+    </form>
   </el-dialog>
 </template>
 <script>
@@ -117,7 +123,8 @@
         buttonShow:false,
 
         resetItem:[],
-        loginMap:[]
+        loginMap:[],
+        downPath:""
       }
     },
     mounted() {
@@ -138,6 +145,14 @@
       })
     },
     methods: {
+
+      downLoadFile(path){
+        let self =this;
+        self.downPath = path;
+        self.$nextTick(()=>{
+          self.$refs.downloadSampleFile.submit();
+        });
+      },
 
       getAllLogin(){
         let self = this;

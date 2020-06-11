@@ -251,6 +251,7 @@
           params:self.sampleData
         }).then(resp => {
           if (resp.success) {
+            debugger
             let items = [];
             let repeat = [];
             for(let data of resp.result){
@@ -265,7 +266,7 @@
                 cc_data.itemName = c_data.itemName;
                 cc_data.itemQualityStandard = c_data.itemQualityStandard;
                 //修改检验单号为批号
-                cc_data.sampleCode = data.standardId;
+                cc_data.sampleCode = data.sampleNum;
                 cc_data.testResult = c_data.testResult;
                 if(repeat.indexOf(c_data.itemName) < 0){
                   let item = {itemName:c_data.itemName,samples:[]};

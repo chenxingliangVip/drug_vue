@@ -116,6 +116,8 @@
         },
         dialogAddVisible: false,
         count: 0,
+        type:"",
+        staffId:"",
         item:{
           tableData: [],
           tableHeader:[],
@@ -132,10 +134,11 @@
     },
     mounted(){
       let self = this;
-      self.$eventBus.$on("openMyTaskDialog",function (editData,operateType) {
+      self.$eventBus.$on("openMyTaskDialog",function (editData,operateType,staffId) {
         self.dialogAddVisible = true;
         self.count = 0;
         self.type = operateType;
+        self.staffId = staffId;
         self.detailData = editData;
         self.getSampleItems();
         self.getSampleDetail();
@@ -356,7 +359,7 @@
             let datas = [];
             let datasId = [];
             for(let data of resp.result.items){
-              if(data.testStaffId == self.$store.getters.userId){
+              if(data.testStaffId == self.$store.getters.userId ||(self.staffId&& data.testStaffId == self.staffId)){
                 // if(!data.resultId){
                 //   self.submitBut = true;
                 // }

@@ -16,7 +16,7 @@
                      size="mini"
                      clearable
                      filterable
-                     style="width: 140px">
+                     style="width: 120px">
             <el-option v-for="item in loginList"
                        :key="item.id"
                        :label="item.userName"
@@ -30,7 +30,7 @@
                           format="yyyy-MM-dd"
                           value-format="yyyy-MM-dd"
                           type="date"
-                          style="width: 140px;">
+                          style="width: 130px;">
           </el-date-picker>
           <span> - </span>
           <el-date-picker v-model="searchParam.endTime"
@@ -38,7 +38,7 @@
                           format="yyyy-MM-dd"
                           value-format="yyyy-MM-dd"
                           type="date"
-                          style="width: 140px;">
+                          style="width: 130px;">
           </el-date-picker>
         </div>
         <div class="filter-item filter-item-btn-search">
@@ -46,9 +46,28 @@
              @click="getList">
           </i></div>
       </div>
+      <!--<div v-if="hasRole('deptTask:check:contrast')">-->
+        <!--<el-button class="filter-btn-item same-contrast"-->
+                   <!--size="mini"-->
+                   <!--style="margin-left: 10px;width: 80px;float: right;"-->
+                   <!--type="green"-->
+                   <!--@click="sameContrast">-->
+          <!--同样对比-->
+        <!--</el-button>-->
+      <!--</div>-->
     </div>
-    <drug-table :backCount="backCount" @emitSpanFun="emitSpanFun"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+    <drug-table  @getSelection="getSelection"  :isMultipleSelection="true":backCount="backCount" @emitSpanFun="emitSpanFun"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+      <template slot-scope="props" slot="operate">
+        <div v-if="hasRole('deptTask:check:see')">
+          <label @click="openMyTaskDialog(props.rowData)"
+                 class="table-view">
+            查看
+          </label>
+        </div>
+      </template>
     </drug-table>
+    <my-task></my-task>
+    <same-contrast></same-contrast>
   </div>
 </template>
 
@@ -57,9 +76,11 @@ import waves from '@/views/directive/waves' // waves directive
 import { formatDate } from '@/utils/formatDate'
 import drugTable from "@/components/table/index";
 import {getToken} from '@/utils/auth' // 验权
+import myTask from "./dialog/myTask"
+import sameContrast from "../sending/dialog/sameContrast"
 export default {
   name: '送检',
-  components: { drugTable},
+  components: { drugTable,myTask,sameContrast},
   directives: { waves },
   data() {
     return {
@@ -74,6 +95,7 @@ export default {
         endTime:"",
       },
       loginList:[],
+      selectChoice:[],
       backCount:0,
     }
   },
@@ -84,6 +106,13 @@ export default {
     self.getAllLogin();
   },
   methods: {
+    getSelection(val){
+      this.selectChoice = val;
+    },
+    openMyTaskDialog(data){
+      let row = Object.assign({},data);
+      this.$eventBus.$emit("openMyTaskDialog",row,"see",data.testStaffId);
+    },
     initPickerTime(){
       let year = formatDate(new Date(), "yyyy");
       let mouth = formatDate(new Date(), "MM");
@@ -134,10 +163,11 @@ export default {
           }
           self.tableHeader =  [
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
+            {"columnName": "materialName", "coloumNameCn": "样品名称"},
             {"columnName": "userName", "coloumNameCn": "领检人","width":"70px"},
             {"columnName": "createTimeFt", "coloumNameCn": "领检时间"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
-            {"columnName": "itemId", "coloumNameCn": "样品名称"},
+            {"columnName": "itemId", "coloumNameCn": "检测项"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "location", "coloumNameCn": "地点"},
@@ -145,7 +175,7 @@ export default {
             {"columnName": "resultIdCn", "coloumNameCn": "结果录入"},
             {"columnName": "updateTimeFt", "coloumNameCn": "录入时间"},
             {"columnName": "checkStatusCn", "coloumNameCn": "状态","isClick":true},];
-          self.option.showOperate = false;
+          self.option.showOperate = true;
         }
       });
     },
@@ -161,6 +191,42 @@ export default {
         }
       });
     },
+
+    sameContrast(){
+      let choiceIds = [];
+      if(this.selectChoice.length == 0){
+        this.$notify({
+          title: '提示',
+          message: "请选择对比项！",
+          type: 'warning'
+        });
+        return;
+      }
+      if(this.selectChoice.length == 1){
+        this.$notify({
+          title: '提示',
+          message: "请至少选择两项对比！",
+          type: 'warning'
+        });
+        return;
+      }
+      let materialName = "";
+      for(let data of this.selectChoice){
+        if(!materialName){
+          materialName = data.materialName;
+        }
+        if(materialName != data.materialName){
+          this.$notify({
+            title: '提示',
+            message: "请选择相同样品名称对比！",
+            type: 'warning'
+          });
+          return;
+        }
+        choiceIds.push(data.sampleId);
+      }
+      this.$eventBus.$emit("openSameContrast",materialName,this.searchParam,choiceIds);
+    }
   },
 }
 </script>

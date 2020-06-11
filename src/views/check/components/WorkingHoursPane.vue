@@ -19,15 +19,15 @@
           </div>
           <div v-if="radio1 == 1"
                class="filter-item">
-            <el-select v-model="searchParam.id"  @change="changeDept"
-                       size="mini"
-                       clearable
-                       style="width: 140px">
-              <el-option v-for="item in deptList"
-                         :key="item.id"
-                         :label="item.deptName"
-                         :value="item.id" />
-            </el-select>
+            <!--<el-select v-model="searchParam.id"  @change="changeDept"-->
+                       <!--size="mini"-->
+                       <!--clearable-->
+                       <!--style="width: 140px">-->
+              <!--<el-option v-for="item in deptList"-->
+                         <!--:key="item.id"-->
+                         <!--:label="item.deptName"-->
+                         <!--:value="item.id" />-->
+            <!--</el-select>-->
           </div>
           <div v-else
                class="filter-item">
@@ -88,7 +88,7 @@
       <div v-show="radio1 == 2">
         <div class="flex-row-space-between"
              style="margin:15px 10px 5px 10px;justify-content:flex-start;">
-          <div class="el-grey-txt">姓名：{{searchParam.userName}} </div>
+          <div class="el-grey-txt">用户：{{searchParam.userName}} </div>
 
           <div class="el-grey-txt"
                style="margin-left:30px;">{{searchParam.startTime}} 至 {{searchParam.endTime}}</div>
@@ -150,22 +150,22 @@ export default {
     }
   },
   mounted() {
-    let day =  formatDate(new Date(), "yyyy");
-    let startTime = day+"-01"+"-01";
-    let endTime = day+"-12"+"-31";
+    let day =  formatDate(new Date(), "yyyy-MM");
+    let startTime = day+"-01";
+    let endTime = day+"-30";
     let user = JSON.parse(getToken());
     this.user = user;
     this.searchParam = {
-      id:"",
+      id:user.deptId,
+      userId:"",
       deptName:"所有部门",
       userName:user.userName,
-      userId:user.id,
       startTime:startTime,
       endTime:endTime
     };
     this.getDeptList();
     this.getPersonList();
-    this.getChooseDeptList();
+    // this.getChooseDeptList();
     this.getAllLogin();
   },
   methods: {
@@ -282,11 +282,12 @@ export default {
           self.person.tableLoading = false;
           self.person.tableData = resp.result;
           self.person.tableHeader =  [
+            {"columnName": "userName", "coloumNameCn": "姓名"},
             {"columnName": "createTimeFt", "coloumNameCn": "时间"},
             {"columnName": "sampleCode", "coloumNameCn": "检验号"},
-            {"columnName": "materialTypeName", "coloumNameCn": "样品属性"},
-            {"columnName": "materialName", "coloumNameCn": "样品名称"},
-            {"columnName": "itemName", "coloumNameCn": "检项"},
+            // {"columnName": "materialTypeName", "coloumNameCn": "样品属性"},
+            // {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            // {"columnName": "itemName", "coloumNameCn": "检项"},
             {"columnName": "manHour", "coloumNameCn": "工时"}];
         }
       });

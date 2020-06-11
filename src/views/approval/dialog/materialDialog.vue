@@ -28,7 +28,7 @@
         <el-row>
             <el-col :span="12">
                 <div class="el-dialog-item">
-                    <label>检项名称<i class="i_colon">：</i></label>
+                    <label>物料名称<i class="i_colon">：</i></label>
                     <span>{{detailData.materialName}}</span>
                 </div>
             </el-col>

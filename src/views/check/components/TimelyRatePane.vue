@@ -69,6 +69,7 @@
 import waves from '@/views/directive/waves' // waves directive
 import drugTable from "@/components/table/index";
 import { formatDate } from '@/utils/formatDate'
+import {getToken} from '@/utils/auth' // 验权
 export default {
   name: '样品检验',
   components: {drugTable},
@@ -97,10 +98,13 @@ export default {
     }
   },
   mounted() {
+    let user = JSON.parse(getToken());
     let day =  formatDate(new Date(), "yyyy");
     let startTime = day+"-01"+"-01";
     let endTime = day+"-12"+"-31";
     this.searchParam = {
+      deptId:user.deptId,
+      userId:user.id,
       startTime:startTime,
       endTime:endTime
     };

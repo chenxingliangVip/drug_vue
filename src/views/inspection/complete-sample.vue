@@ -32,8 +32,17 @@
              @click="getList">
           </i></div>
       </div>
+      <div v-if="hasRole('complete:check:contrast')">
+          <el-button class="filter-btn-item same-contrast"
+              size="mini"
+              style="margin-left: 10px;width: 80px;float: right;"
+              type="green"
+              @click="sameContrast">
+             同样对比
+          </el-button>
+      </div>
     </div>
-    <drug-table :backCount="backCount"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
+    <drug-table @getSelection="getSelection"  :isMultipleSelection="true" :backCount="backCount"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
       <template slot-scope="props" slot="operate">
         <div >
           <label @click="openMyTaskDialog(props.rowData)"
@@ -44,6 +53,7 @@
       </template>
     </drug-table>
     <my-task></my-task>
+    <same-contrast></same-contrast>
   </div>
 </template>
 
@@ -54,10 +64,10 @@ import drugTable from "@/components/table/index";
 import takeTask from "./dialog/takeTask"
 import myTask from "./dialog/myTask"
 import {getToken} from '@/utils/auth' // 验权
-
+import sameContrast from "../sending/dialog/sameContrast"
 export default {
   name: '已检查询',
-  components: { drugTable ,takeTask,myTask},
+  components: { drugTable ,takeTask,myTask,sameContrast},
   directives: { waves },
 
   data() {
@@ -74,6 +84,7 @@ export default {
       count:0,
       backCount:0,
       option:{showOperate:false},
+      selectChoice:[],
     }
   },
   mounted() {
@@ -81,7 +92,45 @@ export default {
     self.getList();
   },
   methods: {
+    sameContrast(){
+      let choiceIds = [];
+      if(this.selectChoice.length == 0){
+        this.$notify({
+          title: '提示',
+          message: "请选择对比项！",
+          type: 'warning'
+        });
+        return;
+      }
+      if(this.selectChoice.length == 1){
+        this.$notify({
+          title: '提示',
+          message: "请至少选择两项对比！",
+          type: 'warning'
+        });
+        return;
+      }
+      let materialName = "";
+      for(let data of this.selectChoice){
+        if(!materialName){
+          materialName = data.materialName;
+        }
+        if(materialName != data.materialName){
+          this.$notify({
+            title: '提示',
+            message: "请选择相同样品名称对比！",
+            type: 'warning'
+          });
+          return;
+        }
+        choiceIds.push(data.sampleId);
+      }
+      this.$eventBus.$emit("openSameContrast",materialName,this.searchParam,choiceIds);
+    },
 
+    getSelection(val){
+      this.selectChoice = val;
+    },
     getList(startIndex,pageRow) {
       let self = this;
       self.tableLoading = true;

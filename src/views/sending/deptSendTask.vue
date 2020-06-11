@@ -53,7 +53,7 @@
              @click="getList">
           </i></div>
       </div>
-      <div>
+      <div v-if="hasRole('send:dept:contrast')">
         <el-button class="filter-btn-item same-contrast"
                    size="mini"
                    style="margin-left: 10px;width: 80px;float: right;"
@@ -65,7 +65,7 @@
     </div>
     <drug-table :backCount="backCount"   @getSelection="getSelection" :isMultipleSelection="true"   @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
       <template slot-scope="props" slot="operate">
-        <div >
+        <div  v-if="hasRole('send:dept:see')">
           <label @click="handleEditData(props.rowData)"
                  class="table-view" style="cursor: pointer;">
             查看
@@ -207,7 +207,7 @@ export default {
           self.tableHeader =  [
             {"columnName": "sampleCode", "coloumNameCn": "检验单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
-            {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
+            {"columnName": "createTimeSecondFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
             {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},

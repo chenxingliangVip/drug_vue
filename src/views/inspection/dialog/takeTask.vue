@@ -214,7 +214,6 @@
         cellList.push(this.getCell(row.materialGrade,3,""));
         cellList.push(this.getCell("申 请 人",3,"EEEEEE",1500));
         cellList.push(this.getCell(row.userName,3));
-
         cellList.push(this.getCell("样品批号",4,"EEEEEE",1500));
         cellList.push(this.getCell(row.sampleNum,4,""));
         cellList.push(this.getCell("申请时间",4,"EEEEEE",1500));
@@ -317,8 +316,8 @@
           cellList12.push(this.getCell("检验人",9*(self.oldChoice.length)));
           cellList12.push(this.getCell(row.userName,9*(self.oldChoice.length)));
 
-          cellList12.push(this.getCell("检验时间",9*(self.oldChoice.length),"",2400));
-          cellList12.push(this.getCell(" 年  月  日 ",9*(self.oldChoice.length),"",2400));
+          cellList12.push(this.getCell("检验时间",9*(self.oldChoice.length),"",2200));
+          cellList12.push(this.getCell(" 年  月  日 ",9*(self.oldChoice.length),"",2300));
 
           cellList12.push(this.getCell("说  明",9*(self.oldChoice.length)+1));
           cellList12.push(this.getCell(row.remark,9*(self.oldChoice.length)+1));

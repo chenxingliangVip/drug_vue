@@ -5,7 +5,7 @@
              :close-on-click-modal="false"
              class="el-dialog-param"
              :visible.sync="dialogGradeVisible">
-    <div class="dialog-title"><span style='color:#000'>送样地点</span></div>
+    <div class="dialog-title"><span style='color:#000'>打印设置</span></div>
     <el-divider></el-divider>
     <div class="el-div-container">
       <el-form ref="dataForm"  :inline="true"  class="demo-form-inline">

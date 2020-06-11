@@ -377,12 +377,13 @@ export default {
           self.tableHeader =  [
             {"columnName": "sampleCode", "coloumNameCn": "检验单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
-            {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
+            {"columnName": "createTimeSecondFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
             {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
+            {"columnName": "materialCode", "coloumNameCn": "物料编码"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
-            {"columnName": "sampleTypeName", "coloumNameCn": "样品规模"},
+            // {"columnName": "sampleTypeName", "coloumNameCn": "样品规模"},
             {"columnName": "locationName", "coloumNameCn": "送样地点"},
             {"columnName": "checkStatusCn", "coloumNameCn": "流程状态"}];
           self.option.showOperate = true;
