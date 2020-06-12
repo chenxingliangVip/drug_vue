@@ -1,6 +1,7 @@
 <template>
 	<div class="workPlace" @click="inputJJ">
 		<div class="Maincontain">
+			<div class="zhanwei"></div>
 			<div class="topImg_logo">
 		        <img src="@/assets/logo.png" class="app-login-logo" />
 		        <img src="@/assets/logoTitle.png" class="app-login-logoTitle" />
@@ -18,13 +19,13 @@
 						<td>{{sampleDetail.sampleCode}}</td>
 						<td>{{sampleDetail.materialName}}</td>
 						<td>{{sampleDetail.sampleNum}}</td>
-            <td>{{sampleDetail.materialGrade}}</td>
-            <td>{{sampleDetail.locationName}}</td>
+			            <td>{{sampleDetail.materialGrade}}</td>
+			            <td>{{sampleDetail.locationName}}</td>
 					</tr>
 				</table>
 			</div>
 			<div class="workForm">
-				<p class="title_txt">自助扫码送样区</p>
+				<p class="title_txt">自助扫码送样区<i></i></p>
 				<el-input type="text"  class="workInput" autofocus v-model="sampleCode"  placeholder="请扫待送样品的检验单号" id="workJJ"/>
 			</div>
 		</div>
@@ -49,17 +50,17 @@
     },
     methods:{
 
-     validatorIp(){
-       let self = this;
-       self.$http({
-         url: "/drug/sample/validatorIp",
-         method: "post",
-       }).then(resp => {
-         if(!resp.success){
-           self.$router.push({path: '/login'})
-         }
-       });
-     },
+//   validatorIp(){
+//     let self = this;
+//     self.$http({
+//       url: "/drug/sample/validatorIp",
+//       method: "post",
+//     }).then(resp => {
+//       if(!resp.success){
+//         self.$router.push({path: '/login'})
+//       }
+//     });
+//   },
 
       inputJJ(){
         let input=document.getElementById('workJJ');
@@ -128,24 +129,27 @@
 		background-color: #3d9691;
     	display: flex;
         justify-content: center;
-        align-items: center;
+        /*align-items: center;*/
         .Maincontain {
         	width: 100%;
         	overflow: auto;
-        	margin-top: -5%;
+        	/*margin-top: -5%;*/
+        	.zhanwei {
+        		height: 8%;
+        	}
 	        .topImg_logo {
-        		width: 32%;
+        		width: 45%;
 				height: 85px;
 				margin: 0 auto;
 	        	.app-login-logo {
 			    	width: 40%;
-				    height: 70px;
+				    height: 85px;
 				    float: left;
 			    }
 			    .app-login-logoTitle {
 			        float: left;
 			    	width: 60%;
-			        height: 70px;
+			        height: 85px;
 			    }
 	        }
 	        .workForm {
@@ -157,17 +161,24 @@
 	        	}
 		        .title_txt {
 					color: #fff;
-					text-align: center;
+					text-align: justify;
+					overflow: hidden;
+					height: 42px;
 					margin-top: 10px;
-					font-size: 32px;
+					font-size: 42px;
 					font-family: serif;
 					margin-bottom: 30px;
+					padding-right: 0;
+					i {
+						display: inline-block;
+    					width: 100%;
+					}
 				}
 
 	        }
 	        .worktable {
 	        	width: 100%;
-	        	padding: 4% 0;
+	        	padding: 6% 0;
 
 		    	display: flex;
 		        justify-content: center;
@@ -175,14 +186,24 @@
 					empty-cells:show;
 					border-collapse: collapse;
 					margin:0 auto;
-					font-size: 16px;
+					font-size: 20px;
 					width: 90%;
 					border:1px solid #ccc;
 					table-layout:fixed;
 					color: #fff;
-					th,td {
+					th {
 						height:30px;
 						line-height: 30px;
+						padding:0 1em 0;
+						text-align: center;
+						font-weight: 400;
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:nowrap;
+					}
+					td {
+						height:45px;
+						line-height: 45px;
 						padding:0 1em 0;
 						text-align: center;
 						font-weight: 400;
