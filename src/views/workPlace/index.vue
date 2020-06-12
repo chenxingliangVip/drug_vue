@@ -16,11 +16,11 @@
 						<th>送样地点</th>
 					</tr>
 					<tr>
-						<td>{{sampleDetail.sampleCode}}</td>
-						<td>{{sampleDetail.materialName}}</td>
-						<td>{{sampleDetail.sampleNum}}</td>
-			            <td>{{sampleDetail.materialGrade}}</td>
-			            <td>{{sampleDetail.locationName}}</td>
+						<td class="col1">{{sampleDetail.sampleCode}}</td>
+						<td class="col">{{sampleDetail.materialName}}</td>
+						<td class="col">{{sampleDetail.sampleNum}}</td>
+			            <td class="col2">{{sampleDetail.materialGrade}}</td>
+			            <td class="col2">{{sampleDetail.locationName}}</td>
 					</tr>
 				</table>
 			</div>
@@ -211,7 +211,15 @@
 						text-overflow:ellipsis;
 						white-space:nowrap;
 						color: #f7ff1c;
-						max-width: 320px;
+					}
+					.col2 {
+						width: 170px
+					}
+					.col1 {
+						width: 200px
+					}
+					.col {
+						max-width: 330px
 					}
 	        	}
 	        }
