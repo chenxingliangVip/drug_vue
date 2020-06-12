@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="type == 'add'?'新增·样检':'查看·样检'"
-             width="40%"
+             width="50%"
              append-to-body
              :close-on-click-modal="false"
              :visible.sync="dialogAddVisible" class="Input_Dialog dialog_FormTxt">
@@ -61,19 +61,34 @@
         <!--</el-select>-->
       <!--</el-form-item>-->
 
-      <el-form-item>
-      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
-        <el-select v-model="detailData.materialTypeId" @change="typeChange"
-                   size="mini"
-                   clearable
-                   style="width: 100px">
-          <el-option v-for="item in codeItemMap.type"
-                     :key="item.id"
-                     :label="item.itemName"
-                     :value="item.id" />
-        </el-select>
-      </el-form-item>
-
+			<el-row>
+			  <el-col :span="16">
+			  	<el-form-item>
+		      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
+		        <el-radio-group v-model="detailData.materialTypeId" class="left_Radio">
+		          <el-radio key="1" label="1" >产品</el-radio>
+		          <el-radio key="2" label="2" >原料</el-radio>
+		          <el-radio key="3" label="3" >中间体</el-radio>
+		          <el-radio key="4" label="4" >中控</el-radio>
+		        </el-radio-group>
+		      </el-form-item>
+			  </el-col>
+			  <el-col :span="8">
+			  	<el-form-item>
+		        <span class="span_colon">终产品<i class="i_colon">：</i></span>
+		        <el-select v-model="detailData.materialTypeId" @change="typeChange"
+		                   size="mini" clearable disabled class="right_Input"
+		                   style="width: calc(100% - 70px) !important;">
+		          <el-option v-for="item in codeItemMap.type"
+		                     :key="item.id"
+		                     :label="item.itemName"
+		                     :value="item.id" />
+		        </el-select>
+	      	</el-form-item>
+			  </el-col>
+			</el-row>
+      
+      
       <el-form-item>
       	<span class="span_colon">样品名称<i class="i_colon">：</i></span>
         <el-select v-model="detailData.materialName"  :disabled="materialNameEdit" @change="materialChange"
@@ -529,5 +544,10 @@
   	position: absolute;
   	right: 0;
   	top: 45px;
+  }
+  .right_Input {
+  		max-width: 180px;
+  	.el-select {
+  	}
   }
 </style>

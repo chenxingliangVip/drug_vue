@@ -70,7 +70,15 @@
         font-size: 13px;
     }
 }
-
+.left_Radio {
+    width: calc(100% - 75px);
+    .el-radio {
+        margin-right: 10px;
+    }
+    .el-radio__label {
+        padding-left: 5px;
+    }
+}
 .el-dialog {
     .el-dialog-item,
     .el-dialog-group,
