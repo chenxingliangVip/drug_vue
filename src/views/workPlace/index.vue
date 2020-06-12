@@ -50,17 +50,17 @@
     },
     methods:{
 
-//   validatorIp(){
-//     let self = this;
-//     self.$http({
-//       url: "/drug/sample/validatorIp",
-//       method: "post",
-//     }).then(resp => {
-//       if(!resp.success){
-//         self.$router.push({path: '/login'})
-//       }
-//     });
-//   },
+     validatorIp(){
+       let self = this;
+       self.$http({
+         url: "/drug/sample/validatorIp",
+         method: "post",
+       }).then(resp => {
+         if(!resp.success){
+           self.$router.push({path: '/login'})
+         }
+       });
+     },
 
       inputJJ(){
         let input=document.getElementById('workJJ');
