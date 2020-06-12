@@ -63,7 +63,7 @@
 			<el-form-item>
       	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
         <el-select v-model="detailData.materialTypeId" @change="typeChange"
-                   size="mini" clearable disabled class="right_Input"
+                   size="mini" clearable class="right_Input"
                    style="width: calc(100% - 70px) !important;">
           <el-option v-for="item in codeItemMap.type"
                      :key="item.id"
