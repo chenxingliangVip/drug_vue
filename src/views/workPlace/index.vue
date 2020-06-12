@@ -9,7 +9,7 @@
 			<div class="worktable">
 				<table border="1" >
 					<tr>
-						<th>检验编码</th>
+						<th >检验编码</th>
 						<th>样品名称</th>
 						<th>样品批号</th>
 						<th>等级</th>
@@ -50,17 +50,17 @@
     },
     methods:{
 
-     validatorIp(){
-       let self = this;
-       self.$http({
-         url: "/drug/sample/validatorIp",
-         method: "post",
-       }).then(resp => {
-         if(!resp.success){
-           self.$router.push({path: '/login'})
-         }
-       });
-     },
+//   validatorIp(){
+//     let self = this;
+//     self.$http({
+//       url: "/drug/sample/validatorIp",
+//       method: "post",
+//     }).then(resp => {
+//       if(!resp.success){
+//         self.$router.push({path: '/login'})
+//       }
+//     });
+//   },
 
       inputJJ(){
         let input=document.getElementById('workJJ');
@@ -138,7 +138,7 @@
         		height: 8%;
         	}
 	        .topImg_logo {
-        		width: 45%;
+        		width: 42%;
 				height: 85px;
 				margin: 0 auto;
 	        	.app-login-logo {
@@ -153,7 +153,7 @@
 			    }
 	        }
 	        .workForm {
-        		width: 32%;
+        		width: 40%;
 	        	margin: auto;
 	        	/*margin-top: 25%;*/
 	        	p {
@@ -179,21 +179,21 @@
 	        .worktable {
 	        	width: 100%;
 	        	padding: 6% 0;
-
+				margin:0 auto;
 		    	display: flex;
 		        justify-content: center;
+				max-width: 1200px;
 	        	table {
 					empty-cells:show;
 					border-collapse: collapse;
-					margin:0 auto;
-					font-size: 20px;
-					width: 90%;
+					font-size: 28px;
+					width: 100%;
 					border:1px solid #ccc;
-					table-layout:fixed;
+					/*table-layout:fixed;*/
 					color: #fff;
 					th {
-						height:30px;
-						line-height: 30px;
+						height:35px;
+						line-height: 35px;
 						padding:0 1em 0;
 						text-align: center;
 						font-weight: 400;
@@ -202,14 +202,16 @@
 						white-space:nowrap;
 					}
 					td {
-						height:45px;
-						line-height: 45px;
+						height:50px;
+						line-height: 50px;
 						padding:0 1em 0;
 						text-align: center;
 						font-weight: 400;
 						overflow:hidden;
 						text-overflow:ellipsis;
 						white-space:nowrap;
+						color: #f7ff1c;
+						max-width: 320px;
 					}
 	        	}
 	        }

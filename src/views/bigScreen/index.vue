@@ -108,7 +108,7 @@
 				</div>
 				<div class="line">
 					<h1>威 &nbsp;&nbsp;&nbsp;尔 &nbsp;&nbsp;&nbsp;药 &nbsp;&nbsp;&nbsp;业</h1>
-					<h1>6&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;5</h1>
+					<h1>6&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;1</h1>
 				</div>
 				<div class="middleRight">
 					<p>收集样品数量<span>{{methodAndPersonAndSample.sampleCount}}个</span></p>
