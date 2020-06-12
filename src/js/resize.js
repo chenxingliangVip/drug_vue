@@ -8,7 +8,7 @@ let setScale = () => {
 	var mleft = '';
 
 	return {
-		'transform': 'scale(' + scaleX + ',' + scaleY + ')',
+//		'transform': 'scale(' + scaleX + ',' + scaleY + ')',
 		'display': 'block'
 	}
 };
