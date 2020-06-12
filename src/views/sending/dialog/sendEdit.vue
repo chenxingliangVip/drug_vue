@@ -60,8 +60,18 @@
                      <!--:value="item.finalProd" />-->
         <!--</el-select>-->
       <!--</el-form-item>-->
-
-			<el-row>
+			<el-form-item>
+      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
+        <el-select v-model="detailData.materialTypeId" @change="typeChange"
+                   size="mini" clearable disabled class="right_Input"
+                   style="width: calc(100% - 70px) !important;">
+          <el-option v-for="item in codeItemMap.type"
+                     :key="item.id"
+                     :label="item.itemName"
+                     :value="item.id" />
+        </el-select>
+      </el-form-item>
+			<!--<el-row>
 			  <el-col :span="16">
 			  	<el-form-item>
 		      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
@@ -86,7 +96,7 @@
 		        </el-select>
 	      	</el-form-item>
 			  </el-col>
-			</el-row>
+			</el-row>-->
       
       
       <el-form-item>
