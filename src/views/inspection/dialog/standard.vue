@@ -112,6 +112,8 @@
             <div v-show="type != 'see'">
               <i class="el-icon-circle-plus-outline" @click="addColumn" style="cursor:pointer;"></i>
               <i class="el-icon-remove-outline" @click="deleteColumn" style="cursor:pointer;margin-left:10px"></i>
+              <i class="el-icon-bottom" @click="changePositionRow(1)" style="cursor:pointer;margin-left:10px"></i>
+              <i class="el-icon-top" @click="changePositionRow(-1)" style="cursor:pointer;margin-left:10px"></i>
             </div>
           </div>
         </el-form>
@@ -119,13 +121,19 @@
       <div class="el-dialog-table el-div-green standard"
            style="margin-top:20px">
         <div class="drugTableCopy">
-          <drug-edit-table  @getSelection="getSelection" :compareItem="compareItem" :editType="type" :filterPage="false" ref="standardTable" :isMultipleSelection="true"
+          <drug-edit-table  @getSelection="getSelection"
+                            :compareItem="compareItem" :editType="type"
+                            :filterPage="false"
+                             ref="standardTable"
+                            :isMultipleSelection="true"
+                            @changCurrentRow="changCurrentRow"
                             :tableData="standardItemList"
                             :tableLoading="standardLoading"
                             :tableHeader="standTableHeader"  ></drug-edit-table>
         </div>
       </div>
-      <drug-table  style="margin-top: 10px" :filterPage="false"  v-show="standardHistoryItemList.length > 0 && this.type != 'edit'"
+      <drug-table  style="margin-top: 10px" :filterPage="false"
+                   v-show="standardHistoryItemList.length > 0 && this.type != 'edit'"
                    :tableLoading="standardHistoryLoading"
                    :tableData="standardHistoryItemList"
                    :option="historyOption"
@@ -197,7 +205,9 @@
         standHistoryTableHeader: [],
         historyOption:{headerStyle:{background:'grey'}},
         standardHistoryLoading:true,
-        applyReason:""
+        applyReason:"",
+
+        currentRow:{}
       }
     },
     components: {drugTable,drugEditTable},
@@ -211,6 +221,38 @@
     },
     methods: {
 
+      changCurrentRow(row){
+        this.currentRow = row;
+      },
+      changePositionRow(index){
+        if(Object.keys(this.currentRow).length == 0){
+          this.$notify({
+            title: "提示",
+            message: "请选择一列！",
+            type: "warning"
+          });
+          return;
+        }
+        let standardTable = this.$refs.standardTable.getTableData();
+        let currentIndex = parseInt(this.currentRow.index.value);
+        let pos = currentIndex + index;
+        if(pos < 0){
+          return;
+        }
+        if(pos == standardTable.length){
+          return;
+        }
+        let tmp = Object.assign({},standardTable[currentIndex]);
+        standardTable[currentIndex] = Object.assign({},standardTable[pos]);
+        standardTable[pos] = tmp;
+        standardTable[pos].index.value = pos;
+        standardTable[currentIndex].index.value = currentIndex;
+        this.standardItemList = standardTable;
+        let self = this;
+        self.$nextTick(() => {
+          self.$refs.standardTable.setCurrent(pos);
+        });
+      },
 
       getSelection(val) {
         this.selectChoice = val;
@@ -240,25 +282,16 @@
               }
             }
         }
+        for(let i = 0 ;i<standardTable.length ;i++){
+          standardTable[i].index.value = i;
+        }
         this.standardItemList = standardTable;
-        // if (this.selectChoice.length < 1) {
-        //   this.$notify({
-        //     title: '提示',
-        //     message: "请选择一列！",
-        //     type: 'warning'
-        //   });
-        //   return;
-        // }
-        // for (let data of this.selectChoice) {
-        //   let index = this.standardItemList.indexOf(data);
-        //   let standardTable = this.$refs.standardTable.getTableData();
-        //   standardTable.splice(index, 1);
-        //   this.standardItemList = standardTable;
-        // }
+        this.currentRow = {};
       },
 
       addColumn() {
         let row = {
+          index: {value: ""},
           methodId: {value: ""},
           itemId: {value: "" },
           itemName: {value: "", edit: false,type:"select",list:this.testItems,tmpList:JSON.parse(JSON.stringify(this.testItems)),key:"itemName"},
@@ -269,8 +302,11 @@
           manHour: {value: "请选择方法..."},
         };
         let standardTable = this.$refs.standardTable.getTableData();
+        let count = standardTable.length;
+        row.index.value = count;
         standardTable.push(row);
         this.standardItemList = standardTable;
+        this.currentRow = {};
       },
 
       getCount() {
@@ -500,6 +536,7 @@
               {"columnName": "createTimeFt", "coloumNameCn": "修改时间"}];
 
             self.standTableHeader = [
+              {"columnName": "index", "coloumNameCn": "序号","width":"55px"},
               {"columnName": "itemName", "coloumNameCn": "检测项目","columnNameRe": "itemId"},
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
               {"columnName": "methodName", "coloumNameCn": "方法名称","columnNameRe": "methodId"},
@@ -509,6 +546,7 @@
             let standardItemList = [];
             for (let data of resp.result.newVersions) {
               let row = {
+                index: {value: ""},
                 methodId: {value: data.methodId},
                 itemId: {value: data.itemId},
                 itemName: {value: data.itemName, edit: false,type:"select",list:this.testItems,tmpList:JSON.parse(JSON.stringify(this.testItems)),key:"itemName"},
@@ -566,6 +604,7 @@
           this.dialogtitle = this.type == 'add'?"新增·质量标准":(this.type=='dz'?"待增·质量标准":"修改·质量标准");
           this.standardLoading = true;
           this.standTableHeader = [
+            {"columnName": "index", "coloumNameCn": "序号","width":"55px"},
             {"columnName": "itemName", "coloumNameCn": "检测项目","columnNameRe": "itemId"},
             {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
             {"columnName": "methodName", "coloumNameCn": "方法名称","columnNameRe": "methodId"},

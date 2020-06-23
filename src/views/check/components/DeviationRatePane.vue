@@ -105,9 +105,9 @@ export default {
     }
   },
   mounted() {
-    let day =  formatDate(new Date(), "yyyy");
-    let startTime = day+"-01"+"-01";
-    let endTime = day+"-12"+"-31";
+    let day =  formatDate(new Date(), "yyyy-MM");
+    let startTime = day+"-01";
+    let endTime = day+"-30";
     let user = JSON.parse(getToken());
     this.searchParam = {
       deptId:user.deptId,

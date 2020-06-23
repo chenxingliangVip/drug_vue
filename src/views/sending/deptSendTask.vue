@@ -10,28 +10,92 @@
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
+          <span class="w3"
+                style="margin-right: -0.5em;">申请人<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.userName"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
+        </div>
+        <div class="filter-item">
           <span>样品名称<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.materialName"
                     size="mini"
                     style="width: 100px;"
                     @keyup.enter.native="getList" />
         </div>
-        <!--<div class="filter-item">-->
-          <!--<span class="w3"-->
-                <!--style="margin-right: -0.5em;">送检人<i class="i_colon">:</i></span>-->
-          <!--<el-select v-model="searchParam.userId"-->
-                     <!--size="mini"-->
-                     <!--clearable-->
-                     <!--filterable-->
-                     <!--style="width: 140px">-->
-            <!--<el-option v-for="item in loginList"-->
-                       <!--:key="item.id"-->
-                       <!--:label="item.userName"-->
-                       <!--:value="item.id" />-->
-          <!--</el-select>-->
-        <!--</div>-->
         <div class="filter-item">
-          <span>领检时间<i class="i_colon">:</i></span>
+          <span>样品规格<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.materialTypeId"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in codeItemMap.type"
+                       :key="item.id"
+                       :label="item.itemName"
+                       :value="item.id" />
+          </el-select>
+        </div>
+        <div class="filter-item">
+          <span>流程状态<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.checkStatus"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in statusMap"
+                       :key="item.value"
+                       :label="item.label"
+                       :value="item.value" />
+          </el-select>
+        </div>
+      </div>
+      <div>
+        <div class="filter-item">
+          <span>物料编码<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.materialCode"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
+        </div>
+        <div class="filter-item">
+          <span>送样地点<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.locationId"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in codeItemMap.location"
+                       :key="item.id"
+                       :label="item.itemName"
+                       :value="item.id" />
+          </el-select>
+        </div>
+        <div class="filter-item">
+          <span>样品规模<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.sampleTypeId"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in codeItemMap.scope"
+                       :key="item.id"
+                       :label="item.itemName"
+                       :value="item.id" />
+          </el-select>
+
+        </div>
+        <div class="filter-item">
+          <span>样品等级<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.materialGradeId"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in codeItemMap.grade"
+                       :key="item.id"
+                       :label="item.itemName"
+                       :value="item.id" />
+          </el-select>
+        </div>
+        <div class="filter-item">
+          <span>送检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
                           format="yyyy-MM-dd"
@@ -53,8 +117,8 @@
              @click="getList">
           </i></div>
       </div>
-      <div v-if="hasRole('send:dept:contrast')">
-        <el-button class="filter-btn-item same-contrast"
+      <div>
+        <el-button class="filter-btn-item same-contrast" v-if="hasRole('send:dept:contrast')"
                    size="mini"
                    style="margin-left: 10px;width: 80px;float: right;"
                    type="green"
@@ -95,27 +159,61 @@ export default {
       tableHeader:[],
       tableLoading:true,
       option:{showOperate:false},
+      codeItemMap:{location:[],type:[],dept:[],grade:[],scope:[]},
       searchParam: {
         sampleCode:"",
-        materialName:"",
+        userName:"",
         userId:"",
         startTime:"",
         endTime:"",
+        materialName:"",
+        materialGradeId:"",
+        checkStatus:"",
+        materialCode:"",
+        locationId:"",
+        sampleTypeId:"",
+        materialTypeId:"",
       },
       loginList:[],
       backCount:0,
       detailData:{},
-      selectChoice:[]
+      selectChoice:[],
+      statusMap:[
+        {label:"待领检",value:"0"},
+        {label:"未送样",value:"1"},
+        {label:"检测中",value:"2"},
+        {label:"复检",value:"3"},
+        {label:"拒绝",value:"4"},
+        {label:"完成",value:"5"}
+      ],
+      currentRow:{}
     }
   },
   mounted() {
     let self = this;
+    self.getItemCode();
     self.initPickerTime();
     self.getList(0,20);
     self.getAllLogin();
   },
   methods: {
 
+    getItemCode() {
+      let self = this;
+      self.codeItemMap = {location:[],type:[],dept:[],grade:[],scope:[]};
+      self.$http({
+        url: "/drug/codeItem/queryCodeItemList",
+        method: "post",
+      }).then(resp => {
+        if (resp.success) {
+          for(let data of resp.result){
+            if(self.codeItemMap.hasOwnProperty(data.itemCode)){
+              self.codeItemMap[data.itemCode].push(data);
+            }
+          }
+        }
+      });
+    },
     getSelection(val){
       this.selectChoice = val;
     },

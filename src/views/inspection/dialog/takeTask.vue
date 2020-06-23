@@ -68,10 +68,12 @@
 <script>
   import drugTable from "@/components/table/index";
   import { formatDate } from '@/utils/formatDate'
+  import {getToken} from '@/utils/auth' // 验权
   export default {
     name:"takeTask",
     data(){
       return{
+        user:{},
         detailData: {
           materialType:"",
           sampleId:"",
@@ -98,6 +100,8 @@
     },
     mounted(){
       let self = this;
+      let user = JSON.parse(getToken());
+      self.user = user;
       self.$eventBus.$on("openTakeTaskDialog",function (editData,operateType) {
         self.dialogAddVisible = true;
         self.count = 0;
@@ -121,7 +125,7 @@
           return;
         }
         for(let data of self.selectChoice){
-          let p = {allCount:self.tableData.length,checkStatus:"SA",sampleId:self.detailData.sampleId,id:data.id,testStaffId:self.$store.getters.userId};
+          let p = {allCount:self.tableData.length,checkStatus:"SA",sampleId:self.detailData.sampleId,id:data.id,testStaffId:self.$store.getters.userId,testStaffOrg:self.user.deptId};
           params.push(p);
         }
         if(self.count !=0){
@@ -136,7 +140,6 @@
         }).then(resp => {
           if (resp.success) {
             self.dialogAddVisible = false;
-            // self.generatePdfPath(self.detailData.sampleId);
             self.generateRecord(self.detailData,self.selectChoice);
             self.$eventBus.$emit("updateDetectionList");
             self.$notify({
@@ -230,7 +233,7 @@
           userId:self.$store.getters.userId,
           sampleCode:row.sampleId,
           title:"威尔研究院测试中心检验报告",
-          printPerson:"打印人："+this.$store.getters.userName +" "+day,
+          printPerson:"打印人：孙庭艳、陈小曼" +" "+day,
           graphWordList:[
             {
               title:"检样信息：",
@@ -239,6 +242,7 @@
               splitRow:[]
             },
             {
+              remark:"检验人:"+this.$store.getters.userName,
               title:"检项：( "+row.itemCount+" )",
               colIndex:5,
               cellList:[],
@@ -264,7 +268,7 @@
         cellList1.push(this.getCell("工时",0,"EEEEEE",800));
         if(self.oldChoice && self.oldChoice.length  > 0){
           for(let i = 0 ; i < self.oldChoice.length ;i++){
-            cellList1.push(this.getCell(self.oldChoice[i].itemId,i+1));
+            cellList1.push(this.getCell(self.oldChoice[i].itemName,i+1));
             cellList1.push(this.getCell(self.oldChoice[i].itemQualityStandard,i+1));
             cellList1.push(this.getCell(self.oldChoice[i].testResult,i+1));
             cellList1.push(this.getCell(self.oldChoice[i].remark,i+1));
@@ -314,7 +318,7 @@
           }
           splitRow1.push((9*(self.oldChoice.length)+1)+",1,3,0");
           cellList12.push(this.getCell("检验人",9*(self.oldChoice.length)));
-          cellList12.push(this.getCell(row.userName,9*(self.oldChoice.length)));
+          cellList12.push(this.getCell(".    .",9*(self.oldChoice.length)));
 
           cellList12.push(this.getCell("检验时间",9*(self.oldChoice.length),"",2200));
           cellList12.push(this.getCell(" 年  月  日 ",9*(self.oldChoice.length),"",2300));
@@ -354,6 +358,7 @@
       getSampleItems(){
         let self = this;
         self.tableLoading = true;
+        let containsSampleItemId = self.detailData.containsSampleItemId;
         let userId = self.$store.getters.userId;
         self.oldChoice = [];
         self.$http({
@@ -365,12 +370,14 @@
             self.tableLoading = false;
             let datas = [];
             for(let data of resp.result.items){
-               if(!data.testStaffId && !data.resultId){
-                 datas.push(data);
-               }
-               if(data.testStaffId == userId){
+              if(containsSampleItemId.indexOf(data.id) > -1){
+                if(!data.testStaffId && !data.resultId){
+                  datas.push(data);
+                }
+                if(data.testStaffId == userId){
                   self.oldChoice.push(data);
-               }
+                }
+              }
             }
             self.tableData = datas;
             self.tableHeader =  [

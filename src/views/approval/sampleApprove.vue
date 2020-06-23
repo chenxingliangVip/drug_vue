@@ -1,5 +1,5 @@
 <template>
-  <div class="app-other-approval-container">
+  <div class="app-other-approval-container" @click="inputJJ">
     <el-row>
       <el-col :span="24">
         <div class="el-input-scan">
@@ -7,7 +7,7 @@
                     <img src="../../assets/img/code.png" style="width: 15px">
                   </span>
           扫码审批
-          <el-input clearable  style="width: 160px; margin-left:10px;" autofocus v-model="sampleCode"
+          <el-input clearable  style="width: 160px; margin-left:10px;" id="sampleApproveJJ" autofocus v-model="sampleCode"
                     size="mini" />
         </div>
       </el-col>
@@ -54,14 +54,20 @@
       let self = this;
       self.getList(0,20);
       self.getAllSampleCode();
+      self.inputJJ();
       self.$eventBus.$on("updateSampleApprove",function (searchForm) {
         if(searchForm){
           self.searchParam = searchForm;
         }
         self.getList(0,20);
+        self.inputJJ();
       })
     },
     methods:{
+      inputJJ(){
+        let input=document.getElementById('sampleApproveJJ');
+        input.focus();
+      },
       getList(startIndex,pageRow) {
         let self = this;
         self.tableLoading = true;

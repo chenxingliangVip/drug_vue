@@ -106,6 +106,7 @@
           <div class="el-dialog-item">
             <label class="dialogTxt">参考物料<i class="i_colon">：</i></label>
             <el-select
+              @change="changeRefMaterial"
               v-model="materialData.refItem"
               :disabled="type == 'see' || refMaterialDisabled  || type=='editname'"
               size="mini"
@@ -164,7 +165,7 @@
             <label class="dialogTxt">物料编码<i class="i_colon">：</i></label>
             <el-input
               clearable
-              v-model="materialData.materialCode"
+              v-model="materialCode"
               disabled
               size="mini"
               style="width: 130px;"
@@ -269,7 +270,9 @@
 
         materialCount: 0,
         materialGradeValue:"",
-        materialGradeValueMap:{"工业级":"01","药用级":"02","注射级":"03"}
+        materialGradeValueMap:{"工业级":"01","药用级":"02","注射级":"03","食品级":"04"},
+
+        materialCode:"提交后生成"
       };
     },
     mounted() {
@@ -280,10 +283,8 @@
       getCount() {
         let count = this.materialCount;
         if (count < 10) {
-          count = "000" + count;
-        } else if (count < 100) {
           count = "00" + count;
-        } else if (count < 1000) {
+        } else if (count < 100) {
           count = "0" + count;
         }
         return count;
@@ -305,6 +306,18 @@
             }
             break;
           }
+        }
+      },
+
+      changeRefMaterial(){
+        if(this.materialData.refItem){
+          let split = this.materialData.refItem.split("-");
+          if(split.length == 1){
+            this.materialData.materialCode = this.materialData.refItem +"-01";
+          }else{
+            this.materialData.materialCode = this.materialData.refItem +"C1";
+          }
+          this.materialData.materialCode = this.materialData.materialCode.substring(0,1)+this.materialGradeValue+this.materialData.materialCode.substring(3,this.materialData.materialCode.length);
         }
       },
 
@@ -340,11 +353,19 @@
           this.showTip("请输入物料名称！");
           return false;
         }
+        if (!this.materialData.materialCode) {
+          this.showTip("物料编码为空！");
+          return false;
+        }
         if (!this.materialData.materialGradeId) {
           this.showTip("请输入物料等级！");
           return false;
         }
         if (!this.materialData.materialTypeId) {
+          this.showTip("请输入物料规格！");
+          return false;
+        }
+        if (!this.refMaterialDisabled &&!this.materialData.refItem) {
           this.showTip("请输入物料规格！");
           return false;
         }
@@ -447,6 +468,7 @@
         this.count = 0;
         this.materialData = val;
         this.refMaterialDisabled = true;
+        this.materialCode = "提交后生成";
         if (this.type == "add") {
           if (this.levels && this.levels.length > 0) {
             this.materialData.materialGradeId = this.levels[0].id
@@ -454,6 +476,7 @@
           }
           this.getMaterialCount();
         } else {
+          this.materialCode = val.materialCode;
           this.getApplyReason();
         }
       }

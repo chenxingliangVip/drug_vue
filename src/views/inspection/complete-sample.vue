@@ -10,6 +10,27 @@
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
+          <span>样品名称<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.materialName"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
+        </div>
+        <div class="filter-item">
+          <span>物料编号<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.materialCode"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
+        </div>
+        <div class="filter-item">
+          <span>申请人<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.userName"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
+        </div>
+        <div class="filter-item">
           <span>送检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
                           size="mini"
@@ -74,6 +95,9 @@ export default {
     return {
       searchParam:{
         sampleCode:"",
+        materialCode:"",
+        userName:"",
+        materialName:"",
         startTime:"",
         endTime:"",
         resultId:"",
@@ -145,7 +169,7 @@ export default {
       searchParam.status = "AP";
       searchParam.userId =  self.$store.getters.userId;
       self.$http({
-        url: "/drug/sampleItem/querySampleItemList",
+        url: "/drug/sampleItem/queryCompleteSampleItemList",
         method: "post",
         params:searchParam
       }).then(resp => {

@@ -11,6 +11,26 @@
                     @keyup.enter.native="searchForm" />
         </div>
 
+        <!--<div class="filter-item" v-show="tab == 'deptTask'">-->
+          <!--<span>样品名称<i class="i_colon">:</i></span>-->
+          <!--<el-input clearable  v-model="searchParam.materialName"-->
+                    <!--size="mini"-->
+                    <!--style="width: 100px;"-->
+                    <!--@keyup.enter.native="searchForm" />-->
+        <!--</div>-->
+        <div class="filter-item" v-show="tab == 'deptTask'">
+          <span>流程状态<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.checkStatus"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in statusMap"
+                       :key="item.value"
+                       :label="item.label"
+                       :value="item.value" />
+          </el-select>
+        </div>
+
         <div class="filter-item">
           <span>送检时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
@@ -91,6 +111,12 @@
             </template>
           </drug-table>
         </el-tab-pane>
+        <el-tab-pane label="deptTask" v-if="hasRole('sample:check:deptTask')">
+          <span slot="label">
+            部门任务
+          </span>
+         <dept-task></dept-task>
+        </el-tab-pane>
       </el-tabs>
     </div>
     <take-task></take-task>
@@ -101,14 +127,17 @@
 <script>
 import waves from '@/views/directive/waves' // waves directive
 import { parseTime } from '@/utils'
+import { formatDate } from '@/utils/formatDate'
+import { sortStr } from '@/utils/common'
 import drugTable from "@/components/table/index";
 import takeTask from "./dialog/takeTask"
 import myTask from "./dialog/myTask"
+import deptTask from "./deptTask"
 import {getToken} from '@/utils/auth' // 验权
 
 export default {
   name: '检效管理',
-  components: { drugTable ,takeTask,myTask},
+  components: { drugTable ,takeTask,myTask,deptTask},
   directives: { waves },
 
   data() {
@@ -116,12 +145,21 @@ export default {
       resultMap:[{label:"全部",value:""},{label:"合格",value:"Y"},{label:"不合格",value:"N"}],
       searchParam:{
         sampleCode:"",
+        materialName:"",
         startTime:"",
         endTime:"",
         resultId:"",
+        checkStatus:"",
         // type:"",
         // testStaffId:""
       },
+
+      statusMap:[
+        {label:"检测中",value:"SA"},
+        {label:"审核中",value:"WA"},
+        {label:"驳回",value:"RJ"},
+        {label:"完成",value:"AP"}
+      ],
 
       sampleCode:"",
       showTip:"",
@@ -149,10 +187,14 @@ export default {
   },
   mounted() {
     let self = this;
+    // self.initPickerTime();
     self.getMyTaskList();
     self.getTakeTaskList();
     self.getSearchSampleTask();
     self.inputJJ();
+    self.$eventBus.$on("initPickerTime",function () {
+      self.initPickerTime();
+    });
     self.$eventBus.$on("updateDetectionList",function () {
       for(let key in self.searchParam){
         self.searchParam[key] = '';
@@ -166,12 +208,26 @@ export default {
     })
   },
   methods: {
+    initPickerTime(){
+      let year = formatDate(new Date(), "yyyy");
+      let mouth = formatDate(new Date(), "MM");
+      let day = new Date(parseInt(year),parseInt(mouth),0).getDate();
+      day = day > 10 ?(day+""):("0"+day);
+      this.searchParam.startTime = year+"-"+mouth+"-01";
+      this.searchParam.endTime = year+"-"+mouth +"-" +day;
+    },
     inputJJ(){
       let input=document.getElementById('sampleCodeJJ');
       input.focus();
     },
     handleClick(tab, event){
       this.tab = tab.label;
+      if(tab.label == "deptTask"){
+        this.initPickerTime();
+      }else{
+        this.searchParam.startTime = "";
+        this.searchParam.endTime = "";
+      }
     },
     handleDetection(rowData){
       let data  = Object.assign({},rowData);
@@ -183,6 +239,10 @@ export default {
       }
       if(this.tab == 'takeTask'){
         this.getTakeTaskList();
+      }
+      if(this.tab == 'deptTask'){
+        let searchParam = Object.assign({},this.searchParam);
+        this.$eventBus.$emit("updateDeptTaskSampleItemList",searchParam);
       }
     },
     getMyTaskList(startIndex,pageRow) {
@@ -219,10 +279,10 @@ export default {
           self.myTask.tableHeader =  [
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
-            {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
-            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
+            {"columnName": "createTimeSecondFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
-            // {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "location", "coloumNameCn": "地点"},
@@ -294,16 +354,17 @@ export default {
           self.takeTask.tableLoading = false;
           self.takeTask.tableData = resp.result;
           self.takeTask.backCount = self.takeTask.tableData.length;
+          resp.result = sortStr(resp.result,"sampleId");
           for(let data of resp.result){
             data.itemCount = data.singleCount+"/"+data.totalCount;
           }
           self.takeTask.tableHeader =  [
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
-            {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
-            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
+            {"columnName": "createTimeSecondFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
-            // {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "location", "coloumNameCn": "地点"},

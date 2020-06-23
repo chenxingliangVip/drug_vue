@@ -163,7 +163,7 @@
       let user = JSON.parse(getToken());
       this.user = user;
       self.$eventBus.$on("openStandardApproveDialog",function (editData) {
-        self.getMaterialList(editData.sampleCode);
+        self.getMaterialList(editData.materialCode);
         self.dialogAddVisible = true;
         self.count = 0;
         self.detailData = editData;
@@ -224,13 +224,12 @@
       getMaterialList(materialCode) {
         let self = this;
         self.$http({
-          url: "/drug/material/queryMaterialList",
+          url: "/drug/material/queryMaterialListByCode",
           method: "post",
           params: {materialCode:materialCode}
         }).then(resp => {
           if (resp.success) {
             self.material = resp.result[0];
-            console.log(self.material)
           }
         });
       },

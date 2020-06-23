@@ -71,6 +71,7 @@ export function sortObject(array,prop){
   }
 }
 
+
 export function sortStr(array,prop){
   for(let i = 0; i < array.length; i++){
     for(let j = i+1; j < array.length; j++){

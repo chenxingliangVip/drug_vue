@@ -1,12 +1,14 @@
 <template>
   <div class="drugTable">
     <el-table :data="displayTableData"
+              ref="singleTable"
               v-loading="loading"
               :border="isBorder"
                size="mini"
               :cell-style="finalCellStyle"
               :header-cell-style="option.headerStyle"
                highlight-current-row
+              @current-change="handleCurrentRowChange"
               @cell-click="cellClick"
                @selection-change="handleSelectionChange"
               :style="{ width:option.width?option.width:'100%' }">
@@ -22,9 +24,10 @@
                        :min-width="col.minWidth"
       >
         <template slot-scope="scope">
-          <span  :title="scope.row[col.columnName].value" v-if="!scope.row[col.columnName].edit">{{scope.row[col.columnName].value}}</span>
+          <span  v-if="col.columnName == 'index'">{{scope.$index+1}}</span>
+          <span  :title="scope.row[col.columnName].value" v-if="!scope.row[col.columnName].edit &&col.columnName != 'index'">{{scope.row[col.columnName].value}}</span>
           <el-select v-model="scope.row[col.columnNameRe].value" @change="changeValue(scope.row,col.columnName)"
-                      v-if="scope.row[col.columnName].edit && scope.row[col.columnName].type == 'select'"
+                      v-if="scope.row[col.columnName].edit && scope.row[col.columnName].type == 'select'  &&col.columnName != 'index'"
                      size="mini"
                      filterable
                      clearable>
@@ -33,7 +36,7 @@
                        :label="item[scope.row[col.columnName].key]"
                        :value="item.id" />
           </el-select>
-          <el-input clearable   size="mini" v-model="scope.row[col.columnName].value" v-if="scope.row[col.columnName].edit && scope.row[col.columnName].type == 'input'"></el-input>
+          <el-input clearable   size="mini" v-model="scope.row[col.columnName].value" v-if="scope.row[col.columnName].edit && scope.row[col.columnName].type == 'input' &&col.columnName != 'index'"></el-input>
         </template>
       </el-table-column>
     </el-table>
@@ -152,11 +155,23 @@
 
         loading: true,
 
-        resultMap:[{label:"合格",value:"Y"},{label:"不合格",value:"N"}]
+        resultMap:[{label:"合格",value:"Y"},{label:"不合格",value:"N"}],
+
+        currentRow:{}
 
       }
     },
     methods: {
+
+      setCurrent(index) {
+        this.$refs.singleTable.setCurrentRow(this.displayTableData[index]);
+      },
+
+      handleCurrentRowChange(val){
+        this.currentRow = val;
+        this.$emit("changCurrentRow",val);
+      },
+
 
       getTableData(){
         return this.displayTableData;
@@ -204,10 +219,7 @@
             if (data.id == id) {
               row.itemName.value = data.itemName;
               for(let it of row['methodName'].tmpList){
-                if(it.itemName =='溶解度'){
-                  console.log(it)
-                }
-                if(it.itemName == data.itemName && it.methodType&&this.compareItem ){
+                if(it.itemName == data.itemName && it.methodType ){
                   itemArray.push(it);
                 }
               }
@@ -348,5 +360,8 @@
   }
   .drugTable .el-table__header, .el-table__body, .el-table__footer {
     table-layout: fixed;
+  }
+  .drugTable .el-table__body tr.current-row>td {
+    background-color: #d0e1f5;
   }
 </style>

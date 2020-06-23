@@ -131,9 +131,9 @@
 						</tr>
 						<tr v-for="(item,index) in sampleTable" :key="index">
 							<td><p style="width:40px">{{index+1}}</p></td>
-							<td><p class="listTime">{{item.createTimeFt}}</p></td>
+							<td><p class="listTime" style=" width: 170px;">{{item.createTimeMinFt}}</p></td>
 							<td><p class="listName" :title="item.materialName">{{item.materialName}}</p></td>
-							<td><p style="width:150px" :title="item.sampleNum">{{item.sampleNum}}</p></td>
+							<td><p style="width:140px" :title="item.sampleNum">{{item.sampleNum}}</p></td>
 							<td>
                 <p style="width:80px" v-if="item.userName !='未送样'">{{item.userName}}</p>
                 <p style="width:80px;color: yellow" v-else>{{item.userName}}</p>
@@ -339,36 +339,42 @@
           for(let data of resp.result){
             mothSet.add(data["startTime"]);
           }
-          let mothList = Array.from(mothSet);
-          let sampleStatus = ["已验样品","未检样品","送检样品"];
-          let map = {};
-          for(let s of sampleStatus){
-            map[s] = [0,0,0,0,0,0];
-            for(let d of resp.result){
-              if(s == d.checkStatusCn){
-                let index =  mothList.indexOf(d.startTime);
-                map[s][index] = d.counts;
-              }
+          let sampleStatus = ["已完成样品","待领检样品","检测中样品"];
+          let map = {"已完成样品":[0,0,0,0,0,0],"待领检样品":[0,0,0,0,0,0],"检测中样品":[0,0,0,0,0,0]};
+          let i = 0;
+          let j = 0;
+          let k = 0;
+          for(let d of resp.result){
+            if('5' == d.checkStatus){
+              map["已完成样品"][i] = d.counts;
+              i++;
             }
-            map[s] = map[s].reverse();
+            if('0' == d.checkStatus){
+              map["待领检样品"][j] = d.counts;
+              j++;
+            }
+            if('2' == d.checkStatus){
+              map["检测中样品"][k] = d.counts;
+              k++;
+            }
           }
           let series = [];
           for(let key in map){
             let stack = "same";
-            if(key =='送检样品'){
+            if(key =='检测中样品'){
               stack ="";
             }
             let color ="";
             let shadowColor = "";
-            if(key =='未检样品'){
+            if(key =='已完成样品'){
               color ="rgba(152, 251, 152, 0.77)";
               shadowColor = "#2d82ca";
             }
-            if(key =='送检样品'){
+            if(key =='待领检样品'){
               color ="#f56c6c";
               shadowColor = "#2d82ca";
             }
-            if(key =='送检样品'){
+            if(key =='检测中样品'){
               color ="#64a7e0";
               shadowColor = "#2d82ca";
             }
@@ -388,7 +394,8 @@
             series.push(seri);
           }
           option.legend.data = sampleStatus;
-          option.yAxis.data = (Array.from(mothSet)).reverse();
+          // option.yAxis.data = (Array.from(mothSet)).reverse();
+          option.yAxis.data = Array.from(mothSet);
           option.series = series;
           echart2.setOption(option)
         });
@@ -481,7 +488,7 @@
 			}, 1000);
       setInterval(() => {
         this.init();
-      }, 1000*60*5)
+      }, 1000*10)
 		}
 	}
 </script>

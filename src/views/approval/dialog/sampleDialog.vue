@@ -1,7 +1,7 @@
 <template>
   <el-dialog :visible.sync="dialogAddVisible"
              append-to-body
-             width="42%"
+             width="50%"
              :close-on-click-modal="false"
              :title="detailData.checkStatus =='3'?'复检 · 审批':'检验报告·审批'" class="standard_Dialog">
 
@@ -146,7 +146,8 @@
 </template>
 <script>
   import {getToken} from '@/utils/auth' // 验权
-  import drugTable from "@/components/table/index";
+  // import drugTable from "@/components/table/index";
+  import drugTable from "@/components/table/editTable";
 
   import drugEditTable from "@/components/table/editTable";
   export default {
@@ -184,12 +185,17 @@
           tableHeader:[],
         },
 
+        loginList:[],
+
+        userEdit:false
+
       }
     },
     mounted(){
       let self = this;
       let user = JSON.parse(getToken());
       this.user = user;
+      this.getAllLogin();
       self.$eventBus.$on("openSampleApproveDialog",function (editData,type) {
         self.dialogAddVisible = true;
         self.count = 0;
@@ -198,8 +204,25 @@
     },
     methods:{
 
+      getAllLogin(){
+        let self = this;
+        self.loginList = [];
+        self.$http({
+          url: "/drug/queryAllLoginList",
+          method: "post",
+        }).then(resp => {
+          if (resp.success) {
+            for(let data of resp.result){
+              let d = {label:data.userName,value:data.id+"&split&"+data.deptId};
+              self.loginList.push(d);
+            }
+          }
+        });
+      },
+
       submitCheck(checkStatus) {
         let self = this;
+        let chooseIds = self.$refs.approveItemTable.getChangeUserIds();
         if('4' == checkStatus &&(!self.detailData.content ||!self.detailData.content.trim())){
           self.$notify({
             title: '提示',
@@ -211,7 +234,7 @@
         if(self.detailData.checkStatus == '3'){
           checkStatus = checkStatus =='5' ?'7':'';
         }
-        let param = {userName:self.user.userName,userId:self.user.id,sampleCode:self.detailData.sampleCode,id:self.detailData.fId,result:self.detailData.result,content:self.detailData.content,checkStatus:checkStatus};
+        let param = {sampleItemList:chooseIds,userName:self.user.userName,userId:self.user.id,sampleCode:self.detailData.sampleCode,id:self.detailData.fId,result:self.detailData.result,content:self.detailData.content,checkStatus:checkStatus};
         if('4' == checkStatus){
           param.refusCount = self.detailData.refusCount+1;
         }
@@ -219,7 +242,9 @@
           self.$http({
             url: "/drug/fmApprove/updateSampleFmApprove",
             method: "post",
-            params:param
+            data: JSON.stringify(param),
+            dataType: 'json',
+            contentType: "application/json",
           }).then(resp => {
             if (resp.success) {
               self.$eventBus.$emit("updateSampleApprove");
@@ -255,6 +280,7 @@
             self.item.tableLoading = false;
             resp.result.result = resp.result.result?resp.result.result:"1";
             self.detailData = resp.result;
+            self.userEdit = self.detailData.checkStatus == '3'||self.detailData.checkStatus == '2'
             self.detailData.finalResult = "合格";
             for(let data of self.detailData.standardItems){
               if(data.resultId == "Y"){
@@ -264,6 +290,17 @@
                 data.resultIdCn="不合格";
                 self.detailData.finalResult = "不合格";
               }
+              data.resultIdCn = {value:data.resultIdCn};
+              data.itemName = {value:data.itemName};
+              data.itemQualityStandard = {value:data.itemQualityStandard};
+              data.testResult = {value:data.testResult};
+              data.remark = {value:data.remark};
+              //后续上
+              if(self.userEdit){
+                data.userName = {value:data.userName,edit:false,type:"select",selectValue:self.loginList};
+              }else{
+                data.userName = {value:data.userName};
+              }
             }
             self.item.tableData = self.detailData.standardItems;
             self.item.tableHeader =  [
@@ -271,6 +308,7 @@
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
               {"columnName": "testResult", "coloumNameCn": "检验结果"},
               {"columnName": "resultIdCn", "coloumNameCn": "结果判定"},
+              {"columnName": "remark", "coloumNameCn": "备注"},
               {"columnName": "userName", "coloumNameCn": "检验人"},
               ];
             let resetDatas = [];
@@ -283,11 +321,6 @@
               if(data.resultId == "N"){
                 data.resultIdCn="不合格";
               }
-              // if(data.resultId){
-              //   data.resultId = {value:data.resultIdCn,type:"select"};
-              // }else{
-              //   data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
-              // }
               data.resultId = {value:data.resultIdCn,type:"select"};
               resetDatas.push(data);
             }

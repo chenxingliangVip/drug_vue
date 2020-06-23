@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="el-table-frame1">
-      <drug-table  :tableData="tableData" :tableLoading="tableLoading"
+      <drug-table  ref="recordTable" :tableData="tableData" :pageSizeParam="pageSizeParam" :tableLoading="tableLoading"
                    :tableHeader="tableHeader" :option="option">
         <template slot-scope="props" slot="operate">
           <div >
@@ -33,7 +33,7 @@
                    class="table-view" style="cursor: pointer;">
               查看
             </label>
-            <label @click="openPrintView(props.rowData)"
+            <label @click="openPrintView(props.rowData)"  v-if="hasRole('report:effiect:print')"
                    class="table-view" style="cursor: pointer;">
               · &nbsp;打印
             </label>
@@ -61,7 +61,7 @@ export default {
   data() {
     return {
 
-      loadingOptions:{text:"正在修复文档，请勿关闭窗口，占用您5秒时间..."},
+      loadingOptions:{text:"正在生成文档，请勿关闭窗口，占用您5-10秒时间..."},
       searchParam: {
         userName:"",
         sampleCode: ""
@@ -70,7 +70,9 @@ export default {
       tableHeader:[],
       tableLoading:true,
       option:{showOperate:true},
-      type:""
+      type:"",
+      pageSizeParam: 20,
+      choseRow:{}
     }
   },
 
@@ -84,6 +86,7 @@ export default {
 
   methods: {
     openPrintView(row){
+      this.choseRow = row;
       let time = (new Date()).getTime();
       this.type = "print";
       if(!row.filePath){
@@ -92,9 +95,10 @@ export default {
       }
       let routeData = this.$router.resolve({ path: "/iframe?filePath="+row.filePath+"&&time="+time });
       window.open(routeData.href, '_blank');
-      this.updatePrintCount(row);
+      this.updatePrintCount(row.id);
     },
     seePrint(row){
+      this.choseRow = row;
       let time = (new Date()).getTime();
       this.type = "see";
       if(!row.filePath){
@@ -143,14 +147,14 @@ export default {
     generateRecord(row,id,current_user,loadingInstance,itemNum){
       let self = this;
       let cellList = [];
-      cellList.push(this.getCell("物料编码",0,"EEEEEE",1500));
-      cellList.push(this.getCell(row.materialCode,0,""));
+      cellList.push(this.getCell("样品名称",0,"EEEEEE",1500));
+      cellList.push(this.getCell(row.materialName,0,""));
       cellList.push(this.getCell("检 验 号",0,"EEEEEE",1500));
       cellList.push(this.getCell(row.sampleCode,0));
       cellList.push(this.getCellCode(row.sampleCode,0,"",3000));
 
-      cellList.push(this.getCell("样品名称",1,"EEEEEE",1500));
-      cellList.push(this.getCell(row.materialName,1,""));
+      cellList.push(this.getCell("样品批号",1,"EEEEEE",1500));
+      cellList.push(this.getCell(row.sampleNum,1,""));
 
 
       cellList.push(this.getCell("样品规格",2,"EEEEEE",1500));
@@ -161,10 +165,11 @@ export default {
       cellList.push(this.getCell("样品等级",3,"EEEEEE",1500));
       cellList.push(this.getCell(row.materialGrade,3,""));
       cellList.push(this.getCell("申 请 人",3,"EEEEEE",1500));
-      cellList.push(this.getCell(row.userName,3));
+      cellList.push(this.getCell(this.choseRow.userName,3));
 
-      cellList.push(this.getCell("样品批号",4,"EEEEEE",1500));
-      cellList.push(this.getCell(row.sampleNum,4,""));
+
+      cellList.push(this.getCell("物料编码",4,"EEEEEE",1500));
+      cellList.push(this.getCell(row.materialCode,4,""));
       cellList.push(this.getCell("申请时间",4,"EEEEEE",1500));
       cellList.push(this.getCell(row.createTimeFt,4));
       let splitRow = [];
@@ -188,6 +193,7 @@ export default {
             splitRow:[]
           },
           {
+            remark:"检验人:"+row.userName,
             title:"检项：( "+itemNum+" )",
             colIndex:5,
             cellList:[],
@@ -261,7 +267,7 @@ export default {
         }
         splitRow1.push((9*(standardItems.length)+1)+",1,3,0");
         cellList12.push(this.getCell("检验人",9*(standardItems.length)));
-        cellList12.push(this.getCell(row.userName,9*(standardItems.length)));
+        cellList12.push(this.getCell(".    .",9*(standardItems.length)));
 
         cellList12.push(this.getCell("检验时间",9*(standardItems.length),"",2200));
         cellList12.push(this.getCell(" 年  月  日 ",9*(standardItems.length),"",2300));
@@ -287,6 +293,7 @@ export default {
           let routeData = self.$router.resolve({ path: "/iframe?filePath="+resp.result+"&&time="+time });
           window.open(routeData.href, '_blank');
           loadingInstance.close();
+          self.updatePrintPath(id,resp.result);
           if(self.type != 'see'){
             self.updatePrintCount(id);
           }
@@ -305,6 +312,17 @@ export default {
       });
     },
 
+    updatePrintPath(id,filePath){
+      let self = this;
+      self.$http({
+        url: "/drug/record/updateRecordLogDetail",
+        method: "post",
+        params:{id:id,filePath:filePath}
+      }).then(resp => {
+        self.getList();
+      });
+    },
+
     handlePrint(row){
       this.$eventBus.$emit("openRecordDialog",row.sampleId,row.filePath);
     },
@@ -317,6 +335,7 @@ export default {
         params:self.searchParam
       }).then(resp => {
         if (resp.success) {
+          self.pageSizeParam = self.$refs.recordTable.getPageRow();
           let count =0;
           self.tableLoading = false;
           for(let data of resp.result){

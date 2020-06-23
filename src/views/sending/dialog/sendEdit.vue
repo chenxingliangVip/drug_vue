@@ -33,7 +33,7 @@
         </el-form-item>
         <el-form-item v-show="type == 'add'"
                       class="el-form-check">
-  				<span class="span_colon">是否存样<i class="i_colon">：</i></span>
+  				<span class="span_colon">存样<i class="i_colon">：</i></span>
           <el-checkbox v-model="detailData.saveTmp"></el-checkbox>
 
         </el-form-item>
@@ -47,58 +47,46 @@
         </el-radio-group>
       </el-form-item>
 
-      <!--<el-form-item label="终 产 品：">-->
-
-        <!--<el-select v-model="detailData.finalProduct"  :disabled="finalProductEdit" @change="finalChange"-->
-                   <!--size="mini"-->
-                   <!--filterable-->
-                   <!--clearable-->
-                   <!--style="width: 100px">-->
-          <!--<el-option v-for="item in finalProds"-->
+			<!--<el-form-item>-->
+      	<!--<span class="span_colon">样品规格<i class="i_colon">：</i></span>-->
+        <!--<el-select v-model="detailData.materialTypeId" @change="typeChange"-->
+                   <!--size="mini" clearable class="right_Input"-->
+                   <!--style="width: calc(100% - 70px) !important;">-->
+          <!--<el-option v-for="item in codeItemMap.type"-->
                      <!--:key="item.id"-->
-                     <!--:label="item.finalProd"-->
-                     <!--:value="item.finalProd" />-->
+                     <!--:label="item.itemName"-->
+                     <!--:value="item.id" />-->
         <!--</el-select>-->
       <!--</el-form-item>-->
-			<el-form-item>
-      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
-        <el-select v-model="detailData.materialTypeId" @change="typeChange"
-                   size="mini" clearable class="right_Input"
-                   style="width: calc(100% - 70px) !important;">
-          <el-option v-for="item in codeItemMap.type"
-                     :key="item.id"
-                     :label="item.itemName"
-                     :value="item.id" />
-        </el-select>
-      </el-form-item>
-			<!--<el-row>
+
+			<el-row>
 			  <el-col :span="16">
 			  	<el-form-item>
 		      	<span class="span_colon">样品规格<i class="i_colon">：</i></span>
-		        <el-radio-group v-model="detailData.materialTypeId" class="left_Radio">
-		          <el-radio key="1" label="1" >产品</el-radio>
-		          <el-radio key="2" label="2" >原料</el-radio>
-		          <el-radio key="3" label="3" >中间体</el-radio>
-		          <el-radio key="4" label="4" >中控</el-radio>
+		        <el-radio-group v-model="materialTypeName" class="left_Radio" @change="sampleTypeChange">
+		          <el-radio key="1" label="原料" >原料</el-radio>
+		          <el-radio key="2" label="成品" >成品</el-radio>
+		          <el-radio key="3" label="中间体" >中间体</el-radio>
+		          <el-radio key="4" label="中控" >中控</el-radio>
 		        </el-radio-group>
 		      </el-form-item>
 			  </el-col>
-			  <el-col :span="8">
+			  <el-col :span="8" v-show="showFinalProd">
 			  	<el-form-item>
 		        <span class="span_colon">终产品<i class="i_colon">：</i></span>
-		        <el-select v-model="detailData.materialTypeId" @change="typeChange"
-		                   size="mini" clearable disabled class="right_Input"
+		        <el-select v-model="detailData.finalProduct" @change="finalProduceChange"
+		                   size="mini" clearable filterable  class="right_Input"
 		                   style="width: calc(100% - 70px) !important;">
-		          <el-option v-for="item in codeItemMap.type"
-		                     :key="item.id"
-		                     :label="item.itemName"
-		                     :value="item.id" />
+              <el-option v-for="item in finalProds"
+                         :key="item.id"
+                         :label="item.materialName"
+                         :value="item.materialCode" />
 		        </el-select>
 	      	</el-form-item>
 			  </el-col>
-			</el-row>-->
-      
-      
+			</el-row>
+
+
       <el-form-item>
       	<span class="span_colon">样品名称<i class="i_colon">：</i></span>
         <el-select v-model="detailData.materialName"  :disabled="materialNameEdit" @change="materialChange"
@@ -199,10 +187,12 @@
         sampleCount:0,
 
         finalProdMap:{},
+        materialTypeName:"",
+        showFinalProd:false,
+
         typeMap:{},
         materials:[],
         finalProds:[],
-        finalProductEdit:true,
         materialNameEdit:true,
         selectChoice:[],
 
@@ -222,8 +212,11 @@
       this.getMaterials();
       self.$eventBus.$on("openSendEdit",function (editData,operateType,codeItemMap) {
         self.dialogAddVisible = true;
-        self.finalProductEdit = true;
         self.materialNameEdit = true;
+        self.materialTypeName = "";
+        self.materials = [];
+        self.finalProds = [];
+        self.showFinalProd = false;
         self.count = 0;
         self.type = operateType;
         self.codeItemMap = codeItemMap;
@@ -246,16 +239,42 @@
       getSelection(val){
         this.selectChoice = val;
       },
-      finalChange(val){
-        // this.detailData.materialGradeId ="";
-        // this.detailData.materialCode = "";
-        // this.detailData.materialName = "";
-        // this.materials = this.finalProdMap[val];
-        // if(this.materials.length == 1){
-        //   this.detailData.materialName = this.materials[0].materialName;
-        //   this.detailData.materialGradeId = this.materials[0].materialGradeId;
-        //   this.detailData.materialCode = this.materials[0].materialCode;
-        // }
+
+      sampleTypeChange(){
+        let procs = ['中间体','中控'];
+        this.detailData.materialName = "";
+        this.detailData.materialCode = "";
+        this.detailData.finalProduct = "";
+        this.materials = this.finalProdMap[this.materialTypeName];
+        if(procs.indexOf(this.materialTypeName) > -1){
+          this.materialNameEdit = true;
+          this.showFinalProd = true;
+          if(this.materialTypeName == '中间体'){
+            this.finalProds = this.finalProdMap["成品"];
+          }
+          if(this.materialTypeName == '中控'){
+            this.finalProds = this.finalProdMap["成品"];
+          }
+        }else{
+          this.showFinalProd = false;
+          this.materialNameEdit = false;
+
+        }
+      },
+
+      finalProduceChange(val){
+        this.detailData.materialName = "";
+        this.detailData.materialCode = "";
+        let materials = this.finalProdMap[this.materialTypeName];
+        let filter = [];
+        for(let m of materials){
+          let materialCode = m.materialCode;
+          if(val && materialCode.indexOf(val) > -1 && materialCode.length > val.length){
+            filter.push(m);
+          }
+        }
+        this.materialNameEdit = false;
+        this.materials = filter;
       },
       materialChange(val){
         for(let data of this.materials){
@@ -270,21 +289,7 @@
         }
         this.selectChoice = [];
       },
-      typeChange(val){
-        this.materials = this.typeMap[val];
-        this.detailData.materialCode = "";
-        this.detailData.materialName = "";
-        this.finalProds = [];
-        let repeat = [];
-        for(let val of this.materials){
-          if(val.finalProd && repeat.indexOf(val.finalProd) < 0){
-            repeat.push(val.finalProd);
-            this.finalProds.push(val);
-          }
-        }
-        this.finalProductEdit = false;
-        this.materialNameEdit = false;
-      },
+
 
       getCount(){
         let count = this.sampleCount;
@@ -338,10 +343,6 @@
           this.showTip("请选择地点！");
           return false;
         }
-        if(!this.detailData.materialTypeId){
-          this.showTip("请输入物料规格！");
-          return false;
-        }
         if(!this.detailData.materialName){
           this.showTip("请选择物料！");
           return false;
@@ -372,11 +373,18 @@
         self.detailData.saveTmp = self.detailData.saveTmp?"1":"0";
         let standardItems = [];
         for(let data of this.selectChoice){
-          let o = {methodDesc:data.methodDesc,testRecord:data.testRecord,
-            testStaffOrg:self.user.deptId,methodId:data.methodId,
-            manHour:data.manHour,sampleId:self.detailData.sampleCode,
-            itemId:data.itemId,itemName:data.itemName,
-            itemQualityStandard:data.itemQualityStandard};
+          let o = {
+            methodDesc:data.methodDesc,
+            testRecord:data.testRecord,
+            // testStaffOrg:self.user.deptId,
+            methodId:data.methodId,
+            manHour:data.manHour,
+            sampleId:self.detailData.sampleCode,
+            itemId:data.itemId,
+            itemName:data.itemName,
+            codeAttrName:data.codeAttrName,
+            itemQualityStandard:data.itemQualityStandard
+          };
             standardItems.push(o);
         }
         self.detailData.standardItems = standardItems;
@@ -432,10 +440,10 @@
             if(data.itemName.indexOf('微生物') >-1){
               wswFlag = true;
             }
-            if(data.itemName.indexOf('肉毒素') >-1){
+            if(data.itemName.indexOf('内毒素') >-1){
               rdsFlag = true;
             }
-            if(data.itemName.indexOf('仪器') >-1){
+            if(data.codeAttrName.indexOf('仪器') >-1){
               yqFlag = true;
             }
           }
@@ -470,9 +478,9 @@
           method: "post",
         }).then(resp => {
           if (resp.success) {
-            self.materials = resp.result.list;
+            // self.materials = resp.result.list;
             self.finalProdMap = resp.result.map;
-            self.typeMap = resp.result.typeMap;
+            // self.typeMap = resp.result.typeMap;
           }
         });
       },

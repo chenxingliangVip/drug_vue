@@ -82,13 +82,13 @@
 
     <div slot="footer" v-show="submitBut"
          class="dialog-footer">
-      <el-button type="primary"  v-if="type !='see'"
-                 size="mini"
-                 style="width: 80px;"
-                 @click="takeTaskEvent"
-                >
-        提交
-      </el-button>
+      <!--<el-button type="primary"  v-if="type !='see'"-->
+                 <!--size="mini"-->
+                 <!--style="width: 80px;"-->
+                 <!--@click="takeTaskEvent"-->
+                <!--&gt;-->
+        <!--提交-->
+      <!--</el-button>-->
     </div>
   </el-dialog>
 </template>
@@ -136,7 +136,7 @@
     mounted(){
       let self = this;
       self.getAllLogin();
-      self.$eventBus.$on("openMyTaskDialog",function (editData,operateType,staffId) {
+      self.$eventBus.$on("openMyDeptTaskDialog",function (editData,operateType,staffId) {
         self.dialogAddVisible = true;
         self.count = 0;
         self.type = operateType;
@@ -166,7 +166,6 @@
           }
         });
       },
-
       emitAutoInput(){
         let sampleFile = document.getElementById("sampleFile");
         let sampleResetFile = document.getElementById("sampleResetFile");
@@ -270,7 +269,7 @@
               resultId = "N";
             }
 
-            let param = {testResult:data.testResult.value,remark:data.remark.value,id:data.id,resultId:resultId,testStaffId:self.$store.getters.userId,checkStatus:"SA"};
+            let param = {testResult:data.testResult.value,id:data.id,resultId:resultId,testStaffId:self.$store.getters.userId,checkStatus:"SA"};
             params.push(param);
           }
         }
@@ -394,11 +393,9 @@
                 if(self.type !='see'){
                   data.testResult = {value:data.testResult,type:"input",edit:false};
                   data.resultId = {value:data.resultIdCn,edit:false,type:"select"};
-                  data.remark = {value:data.remark,type:"input",edit:false};
                 }else{
                   data.testResult = {value:data.testResult,type:"input"};
                   data.resultId = {value:data.resultIdCn,type:"select"};
-                  data.remark = {value:data.remark,type:"input"};
                 }
 
                 // if(data.resultId){
@@ -416,12 +413,9 @@
               {"columnName": "itemQualityStandard", "coloumNameCn": "质量标准"},
               {"columnName": "testResult", "coloumNameCn": "检验结果"},
               {"columnName": "resultId", "coloumNameCn": "判定结果"},
-              {"columnName": "remark", "coloumNameCn": "备注"},
+              {"columnName": "testStaffIdCn", "coloumNameCn": "检测人"},
                ];
-            if(self.type =='see'){
-              let personRow =  {"columnName": "testStaffIdCn", "coloumNameCn": "检测人"};
-              self.item.tableHeader.push(personRow);
-            }
+
             let resetDatas = [];
             for(let data of resp.result.itemResets){
               if(datasId.indexOf(data.sampleItemId) > -1){

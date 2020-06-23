@@ -1,64 +1,17 @@
 <template>
   <div class="app-container">
-    <div class="filter-container">
-      <div>
-        <div class="filter-item">
-          <span>检验单号<i class="i_colon">:</i></span>
-          <el-input clearable  v-model="searchParam.sampleCode"
-                    size="mini"
-                    style="width: 100px;"
-                    @keyup.enter.native="getList" />
-        </div>
-        <div class="filter-item">
-          <span class="w3"
-                style="margin-right: -0.5em;">领检人<i class="i_colon">:</i></span>
-          <el-select v-model="searchParam.userId"
-                     size="mini"
-                     clearable
-                     filterable
-                     style="width: 120px">
-            <el-option v-for="item in loginList"
-                       :key="item.id"
-                       :label="item.userName"
-                       :value="item.id" />
-          </el-select>
-        </div>
-        <div class="filter-item">
-          <span>领检时间<i class="i_colon">:</i></span>
-          <el-date-picker v-model="searchParam.startTime"
-                          size="mini"
-                          format="yyyy-MM-dd"
-                          value-format="yyyy-MM-dd"
-                          type="date"
-                          style="width: 130px;">
-          </el-date-picker>
-          <span> - </span>
-          <el-date-picker v-model="searchParam.endTime"
-                          size="mini"
-                          format="yyyy-MM-dd"
-                          value-format="yyyy-MM-dd"
-                          type="date"
-                          style="width: 130px;">
-          </el-date-picker>
-        </div>
-        <div class="filter-item filter-item-btn-search">
-          <i class="el-icon-search" style="cursor:pointer;"
-             @click="getList">
-          </i></div>
-      </div>
-      <!--<div v-if="hasRole('deptTask:check:contrast')">-->
-        <!--<el-button class="filter-btn-item same-contrast"-->
-                   <!--size="mini"-->
-                   <!--style="margin-left: 10px;width: 80px;float: right;"-->
-                   <!--type="green"-->
-                   <!--@click="sameContrast">-->
-          <!--同样对比-->
-        <!--</el-button>-->
-      <!--</div>-->
+    <div>
+      <el-button class="filter-btn-item same-contrast" v-if="hasRole('sample:check:contrast')"
+                 size="mini"
+                 style="width: 73px;height: 31px;float: right; margin-top: -28px;float: right;"
+                 type="green"
+                 @click="sameContrast">
+        同样对比
+      </el-button>
     </div>
     <drug-table  @getSelection="getSelection"  :isMultipleSelection="true":backCount="backCount" @emitSpanFun="emitSpanFun"  @getBackData="getList" :tableData="tableData" :tableLoading="tableLoading" :tableHeader="tableHeader" :option="option">
       <template slot-scope="props" slot="operate">
-        <div v-if="hasRole('deptTask:check:see')">
+        <div >
           <label @click="openMyTaskDialog(props.rowData)"
                  class="table-view">
             查看
@@ -76,7 +29,7 @@ import waves from '@/views/directive/waves' // waves directive
 import { formatDate } from '@/utils/formatDate'
 import drugTable from "@/components/table/index";
 import {getToken} from '@/utils/auth' // 验权
-import myTask from "./dialog/myTask"
+import myTask from "./dialog/myTask-Dept.vue"
 import sameContrast from "../sending/dialog/sameContrast"
 export default {
   name: '送检',
@@ -101,18 +54,15 @@ export default {
   },
   mounted() {
     let self = this;
+    self.$eventBus.$on("updateDeptTaskSampleItemList",function (searchParam) {
+         self.searchParam = searchParam;
+         self.getList(0,20);
+    });
     self.initPickerTime();
     self.getList(0,20);
-    self.getAllLogin();
+    // self.getAllLogin();
   },
   methods: {
-    getSelection(val){
-      this.selectChoice = val;
-    },
-    openMyTaskDialog(data){
-      let row = Object.assign({},data);
-      this.$eventBus.$emit("openMyTaskDialog",row,"see",data.testStaffId);
-    },
     initPickerTime(){
       let year = formatDate(new Date(), "yyyy");
       let mouth = formatDate(new Date(), "MM");
@@ -120,6 +70,13 @@ export default {
       day = day > 10 ?(day+""):("0"+day);
       this.searchParam.startTime = year+"-"+mouth+"-01";
       this.searchParam.endTime = year+"-"+mouth +"-" +day;
+    },
+    getSelection(val){
+      this.selectChoice = val;
+    },
+    openMyTaskDialog(data){
+      let row = Object.assign({},data);
+      this.$eventBus.$emit("openMyDeptTaskDialog",row,"see",data.testStaffId);
     },
     getAllLogin() {
       let self = this;
@@ -164,10 +121,10 @@ export default {
           self.tableHeader =  [
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
+            {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "userName", "coloumNameCn": "领检人","width":"70px"},
             {"columnName": "createTimeFt", "coloumNameCn": "领检时间"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
-            {"columnName": "itemId", "coloumNameCn": "检测项"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "location", "coloumNameCn": "地点"},

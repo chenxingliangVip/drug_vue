@@ -23,11 +23,12 @@
       >
         <template slot-scope="scope">
           <span  :title="scope.row[col.columnName].value" v-show="!scope.row[col.columnName].edit">{{scope.row[col.columnName].value}}</span>
-          <el-select v-model="scope.row[col.columnName].value" @change="changeValue(scope.row[col.columnName])"
+          <el-select v-model="scope.row[col.columnName].value" @change="changeValue(scope.row[col.columnName],scope.row)"
                       v-show="scope.row[col.columnName].edit && scope.row[col.columnName].type == 'select'"
                      size="mini"
                      clearable>
             <el-option v-for="item in resultMap"
+                       filterable
                        :key="item.label"
                        :label="item.label"
                        :value="item.value" />
@@ -138,7 +139,8 @@
 
         loading: true,
 
-        resultMap:[{label:"合格",value:"Y"},{label:"不合格",value:"N"}]
+        resultMap:[{label:"合格",value:"Y"},{label:"不合格",value:"N"}],
+        chooseUserIds:[]
 
       }
     },
@@ -148,8 +150,31 @@
         return this.displayTableData;
       },
 
-      changeValue(row){
+      getChangeUserIds(){
+        let chooses = [];
+        for(let data of this.chooseUserIds){
+          let value = data.userId.split("&split&");
+          let d = {id:data.id,testStaffId:value[0],testStaffOrg:value[1]};
+          chooses.push(d);
+        }
+        return chooses;
+      },
+
+      changeValue(row,currentRow){
         row.edit = true;
+        let id = currentRow.id;
+        let userId = row.value;
+        let flag = false;
+        for(let choose of this.chooseUserIds){
+          if(choose.id == id){
+            choose.userId = userId;
+            flag = true;
+            break;
+          }
+        }
+        if(!flag){
+          this.chooseUserIds.push({id:id,userId:userId});
+        }
       },
       handleSelectionChange(val){
         this.multipleSelection = val;
@@ -219,12 +244,16 @@
         let item = row[property];
         if(item && item.hasOwnProperty("edit")){
           item.edit = true;
+          if(item.selectValue && item.selectValue.length > 0){
+            this.resultMap = item.selectValue;
+          }
         }
       }
 
     },
     watch: {
       tableData(val) {
+        this.chooseUserIds = [];
         if(this.backCount == 0){
           this.displayTableData = this.filterPage?(val.slice(0, this.pageNum * this.pageSizeParam)):JSON.parse(JSON.stringify(val));
           this.totalCount = val ? val.length : 0;
