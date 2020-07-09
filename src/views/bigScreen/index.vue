@@ -107,13 +107,13 @@
 					</div>
 				</div>
 				<div class="line">
-					<h1>威 &nbsp;&nbsp;&nbsp;尔 &nbsp;&nbsp;&nbsp;药 &nbsp;&nbsp;&nbsp;业</h1>
-					<h1>6&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;1</h1>
+					<h2>威尔药业</h2>
+					<h1><span>6</span><span>0</span><span>3</span><span>3</span><span>5</span><span>1</span></h1>
 				</div>
 				<div class="middleRight">
-					<p>收录样品数量<span>{{methodAndPersonAndSample.sampleCount}}个</span></p>
-					<p>分析方法<span>{{methodAndPersonAndSample.methodCount}}个</span></p>
-					<p>分析人员<span>{{methodAndPersonAndSample.staffCount}}名</span></p>
+					<p><span class="spanLeft">收录样品数量</span><span class="spanRight">{{methodAndPersonAndSample.sampleCount}}个</span></p>
+					<p><span class="spanLeft">分析方法</span><span class="spanRight">{{methodAndPersonAndSample.methodCount}}个</span></p>
+					<p><span class="spanLeft">分析人员</span><span class="spanRight">{{methodAndPersonAndSample.staffCount}}名</span></p>
 				</div>
 				<div class="clearBoth"></div>
 			</div>
