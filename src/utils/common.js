@@ -87,13 +87,36 @@ export function sortStr(array,prop){
   return array;
 }
 
+export function sortS(array){
+  for(let i = 0; i < array.length; i++){
+    for(let j = i+1; j < array.length; j++){
+      let copy = array[i];
+      let data_i =array[i];
+      let data_j = array[j];
+      if(data_i > data_j){
+        array[i] = array[j];
+        array[j] = copy;
+      }
+    }
+  }
+  return array;
+}
+
 export function sortSpecial(array){
   for(let i = 0; i < array.length; i++){
     for(let j = i+1; j < array.length; j++){
       let copy = array[i];
       let data_i =array[i];
       let data_j = array[j];
-      if(data_i.length < data_j.length || data_i.replace(/[^0-9]/ig,"") > data_j.replace(/[^0-9]/ig,"")){
+      let num_i = data_i.replace(/[^0-9]/ig,"");
+      let num_j = data_j.replace(/[^0-9]/ig,"");
+      if(!num_i){
+        num_i = "99";
+      }
+      if(!num_j){
+        num_j = "99";
+      }
+      if(num_i < num_j){
         array[i] = array[j];
         array[j] = copy;
       }

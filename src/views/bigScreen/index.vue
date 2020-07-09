@@ -190,6 +190,7 @@
 	import nxFullScreen from '@/components/nx-full-screen/index'
   import { formatDate } from '@/utils/formatDate'
   import { sortSpecial } from '@/utils/common'
+  import { sortS } from '@/utils/common'
 
 	export default {
 		name: 'bigScreen',
@@ -413,7 +414,7 @@
             map[s] = map[s].reverse();
           }
           let series = [];
-          let colors = ["#CA1F1F","#2d82ca","#78CA26","#4DCAB3","#CAAD38"];
+          let colors = ["#CA1F1F","#2d82ca","#78CA26","#4DCAB3","#CAAD38","#BE08CA","#86C7CA","#656253"];
           let s_index = 0;
           for(let key in map){
             let c_c = colors[s_index];
@@ -431,8 +432,8 @@
             series.push(seri);
             s_index++;
           }
-          option3.legend.data = Array.from(deptNames);
-          option3.yAxis.data = (Array.from(mothSet)).reverse();
+          option3.legend.data = deptNames;
+          option3.yAxis.data = sortS(Array.from(mothSet));
           option3.series = series;
           echart3.setOption(option3)
         });
