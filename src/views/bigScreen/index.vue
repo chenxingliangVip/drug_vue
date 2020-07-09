@@ -161,7 +161,7 @@
 				</div>
 				<div class="item3-moduleImg">
 					<div class="block">
-						<el-carousel height="250px">
+						<el-carousel height="270px">
 							<el-carousel-item v-for="(item,index) in Img" :key="index">
 								<img class="lunboImg" :src="item.src">
 							</el-carousel-item>

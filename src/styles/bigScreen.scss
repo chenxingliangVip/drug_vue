@@ -153,20 +153,20 @@ body {
         }
         //模块二  月度样品检测统计
         .item1-module2 {
-            height: 390px;
+            height: 440px;
             .module-body {
-                height: 330px;
+                height: 380px;
                 .echart2 {
                     width: 100%;
-                    height: 330px;
+                    height: 380px;
                 }
             }
         }
         //模块三  月度检测排行榜
         .item1-module3 {
-            height: 320px;
+            height: 340px;
             .module-body {
-                height: 270px;
+                height: 290px;
                 padding: 20px;
                 .body-right {
                     margin-left: 2%;
@@ -236,7 +236,7 @@ body {
             }
         }
         .middle {
-            height: 150px;
+            height: 170px;
             padding: 30px 0px;
             .middleLeft,
             .middleRight {
@@ -247,7 +247,7 @@ body {
                 width: 240px;
                 border: 1px solid #3a679e47;
                 box-shadow: 0px 0px 10px 10px #3a679e47 inset;
-                padding: 15px 0px;padding-left: 15px;
+                padding: 25px 0px;padding-left: 15px;
                 .TimeForm {
                     float: left;
                     width: 50%;
@@ -349,10 +349,10 @@ body {
                 border-top: 1px solid #3a679e47;
                 border-bottom: 1px solid #3a679e47;
                 box-shadow: 0px 0px 10px 10px #3a679e47 inset;
-                padding: 20px 20px;
+                padding: 25px 20px;
                 p {
-                    height: 39px;
-//                  line-height: 39px;
+                    height: 44px;
+                    line-height: 44px;
                     font-size: 22px;
                     font-weight: 600;
                     text-align: left;
@@ -362,9 +362,10 @@ body {
                 }
             }
             .module-table {
-                height: 560px;
+                height: 580px;
                 overflow: auto;
                 margin-bottom: 0;
+                margin-top: 10px;
                 table {
                     width: 100%;
                     font-size: 17px;
@@ -411,20 +412,20 @@ body {
         .item3-module1 {
             .lunboImg {
                 width: 100%;
-                height: 230px;
+                height: 250px;
 //              margin-top: 10px;
             }
         }
         .item3-module2 {
             .module2-body {
-                height: 618px;
+                height: 668px;
 //              margin: 10px 0;
                 box-shadow: 0px 0px 10px 10px #3a679e47 inset;
                 border: 1px solid #3a679e47;
                 border-top: 0px;
                 .echart3 {
                     width: 100%;
-                    height: 618px;
+                    height: 668px;
                 }
             }
         }
