@@ -111,8 +111,8 @@
 					<h1>6&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;1</h1>
 				</div>
 				<div class="middleRight">
-					<p>收集样品数量<span>{{methodAndPersonAndSample.sampleCount}}个</span></p>
-					<p>分析方法<span>3{{methodAndPersonAndSample.methodCount}}个</span></p>
+					<p>收录样品数量<span>{{methodAndPersonAndSample.sampleCount}}个</span></p>
+					<p>分析方法<span>{{methodAndPersonAndSample.methodCount}}个</span></p>
 					<p>分析人员<span>{{methodAndPersonAndSample.staffCount}}名</span></p>
 				</div>
 				<div class="clearBoth"></div>
@@ -189,6 +189,7 @@
 	import "@/styles/bigScreen.scss"
 	import nxFullScreen from '@/components/nx-full-screen/index'
   import { formatDate } from '@/utils/formatDate'
+  import { sortSpecial } from '@/utils/common'
 
 	export default {
 		name: 'bigScreen',
@@ -335,46 +336,29 @@
         }).then(resp => {
           let echart2 = this.$echarts.init(this.$refs.echart2);
           let option = echartOption.option2;
-          let mothSet = new Set();
-          for(let data of resp.result){
-            mothSet.add(data["startTime"]);
-          }
-          let sampleStatus = ["已完成样品","待领检样品","检测中样品"];
-          let map = {"已完成样品":[0,0,0,0,0,0],"待领检样品":[0,0,0,0,0,0],"检测中样品":[0,0,0,0,0,0]};
-          let i = 0;
-          let j = 0;
-          let k = 0;
-          for(let d of resp.result){
-            if('5' == d.checkStatus){
-              map["已完成样品"][i] = d.counts;
-              i++;
-            }
-            if('0' == d.checkStatus){
-              map["待领检样品"][j] = d.counts;
-              j++;
-            }
-            if('2' == d.checkStatus){
-              map["检测中样品"][k] = d.counts;
-              k++;
-            }
-          }
+          let mothSet = resp.result["m"]["moth"];
+
+          // let sampleStatus = ["已检样品","检测中样品","送检样品"];
+          let sampleStatus = ["已检样品","检测中样品"];
+          let map = resp.result["s"];
+
           let series = [];
           for(let key in map){
             let stack = "same";
-            if(key =='检测中样品'){
+            if(key =='送检样品'){
               stack ="";
             }
             let color ="";
             let shadowColor = "";
-            if(key =='已完成样品'){
+            if(key =='已检样品'){
               color ="rgba(152, 251, 152, 0.77)";
               shadowColor = "#2d82ca";
             }
-            if(key =='待领检样品'){
+            if(key =='检测中样品'){
               color ="#f56c6c";
               shadowColor = "#2d82ca";
             }
-            if(key =='检测中样品'){
+            if(key =='送检样品'){
               color ="#64a7e0";
               shadowColor = "#2d82ca";
             }
@@ -395,7 +379,7 @@
           }
           option.legend.data = sampleStatus;
           // option.yAxis.data = (Array.from(mothSet)).reverse();
-          option.yAxis.data = Array.from(mothSet);
+          option.yAxis.data = mothSet;
           option.series = series;
           echart2.setOption(option)
         });
@@ -415,6 +399,7 @@
             deptNames.add(data["deptName"]);
             mothSet.add(data["startTime"]);
           }
+          deptNames = sortSpecial(Array.from(deptNames));
           let mothList = Array.from(mothSet);
           let map = {};
           for(let s of deptNames ){
@@ -428,18 +413,23 @@
             map[s] = map[s].reverse();
           }
           let series = [];
+          let colors = ["#CA1F1F","#2d82ca","#78CA26","#4DCAB3","#CAAD38"];
+          let s_index = 0;
           for(let key in map){
+            let c_c = colors[s_index];
             let seri = {
               name: key,
               type: 'bar',
               itemStyle: {
                 normal: {
+                  color: c_c,
                   shadowBlur: 10,
                 }
               },
               data: map[key]
             };
             series.push(seri);
+            s_index++;
           }
           option3.legend.data = Array.from(deptNames);
           option3.yAxis.data = (Array.from(mothSet)).reverse();
@@ -467,7 +457,7 @@
       init(){
         let startDay = new Date("2020-01-01");
         this.timestap = parseInt((new Date().getTime() - startDay.getTime())/(1000*3600*24));
-        this.getBigScreenSampleList();
+        // this.getBigScreenSampleList();
         this.pageShow();
         this.getMothTotal();
         this.queryMothSampleSeasonTotal();
@@ -481,13 +471,18 @@
 
 		},
 		mounted() {
-      this.init();
-      this.setFullScreen();
+		  let self = this;
+      self.init();
+      self.getBigScreenSampleList();
+      self.setFullScreen();
 			setInterval(() => {
-				this.getdateFormat();
+        self.getdateFormat();
 			}, 1000);
       setInterval(() => {
-        this.init();
+        self.init();
+      }, 1000*60)
+      setInterval(() => {
+        self.getBigScreenSampleList();
       }, 1000*10)
 		}
 	}

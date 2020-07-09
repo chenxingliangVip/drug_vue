@@ -26,9 +26,9 @@
           <el-select v-model="scope.row[col.columnName].value" @change="changeValue(scope.row[col.columnName],scope.row)"
                       v-show="scope.row[col.columnName].edit && scope.row[col.columnName].type == 'select'"
                      size="mini"
+                     filterable
                      clearable>
             <el-option v-for="item in resultMap"
-                       filterable
                        :key="item.label"
                        :label="item.label"
                        :value="item.value" />

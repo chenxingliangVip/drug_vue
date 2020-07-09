@@ -7,14 +7,14 @@
           <span>检验人<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.userName"
                     size="mini"
-                    style="width: 100px;"
+                    style="width: 140px;"
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
           <span>检验号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.sampleCode"
                     size="mini"
-                    style="width: 100px;"
+                    style="width: 140px;"
                     @keyup.enter.native="getList" />
         </div>
 
@@ -212,9 +212,10 @@ export default {
       let cellList1 = [];
       cellList1.push(this.getCell("检项",0,"EEEEEE",1500));
       cellList1.push(this.getCell("质量标准",0,"EEEEEE"));
-      cellList1.push(this.getCell("检验结果",0,"EEEEEE",1000));
+      cellList1.push(this.getCell("检验结果",0,"EEEEEE"));
       cellList1.push(this.getCell("备注",0,"EEEEEE",1000));
       cellList1.push(this.getCell("工时",0,"EEEEEE",800));
+
       if(standardItems && standardItems.length  > 0){
         for(let i = 0 ; i < standardItems.length ;i++){
           cellList1.push(this.getCell(standardItems[i].itemId,i+1));

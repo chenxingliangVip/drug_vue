@@ -87,6 +87,21 @@ export function sortStr(array,prop){
   return array;
 }
 
+export function sortSpecial(array){
+  for(let i = 0; i < array.length; i++){
+    for(let j = i+1; j < array.length; j++){
+      let copy = array[i];
+      let data_i =array[i];
+      let data_j = array[j];
+      if(data_i.length < data_j.length || data_i.replace(/[^0-9]/ig,"") > data_j.replace(/[^0-9]/ig,"")){
+        array[i] = array[j];
+        array[j] = copy;
+      }
+    }
+  }
+  return array;
+}
+
 export function getLastDay(year, month)
 {
   let d = new Date(0);

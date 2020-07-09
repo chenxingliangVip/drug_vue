@@ -114,7 +114,7 @@
                  class="table-view">
             查看
           </label>
-          <label v-if="hasRole('method:check:edit')" @click="handleEditData(props.rowData,'edit')" style="cursor:pointer;" v-show="props.rowData.checkStatus=='1'|| user.type =='1' "
+          <label v-if="hasRole('method:check:edit')" @click="handleEditData(props.rowData,'edit')" style="cursor:pointer;" v-show="props.rowData.checkStatus=='1' && props.rowData.userId == user.id"
                  class="table-view">
             修改
           </label>

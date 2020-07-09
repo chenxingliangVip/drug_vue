@@ -294,11 +294,16 @@ export default {
       param.graphWordList[0].splitRow = splitRow;
 
       let cellList1 = [];
-      cellList1.push(this.getCell("检项",0,"EEEEEE"));
+      // cellList1.push(this.getCell("检项",0,"EEEEEE"));
+      // cellList1.push(this.getCell("质量标准",0,"EEEEEE"));
+      // cellList1.push(this.getCell("检验结果",0,"EEEEEE"));
+      // cellList1.push(this.getCell("备注",0,"EEEEEE"));
+      // cellList1.push(this.getCell("工时",0,"EEEEEE"));
+      cellList1.push(this.getCell("检项",0,"EEEEEE",1800));
       cellList1.push(this.getCell("质量标准",0,"EEEEEE"));
       cellList1.push(this.getCell("检验结果",0,"EEEEEE"));
-      cellList1.push(this.getCell("备注",0,"EEEEEE"));
-      cellList1.push(this.getCell("工时",0,"EEEEEE"));
+      cellList1.push(this.getCell("备注",0,"EEEEEE",1000));
+      cellList1.push(this.getCell("工时",0,"EEEEEE",800));
 
       param.graphWordList[1].cellList = cellList1;
 
@@ -330,12 +335,13 @@ export default {
         }
       });
     },
-    getCell(text,index,backGround){
+    getCell(text,index,backGround,width){
        let cell = {
          text:text,
          fontSize:11,
          family:"黑体",
-         index:index?index:0
+         index:index?index:0,
+         width:width?width:0
        };
        if(backGround){
          cell.backGround = "EEEEEE"

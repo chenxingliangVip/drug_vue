@@ -228,6 +228,7 @@
         splitRow.push("4,0,3,1");
         let day =  formatDate(new Date(), "yyyy-MM-dd hh:mm:ss");
         // let standardItems = row.standardItems;
+        self.oldChoice.push(...standardItems);
         let param ={
           id:row.id,
           userId:self.$store.getters.userId,
@@ -243,7 +244,7 @@
             },
             {
               remark:"检验人:"+this.$store.getters.userName,
-              title:"检项：( "+row.itemCount+" )",
+              title:"检项：( "+self.oldChoice.length+"/"+row.totalCount+" )",
               colIndex:5,
               cellList:[],
               splitRow:[]
@@ -260,10 +261,9 @@
         param.graphWordList[0].splitRow = splitRow;
 
         let cellList1 = [];
-        self.oldChoice.push(...standardItems);
-        cellList1.push(this.getCell("检项",0,"EEEEEE",1500));
+        cellList1.push(this.getCell("检项",0,"EEEEEE",1800));
         cellList1.push(this.getCell("质量标准",0,"EEEEEE"));
-        cellList1.push(this.getCell("检验结果",0,"EEEEEE",1000));
+        cellList1.push(this.getCell("检验结果",0,"EEEEEE"));
         cellList1.push(this.getCell("备注",0,"EEEEEE",1000));
         cellList1.push(this.getCell("工时",0,"EEEEEE",800));
         if(self.oldChoice && self.oldChoice.length  > 0){

@@ -339,6 +339,10 @@
         }
       },
       checkValue(){
+        if(!this.detailData.sampleNum){
+          this.showTip("请选择样品批号！");
+          return false;
+        }
         if(!this.detailData.locationId){
           this.showTip("请选择地点！");
           return false;

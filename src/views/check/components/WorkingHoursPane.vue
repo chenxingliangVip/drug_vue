@@ -34,6 +34,7 @@
             <el-select v-model="searchParam.userId" @change="changePerson"
                        size="mini"
                        clearable
+                       filterable
                        style="width: 140px">
               <el-option v-for="item in loginList"
                          :key="item.id"
@@ -283,8 +284,8 @@ export default {
           self.person.tableData = resp.result;
           self.person.tableHeader =  [
             {"columnName": "userName", "coloumNameCn": "姓名"},
-            {"columnName": "createTimeFt", "coloumNameCn": "时间"},
-            {"columnName": "sampleCode", "coloumNameCn": "检验号"},
+            // {"columnName": "updateTimeFt", "coloumNameCn": "时间"},
+            // {"columnName": "sampleCode", "coloumNameCn": "检验号"},
             // {"columnName": "materialTypeName", "coloumNameCn": "样品属性"},
             // {"columnName": "materialName", "coloumNameCn": "样品名称"},
             // {"columnName": "itemName", "coloumNameCn": "检项"},

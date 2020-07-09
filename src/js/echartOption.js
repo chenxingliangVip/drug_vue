@@ -76,10 +76,15 @@ export default {
 				type: 'shadow'
 			}
 		},
+
 		legend: {
-			orient: 'vertical',
-			right: '0',
-			top: '40%',
+			// orient: 'vertical',
+			// right: '0',
+			// top: '40%',
+      // x: '80%', //用百分比 处理块与文字位置
+      left: 'center',
+      top:'90%',
+
 			icon: 'square',
 			data: ['已检样品', '未检样品', '送检样品'],
 			textStyle: { //图例的公共文本样式
@@ -90,14 +95,30 @@ export default {
 		grid: {
 			left: '3%',
 			right: '20%',
-			bottom: '3%',
+			bottom: '12%',
 			top: '6%',
 			containLabel: true
 		},
-		xAxis: {
-			type: 'value',
-			show: false
-		},
+    xAxis: {
+      type: 'value',
+      position: 'top',
+      axisLine: {  //x轴坐标轴轴线相关设置
+        lineStyle: {
+          color: '#fff',
+          opacity: 0
+        }
+      },
+      axisTick: {  //x轴坐标轴刻度相关设置
+        show: false,
+      },
+      axisLabel: {  //x轴坐标轴刻度标签的相关设置
+        fontSize: 14,
+        fontWeight: 600,
+      },
+      splitLine: {  //坐标轴在 grid 区域中的分隔线
+        show: false,
+      }
+    },
 		yAxis: {
 			type: 'category',  //坐标轴类型。
 			data: ['2019-10', '2019-11', '2019-12', '2020-2', '2020-2', '2020-3'],
@@ -167,9 +188,12 @@ export default {
 			}
 		},
 		legend: {
-			orient: 'vertical',
-			right: '0',
-			top: '40%',
+			// orient: 'vertical',
+			// right: '0',
+      // left:'77%',
+			// top: '10%',
+      left: 'center',
+      top:'90%',
 			icon: 'square',
 			data: ['科室1-1', '科室1-2', '科室2-1', '科室2-2', '科室2-3', '科室2-3', '科室3', '科室4'],
 			textStyle: {  //图例的公共文本样式
@@ -180,7 +204,7 @@ export default {
 		grid: {
 			left: '3%',
 			right: '20%',
-			bottom: '3%',
+			bottom: '10%',
 			top: '5%',
 			containLabel: true
 		},
