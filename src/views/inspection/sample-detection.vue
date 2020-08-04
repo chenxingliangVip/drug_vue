@@ -50,7 +50,7 @@
 
         <div class="filter-item">
           <span>结果录入<i class="i_colon">:</i></span>
-          <el-select v-model="searchParam.resultId"
+          <el-select v-model="searchParam.results"
                      size="mini"
                      clearable
                      style="width: 100px">
@@ -142,13 +142,14 @@ export default {
 
   data() {
     return {
-      resultMap:[{label:"全部",value:""},{label:"合格",value:"Y"},{label:"不合格",value:"N"}],
+      resultMap:[{label:"全部",value:""},{label:"已录入",value:"Y"},{label:"未录入",value:"N"}],
       searchParam:{
         sampleCode:"",
         materialName:"",
         startTime:"",
         endTime:"",
         resultId:"",
+        results:"",
         checkStatus:"",
         // type:"",
         // testStaffId:""

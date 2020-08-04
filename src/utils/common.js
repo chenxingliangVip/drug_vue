@@ -87,20 +87,29 @@ export function sortStr(array,prop){
   return array;
 }
 
-export function sortS(array){
+export function sortS(array,desc){
   for(let i = 0; i < array.length; i++){
     for(let j = i+1; j < array.length; j++){
       let copy = array[i];
       let data_i =array[i];
       let data_j = array[j];
-      if(data_i > data_j){
-        array[i] = array[j];
-        array[j] = copy;
+      if(!desc){
+        if(data_i > data_j){
+          array[i] = array[j];
+          array[j] = copy;
+        }
+      }else{
+        if(data_i < data_j){
+          array[i] = array[j];
+          array[j] = copy;
+        }
       }
+
     }
   }
   return array;
 }
+
 
 export function sortSpecial(array){
   for(let i = 0; i < array.length; i++){

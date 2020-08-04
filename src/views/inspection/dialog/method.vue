@@ -412,8 +412,9 @@
         self.methodData.oldStatus = self.methodData.checkStatus;
         self.methodData.checkStatus = '0';
         //明天要回复
-        // self.methodData.userId = self.$store.getters.userId;
-        // self.methodData.userName = self.$store.getters.userName;
+        self.methodData.userId = self.$store.getters.userId;
+        self.methodData.userName = self.$store.getters.userName;
+
         self.methodData.testRecordSummary = self.$refs.editRecord.getPlainTxt();
         self.methodData.methodDescSummary = self.$refs.editMethod.getPlainTxt();
 

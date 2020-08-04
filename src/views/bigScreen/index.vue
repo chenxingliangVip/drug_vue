@@ -106,14 +106,19 @@
 						<p><span>{{timestap}}</span> 天</p>
 					</div>
 				</div>
-				<div class="line">
-					<h2>威尔药业</h2>
-					<h1><span>6</span><span>0</span><span>3</span><span>3</span><span>5</span><span>1</span></h1>
-				</div>
+				<!--<div class="line">-->
+					<!--<h2>威尔药业</h2>-->
+					<!--<h1><span>6</span><span>0</span><span>3</span><span>3</span><span>5</span><span>1</span></h1>-->
+				<!--</div>-->
+        <div class="middleRight" style="margin-left: 15%">
+          <p><span class="spanLeft">总检测样品数量</span><span class="spanRight">{{methodAndPersonAndSample.sampleCount}}个</span></p>
+          <p><span class="spanLeft">总检测项目数量</span><span class="spanRight">{{methodAndPersonAndSample.sampleItemCount}}个</span></p>
+          <p><span class="spanLeft">分析人员</span><span class="spanRight">{{methodAndPersonAndSample.staffCount}}名</span></p>
+        </div>
 				<div class="middleRight">
-					<p><span class="spanLeft">收录样品数量</span><span class="spanRight">{{methodAndPersonAndSample.sampleCount}}个</span></p>
-					<p><span class="spanLeft">分析方法</span><span class="spanRight">{{methodAndPersonAndSample.methodCount}}个</span></p>
-					<p><span class="spanLeft">分析人员</span><span class="spanRight">{{methodAndPersonAndSample.staffCount}}名</span></p>
+					<p><span class="spanLeft">检测样品录入</span><span class="spanRight">{{methodAndPersonAndSample.materialCount}}个</span></p>
+					<p><span class="spanLeft">检测项目录入</span><span class="spanRight">{{methodAndPersonAndSample.codeCount}}个</span></p>
+          <p><span class="spanLeft">分析方法录入</span><span class="spanRight">{{methodAndPersonAndSample.methodCount}}个</span></p>
 				</div>
 				<div class="clearBoth"></div>
 			</div>
@@ -125,12 +130,14 @@
 				</div>
 				<div class="module-table">
 					<table>
-						<tr><th>序号</th><th>送样时间</th>
+						<tr>
+              <!--<th>序号</th>-->
+              <th>送样时间</th>
 							<th>样品名称</th><th>样品批号</th>
-							<th>送样人</th><th>检测组</th>
+							<th>送样人</th><th>送样组</th>
 						</tr>
 						<tr v-for="(item,index) in sampleTable" :key="index">
-							<td><p style="width:40px">{{index+1}}</p></td>
+							<!--<td><p style="width:40px">{{index+1}}</p></td>-->
 							<td><p class="listTime" style=" width: 170px;">{{item.createTimeMinFt}}</p></td>
 							<td><p class="listName" :title="item.materialName">{{item.materialName}}</p></td>
 							<td><p style="width:140px" :title="item.sampleNum">{{item.sampleNum}}</p></td>
@@ -401,7 +408,7 @@
             mothSet.add(data["startTime"]);
           }
           deptNames = sortSpecial(Array.from(deptNames));
-          let mothList = Array.from(mothSet);
+          let mothList = sortS(Array.from(mothSet),true);
           let map = {};
           for(let s of deptNames ){
             map[s] = [0,0,0];
@@ -456,7 +463,7 @@
         });
       },
       init(){
-        let startDay = new Date("2020-01-01");
+        let startDay = new Date("2018-06-01");
         this.timestap = parseInt((new Date().getTime() - startDay.getTime())/(1000*3600*24));
         // this.getBigScreenSampleList();
         this.pageShow();

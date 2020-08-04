@@ -415,8 +415,8 @@
             }
             self.$notify({
               title: "提示",
-              message: "出现异常，请联系管理员",
-              type: "error"
+              message: "物料名称重复，请修改！",
+              type: "warning"
             });
             this.count--;
           });

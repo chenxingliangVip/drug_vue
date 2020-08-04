@@ -21,6 +21,18 @@
                        :value="item.value" />
           </el-select>
         </div>
+        <div class="filter-item" v-show="activeName == 'sample'">
+          <span>送样地点<i class="i_colon">:</i></span>
+          <el-select v-model="searchParam.locationId"
+                     size="mini"
+                     clearable
+                     style="width: 100px">
+            <el-option v-for="item in locations"
+                       :key="item.id"
+                       :label="item.itemName"
+                       :value="item.id" />
+          </el-select>
+        </div>
         <div class="filter-item">
           <span>时间<i class="i_colon">:</i></span>
           <el-date-picker v-model="searchParam.startTime"
@@ -98,10 +110,12 @@
         activeName:"sample",
         searchParam:{
           name:"",
+          locationId:"",
           checkStatus:"",
           startTime:"",
           endTime:""
         },
+        locations:[],
         name:"检验号",
         nameMap:{sample:"检验号",material:"物料编码",method:"方法名称",standard:"物料名称"},
         countMap:{sample:0,material:0,method:0,standard:0},
@@ -110,11 +124,28 @@
     },
     mounted(){
       let self =this;
+      self.getItemCode();
       self.$eventBus.$on("updateApproveCount",function (type,count) {
         self.countMap[type] = count;
       })
     },
     methods: {
+      getItemCode() {
+        let self = this;
+        self.locations = [];
+        self.$http({
+          url: "/drug/codeItem/queryCodeItemList",
+          method: "post",
+        }).then(resp => {
+          if (resp.success) {
+            for(let data of resp.result){
+              if(data.itemCode == 'location'){
+                self.locations.push(data);
+              }
+            }
+          }
+        });
+      },
       handleClick(e){
         this.name = this.nameMap[e.name];
       },

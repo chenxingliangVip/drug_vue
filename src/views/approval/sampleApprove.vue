@@ -129,7 +129,22 @@
         });
       },
 
-
+      getSampleCount(sampleCode) {
+        let self = this;
+        self.$http({
+          url: "/drug/fmApprove/querySampleFmApproveCount",
+          method: "post",
+          params:{sampleCode:sampleCode}
+        }).then(resp => {
+          if (resp.success) {
+            if(resp.result < 1){
+              self.showTip = "操作无效！";
+            }else{
+              self.showTip = "审核通过，无需审核！";
+            }
+          }
+        });
+      },
 
       openSampleApproveDialog(sampleId){
         let row = {sampleId:sampleId};
@@ -157,14 +172,15 @@
               self.firstExc = true;
             }, 2000);
           }
-        }, 1000);
+        }, 1500);
         if(self.sampleCodeList.indexOf(val) > -1){
           self.openSampleApproveDialog(self.sampleCode);
           self.showTip = "";
           self.sampleCode="";
           self.firstExc = true;
         }else{
-          this.showTip = "操作无效！";
+          self.showTip = "审核通过，无需审核！";
+          self.getSampleCount(val);
         }
       }
     }
