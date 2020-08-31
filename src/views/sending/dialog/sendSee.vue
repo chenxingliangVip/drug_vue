@@ -48,7 +48,7 @@
     <div class="flex-row-space-between"
          style="margin:10px 0 3px 0;">
       <div style="line-height:20px;"><span style="color:#878989">检项选择<i class="i_colon">：</i></span></div>
-      <div @click="downLoadFile(detailData.filePath)" v-show="detailData.filePath" style="font-family: cursive;font-size: 14px;cursor: pointer;">附件下载</div>
+      <!--<div @click="downLoadFile(detailData.filePath)" v-show="detailData.filePath" style="font-family: cursive;font-size: 14px;cursor: pointer;">附件下载</div>-->
       <el-button :type="isCheckSelect? 'red':'info'" @click="changeCheck" v-if="buttonShow"
                  size="mini"
                  style="width: 60px; height:20px; min-height:20px;">
@@ -56,14 +56,14 @@
       </el-button>
     </div>
     <div class="el-dialog-table">
-      <drug-table  @getSelection="getSelection" :filterPage="false" :isMultipleSelection="true"
+      <drug-table :cellOver="false"  @getSelection="getSelection" :filterPage="false" :isMultipleSelection="true"
                    :tableData="tableData" :tableLoading="tableLoading"
                    :tableHeader="tableHeader"  >
       </drug-table>
     </div>
     <div>
       <div style="color:#878989;padding:10px 0 3px 0"><span>复检原因<i class="i_colon">：</i></span></div>
-      <div  @click="downLoadFile(detailData.resetPath)" v-show="detailData.resetPath" style="font-family: cursive;font-size: 14px;cursor: pointer;">附件下载</div>
+      <!--<div  @click="downLoadFile(detailData.resetPath)" v-show="detailData.resetPath" style="font-family: cursive;font-size: 14px;cursor: pointer;">附件下载</div>-->
       <div>
         <el-input clearable  type="textarea"
                   maxlength="300"

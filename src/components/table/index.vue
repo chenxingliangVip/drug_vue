@@ -1,5 +1,5 @@
 <template>
-    <div class="drugTable">
+    <div  :class="{'cell_over':cellOver,'drugTable':true}">
         <el-table :data="displayTableData"
             v-loading="loading"
             :border="isBorder"
@@ -102,6 +102,13 @@ export default {
             },
             type: Boolean
         },
+
+      cellOver: {
+        default: function () {
+          return true
+        },
+        type: Boolean
+      },
 
         isBorder: {
             default: function() {
@@ -289,11 +296,11 @@ export default {
 };
 </script>
 <style lang="scss">
-		.drugTable .cell {
-		    overflow: hidden; /*超出部分隐藏*/
-		    white-space: nowrap; /*不换行*/
-		    text-overflow: ellipsis; /*超出部分文字以...显示*/
-		}
+  .cell_over .cell {
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+  }
 		.drugTable .el-table__header,
 		.el-table__body,
 		.el-table__footer {

@@ -3,6 +3,20 @@
     <div class="filter-container"
          style="margin-left:20px">
       <div>
+        <div class="filter-item" v-show="tab == 'deptTask'">
+          <span>样品名称<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.materialName"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="searchForm" />
+        </div>
+        <div class="filter-item" v-show="tab == 'deptTask'">
+          <span>样品批号<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.sampleNum"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="searchForm" />
+        </div>
         <div class="filter-item">
           <span>检验单号<i class="i_colon">:</i></span>
           <el-input clearable  v-model="searchParam.sampleCode"
@@ -11,13 +25,6 @@
                     @keyup.enter.native="searchForm" />
         </div>
 
-        <!--<div class="filter-item" v-show="tab == 'deptTask'">-->
-          <!--<span>样品名称<i class="i_colon">:</i></span>-->
-          <!--<el-input clearable  v-model="searchParam.materialName"-->
-                    <!--size="mini"-->
-                    <!--style="width: 100px;"-->
-                    <!--@keyup.enter.native="searchForm" />-->
-        <!--</div>-->
         <div class="filter-item" v-show="tab == 'deptTask'">
           <span>流程状态<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.checkStatus"
@@ -146,6 +153,7 @@ export default {
       searchParam:{
         sampleCode:"",
         materialName:"",
+        sampleNum:"",
         startTime:"",
         endTime:"",
         resultId:"",

@@ -46,18 +46,20 @@
     </el-row>
     <div class="flex-row-space-between">
       <div style="line-height:15px; font-size:13px;"><span style="color:#878989">检项数量<i class="i_colon">：</i></span><span>{{item.tableData.length}}/{{item.tableData.length}}</span></div>
-      <span>{{detailData.filePathName}}</span>
-      <el-button type="primary"  v-show="submitBut && type !='see'"
-                 size="mini"
-                 style="width: 60px; height:15px; min-height:15px; font-size: 8px;"
-                 @click="uploadSampleFile"
-                >
-        文件上传
-      </el-button>
-      <input type="file" id="sampleFile" style="display: none;" @change="uploadFileSample">
+      <!--<span>{{detailData.filePathName}}</span>-->
+      <!--<el-button type="primary"  v-show="submitBut && type !='see'"-->
+                 <!--size="mini"-->
+                 <!--style="width: 60px; height:15px; min-height:15px; font-size: 8px;"-->
+                 <!--@click="uploadSampleFile"-->
+                <!--&gt;-->
+        <!--文件上传-->
+      <!--</el-button>-->
+    </div>
+    <div style="float: right;text-align: right">
+      <input id="sampleFile" class="change" style="width: 70%" type="file" @change="uploadFileSample" multiple="multiple" />
     </div>
     <div class="el-dialog-table">
-      <drug-table  :filterPage="false" ref="taskTable" :tableData="item.tableData" :tableLoading="item.tableLoading"
+      <drug-table :cellOver="cellOver" :filterPage="false" ref="taskTable" :tableData="item.tableData" :tableLoading="item.tableLoading"
                    :tableHeader="item.tableHeader"  >
       </drug-table>
     </div>
@@ -75,7 +77,7 @@
       <input type="file" id="sampleResetFile" style="display: none;" @change="uploadFileResetSample">
     </div>
     <div class="el-dialog-table el-div-review" v-show="resetItem.tableData.length >0">
-      <drug-table  :filterPage="false" ref="taskResetTable" :tableData="resetItem.tableData" :tableLoading="item.tableLoading"
+      <drug-table   :filterPage="false" ref="taskResetTable" :tableData="resetItem.tableData" :tableLoading="item.tableLoading"
                    :tableHeader="resetItem.tableHeader"  >
       </drug-table>
     </div>
@@ -109,12 +111,14 @@
           location:"",
           sampleType:"",
           filePath:"",
+          filePaths:[],
           filePathName:"",
           resetPath:"",
           checkStatus:"",
           resetPathName:""
         },
         dialogAddVisible: false,
+        cellOver: false,
         count: 0,
         type:"",
         staffId:"",
@@ -205,20 +209,28 @@
         let self = this;
         let fileList = event.target.files;
         if (fileList.length > 0) {
-          let file = fileList[0];
-          if (/.(jpg|jpeg|png|gif|pdf)$/.test(file.name)) {
-            let reader = new FileReader();
-            self.detailData.filePathName = self.detailData.sampleId+"_"+file.name;
-            reader.readAsDataURL(file);
-            reader.onload = function (e) {
-              self.detailData.filePath = e.currentTarget.result;
-            };
-          } else {
-            self.$notify({
-              title: '提示',
-              message: "上传文件必须是JPG或者是pdf！！",
-              type: 'warning'
-            });
+          self.detailData.filePaths = [];
+          for(let i = 0; i < fileList.length;i++){
+            let file = fileList[i];
+            let fileObj = {fileName:file.name,fileBlob:"",id:self.detailData.sampleId,fileType:'code'};
+            if (/.(jpg|jpeg|png|gif)$/.test(file.name)) {
+              let reader = new FileReader();
+              reader.readAsDataURL(file);
+              reader.onload = function (e) {
+                fileObj.fileBlob = e.currentTarget.result;
+                self.detailData.filePaths.push(fileObj);
+              };
+            } else {
+              self.$notify({
+                title: '提示',
+                message: "上传文件必须是图片！",
+                type: 'warning'
+              });
+              self.detailData.filePaths = [];
+              let obj = document.getElementById('sampleFile') ;
+              obj.outerHTML = obj.outerHTML;
+              break;
+            }
           }
         }
       },
@@ -252,6 +264,7 @@
         let detailData = {
           sampleCode:this.detailData.sampleId,
           filePath:this.detailData.filePath,
+          filePaths:this.detailData.filePaths,
           filePathName:this.detailData.filePathName,
           resetPath:this.detailData.resetPath,
           resetPathName:this.detailData.resetPathName,
@@ -456,3 +469,6 @@
     }
   }
 </script>
+<style>
+
+</style>

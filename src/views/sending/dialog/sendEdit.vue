@@ -351,6 +351,10 @@
           this.showTip("请选择物料！");
           return false;
         }
+        if(!this.detailData.sampleTypeId){
+          this.showTip("请选择样品规模！");
+          return false;
+        }
         if(this.selectChoice.length < 1){
           this.showTip("请选择标准！");
           return false;

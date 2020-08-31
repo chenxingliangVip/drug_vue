@@ -64,6 +64,7 @@
          style="margin:0">
       <div style="line-height:16px;"><span style="color:#878989">检项<i class="i_colon">：</i></span></div>
     </div>
+    <div @click="downLoadFile(detailData.sampleCode)"  style="font-family: cursive;font-size: 14px;cursor: pointer;float: right">附件下载</div>
     <div class="el-dialog-table el-div-version"
          style="border: 0px; margin-top: 0px;">
 
@@ -200,10 +201,53 @@
         self.dialogAddVisible = true;
         self.count = 0;
         self.getAllSampleCode(editData.sampleId);
+        self.getSampleImagesFile(editData.sampleId);
       })
     },
     methods:{
-
+      getSampleImagesFile(sampleCode){
+        let self =this;
+        self.$http({
+          url: "/drug/sample/querySampleImagesFile",
+          method: "post",
+          params: {sampleCode:sampleCode}
+        }).then(resp => {
+          if (resp.success) {
+            let data  =  resp.result;
+            self.files = data;
+          }
+        });
+      },
+      downLoadFile(){
+        let self = this;
+        let data = self.files;
+        if(data && data.length > 0){
+          for(let i = 0; i < data.length;i++){
+            let image = new Image();
+            image.setAttribute('crossOrigin', 'anonymous');
+            image.onload = function() {
+              let canvas = document.createElement('canvas');
+              canvas.width = image.width;
+              canvas.height = image.height;
+              let context = canvas.getContext('2d');
+              context.drawImage(image, 0, 0, image.width, image.height);
+              let url = canvas.toDataURL('image/png') ;//得到图片的base64编码数据
+              let a = document.createElement('a') ;// 生成一个a元素
+              let event = new MouseEvent('click'); // 创建一个单击事件
+              a.download =  data[i].fileName; // 设置图片名称
+              a.href = url;// 将生成的URL设置为a.href属性
+              a.dispatchEvent(event) // 触发a的单击事件
+            };
+            image.src = data[i].fileBlob;
+          }
+        }else{
+          self.$notify({
+            title: '提示',
+            message: "未上传图片！",
+            type: 'warning'
+          });
+        }
+      },
       getAllLogin(){
         let self = this;
         self.loginList = [];

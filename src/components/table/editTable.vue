@@ -1,5 +1,5 @@
 <template>
-  <div class="drugTable">
+  <div  :class="{'cell_over':cellOver,'drugTable1':true}">
     <el-table :data="displayTableData"
               v-loading="loading"
               :border="isBorder"
@@ -116,6 +116,12 @@
         },
         type: Boolean
       },
+      cellOver: {
+        default: function () {
+          return false
+        },
+        type: Boolean
+      },
       filterPage: {
         default: function () {
           return true
@@ -141,7 +147,6 @@
 
         resultMap:[{label:"合格",value:"Y"},{label:"不合格",value:"N"}],
         chooseUserIds:[]
-
       }
     },
     methods: {
@@ -276,12 +281,12 @@
   }
 </script>
 <style>
-  .drugTable .cell {
+  .cell_over .cell {
     overflow: hidden;/*超出部分隐藏*/
     white-space: nowrap;/*不换行*/
     text-overflow:ellipsis;/*超出部分文字以...显示*/
   }
-  .drugTable .el-table__header, .el-table__body, .el-table__footer {
+  .drugTable1 .el-table__header, .el-table__body, .el-table__footer {
     table-layout: fixed;
   }
 </style>
