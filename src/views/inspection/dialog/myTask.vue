@@ -44,7 +44,7 @@
         <div class="el-dialog-item"><label>样品规模<i class="i_colon">：</i></label><span>{{detailData.sampleType}}</span></div>
       </el-col>
     </el-row>
-    <div class="flex-row-space-between">
+    <div class="flex-row-space-between" style="float: left;">
       <div style="line-height:15px; font-size:13px;"><span style="color:#878989">检项数量<i class="i_colon">：</i></span><span>{{item.tableData.length}}/{{item.tableData.length}}</span></div>
       <!--<span>{{detailData.filePathName}}</span>-->
       <!--<el-button type="primary"  v-show="submitBut && type !='see'"-->
@@ -55,9 +55,13 @@
         <!--文件上传-->
       <!--</el-button>-->
     </div>
-    <div style="float: right;text-align: right">
-      <input id="sampleFile" class="change" style="width: 70%" type="file" @change="uploadFileSample" multiple="multiple" />
+    <div class="upLoad_icon">
+    	<span class="btn">点击上传</span>
+    	<span class="file_name">{{ fileName }}</span>
+    	<div style="clear: both;"></div>
+      <input id="sampleFile" class="change"  type="file" @change="uploadFileSample" multiple="multiple" />
     </div>
+    <div style="clear: both;"></div>
     <div class="el-dialog-table">
       <drug-table :cellOver="cellOver" :filterPage="false" ref="taskTable" :tableData="item.tableData" :tableLoading="item.tableLoading"
                    :tableHeader="item.tableHeader"  >
@@ -117,7 +121,7 @@
           checkStatus:"",
           resetPathName:""
         },
-        dialogAddVisible: false,
+        dialogAddVisible: true,
         cellOver: false,
         count: 0,
         type:"",
@@ -133,7 +137,8 @@
         },
 
         submitBut:true,
-        loginMap:{}
+        loginMap:{},
+        fileName: '',
 
       }
     },
@@ -219,6 +224,7 @@
               reader.onload = function (e) {
                 fileObj.fileBlob = e.currentTarget.result;
                 self.detailData.filePaths.push(fileObj);
+              	self.fileName = self.detailData.filePaths.length + '个文件'
               };
             } else {
               self.$notify({
@@ -469,6 +475,39 @@
     }
   }
 </script>
-<style>
+<style lang="scss">
+	.upLoad_icon {
+		position: relative;
+		float: right;
+		.btn {
+			width: 80px;
+	    height: 20px;
+	    background: #2e827f;
+	    color: #fff;
+	    text-align: center;
+	    line-height: 20px;
+	    cursor: pointer;
+	    border-radius: 5px;
+	    font-size: 12px;
+	    display: inline-block;
+		}
+		.change {
+			width: 100%;
+	    height: 20px;
+	    position: absolute;
+	    left: 0px;
+	    top: 0;
+	    z-index:1;
+	    opacity: 0;  /*css属性——opcity不透明度，取值0-1*/
+	    cursor: pointer;
+		}
+		.file_name {
+			float: left;
+    	height: 20px;
+    	line-height: 20px;
+    	padding-right: 5px;
+	    font-size: 12px;
+		}
+	}
 
 </style>
