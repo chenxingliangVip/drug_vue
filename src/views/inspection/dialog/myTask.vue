@@ -121,7 +121,7 @@
           checkStatus:"",
           resetPathName:""
         },
-        dialogAddVisible: true,
+        dialogAddVisible: false,
         cellOver: false,
         count: 0,
         type:"",
