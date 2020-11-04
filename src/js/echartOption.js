@@ -19,7 +19,7 @@ export default {
 		series: [{
 			'name': '样品检测',
 			'type': 'pie',
-			'radius': ['85%', '110%'],
+			'radius': ['75%', '100%'],
 			'top': '45',
 			'avoidLabelOverlap': false,
 			'startAngle': -18,
