@@ -25,6 +25,13 @@
                     @keyup.enter.native="getList" />
         </div>
         <div class="filter-item">
+          <span>样品批号<i class="i_colon">:</i></span>
+          <el-input clearable  v-model="searchParam.sampleNum"
+                    size="mini"
+                    style="width: 100px;"
+                    @keyup.enter.native="getList" />
+        </div>
+        <div class="filter-item">
           <span>样品规格<i class="i_colon">:</i></span>
           <el-select v-model="searchParam.materialTypeId"
                      size="mini"
@@ -196,6 +203,7 @@ export default {
       searchParam: {
         sampleCode:"",
         userName:"",
+        sampleNum:"",
         startTime:"",
         endTime:"",
         materialName:"",

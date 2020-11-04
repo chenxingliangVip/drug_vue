@@ -99,7 +99,7 @@
   import materialApprove from "./materialApprove"
   import testMethodApprove from "./testMethodApprove"
   import materialStandardApprove from "./materialStandardApprove"
-
+  import { getToken } from '@/utils/auth' // 验权
   export default {
     name: '样品检验',
     components: { drugTable,sampleApprove,materialApprove,testMethodApprove ,materialStandardApprove},
@@ -124,12 +124,30 @@
     },
     mounted(){
       let self =this;
+      self.init();
       self.getItemCode();
       self.$eventBus.$on("updateApproveCount",function (type,count) {
         self.countMap[type] = count;
       })
     },
     methods: {
+      init(){
+        let permission = {"sample":"report:approve","material":"material:approve","method":"method:approve","standard":"standard:approv"};
+        let user = JSON.parse(getToken());
+        for(let p in permission){
+          if (user.type == 1) {
+            this.activeName = 'sample';
+            return ;
+          } else {
+            const roles = JSON.parse(JSON.stringify(this.$store.state.user.permission||[]));
+            if(roles.indexOf(permission[p]) > -1 ){
+              this.activeName = p;
+            }
+
+          }
+        }
+
+      },
       getItemCode() {
         let self = this;
         self.locations = [];

@@ -348,6 +348,8 @@ export default {
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "workNum", "coloumNameCn": "工号"},
             {"columnName": "userName", "coloumNameCn": "姓名"},
+            {"columnName": "applyName", "coloumNameCn": "申请人"},
+            {"columnName": "sampleType", "coloumNameCn": "样品规格"},
             {"columnName": "itemNum", "coloumNameCn": "项数"},
             {"columnName": "printNum", "coloumNameCn": "打印数"},
             {"columnName": "repeatPrintNum", "coloumNameCn": "复打数"},

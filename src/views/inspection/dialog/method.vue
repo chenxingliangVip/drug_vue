@@ -480,6 +480,9 @@
           }
         }
         this.methodData = val;
+        if(val.createTime){
+          this.nowTime = new Date(val.createTime);
+        }
         if(this.type != 'add'){
           this.formNo = val.id;
         }

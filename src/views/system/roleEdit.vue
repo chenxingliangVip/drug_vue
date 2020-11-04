@@ -139,6 +139,7 @@
         });
       },
       changeSecondCheck(row){
+        debugger
         row.checkedRole = [];
         if(row.secondCheck){
           for(let c of row.thirdModule){
@@ -159,6 +160,7 @@
           permissionList.push(...data.checkedRole);
         }
         this.roleData.rolePermission = permissionList.join(",");
+
         let url = this.type == 'add' ? "/drug/role/addRole" : "/drug/role/updateRole";
         if(this.roles){
           for(let r of this.roles){

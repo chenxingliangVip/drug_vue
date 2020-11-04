@@ -113,7 +113,7 @@
       },
 
       seeSampleApprove(rowData){
-        let row = {sampleId:rowData.sampleCode};
+        let row = {sampleId:rowData.sampleCode,approveStatus:rowData.checkStatus};
         this.$eventBus.$emit("openSampleApproveDialog",row,"edit");
       },
 

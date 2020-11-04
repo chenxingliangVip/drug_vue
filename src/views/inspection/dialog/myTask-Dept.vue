@@ -40,8 +40,11 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="24">
+      <el-col :span="12">
         <div class="el-dialog-item"><label>样品规模<i class="i_colon">：</i></label><span>{{detailData.sampleType}}</span></div>
+      </el-col>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label>样品批号<i class="i_colon">：</i></label><span>{{detailData.sampleNum}}</span></div>
       </el-col>
     </el-row>
     <div class="flex-row-space-between">
@@ -101,6 +104,7 @@
         detailData: {
           materialType:"",
           sampleId:"",
+          sampleNum:"",
           materialCode:"",
           userName:"",
           materialName:"",

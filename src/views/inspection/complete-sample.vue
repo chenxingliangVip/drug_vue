@@ -188,7 +188,7 @@ export default {
           self.tableHeader =  [
             {"columnName": "sampleId", "coloumNameCn": "检验单号"},
             {"columnName": "userName", "coloumNameCn": "申请人","width":"70px"},
-            {"columnName": "createTimeFt", "coloumNameCn": "送检时间"},
+            {"columnName": "createTimeSecondFt", "coloumNameCn": "送检时间"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
@@ -196,7 +196,7 @@ export default {
             {"columnName": "location", "coloumNameCn": "地点"},
             {"columnName": "itemCount", "coloumNameCn": "检项数"},
             {"columnName": "resultIdCn", "coloumNameCn": "结果录入"},
-            {"columnName": "updateTimeFt", "coloumNameCn": "录入时间"}];
+            {"columnName": "updateSecondTimeFt", "coloumNameCn": "录入时间"}];
           self.option.showOperate = true;
         }
       });

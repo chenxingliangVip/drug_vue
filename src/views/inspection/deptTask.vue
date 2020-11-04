@@ -123,14 +123,14 @@ export default {
             {"columnName": "materialName", "coloumNameCn": "样品名称"},
             {"columnName": "sampleNum", "coloumNameCn": "样品批号"},
             {"columnName": "userName", "coloumNameCn": "领检人","width":"70px"},
-            {"columnName": "createTimeFt", "coloumNameCn": "领检时间"},
+            {"columnName": "createTimeSecondFt", "coloumNameCn": "领检时间"},
             {"columnName": "materialCode", "coloumNameCn": "物料编码"},
             {"columnName": "materialType", "coloumNameCn": "样品规格"},
             {"columnName": "materialGrade", "coloumNameCn": "样品等级"},
             {"columnName": "location", "coloumNameCn": "地点"},
             {"columnName": "itemCount", "coloumNameCn": "检项数"},
             {"columnName": "resultIdCn", "coloumNameCn": "结果录入"},
-            {"columnName": "updateTimeFt", "coloumNameCn": "录入时间"},
+            {"columnName": "updateSecondTimeFt", "coloumNameCn": "录入时间"},
             {"columnName": "checkStatusCn", "coloumNameCn": "状态","isClick":true},];
           self.option.showOperate = true;
         }

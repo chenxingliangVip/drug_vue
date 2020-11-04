@@ -40,8 +40,11 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="24">
+      <el-col :span="12">
         <div class="el-dialog-item"><label>样品规模<i class="i_colon">：</i></label><span>{{detailData.sampleType}}</span></div>
+      </el-col>
+      <el-col :span="12">
+        <div class="el-dialog-item"><label>样品批号<i class="i_colon">：</i></label><span>{{detailData.sampleNum}}</span></div>
       </el-col>
     </el-row>
     <div class="flex-row-space-between" style="float: left;">
@@ -71,14 +74,20 @@
     <div class="flex-row-space-between" v-show="resetItem.tableData.length >0"
          style="margin-top:10px">
       <div style="line-height:15px; font-size:13px;"><span style="color:#878989">复检项<i class="i_colon">：</i></span></div>
-      <span>{{detailData.resetPathName}}</span>
-      <el-button type="primary" v-show="submitBut"
-                 size="mini"
-                 style="width: 60px; height:15px; min-height:15px; font-size: 8px;"
-                 @click="uploadSampleResetFile">
-        JPG上传
-      </el-button>
-      <input type="file" id="sampleResetFile" style="display: none;" @change="uploadFileResetSample">
+      <!--<span>{{detailData.resetPathName}}</span>-->
+      <!--<el-button type="primary" v-show="submitBut"-->
+                 <!--size="mini"-->
+                 <!--style="width: 60px; height:15px; min-height:15px; font-size: 8px;"-->
+                 <!--@click="uploadSampleResetFile">-->
+        <!--JPG上传-->
+      <!--</el-button>-->
+      <!--<input type="file" id="sampleResetFile" style="display: none;" @change="uploadFileResetSample">-->
+      <div class="upLoad_icon">
+        <span class="btn">点击上传</span>
+        <span class="file_name">{{ resetFileName }}</span>
+        <div style="clear: both;"></div>
+        <input id="sampleResetFile" class="change"  type="file" @change="uploadFileResetSample" multiple="multiple" />
+      </div>
     </div>
     <div class="el-dialog-table el-div-review" v-show="resetItem.tableData.length >0">
       <drug-table   :filterPage="false" ref="taskResetTable" :tableData="resetItem.tableData" :tableLoading="item.tableLoading"
@@ -116,6 +125,7 @@
           sampleType:"",
           filePath:"",
           filePaths:[],
+          resetFilePaths:[],
           filePathName:"",
           resetPath:"",
           checkStatus:"",
@@ -139,6 +149,7 @@
         submitBut:true,
         loginMap:{},
         fileName: '',
+        resetFileName: '',
 
       }
     },
@@ -218,7 +229,7 @@
           for(let i = 0; i < fileList.length;i++){
             let file = fileList[i];
             let fileObj = {fileName:file.name,fileBlob:"",id:self.detailData.sampleId,fileType:'code'};
-            if (/.(jpg|jpeg|png|gif)$/.test(file.name)) {
+            if (/.(jpg|jpeg|png|gif|pdf)$/.test(file.name)) {
               let reader = new FileReader();
               reader.readAsDataURL(file);
               reader.onload = function (e) {
@@ -244,20 +255,29 @@
         let self = this;
         let fileList = event.target.files;
         if (fileList.length > 0) {
-          let file = fileList[0];
-          if (/.(jpg|jpeg|png|gif)$/.test(file.name)) {
-            self.detailData.resetPathName = self.detailData.sampleId+"_reset_"+file.name;
-            let reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function (e) {
-              self.detailData.resetPath = e.currentTarget.result;
-            };
-          } else {
-            self.$notify({
-              title: '提示',
-              message: "上传文件必须是JPG！！",
-              type: 'warning'
-            });
+          self.detailData.resetFilePaths = [];
+          for(let i = 0; i < fileList.length;i++){
+            let file = fileList[i];
+            let fileObj = {fileName:file.name,fileBlob:"",id:self.detailData.sampleId,fileType:'reset'};
+            if (/.(jpg|jpeg|png|gif|pdf)$/.test(file.name)) {
+              let reader = new FileReader();
+              reader.readAsDataURL(file);
+              reader.onload = function (e) {
+                fileObj.fileBlob = e.currentTarget.result;
+                self.detailData.resetFilePaths.push(fileObj);
+                self.resetFileName = self.detailData.resetFilePaths.length + '个文件'
+              };
+            } else {
+              self.$notify({
+                title: '提示',
+                message: "上传文件必须是图片！",
+                type: 'warning'
+              });
+              self.detailData.resetFilePaths = [];
+              let obj = document.getElementById('sampleResetFile') ;
+              obj.outerHTML = obj.outerHTML;
+              break;
+            }
           }
         }
       },
@@ -271,6 +291,7 @@
           sampleCode:this.detailData.sampleId,
           filePath:this.detailData.filePath,
           filePaths:this.detailData.filePaths,
+          resetFilePaths:this.detailData.resetFilePaths,
           filePathName:this.detailData.filePathName,
           resetPath:this.detailData.resetPath,
           resetPathName:this.detailData.resetPathName,

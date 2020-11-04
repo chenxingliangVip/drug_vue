@@ -64,7 +64,7 @@
          style="margin:0">
       <div style="line-height:16px;"><span style="color:#878989">检项<i class="i_colon">：</i></span></div>
     </div>
-    <div @click="downLoadFile(detailData.sampleCode)"  style="font-family: cursive;font-size: 14px;cursor: pointer;float: right">附件下载</div>
+    <div @click="downLoadFile('code')"  style="font-family: cursive;font-size: 14px;cursor: pointer;float: right">附件下载</div>
     <div class="el-dialog-table el-div-version"
          style="border: 0px; margin-top: 0px;">
 
@@ -100,6 +100,7 @@
         <div style="line-height:16px;"><span style="color:#cb0000">复检项<i class="i_colon">：</i></span></div>
 
       </div>
+      <div @click="downLoadFile('reset')"  style="font-family: cursive;font-size: 14px;cursor: pointer;float: right">附件下载</div>
       <div class="el-dialog-table el-div-version"
            style="border: 0px; margin-top: 0px;">
 
@@ -121,7 +122,7 @@
       </el-row>
     </div>
 
-    <div slot="footer" v-show="detailData.checkStatus == '3'||detailData.checkStatus == '2'"
+    <div slot="footer"  v-show=" hasRole('report:approve:edit') && approveStatus!='5'&&(detailData.checkStatus == '3'||detailData.checkStatus == '2')"
          class="dialog-footer ">
       <el-button type="red"
                  size="mini"
@@ -129,13 +130,13 @@
                 >
         驳回
       </el-button>
-      <el-button type="primary" v-if="resetItem.tableData.length > 0" @click="submitCheck('5')"
+      <el-button type="primary" v-if="approveStatus!='5'&&resetItem.tableData.length > 0" @click="submitCheck('5')"
                  size="mini"
                  style="width: 120px;margin-left:20%"
                 >
         复检批准
       </el-button>
-      <el-button type="green" v-else @click="submitCheck('5')"
+      <el-button type="green" v-if="approveStatus!='5'&&resetItem.tableData.length == 0" @click="submitCheck('5')"
                  size="mini"
                  style="width: 80px;margin-left:30%"
                 >
@@ -143,6 +144,10 @@
       </el-button>
 
     </div>
+    <form action="/api/drug/file/downloadFile" method="post"
+          style="display: none;" ref="downloadResetFile">
+      <input name="path" :value="downPath"/>
+    </form>
   </el-dialog>
 </template>
 <script>
@@ -176,6 +181,7 @@
         count: 0,
         user:{},
         type:"",
+        approveStatus:"",
         item:{
           tableData: [],
           tableHeader:[],
@@ -186,6 +192,7 @@
           tableHeader:[],
         },
 
+        downPath:"",
         loginList:[],
 
         userEdit:false
@@ -200,6 +207,7 @@
       self.$eventBus.$on("openSampleApproveDialog",function (editData,type) {
         self.dialogAddVisible = true;
         self.count = 0;
+        self.approveStatus = editData.approveStatus;
         self.getAllSampleCode(editData.sampleId);
         self.getSampleImagesFile(editData.sampleId);
       })
@@ -218,11 +226,58 @@
           }
         });
       },
-      downLoadFile(){
+
+      dataURLtoBlob(dataUrl) {
+        let str = atob(dataUrl);
+        let n = str.length;
+        let u8arr = new Uint8Array(n);
+        while (n--) {
+          u8arr[n] = str.charCodeAt(n);
+        }
+        return new Blob([u8arr], { type: 'pdf' });
+      },
+
+      downPdf(pdfArray){
+        for(let i = 0 ; i< pdfArray.length;i++){
+          let obj = pdfArray[i];
+          let data = obj.fileBlob.substring(obj.fileBlob.indexOf(",")+1);
+          let URL = this.dataURLtoBlob(data);
+          let reader = new FileReader();
+          reader.readAsDataURL(URL);
+          reader.onload = function (e) {
+            // 转换完成，创建一个a标签用于下载
+            const a = document.createElement('a');
+            a.download = obj.fileName; // 这里写你的文件名
+            a.href = e.target.result;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a)
+          }
+        }
+      },
+
+      downLoadResetFile(){
+        let self =this;
+        self.downPath = self.detailData.resetPath;
+        alert(self.downPath)
+        self.$nextTick(()=>{
+          self.$refs.downloadResetFile.submit();
+        });
+      },
+
+      downLoadFile(attr){
         let self = this;
         let data = self.files;
+        let pdfArray = [];
         if(data && data.length > 0){
           for(let i = 0; i < data.length;i++){
+            if(data[i].fileType !=attr){
+                continue;
+            }
+            if(data[i].fileBlob.indexOf("application/pdf;base64") > 0){
+              pdfArray.push(data[i]);
+              continue;
+            }
             let image = new Image();
             image.setAttribute('crossOrigin', 'anonymous');
             image.onload = function() {
@@ -239,6 +294,9 @@
               a.dispatchEvent(event) // 触发a的单击事件
             };
             image.src = data[i].fileBlob;
+          }
+          if(pdfArray.length > 0){
+            self.downPdf(pdfArray);
           }
         }else{
           self.$notify({
@@ -324,6 +382,7 @@
             self.item.tableLoading = false;
             resp.result.result = resp.result.result?resp.result.result:"1";
             self.detailData = resp.result;
+            console.log(self.detailData)
             self.userEdit = self.detailData.checkStatus == '3'||self.detailData.checkStatus == '2'
             self.detailData.finalResult = "合格";
             for(let data of self.detailData.standardItems){
