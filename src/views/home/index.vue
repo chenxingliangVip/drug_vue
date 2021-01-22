@@ -32,8 +32,6 @@ export default {
   text-align: center;
   line-height: 60px;
   height: 40px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
  }
 
 .el-main {

@@ -7,7 +7,7 @@
                       :class="{'submenu-title-noDropdown':!isNest}">
           <!--<item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)"-->
                 <!--:title="onlyOneChild.meta.title" />-->
-          <img :src="onlyOneChild.meta.image" style="width: 17px;margin-right: 4px;margin-left: 15px">
+          <img :src="onlyOneChild.meta.image" style="margin-right: 4px;margin-left: 0px" class="collapse_img">
           <span  slot="title">{{onlyOneChild.meta.title}}</span>
 					<span class="txt_Num" v-if="onlyOneChild.meta.title  == '信息'">{{txtNum}}</span>
           <img src="@/assets/img/left_icona.png" v-if="onlyOneChild.meta.title  == '审批' && approveTag" class="txt_Img"/>
@@ -25,7 +25,7 @@
           <!--<item v-if="item.meta"-->
                 <!--:icon="item.meta && item.meta.icon"-->
                 <!--:title="item.meta.title" />-->
-          <img :src="item.meta.image" style="width: 17px;margin-right: 4px;margin-left: 15px">
+          <img :src="item.meta.image" style="margin-right: 4px;margin-left: 0px" class="collapse_img">
           <span  slot="title">{{item.meta.title}}</span>
         </template>
         <sidebar-item v-for="child in item.children"

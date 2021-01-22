@@ -2,12 +2,10 @@
   <div>
     <div class="navbar">
       <el-row class="el-row-header">
-        <el-col :offset="6"
-                :span="12"
-                class="el-col-title">
+        <el-col :offset="8" :span="8" class="el-col-title">
           <div>分 析 测 试 平 台</div>
         </el-col>
-        <el-col :span="6">
+        <el-col :span="8">
           <div class="right-menu">
             <el-dropdown class="avatar-container right-menu-item hover-effect"
                          trigger="click">
@@ -26,6 +24,7 @@
               </el-dropdown-menu>
             </el-dropdown>
           </div>
+          <h1 class="sidebar-title">{{ date| parseTime('{y}-{m}-{d} {h}:{i}:{s}')  }} </h1>
         </el-col>
       </el-row>
 
@@ -61,7 +60,8 @@
     data() {
       return {
         smallTitle: null,
-        user:{}
+        user:{},
+        date: new Date(),
       }
     },
     watch: {
@@ -75,6 +75,10 @@
     mounted(){
       let user = JSON.parse(getToken());
       this.user = user;
+      var that = this;
+      this.timer = setInterval(function() {
+        that.date = new Date()
+      }, 1000)
     },
     created() {
       this.getBreadcrumb()
@@ -107,13 +111,18 @@
         removeToken();
         location.reload();
       }
+    },
+    beforeDestroy() {
+      if (this.timer) {
+        clearInterval(this.timer) //在vue实例销毁钱，清除我们的定时器
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
   .navbar {
-    height: 148px;
+    height: 98px;
     overflow: hidden;
     position: relative;
     background: #2e827f;
@@ -121,8 +130,7 @@
     box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
     .el-row-header {
-      height: 100px;
-      border-left: solid 2px #fff;
+      height: 50px;
     }
     .el-row-breadcrumb {
       height: 48px;
@@ -135,10 +143,10 @@
 
     .el-col-title {
       color: #fff;
-      font-size: 30px;
-      height: 100px;
+      font-size: 24px;
+      height: 50px;
       text-align: center;
-      line-height: 100px;
+      line-height: 50px;
     }
 
     .el-small-title {
@@ -171,9 +179,8 @@
 
     .right-menu {
       float: right;
-      height: 100%;
-      margin-top: 60px;
-      line-height: 30px;
+      line-height: 70px;
+      height: 50px;
 
       &:focus {
         outline: none;
@@ -198,10 +205,9 @@
       }
 
       .avatar-container {
-        margin-right: 40px;
+        margin-right: 15px;
 
         .name-wrapper {
-          margin-top: 5px;
           position: relative;
           color: #fff;
 
@@ -211,13 +217,27 @@
 
           .el-icon-caret-bottom {
             cursor: pointer;
-            position: absolute;
-            right: -20px;
-            top: 10px;
+            // position: absolute;
+            // right: -20px;
+            // top: 10px;
             font-size: 12px;
           }
         }
       }
     }
+    .sidebar-title {
+        display: inline-block;
+        margin: 0;
+        color: #fff;
+        font-weight: normal;
+        line-height: 50px;
+        font-size: 14px;
+        font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+        vertical-align: middle;
+        margin-top: 10px;
+        margin-right: 20px;
+        height: 40px;
+        float: right;
+      }
   }
 </style>

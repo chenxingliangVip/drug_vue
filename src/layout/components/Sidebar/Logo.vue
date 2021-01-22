@@ -6,7 +6,7 @@
         <div v-if="collapse"
              key="collapse"
              class="sidebar-logo-link">
-          <img src="@/assets/logo.png"
+          <img src="@/assets/logo_collapse.png"
                class="sidebar-logo">
         </div>
         <div v-else
@@ -20,9 +20,9 @@
           <el-row>
             <div class="sidebar-name">威尔药业</div>
           </el-row>
-          <el-row>
+          <!-- <el-row>
             <h1 class="sidebar-title">{{ date| parseTime('{y}-{m}-{d} {h}:{i}:{s}')  }} </h1>
-          </el-row>
+          </el-row> -->
         </div>
       </transition>
     </div>
@@ -78,7 +78,7 @@
   .sidebar-logo-container {
     position: relative;
     width: 100%;
-    height: 144px;
+    height: 94px;
     background: #2e827f;
     text-align: center;
     overflow: hidden;
@@ -90,7 +90,7 @@
 
       & .sidebar-logo {
         height: 35px;
-        margin-top: 30px;
+        margin-top: 20px;
         vertical-align: middle;
       }
 

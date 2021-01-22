@@ -39,7 +39,7 @@
 
     &.has-logo {
       .el-scrollbar {
-        height: calc(100% - 144px - 90px);
+        height: calc(100% - 94px - 90px);
       }
     }
 
@@ -147,7 +147,7 @@
 
     .sidebar-logo {
       height: 14px;
-      margin-top: 65px;
+    //   margin-top: 65px;
       vertical-align: middle;
     }
 
@@ -199,6 +199,9 @@
             display: inline-block;
           }
         }
+      }
+      .collapse_img {
+          margin-left: 17px !important;
       }
     }
   }

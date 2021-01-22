@@ -91,7 +91,7 @@ export const constantRouterMap = [
         path: "send-dept",
         component: () => import("@/views/sending/deptSendTask.vue"),
         name: "send-dept",
-        meta: { title: "部门送检",permission:"send:dept",image:require('@/assets/img/send-02.png') }
+        meta: { title: "部门送检",permission:"send:dept",image:require('@/assets/img/send-03.png') }
       }
     ]
   },
